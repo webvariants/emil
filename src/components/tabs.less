@@ -1,0 +1,128 @@
+/* topdoc
+  application: ION-U web application
+  copyright: Copyright (c) 2013, CommScope/webvariants
+  author: Steven David <steven.david@webvariants.de>, Andreas Schmueckert <andreas.schmueckert@freelancer.webvariants.de>
+  name: Tabs
+  description: A list of tabs syles
+  example: Link to an example on sites like Codepen.io or jsfiddle.net
+  tags: ui, components, tabs
+  markup:
+  .alarms_simple
+    .tabPanelContainer.alarmsTabs
+        ul#tabPanel.ion-tabPanel
+            +tab({label:'status.alarms.services', dataTab: 'tabServices'})
+            +tab({label:'status.alarms.coverage', dataTab: 'tabCoverage'})
+            +tab({label:'status.alarms.devices', dataTab: 'tabDevices'})
+    .alarmsContent
+        if tabContent == 'tabServices'
+            div(class=topConta, style="height:100%; margin-top:15px;")
+                .full.alarms.simple
+                    .fill_alarms-activeSimple
+        else if tabContent == 'tabCoverage'
+            div(class=topConta, style="height:100%; margin-top:15px;")
+                .full.alarms.simple
+                    .fill_alarms-activeSimple
+        else if tabContent == 'tabDevices'
+            div.deviceContainer
+                include alarms_simple_tabs_content_devices
+            div.downPart(style="margin-top:15px;overflow:visible;height:100%; ")
+                .full.alarms.simple
+                    .fill_alarms-activeSimple
+*/
+
+// ul.ion-tabPanel, ul#tabPanel{
+
+//     display:        block;
+//     list-style:     none;
+//     width:          100%;
+//     margin:         0px;
+//     border:         none;
+//     background:     transparent;
+//     position:       relative;
+
+
+// 	li.ion-tabPanel.tab {
+// 		font-weight: 	bold;
+// 		list-style: 	none;
+// 		cursor: 		pointer;
+// 		color: 			@grey53;
+// 		float: 			left;
+// 		height: 		25px;
+// 		line-height: 	24px;
+// 		margin:   		0px 12px 12px 0;
+// 		padding: 		0px 12px 0px 12px;
+// 		border-top: 	1px solid @grey53;
+// 		border-left: 	1px solid @grey53;
+// 		border-right: 	1px solid @grey53;
+// 		position: 		relative;
+// 		background: 	@white;
+// 		.border-radius(3px, 0px, 0px, 3px);
+
+// 		a {
+// 			color: 			inherit;
+// 			background: 	transparent;
+// 			text-decoration: none;
+// 		}
+
+// 		&:hover{
+// 			.ion-btn-transition;
+// 			color: darken(@grey53, 7%);
+// 			background: darken(@white, 5%);
+// 		}
+
+//         &.activated {
+//             background:     @grey10;
+//             .ion-btn-transition;
+//             z-index: 1;
+//             color:      @grey80;
+//         }
+//     }
+
+//     li.panelTabs {
+//         .border-radius(3px, 0px, 0px, 3px);
+//         list-style:     none;
+//         cursor:         pointer;
+//         float:          left;
+//         line-height:    24px;
+//         margin:   0 12px 12px 0;
+//         position:       relative;
+
+// 		.border-radius(3px, 0px, 0px, 3px);
+
+//         .ion-btn {
+//             .ion-btn.subMenu;
+
+//             &.selected {
+//                 .ion-btn-transition;
+//                 z-index: 1;
+//                 // color:      @grey80;
+//                 // font-weight: bold;
+//             }
+
+//         }
+
+//         &:hover{
+//             .ion-btn-transition;
+//             color: darken(@grey53, 7%);
+//         }
+//     }
+// }
+// //container for tab-related content
+// .ion-tabPanel-tabContent{
+// 	background: 	@grey10;
+// 	width: 			100%;
+// 	min-height: 	200px;
+//     background:     @grey10;
+//     width:          100%;
+//     min-height:     200px;
+//     background:     transparent;
+//     position: relative;
+// }
+
+// .rfMeasurementContent {
+
+//     .widget .title {
+//         text-align: left;
+//     }
+
+// }

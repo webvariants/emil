@@ -1,0 +1,101 @@
+/* topdoc
+  application: ION-U web application
+  copyright: Copyright (c) 2013, CommScope/webvariants
+  author: Steven David <steven.david@webvariants.de>, Christian Sonderfeld <christian.sonderfeld@webvaraints.de>
+  name: Mixin
+  description: a list of all mixins.
+  example: Link to an example on sites like Codepen.io or jsfiddle.net
+  tags: standards, mixin
+*/
+
+.has-layout()
+{
+	zoom:1;
+}
+
+/**
+* Quick Clearfix
+*
+* Clears an element of its floated children. The quick way.
+*/
+
+.clear()
+{
+	overflow:auto;
+}
+
+/**
+* Clearfix
+*
+* Clears an element of its floated children.
+*/
+.clearfix()
+{
+	.has-layout;
+	display:block;
+
+	&:after
+	{
+		content:"\\0020";
+		display:block;
+		height:0;
+		clear:both;
+		visibility:hidden;
+		font-size:0;
+	}
+}
+
+.opacity(@opacity: 1) {
+	@opacityPercentage: @opacity * 100;
+
+	filter:         ~"alpha(opacity=@{opacityPercentage})";
+	-ms-filter:     ~"progid:DXImageTransform.Microsoft.Alpha(Opacity=@{opacityPercentage})";
+	-khtml-opacity: @opacity;
+	-moz-opacity:   @opacity;
+	opacity:        @opacity;
+}
+
+.colored-drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @color: rgba(0,0,0,0.45)) {
+  -webkit-box-shadow: @x-axis @y-axis @blur @color;
+  -moz-box-shadow: @x-axis @y-axis @blur @color;
+  box-shadow: @x-axis @y-axis @blur @color;
+}
+
+.transition-color (@duration:0.2s, @ease:ease-out) {
+  -webkit-transition: color @duration @ease;
+  -moz-transition: color @duration @ease;
+  -o-transition: color @duration @ease;
+  transition: color @duration @ease;
+}
+.transition-background (@duration:0.2s, @ease:ease-out) {
+  -webkit-transition: background @duration @ease;
+  -moz-transition: background @duration @ease;
+  -o-transition: background @duration @ease;
+  transition: background @duration @ease;
+}
+
+.bgfade(@color, @fade) {
+    background-color: fadeout(@color, 100-@fade*100);
+    @rgbahex: ~`function(color, fade){var t = (Math.round(255*fade)).toString(16).toUpperCase();t=t.length==1?'0'+t:t;return '#'+t+color.substr(1)}("@{color}","@{fade}")`;
+    filter: ~"progid:DXImageTransform.Microsoft.gradient( startColorstr=@{rgbahex}, endColorstr=@{rgbahex},GradientType=0 )";
+}
+
+// Global mixin for disabled state
+.disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.centerCalc (@width, @height) {
+    position: absolute;
+    left: calc(~"50% - @{dialog-width} / 2");
+    top: calc(~"50% - @{dialog-height} / 2");
+}
+
+.floatLeft {
+  float: left;
+}
+
+.floatRight {
+  float: left;
+}

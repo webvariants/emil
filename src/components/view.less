@@ -1,0 +1,65 @@
+#view {
+    background-color: transparent;
+}
+
+.viewContainer {
+    background-color: white;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    width: 100%;
+    height: 100%;
+
+    .containerBox {
+        height: 100%;
+    }
+
+    .viewHeader {
+        border-bottom: 1px solid @borderColor;
+        height: 40px;
+        width: 100%;
+        position: relative;
+
+        &.SystemProfile {
+            border: 0;
+        }
+
+        .viewTitle {
+            color: @blackLighten40;
+            height: 40px;
+            line-height: 40px;
+            font-size: 18px;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        #sidebarBtn {
+            position: absolute;
+            left: 3px;
+            top: 6px;
+            margin-top: 0;
+
+            &.rotateBtn {
+                transform-style: preserve-3d;
+                .transition(0.1s, ease-in-out, all);
+                // backface-visibility: hidden;
+                transform: rotateY( 180deg );
+            }
+        }
+        .maximizeBtn {
+            position: absolute;
+            right: 3px;
+            top: 6px;
+            margin-top: 0;
+        }
+    }
+    .viewContent {
+        height: calc(~"100% - 40px");
+
+        .masterdetail {
+            height: 100%;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+.alarmTable {
+	box-sizing: border-box;
+	margin: 10px;
+	width: 440px;
+
+	thead {
+
+		th {
+			border-bottom: 1px solid @borderColor;
+			padding: 0 0 5px 0;
+
+			&:first-child {
+				width: 90px;
+			}
+
+			&.availability {
+				width: 80px;
+			}
+
+			&.raiseTime {
+				width: 90px;
+			}
+
+			span {
+				float: left;
+
+				&.icon {
+					cursor: pointer;
+					margin: 4px 5px;
+				}
+			}
+		}
+	}
+
+	tbody {
+
+		tr {
+
+			td {
+				padding: 3px 0;
+
+				.icon {
+					cursor: pointer;
+					position: relative;
+					top: 3px;
+				}
+				.remedy {
+					position: absolute;
+					right: -300px;
+					background: #f42e52;
+					border-collapse: collapse;
+					border-radius: 2px;
+					padding: 4px;
+					margin-top: -15px;
+					-webkit-transition: right 0.5s;
+					-moz-transition: right 0.5s;
+					-ms-transition: right 0.5s;
+					-o-transition: right 0.5s; 
+					transition: right 0.5s;
+
+					&.active {
+						right: 0;
+					}
+
+					.close {
+						color: white;
+						padding-left: 10px;
+						padding-right: 5px;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+}

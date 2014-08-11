@@ -1,0 +1,93 @@
+/* topdoc
+  application: ION-U web application
+  copyright: Copyright (c) 2013, CommScope/webvariants
+  author: Steven David <steven.david@webvariants.de>, Christian Sonderfeld <christian.sonderfeld@webvaraints.de>
+  name: IE
+  description: Import separate ie.
+  example: Link to an example on sites like Codepen.io or jsfiddle.net
+  tags: standards, ie
+*/
+
+ // @import 'mixins.less';
+
+#loginForm {
+	input[type=submit] {
+		margin-right: 7px;
+		min-width: 65px;
+	}
+	input[type=password] {
+		position: relative;
+		top: -1px;
+	}
+}
+
+input[type=file] {
+	width: auto;
+}
+
+#navigation {
+	.treeControl {
+		a {
+			padding-top: 2px;
+		}
+	}
+	.filter label {
+		width: 177px;
+		margin-top: 12px;
+	}
+}
+
+content {
+
+	.widgetTable {
+		label span {
+			padding-left: 0;
+		}
+	}
+	.alarms .widgetTable {
+		tr.active td {
+			background: #faa;
+
+			&.date {
+				background: #fff;
+			}
+		}
+	}
+	form {
+		> fieldset, > fieldset.secondLevel {
+			border-bottom-width: 0;
+
+			fieldset {
+				border-top: 0;
+				border-bottom: 1px solid @grey40;
+
+				&.combined legend {
+					border-bottom: 1px solid @grey40;
+				}
+			}
+			> label {
+				border-bottom: 1px solid @grey40;
+				border-top: 0;
+			}
+			label.combined {
+				span {
+					border-bottom: 1px solid @grey40;
+					background: @white;
+					position: relative;
+					top: -1px;
+					padding-top: 7px;
+				}
+			}
+			.button.addItem {
+				border-top: 0;
+				border-bottom: 1px solid @grey40;
+			}
+			> legend + div,
+			> div {
+				border-bottom: 1px solid @grey40;
+				border-top: 0;
+				min-height: 24px;
+			}
+		}
+	}
+}

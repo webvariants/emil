@@ -1,0 +1,97 @@
+/* topdoc
+  application: ION-U web application
+  copyright: Copyright (c) 2013, CommScope/webvariants
+  author: Steven David <steven.david@webvariants.de>, Christian Sonderfeld <christian.sonderfeld@webvaraints.de>
+  name: User-List
+  description:
+  example: Link to an example on sites like Codepen.io or jsfiddle.net
+  tags: styleguide, user-list
+
+  div(data-template="templates/setup/user_list", data-module="setup", data-uid="30", class="row solo")
+    div.basic_widget.col-12.alpha.omega
+      div.widget.user_list
+        div.title
+          div(class="ion-btn toggle toggleBtn", title="toggle open or close")
+            span Accounts
+          div(class="ion-btn help helpBtn  withIcon", title="open help", data-help="USER_LIST")
+            span.icon.help
+          div.widgetLoader-overlay
+            div.widgetLoader-box
+              div.circleG_1.circleG
+              div.circleG_2.circleG
+              div.circleG_3.circleG
+          div.content
+            table.widgetTable
+              thead
+                tr
+                  th No.
+                  th Role
+                  th User name
+                  th Actions
+              tbody
+                tr
+                  td 1
+                  td Owner
+                  td test
+                  td
+                    div(class="ion-btn edit onlyIcon  withIcon", id="1")
+                      span.icon.edit
+                    div(class="ion-btn delete onlyIcon grey  withIcon", id="1")
+                      span.icon.delete
+                tr
+                  td 2
+                  td Owner
+                  td admin
+                  td
+                    div(class="ion-btn edit onlyIcon  withIcon", id="2")
+                      span.icon.edit
+                    div(class="ion-btn delete onlyIcon grey  withIcon", id="2")
+                      span.icon.delete
+                tr
+                  td 5
+                  td Owner
+                  td user
+                  td
+                    div(class="ion-btn edit onlyIcon  withIcon", id="5")
+                      span.icon.edit
+                    div(class="ion-btn delete onlyIcon grey  withIcon", id="5")
+                      span.icon.delete
+            div(class="ion-btn add", id="adduserbtn")
+              span Add User
+*/
+
+.widget.user_list {
+
+	.widgetTable {
+
+		td:first-child, th:first-child {
+			width: 100px;
+
+			+ td, + th, + td + td, + th + th {
+				text-align: left;
+				padding-left: 20px;
+			}
+
+			+ td, + th {
+				width: 20%;
+			}
+		}
+
+		td:last-child, th:last-child {
+			width: 150px;
+		}
+
+            tbody{
+
+              td{
+                line-height: 38px;
+              }
+            }
+	}
+
+	#adduserbtn {
+		bottom: -38px;
+		position: absolute;
+		right: 0;
+	}
+}

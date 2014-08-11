@@ -1,0 +1,259 @@
+/* topdoc
+  application: ION-U web application
+  copyright: Copyright (c) 2013, CommScope/webvariants
+  author: Steven David <steven.david@webvariants.de>, Marko Ladngast <marko.ladengast@webvariants.de>
+  name: rf-parameters
+  description:
+  example: Link to an example on sites like Codepen.io or jsfiddle.net
+  tags: styleguide, rf-parameters
+  markup:
+*/
+
+@tempSliderBgWebkit: -webkit-gradient(linear,left center, right center,color-stop(0,@red),color-stop(25%, @yellow),color-stop(75%, @green),color-stop(1,@green));
+@tempSliderBgMoz: -moz-linear-gradient(left, @red 0, @yellow 25%, @green);
+@tempSliderBgMs: -ms-linear-gradient(left, @red 0, @yellow 25%, @green);
+
+.container {
+	margin: 0;
+	max-width: 1400px;
+}
+
+.leftContentContainer {
+	float: left;
+	width: 20%;
+
+	.rf_param_pic {
+		background: @grey10;
+	}
+
+	.rf_param_pic, .rf_param_fault_clearance {
+		float: left;
+		width: 100%;
+		min-width: 130px;
+
+		.prev {
+			height: 400px;
+			width: 25%;
+			float: left;
+
+			.prevIcon {
+				.icon;
+				background-position: center -2298px;
+				height: 30px;
+				width: 30px;
+				margin-top: 200px;
+				border: 1px solid @grey80;
+				border-radius: 50%;
+				margin-left: 20%;
+				cursor: pointer;
+			}
+
+		}
+
+		.rackPicture {
+			background: @url_inventory_spr no-repeat;
+			height: 350px;
+			margin: 0 auto;
+			width: 50%;
+			float: left;
+			margin-top: 25px;
+		}
+
+		.next {
+			height: 400px;
+			width: 25%;
+			float: left;
+
+			.nextIcon {
+				.icon;
+				background-position: center -2322px;
+				height: 30px;
+				width: 30px;
+				margin-top: 200px;
+				border: 1px solid @grey80;
+				border-radius: 50%;
+				margin-left: 20%;
+				cursor: pointer;
+			}
+		}
+
+		.downLogBtn{
+			text-align: center;
+			width: 100%;
+
+			.downloadLog {
+				text-align: center;
+				margin-bottom: 20px;
+				margin-top: 10px;
+				width: 75%
+			}
+		}
+
+		.maintenanceMode {
+			text-align: center;
+
+			#MaintenanceMode {
+				margin-left: 15px;
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+
+.rightContentContainer {
+	width: 78%;
+	float: right;
+
+	.rf_param_rf_path,
+	.rf_param_active_alarms,
+	.rf_param_alarm_history,
+	.rf_param_temp {
+		width: 100%;
+
+		.icon.checkbox {
+			background-position: 0 -2448px;
+			float: right;
+			margin-left: 10px;
+		}
+
+		.widgetTable {
+
+			thead tr {
+
+				.date, .time {
+					background: @grey53;
+				}
+			}
+
+			tbody tr {
+
+				&.selected {
+					background: @orange;
+				}
+
+				td {
+					padding: 10px;
+
+					&.remedy {
+						background-color: transparent;
+						background-image: @url_icons_spr;
+						background-repeat: no-repeat;
+						background-position: center -488px;
+						cursor: pointer;
+					}
+
+					&.red {
+						background: @red;
+					}
+
+					&.orange {
+						background: @orange;
+					}
+				}
+			}
+		}
+
+		.widgetTable.temperature {
+
+			tbody tr td {
+				border: none;
+
+				&.temp {
+					margin: 25px 0 0 10px;
+					float: left;
+					width: 75%;
+
+					.title{
+						width: 100%;
+					}
+				}
+
+				&.tempSlider {
+					width: 70%;
+				}
+
+				.sliderRow {
+					width: 100%;
+				}
+
+				.sliderContainer {
+					border: none;
+					margin-top: 40px;
+
+					.slider {
+						background: @tempSliderBgWebkit;
+						background: @tempSliderBgMoz;
+						background: @tempSliderBgMs;
+
+						span.cur {
+							background: none;
+							border: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.rf_param_opt_loss {
+
+	table thead {
+
+		.location {
+			width: 200px;
+		}
+	}
+
+	table tbody tr {
+		background: @grey7;
+
+		.sliderContainer {
+			border: none;
+			margin-top: 40px;
+		}
+
+		.location {
+			border-right: 1px solid @grey30;
+		}
+	}
+}
+
+.rf_param_fibre_sig {
+
+	table tbody tr {
+
+		.switch{
+			width: 700px;
+			text-align: left;
+
+			.switchUnit {
+				margin-left: 15px;
+			}
+		}
+	}
+}
+
+.rf_param_unit {
+
+	table tbody tr {
+
+		td{
+			padding: 10px;
+		}
+
+		.info {
+			text-align: left;
+			padding-left: 15px;
+		}
+	}
+}
+
+.alarmsCounter {
+	color: @grey60;
+}
+
+#toggle_all_active_alarms {
+	margin-top: 0;
+	cursor: pointer;
+}

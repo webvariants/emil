@@ -1,0 +1,180 @@
+/* topdoc
+  application: ION-U web application
+  copyright: Copyright (c) 2013, CommScope/webvariants
+  author:  Jon Doe  Steven David <steven.david@webvariants.de>
+  name: Component
+  description: Datepicker
+  example: Link to an example on sites like Codepen.io or jsfiddle.net
+  tags: ui, components, datepicker
+  markup: Markup Example to demonstrate usage
+*/
+.ui-datepicker{
+    font-family:    arial;
+    font-size:      11px;
+    margin-top:  -7px;
+    margin-left: 8px;
+    overflow:       hidden;
+    width: auto;
+    .rounded(2px);
+    .box-shadow2(0px 1px 2px rgba(0, 0, 0, 0.65), inset 0px 0px 1px rgba(0,0,0, 0.15));
+
+    table{
+        margin: 0 0;
+
+        td{
+
+            .ui-state-default{
+                background: #dfdfdf;
+                color: #4c4c4c;
+                height: 23px;
+                width: 23px;
+            }
+
+            &.ui-datepicker-week-end{
+
+                span{
+                    background: #F1F1F1;
+                }
+            }
+
+            &.ui-state-disabled{
+                opacity: 1;
+            }
+        }
+    }
+
+    .ui-datepicker-header{
+        background: @blueDark;
+        border: none;
+        height: 23px;
+        overflow: hidden;
+
+        .ui-datepicker-prev{
+
+            .ui-icon{
+                background-image: url("/assets/img/icons.spr.png");
+                background-repeat: no-repeat;
+            }
+        }
+
+        .ui-datepicker-next{
+
+            .ui-icon{
+                background-image: url("/assets/img/icons.spr.png");
+                background-repeat: no-repeat;
+            }
+        }
+
+        .ui-datepicker-title{
+            padding-top: 6px;
+
+            .ui-datepicker-month, .ui-datepicker-year {
+                color: @white;
+                font-weight: bold;
+                font-size: 12px;
+            }
+        }
+
+        .ui-datepicker-next {
+
+            span {
+                background-color: @grey15;
+                background-position: 0 -2324px;
+            }
+        }
+
+        .ui-datepicker-prev{
+
+            span {
+                background-position: 0 -2300px;
+                background-color: @grey15;
+            }
+        }
+    }
+
+    table.ui-datepicker-calendar{
+        border-collapse: collapse;
+        border-color: @white;
+        border-width: 0 1px 1px;
+        font-size: 11px;
+
+        td {
+            border: 1px solid @white;
+        }
+
+        thead{
+
+            tr th{
+                padding: 0px;
+
+                span{
+                    color: @black;
+                    font-weight: bold;
+                    height: 23px;
+                }
+            }
+        }
+
+        tr{
+            td{
+
+                a.ui-state-default{
+                    background: @grey15;
+                    color: @black;
+                    height: 23px;
+                    width: 23px;
+
+                    &.ui-state-hover{
+                        color: @grey100;
+                        border: @blueDark solid 2px;
+                        background: @grey15;
+                        padding: 2px;
+                    }
+                }
+            }
+
+            td.ui-datepicker-week-end a{
+                background: @grey10;
+                color: @grey80;
+            }
+
+            td.ui-datepicker-current-day a{
+                background: @blueDark;
+                color: @white;
+            }
+        }
+    }
+}
+
+.ion-inputfield{
+
+    &.hasDatepicker{
+        border: 1px solid #A7A7A7;
+        box-shadow: none;
+        cursor: pointer;
+        width: 100px!important;
+        .typo.content;
+
+        &:hover{
+            border: 1px solid #A7A7A7;
+        }
+    }
+}
+
+#ui-datepicker-div {
+    margin-top: 0;
+}
+
+.inputs{
+
+    &.date{
+
+        .ion-inputfieldContainer{
+            width: 130px!important;
+
+            .calendar{
+                right: 37px!important;
+            }
+        }
+    }
+}

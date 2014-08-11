@@ -1,0 +1,77 @@
+@task_change_duration: 2s;
+
+/* Later on will replace this with 3L mixins */
+@-webkit-keyframes task-change-loader {
+	0%        { opacity : 0; }
+	50%       { opacity : 0.5; }
+	100%      { opacity : 1; }
+}
+@-moz-keyframes task-change-loader {
+	0%        { opacity : 0; }
+	50%       { opacity : 0.5; }
+	100%      { opacity : 1; }
+}
+@-o-keyframes task-change-loader {
+	0%        { opacity : 0; }
+	50%       { opacity : 0.5; }
+	100%      { opacity : 1; }
+}
+@keyframes task-change-loader {
+	0%        { opacity : 0; }
+	50%       { opacity : 0.5; }
+	100%      { opacity : 1; }
+}
+
+.task-change-animation {
+		-webkit-animation: task-change-loader @task_change_duration 2; /* Safari 4+ */
+		-moz-animation:    task-change-loader @task_change_duration 2; /* Fx 5+ */
+		-o-animation:      task-change-loader @task_change_duration 2; /* Opera 12+ */
+		animation:         task-change-loader @task_change_duration 2; /* IE 10+ */
+}
+
+.masterdetail {
+	height: calc(~"100% - 50px");
+	.clearfix;
+	-ms-overflow-style: -ms-autohiding-scrollbar; //MAKE SCROLLBARS ON IE HALFTRANSPARENT
+
+	.master {
+		border-right: 1px solid @borderColor;
+		float: left;
+		height: 100%;
+		overflow-y: auto;
+		width: 240px;
+
+		.tasks div { // @FIXME only first item should be shown - is needed until shadow-dom exists
+			display: none;
+		}
+
+		.tasks div:first-child {
+			display: block;
+		}
+	}
+
+
+	.detail {
+		float: left;
+		height: 100%;
+		overflow-y: auto;
+		position: relative;
+		width: 480px;
+
+		.container {
+			height: 100%;
+		}
+
+		.alarmDetail {
+			padding: 6px;
+			width: 100%;
+		}
+	}
+}
+
+.toggleView {
+
+	.detail {
+		width: 720px;
+	}
+}

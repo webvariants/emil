@@ -1,0 +1,75 @@
+/* topdoc
+  application: ION-U web application
+  copyright: Copyright (c) 2013, CommScope/webvariants
+  author: Steven David <steven.david@webvariants.de>, Marko Ladngast <marko.ladengast@webvariants.de>
+  name: Pager
+  description: Pager Styling
+  example: Link to an example on sites like Codepen.io or jsfiddle.net
+  tags: styleguide, pager
+  markup:
+
+*/
+
+.pager {
+
+	margin: 10px 0px;
+
+	.position {
+
+		margin: 0;
+
+		span.end {
+
+			span {
+				margin: 0px 5px;
+				color: @grey53;
+
+				&:last-child {
+					text-transform: capitalize;
+				}
+			}
+		}
+	}
+
+	ol {
+
+		li {
+			margin: 0 1px;
+			display: inline-block;
+			width: 16px;
+			padding: 0;
+			height: 16px;
+			line-height: 16px;
+			text-align: center;
+			vertical-align: middle;
+
+			&:not(.current) {
+				cursor: pointer;
+				color: @grey53;
+
+				span {
+					text-decoration: underline;
+				}
+			}
+
+			&.current {
+			}
+
+			span {
+				padding: 0;
+				background-color: transparent;
+				border: none;
+			}
+
+			&.first, &.prev, &.next, &.last {
+				background: none;
+				margin: 0px 2px;
+
+				span {
+					float: none;
+					border-radius: 0;
+				}
+			}
+		}
+	}
+}

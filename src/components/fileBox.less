@@ -1,0 +1,205 @@
+/* topdoc
+  application: ION-U web application
+  copyright: Copyright (c) 2013, CommScope/webvariants
+  author: Steven David <steven.david@webvariants.de>, Marko Ladngast <marko.ladengast@webvariants.de>
+  name: Filebox
+  description: Filebox Styling
+  example: Link to an example on sites like Codepen.io or jsfiddle.net
+  tags: styleguide, filebox
+  markup:
+  div.fileBox.updateFileBoxDefault
+  	div.noFile
+  		div
+  			div.noPro Currently no default profile is defined.
+  			em Drag and Drop file here
+  			div.ion-btn.browseForFile.onlyCaption
+  				span or browse for file
+  				input(type="file", name="file")
+  			div#progress.progress
+  				div.progress-bar
+  					span.sr-only 0%
+  	div.fileError
+  		div
+  			span.icon
+  	div.fileType
+  		em
+  			span File has wrong type
+  			span File not ok, please try again
+  	div.fileContent
+  		em
+  			span File content is corrupted
+  			span File not ok, please try again
+  	div.fileUpload
+  		em
+  			span File upload failed
+  			span File not ok, please try again
+*/
+
+.fileBox {
+	padding: 0;
+	margin: 6px;
+	background-color: #fff;
+
+	.browseForFile{
+		margin: 12px!important;
+	}
+
+	.ion-progress{
+
+		.progressLabel{
+			.typo.content;
+			line-height: 20px;
+			color: @blueDark;
+		}
+	}
+
+	> div {
+		margin: 0;
+		padding: 8px;
+		height: 105px;
+		display: block;
+		text-align: center;
+		border: 1px dashed @grey70;
+	}
+
+	a span {
+		background: none;
+	}
+
+	.noFile, .addFile {
+		background-color: @grey15;
+
+		&.dragHover{
+			.gradient(@grey60, @grey15, @grey60);
+		}
+
+		div + em {
+			margin: 0;
+		}
+
+		em {
+			display: block;
+			font-size: 20px;
+			font-style: normal;
+			font-weight: bold;
+			color: @blueDark;
+			margin-top: 6px;
+		}
+
+		a.button {
+			display: inline-block;
+		}
+
+		input[type=file]{
+			opacity: 0.5;
+		}
+		.progress {
+			display: none;
+		}
+	}
+	.fileOk, .fileError {
+		display: none;
+		.ion-diagonal-lines-pattern(@green);
+		color: @white;
+		border-color: @grey10;
+		text-align: left;
+
+		> div {
+			position: relative;
+			left: 50%;
+			width: 300px;
+			margin-left: -150px;
+			margin-top: 10px;
+			.clearfix;
+
+
+			> div {
+				display: none;
+				padding-left: 10px;
+				margin-top: 6px;
+
+				&:not(.fileType):not(.fileContent):not(.fileUpload) {
+					display: inline-block;
+				}
+			}
+		}
+
+		span.icon {
+			margin: 0 10px 0 0;
+			float: left;
+		}
+
+		em {
+			span {
+				display: block;
+				font-size: 20px;
+				font-style: normal;
+				font-weight: bold;
+				color: inherit;
+			}
+		}
+
+		> span {
+			display: block;
+			font-size: 14px;
+			color: @green;
+			font-weight: bold;
+			text-align: left;
+			line-height: 20px;
+		}
+	}
+
+	.fileError {
+		.ion-diagonal-lines-pattern(@criticalRed);
+
+		> span {
+			color: @red;
+		}
+		span.icon {
+			background-position: 0 0;
+			border: 2px solid #fff;
+			width: 52px;
+			height: 52px;
+			margin-top: -2px;
+		}
+	}
+
+	&.fileError {
+		.noFile, .addFile, .fileOk {
+			display: none;
+		}
+
+		.fileError {
+			display: block;
+		}
+
+		&.fileType {
+			.fileType {
+				display: inline-block;
+			}
+		}
+
+		&.fileContent {
+			.fileContent {
+				display: inline-block;
+			}
+		}
+
+		&.fileUpload {
+			.fileUpload {
+				display: inline-block;
+			}
+		}
+	}
+}
+
+.widgetTable .fileBox {
+	margin: 0px;
+}
+
+
+.browseForFile{
+	input {
+		width: 100% !important;
+	}
+}

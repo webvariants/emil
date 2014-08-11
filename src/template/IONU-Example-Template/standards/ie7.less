@@ -1,0 +1,89 @@
+/* topdoc
+  application: ION-U web application
+  copyright: Copyright (c) 2013, CommScope/webvariants
+  author: Steven David <steven.david@webvariants.de>, Christian Sonderfeld <christian.sonderfeld@webvaraints.de>
+  name: IE
+  description: Import separate ie.
+  example: Link to an example on sites like Codepen.io or jsfiddle.net
+  tags: standards, ie
+*/
+
+// @import 'mixins.less';
+
+input[type=submit], input[type=button] {
+	filter:chroma(color=@black);
+}
+
+#langSel {
+	margin-top: 0;
+	padding-top: 150px;
+}
+
+#loginForm {
+	input[type=submit] {
+		min-width:    100px;
+	}
+	input[name=loginname], input[type=password] {
+		top: 0;
+	}
+	label input {
+		margin-top: -1px;
+	}
+}
+
+#navigation {
+	.filter {
+		input {
+			&[type=text] {
+				margin-left: -10px;
+			}
+			&[type=checkbox] {
+				margin-left: 0px;
+			}
+		}
+		label {
+			margin-top: 14px;
+		}
+	}
+}
+
+content {
+	form {
+		> fieldset {
+			legend {
+				top: -21px;
+				left: -8px;
+
+				+ * {
+					padding-top: 1px;
+				}
+				.toggle {
+					left: 0;
+				}
+			}
+			fieldset {
+				legend {
+					width: 148px;
+				}
+				label {
+					left: 162px;
+					top: -22px;
+
+					input[type="radio"], input[type="checkbox"] {
+						margin-top: -1px;
+					}
+				}
+			}
+		}
+		.submit {
+			position: relative;
+			bottom: -20px;
+			right: -10px;
+		}
+	}
+	.sliderRange {
+		margin-top: 55px;
+		position: relative;
+		top: -30px;
+	}
+}

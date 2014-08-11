@@ -1,0 +1,108 @@
+/* topdoc
+  application: ION-U web application
+  copyright: Copyright (c) 2013, CommScope/webvariants
+  author: Steven David <steven.david@webvariants.de>, Marko Ladngast <marko.ladengast@webvariants.de>
+  name: popultaion
+  description: Dialog Styling
+  example: Link to an example on sites like Codepen.io or jsfiddle.net
+  tags: styleguide, popultaion
+  markup:
+*/
+
+#fullscreen .commissioning.hardware.populating_hardware .widget.tasks{
+	width: 100%;
+	float: left;
+	clear: none;
+
+	> .title {
+
+		span.right > .checkbox {
+			margin-top: 0;
+			margin-bottom: 3px;
+		}
+	}
+
+	.widgetTable{
+
+		thead span.icon, tbody td:first-child span.icon{
+			margin: auto;
+		}
+
+		th:first-child {
+			padding: 0;
+			width: 80px;
+		}
+
+		th:first-child + th, td:first-child + td {
+			text-align: left;
+			padding: 2px 5px;
+
+			+th, +td {
+				text-align: left;
+				padding: 2px 5px;
+			}
+		}
+
+		td.information{
+
+			span.message {
+				padding: 0px 6px;
+				float: left;
+				background: none;
+				color: @black;
+				font-weight: normal;
+			}
+
+			span.ion-btn {
+				padding: 1px 6px;
+				float: right;
+				height: auto;
+				margin: 0;
+				visibility: hidden;
+				line-height: 15px;
+			}
+		}
+
+		tbody tr{
+			cursor: pointer;
+
+			&.success {
+				opacity: 0.7;
+				color: @grey53;
+
+				.message {
+					color: @grey53;
+				}
+			}
+
+			&:hover {
+				background-color: rgba(153, 229, 255, .5);
+				opacity: 1;
+				color: @black;
+			}
+
+			&.selected {
+				background-color: @azure;
+				cursor: default;
+				opacity: 1;
+				color: @black;
+
+				td.information span.ion-btn {
+					visibility: visible;
+				}
+			}
+
+			td {
+				height: 25px;
+			}
+		}
+	}
+
+	.button.submit {
+		right: 0;
+	}
+}
+
+#skipAllMissing{
+	margin: 0 0 24px 0;
+}

@@ -1,0 +1,50 @@
+/* topdoc
+  application: ION-U web application
+  copyright: Copyright (c) 2013, CommScope/webvariants
+  author: Steven David <steven.david@webvariants.de>, Christian Sonderfeld <christian.sonderfeld@webvaraints.de>
+  name: Update
+  description:
+  example: Link to an example on sites like Codepen.io or jsfiddle.net
+  tags: styleguide, update
+*/
+
+.widget.update {
+	.widgetTable {
+		tr:first-child {
+			td {
+				border-top: 0;
+			}
+		}
+
+		td {
+			padding: 6px;
+
+			&:first-child {
+				text-align: right;
+				width: 150px;
+			}
+
+			.fileBox {
+				text-align: center !important;
+				color: white !important;
+			}
+		}
+	}
+}
+
+
+.console {
+	height: 250px;
+	border: none;
+	border-top: 0;
+	padding: .5em;
+	overflow: auto;
+	overflow-y: scroll !important;
+	font-family: Monospace;
+	background: @grey80;
+	color: @white;
+
+	span.slotname {
+		color: @grey53;
+	}
+}

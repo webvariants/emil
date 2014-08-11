@@ -1,0 +1,89 @@
+.masterdetail {
+
+	&.systemProfiles {
+		border-top: 1px solid @borderColor;
+	}
+}
+
+.systemProfileFileDetail {
+	border-bottom: 1px solid @borderColor;
+	.clearfix;
+
+	.iconBox,
+	.infoBox,
+	.buttonBox {
+		float: left;
+		padding: 10px 0 10px 10px;
+	}
+
+	.iconBox {
+		width: 80px;
+	}
+
+	.infoBox {
+		border: 0;
+		padding: 10px;
+		width: 330px;
+	}
+
+	.buttonBox {
+		border-left: 1px solid @borderColor;
+		padding: 0;
+
+		.ion-btn {
+			height: 60px;
+			width: 69px;
+			padding: 10px;
+			position: relative;
+
+			&:first-child {
+				border-bottom: 1px solid @borderColor;
+			}
+
+			.icon {
+				margin: 0 auto;
+				display: block;
+				float: none;
+			}
+
+			p {
+				.typo.systemProfileButton;
+				position: absolute;
+				bottom: 10px;
+			}
+		}
+	}
+}
+
+.systemProfileUserLabel {
+	background: @cyanLighten40;
+	border-radius: 10px;
+	display: inline-block;
+	margin: 0 0 0 10px;
+	padding: 2px 10px;
+	.typo.systemProfileUserLabel;
+}
+
+.fileUploadBox {
+	border: 2px dashed @cyanLighten20;
+	border-radius: 5px;
+	margin: 0 10px 10px 10px;
+	padding: 30px 0;
+	.clearfix;
+
+	h2 {
+		text-align: center;
+	}
+
+	.ion-btn {
+		.typo.uploadBoxButton;
+		border: 1px solid @cyanLighten20;
+		border-radius: 5px;
+		margin: 30px auto 0 auto;
+		width: 150px;
+
+		.icon {
+			margin: 0 10px 0 0;
+		}
+	}
+}

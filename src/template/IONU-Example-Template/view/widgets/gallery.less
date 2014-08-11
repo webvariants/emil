@@ -1,0 +1,321 @@
+/* topdoc
+  application: ION-U web application
+  copyright: Copyright (c) 2013, CommScope/webvariants
+  author: Steven David <steven.david@webvariants.de>, Christian Sonderfeld <christian.sonderfeld@webvaraints.de>
+  name: Gallery
+  description:
+  example: Link to an example on sites like Codepen.io or jsfiddle.net
+  tags: styleguide, gallery
+
+  div(data-template="templates/commissioning/import_scheduled", data-module="commissioning", data-uid="21", class="container")
+	div.row.solo
+	  div.basic_widget.col-12.alpha.omega
+		div.widget.system_profiles
+		  div.title
+			div(class="ion-btn toggle toggleBtn",  title="toggle open or close")
+			  span Default
+			  div(class="ion-btn help helpBtn  withIcon", title="open help", data-help="import_scheduled")
+				span.icon.help
+		div.widgetLoader-overlay
+		  div.widgetLoader-box
+			div.circleG_1.circleG
+			div.circleG_2 circleG
+			div.circleG_3 circleG
+		div.content
+		  table.widgetTable.systemProfiles.defaultTable
+			thead
+			  tr
+				th(class="progress", colspan="4")
+				  div#commissioning-import-progress.progress
+					div(class="progress-bar", style="width: 0%;", aria-valuemax="100", aria-valuemin="0", aria-valuenow="0", data-value="0", role="progressbar")
+					  span.sr-only 0%
+			  tr
+				th
+				  span Current Step
+				th
+				  span Information
+				th
+				  span Name
+				th.actionButtonCell
+				  span Actions
+			tbody
+			  tr
+				td.stateInfo
+				  div.stateInfo.leveling
+					span leveling
+				td.importStatus.not_started
+				  span Never Started
+				td
+				  span sct_att_klaus1_freq_BNi1.xml
+				td
+				  div.buttonContainer
+					div.ion-btn.start
+					  span(class="") Start
+					div.ion-btn.report. disabled
+					  span(class="") Report
+		  div.button.submit
+			div.ion-btn.resetCommissioning
+			  span(class="") Reset
+*/
+
+div.widget.deviceGallery {
+	min-width: 8.333333333333332%;
+}
+
+.gallery {
+	min-width: 300px;
+	min-height: 100px;
+	display: inline-block;
+	vertical-align: top;
+
+	.main {
+		position: relative;
+		text-align: center;
+		padding: 0px 42px;
+
+		img {
+			cursor: pointer;
+			height: 100%;
+			width: auto;
+		}
+
+		.thumbnails {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 60px;
+			overflow: hidden;
+
+			> div {
+				.transition(0.25s, ease-in-out, margin);
+				position: relative;
+				margin-top: 60px;
+				width: 100%;
+				height: 60px;
+
+				ul {
+					height: 60px;
+					margin: 0px 42px;
+
+					li {
+						.transition(0.25s, ease-in-out, opacity);
+						display: inline-block;
+						height: 100%;
+						width: 60px;
+						text-align: center;
+						opacity: .5;
+						cursor: pointer;
+
+						&:hover {
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+
+		.prev_img, .next_img {
+			.transition(0.25s, ease-in-out, opacity);
+			width: 42px;
+			min-height: 30px;
+			height: 100%;
+			position: absolute;
+			z-index: 100;
+			top: 0;
+			opacity: 0;
+			cursor: pointer;
+
+			.icon {
+				.transition(0.25s, ease-in-out, all);
+				background-position: center -2298px;
+				position: absolute;
+				height: 30px;
+				width: 30px;
+				top: 50%;
+				left: 50%;
+				margin-top: -15px;
+				margin-left: -15px;
+				border-radius: 50%;
+				border: 1px solid rgba(0,0,0,0.0);
+			}
+		}
+
+		.prev_img {
+			left: 0;
+		}
+
+		.next_img {
+			right: 0;
+
+			.icon {
+				background-position: center -2322px;
+			}
+		}
+
+		&:hover {
+			.thumbnails > div{
+				margin-top: 0px;
+			}
+
+			.prev_img, .next_img {
+				opacity: 0.5;
+
+				&:hover {
+					opacity: 1;
+
+					.icon {
+						background-color: rgba(230, 230, 230, 0.7);
+						// border-color: rgba(0,0,0,0.3);
+					}
+				}
+			}
+		}
+	}
+
+	.overlay {
+		background: rgba(0,0,0,0.85);
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 10;
+		text-align: center;
+		cursor: pointer;
+		border-bottom-left-radius: 2px;
+		border-bottom-right-radius: 2px;
+		display: none;
+
+		&:after {
+			.transition(0.25s, ease-in-out, opacity);
+			content: '\00D7';
+			position: absolute;
+			display: block;
+			height: 24px;
+			width: 24px;
+			line-height: 24px;
+			top: 10px;
+			right: 10px;
+			padding: 2px;
+			color: @white;
+			background: #000;
+			border-radius: 50%;
+			opacity: 0.3;
+			font-size: 38px;
+		}
+
+		&:hover {
+			&:after {
+				opacity: 1;
+			}
+		}
+
+		img {
+			height: 100%;
+			width: auto;
+		}
+	}
+}
+
+.unitIdentification {
+	min-height: 100px;
+	min-width: 500px;
+	height: 100%;
+	display: inline-block;
+	vertical-align: top;
+	margin: 24px 0px;
+
+	h1 {
+		margin: 12px 24px 6px;
+	}
+
+	#editUnitId, #collapseUnitId  {
+		position: absolute;
+		right: 12px;
+		margin: 0;
+		.icon {
+			padding-left: 19px;
+		}
+	}
+
+	#editUnitId {
+		top: 12px;
+		.icon {
+			padding-left: 18px;
+		}
+	}
+
+	#collapseUnitId {
+		bottom: 12px;
+	}
+
+	label {
+		width: 120px;
+
+		&:after {
+			content: ':';
+		}
+
+		&.hidden {
+			display: inline-block !important;
+		}
+	}
+
+	table {
+		width: 100%;
+		margin: 0px 24px;
+
+		td {
+			padding: 12px 0px;
+
+			.icon {
+				display: inline-block;
+			}
+
+			.location {
+				width: 15px;
+				height: 23px;
+				position: relative;
+				overflow: hidden;
+				display: inline-block;
+				margin-bottom: -6px;
+				margin-right: 5px;
+
+				.circle {
+					display: block;
+					border-radius: 50%;
+					width: 15px;
+					height: 15px;
+					background: red;
+					position: relative;
+					z-index: 2;
+
+					.dot {
+						position: absolute;
+						left: 5px;
+						top: 5px;
+						width: 5px;
+						height: 5px;
+						border-radius: 50%;
+						background: white;
+					}
+				}
+
+				.pin {
+					display: block;
+					width: 11px;
+					height: 11px;
+					-webkit-transform: scale(1, 1.7) rotate(45deg);
+					transform: scale(1, 1.7) rotate(45deg);
+					background: red;
+					position: absolute;
+					top: 4px;
+					left: 2px;
+					z-index: 1;
+				}
+			}
+		}
+	}
+}

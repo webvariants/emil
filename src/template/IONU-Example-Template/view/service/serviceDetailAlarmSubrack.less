@@ -1,0 +1,48 @@
+.serviceDetailAlarmSubrack {
+	padding: 10px;
+}
+
+.subrackContainer {
+
+	.subrackImage {
+		position: relative;
+
+		.deviceImage1,
+		.deviceImage2 {
+			cursor: pointer;
+			position: absolute;
+			top: 0;
+			left: 17px;
+
+			.alarmMarker {
+				border-radius: 50%;
+				height: 10px;
+				position: absolute;
+				width: 10px;
+				bottom: 10px;
+				left: -5px;
+				margin: 0 50%;
+			}
+
+			&.selected {
+
+				img {
+					border: 2px solid @cyanLighten70;
+					border-radius: 3px;
+				}
+			}
+
+			img {
+				display: block;
+				width: auto;
+				height: 103px;
+			}
+		}
+
+		.deviceImage2 {
+			position: absolute;
+			top: 0;
+			left: 40px;
+		}
+	}
+}

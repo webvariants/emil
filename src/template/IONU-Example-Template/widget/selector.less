@@ -1,0 +1,48 @@
+.selector{
+	padding: 10px;
+
+	.selectorBox {
+		.clearfix;
+		margin: 10px auto;
+		width: 320px;
+
+		.icon {
+			position: relative;
+			top: 7px;
+
+			&.prev {
+				float: left;
+			}
+
+			&.next {
+				float: right;
+			}
+		}
+
+		.selectorContainer {
+			width: 288px;
+
+			div {
+				cursor: pointer;
+				float: left;
+				width: 90px;
+
+				&.selected {
+
+					span {
+						font-size: 15px;
+
+						& + span {
+							font-size: 12px;
+						}
+					}
+				}
+
+				span {
+					display: block;
+					text-align: center;
+				}
+			}
+		}
+	}
+}

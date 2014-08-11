@@ -1,0 +1,205 @@
+/* topdoc
+  application: ION-U web application
+  copyright: Copyright (c) 2013, CommScope/webvariants
+  author: Steven David <steven.david@webvariants.de>, Andreas Schmueckert <andreas.schmueckert@freelancer.webvariants.de>
+  name: Tree
+  description: A simle tree
+  example: Link to an example on sites like Codepen.io or jsfiddle.net
+  tags: ui, components, tree
+  markup:
+  #trees
+	+treeFilter(alarms, operators, technologies, zones, filter)
+*/
+
+#trees {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	bottom: 6px;
+	right: 0;
+	overflow: hidden;
+	color: @blueDark;
+	font-weight: normal;
+	font-style: normal;
+
+
+// NOTE We need this service-list
+	> .services {
+		margin-left: 12px;
+		margin-bottom: 1em;
+		max-height: calc(~"100% - 97px");
+		overflow: auto;
+		overflow-x: hidden;
+		position: absolute;
+		bottom: 0px;
+		top: 170px;
+		left: 0;
+		right: 0;
+
+		> ul {
+			margin-bottom: 0;
+			overflow: auto;
+		}
+
+		.branch > div > span {
+			font-weight: bold;
+			cursor: pointer;
+		}
+
+		li > ul {
+			margin-top: 5px;
+			margin-left: 12px;
+
+			li.leaf {
+				height: 20px;
+				line-height: 20px;
+				padding-left: 20px;
+				width: auto;
+				cursor: pointer;
+
+				&:hover {
+					font-weight: bold;
+				}
+
+				span {
+					display: inline-block;
+					float: left;
+
+					+span {
+						margin-left: 10px;
+					}
+				}
+			}
+		}
+	}
+
+	.devices {
+		padding-left: 12px;
+		max-height: calc(~"100% - 97px");
+		margin-bottom: 40px;
+		margin-top: 10px;
+		overflow: auto;
+		overflow-x: hidden;
+		position: absolute;
+		bottom: 0;
+		// NOTE CHANGE TOP BECAUSE THE ALARMSBAR NOT DISPLAY
+		// top: 145px;
+		top: 55px;
+		left: 0;
+		right: 0;
+
+		ul {
+			margin: 0 0 0 10px;
+
+			li {
+				line-height: 18px;
+				text-transform: capitalize;
+				.typo.treeLabel;
+
+				&.isDevice{
+					margin: 0 0 0 24px;
+
+					&.smhw{
+						margin: 0;
+
+						.marker{
+							left: -37px;
+						}
+					}
+
+					&.branch{
+						margin: 0;
+
+						.deviceLink{
+							cursor: pointer;
+
+							&.selected{
+
+								.marker{
+									left: -110px;
+								}
+							}
+						}
+
+						.nochilds{
+
+							.item{
+
+								.marker{
+									left: -163px;
+								}
+							}
+
+							ul{
+
+								.marker{
+									left: -110px;
+								}
+
+								.nochilds{
+
+									.marker{
+										left: -157px;
+									}
+								}
+							}
+						}
+					}
+				}
+
+				.mainDevice{
+					padding-bottom: 8px;
+				}
+
+				.icon {
+					background-color: #BBBBBB;
+				}
+
+				a {
+					color: @blueDark;
+				}
+
+				.icon {
+					border-radius: 2px;
+					float: left;
+					margin-right: 3px;
+					position: relative;
+					cursor: default;
+					width: 18px;
+					height: 18px;
+				}
+
+				.ion-treenode{
+
+					&.level{
+						height: 14px;
+						margin: 2px 8px 0 2px;
+						width: 14px;
+						position: relative;
+						z-index: 200;
+					}
+				}
+			}
+		}
+	}
+}
+
+// .selected {
+// 	.icon {
+// 		background-color: #FFFFFF;
+// 	}
+// }
+
+#trees {
+	.devices {
+		ul li {
+			.deviceLink {
+				&.selected {
+					.icon {
+						background-color: @white;
+					}
+				}
+			}
+		}
+	}
+}

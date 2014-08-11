@@ -1,0 +1,156 @@
+.tableView {
+	width: 100%;
+	height: auto;
+}
+
+.tableCell {
+	background: white;
+	border-bottom: 1px solid @borderColor;
+	position: relative;
+	.transition(0.1s, ease-in-out, all);
+	width: 100%;
+	height: auto;
+	cursor: pointer;
+	padding: 5px 10px;
+	overflow: hidden;
+
+	.title {
+		color: @blackLighten20;
+	}
+
+	// span:not(.title) {
+	// 	color: @blackLighten40;
+	// }
+
+	&:hover,
+	&.selected {
+		.cyanLighten70;
+	}
+
+	&:active {
+		.cyanLighten40;
+	}
+}
+
+.severityMarker {
+	position: absolute;
+	width: 80px;
+	height: 4px;
+	top: 0;
+	right: 0;
+}
+
+.navigationTableCell {
+
+	.sidebarMarker {
+		position: relative;
+		.transition(0.1s, ease-in-out, all);
+		width: 100%;
+		height: 40px;
+		cursor: pointer;
+
+		.ion-badge-container {
+
+			.icon {
+				margin: 4px 0;
+			}
+		}
+	}
+
+	&.device {
+
+		.sidebarMarker {
+			width: 235px;
+			float: left;
+		}
+
+		.ion-badge-container {
+			margin: 6px;
+			position: relative;
+
+			.icon {
+				margin: 10px;
+			}
+
+			.ion-btn {
+				background: none;
+				border: none;
+				padding: 0;
+				z-index: 30;
+
+				&:active {
+					box-shadow: none;
+				}
+			}
+		}
+	}
+
+	.title {
+		.no-select;
+	}
+
+	&:hover, &.selected {
+		background-color: @cyanLighten50;
+
+		// .icon {
+		// 	background-position: 0 -16px;
+		// 	background-color: transparent;
+
+		// 	&.sidebarAddonClose {
+		// 		background-position: 0 0;
+		// 	}
+		// }
+
+		.title {
+			color: white;
+		}
+	}
+
+	&:active {
+		background-color: rgba(255, 255, 255, 0.15);
+
+		.title {
+			color: white;
+		}
+	}
+
+	.icon {
+		z-index: 1;
+		float: left;
+		margin: 10px 25px 10px 10px;
+	}
+
+	.title, .percentage {
+		z-index: 1;
+		display: block;
+		height: 40px;
+		line-height: 39px;
+		color: @blackLighten70;
+	}
+
+	.title {
+		float: left;
+		// width: 50%;
+	}
+
+	.percentage {
+		opacity: 0.65;
+		margin-right: 12px;
+		float: right;
+		color: white;
+		z-index: 1;
+	}
+
+	.loader {
+		.ion-diagonal-lines-pattern (grey, 20px, 25%);
+		.transition;
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		width: 66%;
+		opacity: 0.15;
+		z-index: -1;
+	}
+}

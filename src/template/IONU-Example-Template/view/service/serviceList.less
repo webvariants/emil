@@ -1,0 +1,87 @@
+.serviceList,
+.deviceList{
+	.clearfix;
+
+	.tableCell {
+
+		&:hover,
+		&.selected {
+			.cyanLighten70;
+
+			.iconBox {
+
+				p {
+					color: @cyanLighten40;
+				}
+			}
+
+			.alarmDiagram {
+				opacity: 1;
+			}
+		}
+	}
+
+	div {
+
+		&.iconBox {
+			float: left;
+
+			img {
+				display: block;
+				height: auto;
+				width: 25px;
+			}
+
+			p {
+				padding: 5px 0 0 0;
+				text-align: center;
+			}
+		}
+
+		&.adressBox {
+			float: left;
+			margin: 0 10px;
+			width: 105px;
+
+			ul {
+				.clearfix;
+				padding: 5px 0 0 0;
+
+				li {
+					float: left;
+					margin: 0 5px 0 0;
+
+					.icon {
+						height: 8px;
+						width: 8px;
+					}
+				}
+			}
+		}
+
+		&.alarmDiagram {
+			float: left;
+			background: url("../img/icons/diagram.svg") no-repeat center center;
+			background-size: 60px 60px;
+			display: block;
+			height: 60px;
+			opacity: 0.3;
+			position: relative;
+			width: 60px;
+
+			span {
+				display: block;
+				font-size: 12px;
+				line-height: 12px;
+				min-height: 12px;
+				text-align: center;
+				position: relative;
+				top: 18px;
+
+				& + span {
+					font-size: 8px;
+				}
+			}
+		}
+	}
+}

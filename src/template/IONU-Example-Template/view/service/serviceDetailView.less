@@ -1,0 +1,25 @@
+.detailView {
+	height: 100%;
+}
+
+.detailContainer {
+	.clearfix;
+	position: relative;
+	overflow: hidden;
+	height: calc(~"100% - 41px");
+}
+
+.detailTabsContainer {
+	position: absolute;
+	left: 480px;
+	top: 0;
+	height: 100%;
+	width: 480px;
+	overflow: auto;
+	overflow-x: hidden;
+
+	&.selected {
+		.transition(0.25s, ease-in-out, all);
+		left: 0;
+	}
+}

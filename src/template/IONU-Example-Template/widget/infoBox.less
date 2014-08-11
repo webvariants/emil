@@ -1,0 +1,96 @@
+.infoBox {
+	border-bottom: 1px solid @borderColor;
+	.clearfix;
+}
+
+.leftBox {
+	border-right: 1px solid @borderColor;
+	float: left;
+	width: 40%;
+	.clearfix;
+}
+
+.rightBox {
+	float: right;
+	width: 60%;
+	.clearfix;
+}
+
+.subrackBox {
+
+	p {
+		.clearfix;
+		cursor: pointer;
+		padding: 0 0 5px 0;
+		margin: 0 0 5px 0;
+	}
+}
+
+.deviceBox {
+
+	.deviceImage {
+		background: @cyanLighten40;
+		border-radius: 5px;
+		height: 222px;
+		margin: 6px auto;
+		padding: 2px 3px;
+		width: 50px;
+
+		img {
+			display: block;
+			height: 218px;
+			width: auto;
+		}
+	}
+}
+
+.mapBox {
+	position: relative;
+
+	.adress {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+	}
+
+	img {
+		display: block;
+	}
+}
+
+.logoContainer {
+	.clearfix;
+
+	.logo {
+		margin: 65px auto;
+		width: 100px;
+
+		.subrackImage {
+			position: relative;
+
+			.deviceImage {
+				position: absolute;
+				top: 0;
+				left: 10px;
+
+				img {
+					display: block;
+					height: 63px;
+					width: auto;
+				}
+			}
+		}
+	}
+
+	.map {
+		float: left;
+		width: 60%;
+		position: relative;
+
+		.adress {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+		}
+	}
+}

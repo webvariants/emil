@@ -1,0 +1,33 @@
+#filter {
+	.transition(0.1s, ease-in-out, all);
+	padding: 0 6px;
+	height: 0px;
+	position: relative;
+
+	&.filterOpen {
+		.transition(0.1s, ease-in-out, all);
+		height: 300px;
+	}
+
+	.ion-btn {
+		position: absolute;
+		bottom: -13.5px;
+		left: 101px;
+		z-index: 1000;
+
+		&.simpleBtn {
+			height: 16px;
+			width: 16px;
+			padding: 0;
+		}
+
+		&.onlyCaption {
+			margin: 0;
+			padding: 0;
+		}
+
+		&.onlyIcon {
+			min-width: 16px;
+		}
+	}
+}

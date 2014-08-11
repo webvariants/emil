@@ -1,0 +1,45 @@
+.searchContainer {
+    height: 40px;
+
+    #searchBtn {
+      cursor: pointer;
+      float: left;
+    }
+
+    .ion-inputfieldContainer {
+      padding: 8px 0;
+      float: left;
+
+      .ion-inputfield {
+        .transition(0.1s, ease-in-out, all);
+        border: 0;
+        border-bottom: 1px solid @blackLighten40;
+        border-radius: 0px;
+        box-shadow: none;
+        color: white;
+        padding: 0 10px;
+        width: 230px;
+
+        &:focus {
+          .cyanLighten10;
+          box-shadow: none;
+          border-bottom: 0;
+          border-radius: 3px;
+        }
+      }
+    }
+
+    &:hover {
+      .ion-inputfieldContainer {
+        .ion-inputfield {
+          .cyanLighten20;
+          border-bottom: 0;
+          border-radius: 3px;
+        }
+      }
+
+      .search {
+        background-image: url('../img/icons/search_hover.svg');
+      }
+    }
+}

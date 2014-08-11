@@ -1,0 +1,325 @@
+#fullscreen {
+	padding-bottom: 12px;
+}
+
+.commissioning {
+	padding: 12px;
+	margin-bottom: 20px;
+	//pointer-events: none;
+
+	> .row > div {
+		padding: 12px;
+	}
+
+	&.finshed{
+		color: white;
+
+		.info{
+			.typo.informationGraphics;
+
+			.ion-btn{
+				margin: 10px!important;
+			}
+		}
+	}
+
+	p{
+		color: white;
+	}
+}
+
+.cabelingMessage{
+	float: left;
+	width: 100%;
+
+	div{
+		.clearfix;
+
+		.icon{
+			margin: 0 9px 0 0;
+			float: left;
+		}
+
+		p{
+			.typo.contentHeader;
+		}
+	}
+
+	&.failed{
+		margin-top: 8px;
+
+		p{
+			.typo.contentHeader;
+		}
+	}
+}
+
+.reportFake {
+	padding: 12px;
+
+	.helpContainer1{
+	    height: 48px;
+	    margin: 0 auto;
+	    padding-bottom: 12px;
+	    padding-top: 12px;
+	    width: 90%;
+
+		#fakeBtn4{
+			float: right;
+			margin-right: 1px;
+		}
+	}
+}
+
+#backToSystem {
+
+}
+
+.updateFileBoxDefault, .updateFileBoxScheduled {
+	text-align: center;
+	margin: 6px;
+
+	.noFile, .fileOk, .fileError {
+		padding: 6px;
+	}
+
+	.addFile {
+		padding: 6px;
+		height: 100px;
+		padding-top: 20px;
+	}
+
+}
+
+.updateFileBoxDefault {
+
+	.noFile {
+		padding: 10px !important;
+	}
+
+}
+
+form{
+
+  div:first-child:not(.ion-btn) {
+
+    label{
+      margin-bottom: 0;
+      margin-top: 10px;
+
+      &.timePicker {
+        margin-left: 0;
+      }
+
+      span {
+        margin-right: 5px;
+      }
+    }
+
+    input {
+      left: 0;
+      padding-left: 8px;
+      text-align: left;
+      top: 0;
+      width: 45px;
+    }
+
+    .timePicker select {
+      width: 20px;
+    }
+
+    select {
+      margin-right: 10px;
+    }
+
+    .button {
+      display: inline-block;
+      float: initial;
+    }
+  }
+}
+
+.transitionPageHeader{
+	margin: 0 0 12px 0;
+
+	&.second{
+		margin: 24px 0 12px 0;
+	}
+}
+
+.finishingTable{
+	margin: 0 auto;
+	width: 400px;
+
+	tr{
+
+		td{
+			padding: 10px 5px;
+			text-align: center;
+			vertical-align: middle;
+
+			&.finishingIcon{
+				text-align: left;
+			}
+
+			.ion-btn{
+				margin: 0!important;
+				width: 100%;
+			}
+		}
+
+		.stateIcon{
+			display: block;
+		}
+
+		&.finished{
+
+			.stateIcon{
+				.stateIconStyling;
+				// .successIcon;
+				display: block;
+				float: left;
+			}
+		}
+
+		&.done {
+			color: @grey53;
+		}
+
+		&.running,
+		&.waiting{
+
+			.stateIcon{
+				.preloader;
+			}
+		}
+
+		&.finished,
+		&.done,
+		&.running,
+		&.waiting{
+
+			td{
+				&:last-child{
+					text-align: right;
+				}
+			}
+		}
+	}
+}
+
+.transitionPageHeader{
+	color: white;
+}
+
+.helper1{
+	position: relative;
+	top: 100px;
+}
+
+
+@media (max-width: 1400px) {
+
+	.transitionPageContainer {
+
+		&.commissioning {
+
+			.commissioningRunning {
+
+				.col-2 {
+						float: left;
+						min-width: 250px;
+						margin-top: 0;
+						width: 250px;
+					}
+
+				.col-10{
+					float: left;
+					min-width:  calc(~"100% - 250px");
+					margin-top: 0;
+					width: calc(~"100% - 250px");
+				}
+			}
+		}
+	}
+
+	.commissioning{
+
+		&.hardware{
+
+			&.populating_hardware,
+			&.cabling{
+
+				.col-2 {
+					float: left;
+					min-width: 250px;
+					margin-top: 0;
+					width: 250px;
+				}
+
+				.col-10{
+					float: left;
+					min-width:  calc(~"100% - 250px");
+					margin-top: 0;
+					width: calc(~"100% - 250px");
+				}
+			}
+		}
+	}
+
+	.commissioning{
+
+		&.hardware{
+
+			&.cabling{
+
+				.col-2, .col-10 {
+					float: none;
+					width: 100%;
+				}
+
+				table {
+					// display: block;
+					// overflow-x: auto;
+					// position: relative;
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	.commissioningPrepare {
+
+		.col-2, .col-10 {
+			float: none;
+			width: 100%;
+		}
+
+		table {
+			display: block;
+			overflow-x: auto;
+			position: relative;
+			width: 100%;
+		}
+	}
+}
+
+@import "populating.less";
+
+@import "cabling.less";
+
+@import "referenceInventory.less";
+
+@import 'header.less';
+
+@import 'leveling.less';
+
+@import 'hw-view.less';
+
+@import 'import-scheduled.less';
+
+@import 'populating-finished.less';
+
+@import 'populating-transitionpage.less';
+
+@import 'report.less';

@@ -1,0 +1,65 @@
+/* topdoc
+  application: ION-U web application
+  copyright: Copyright (c) 2013, CommScope/webvariants
+  author: Thomas Krause <thomas.krause@webvariants.de>
+  name: Save-button-bar
+  description: A list for all save-button-bar styles.
+  example: Link to an example on sites like Codepen.io or jsfiddle.net
+  tags: meta tags
+  markup:
+  div.save-button-bar(class='hide')
+	div.save-button-bar-row
+		div.save-button-bar-text
+		div.save-button-bar-preloader
+		div.save-button-bar-btn
+			+button({label: 'form.save', id: 'save-button-bar-btn'})
+*/
+
+.addSaveButtonBarMargin {
+	margin-bottom: 40px;
+}
+
+.button-bar {
+	height: 38px;
+	width: 100%;
+	background: #bbb;
+	position: relative;
+
+	.button-bar-row {
+		height: 38px;
+
+		.save-button-bar-text {
+			height: 38px;
+			padding: 15px 20px;
+			text-align: right;
+			display: table-cell;
+			vertical-align: bottom;
+		}
+
+		.button-container {
+			position: absolute;
+			right: 6px;
+			top: 0px;
+
+
+			.ion-btn {
+				margin-top: 6px;
+				margin-left: 6px;
+			}
+		}
+	}
+
+	&.showPreloader {
+
+		.save-button-bar-row {
+
+			.save-button-bar-text {
+				margin-right: 400px;
+			}
+
+			.save-button-bar-preloader {
+				display: block;
+			}
+		}
+	}
+}

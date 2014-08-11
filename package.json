@@ -24,7 +24,6 @@
       "bin": "bin/",
       "src": "src/",
       "vendor": "vendor/",
-      "test": "test/",
       "build": "build/",
       "build-tasks": "build/tasks"
     },

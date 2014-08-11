@@ -1,0 +1,22 @@
+/* topdoc
+  application: ION-U web application
+  copyright: Copyright (c) 2013, CommScope/webvariants
+  author: Steven David <steven.david@webvariants.de>, Marko Ladngast <marko.ladengast@webvariants.de>
+  name: selectContainer
+  description: selectContainer Styling
+  example: Link to an example on sites like Codepen.io or jsfiddle.net
+  tags: styleguide, selectContainer
+  markup:
+*/
+
+.select_container {
+	height: 30px;
+	padding: 5px;
+	padding-left: 0;
+	display: block;
+
+	+.select_container {
+		border-left: 1px solid @grey30;
+		padding-left: 5px;
+	}
+}

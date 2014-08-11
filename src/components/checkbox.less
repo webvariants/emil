@@ -1,0 +1,45 @@
+/* topdoc
+  application: ION-U web application
+  copyright: Copyright (c) 2013, CommScope/webvariants
+  author: Steven David <steven.david@webvariants.de>, Marko Ladngast <marko.ladengast@webvariants.de>
+  name: Checkbox
+  description: Checkbox Styling
+  example: Link to an example on sites like Codepen.io or jsfiddle.net
+  tags: styleguide, checkbox
+  markup:
+  span.checkbox
+    span.icon.checkbox
+    span Port 1
+*/
+
+.checkbox {
+	display: inline-block;
+	text-align: left;
+	margin: 4px;
+	min-height: 10px;
+	padding: 0;
+	cursor: pointer;
+
+	+ .checkbox {
+		margin: 4px;
+	}
+
+	span, span.icon {
+		display: block;
+		margin: 0;
+		padding: 0;
+		height: 16px;
+		float: left;
+		line-height: 16px;
+	}
+
+	span.icon {
+		margin-right: 5px;
+	}
+
+	&.checked {
+		span.icon {
+			background-position: 0px -2088px;
+		}
+	}
+}

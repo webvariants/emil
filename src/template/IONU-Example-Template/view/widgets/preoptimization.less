@@ -1,0 +1,689 @@
+/* topdoc
+  application: ION-U web application
+  copyright: Copyright (c) 2013, CommScope/webvariants
+  author:  Steven David <steven.david@webvariants.de>
+  name: Component
+  description: Preoptimization
+  example: Link to an example on sites like Codepen.io or jsfiddle.net
+  tags: ui, components, Preoptimization
+  markup: Markup Example to demonstrate usage
+
+  div(data-template="templates/widget/anchor_handle", data-module="widget", data-uid="21")
+    div.container
+      div(data-template="templates/setup/preoptimization_frequencies", data-module="setup", data-uid="28", class="row solo")
+        div.basic_widget.col-12.alpha.omega
+          div.widget.preoptimization
+            div.title
+              div(class="ion-btn toggle toggleBtn", title="toggle open or close")
+                span Preoptimization
+              div(class="ion-btn help helpBtn withIcon", title="open help", data-help="preoptimization_frequencies")
+                span.icon.help
+            div.widgetLoader-overlay
+              div.widgetLoader-box
+                div.circleG_1.circleG
+                div.circleG_2.circleG
+                div.circleG_3.circleG
+            div.content
+              div.frequencies
+                table.widgetTable
+                  thead
+                    tr
+                      th Unit
+                      th
+                        span(class="icon rack", title="undefined")
+                      th
+                        span(class="icon subrack", title="undefined")
+                      th
+                        span(class="icon slot", title="undefined")
+                      th Port
+                      th Operator
+                      th Standard
+                      th setup.preoptimization.sector_id
+                      th UL Gain Offset in dB
+                      th DL Gain Offset in dB
+                      th Generator Power
+                      th Frequency in MHz
+                      th.portEnable
+                        span
+                          span(class="checkbox", data-keep="allport1:checked", id="enableAllPort1")
+                            span.icon.checkbox"
+                            span Port 1
+                          span
+                            span(class="checkbox", data-keep="allport2:checked", id="enableAllPort2")
+                            span.icon.checkbox
+                            span Port 2
+                  tbody
+                    tr(data-unit="1"
+                      td.color.unit">
+                        td(class="color", rowspan="2") 1
+                      td(class="color", rowspan="2") 1
+                      td(class="color", rowspan="2") 1
+                      td.color.port" 1
+                      td.color.operator
+                        span(class="icon providerId", title="undefined")
+                      td.color.standard UMTS 850.0
+                      td.secID ipoib
+                      td(class="offsetUL", data-id="1", data-fqdn="slot03-poi.subrack01.rack01", data-resolution="0.5", data-secondportlabel="DAS UL 1", data-portlabel="BTS 1 UL")
+                        fieldset.sliderRow
+                          div.fieldsetcontent
+                            div.sliderContainer
+                              div.slider.single_slider
+                                span.min -85
+                                span.max" 100
+                                span.unit
+                                input(type="hidden", value="-30.5", name="")
+                                a(class="slider-handle left inputTopRight", data-num="0", data-max="100", data-min="-85", data-offset="0.29", style="left:29%;")
+                                  span.lines
+                                  span.value
+                                  input(data-val="-30.5", value="-30.5")
+                                div.handle
+                                  span(class="cur left", style="width:29%;")
+                      td(class="offsetDL", data-id="1", data-fqdn="slot03-poi.subrack01.rack01", data-resolution="0.5", data-secondportlabel="DAS DL 1", data-portlabel="BTS 1 DL")
+                        fieldset.sliderRow
+                          div.fieldsetcontent
+                            div.sliderContainer
+                              div.slider.single_slider
+                                span.min -85
+                                span.max 100
+                                span.unit
+                                input(type="hidden", value="-24.5", name="")
+                                a(class="slider-handle left inputTopRight", data-num="0", data-max="100", data-min="-85", data-offset="0.33", style="left:33%;")
+                                  span.lines
+                                  span.value
+                                  input(data-val="-24.5", value="-24.5")
+                                div.handle
+                                  span(class="cur left", style="width:33%;")
+                      td.color.generator 23.5
+                      td.dlFrequency
+                        fieldset.sliderRow
+                          div.fieldsetcontent
+                            div.sliderContainer
+                              div.slider.single_slider
+                                span.min 869
+                                span.max 894
+                                span.unit
+                                input(type="hidden", value="869", name="")
+                                a(class="slider-handle left inputTopRight", data-num="0", data-max="894", data-min="869", data-offset="0", style="left:0%;")
+                                  span.lines
+                                  span.value
+                                  input(data-val="869", value="869")
+                                div.handle
+                                  span(class="cur left", style="width:0%;")
+                      td.enable
+                        div(data-index="0", data-portindex="1", data-id="1", data-position="1-1-1")
+                          span(class="checkbox checked disabled", data-keep="mep", id="id"
+                          span.icon.checkbox
+                            span false
+                    tr(data-unit="2")
+                      td.color.unit
+                      td.color.port 2
+                      td.color.operator
+                        span(class="icon providerId", title="undefined")
+                      td.color.standard UMTS 1900.0
+                      td.secID ipoi2
+                      td.offsetUL
+                      td.offsetDL
+                      td.color.generator 23.5
+                      td.dlFrequency
+                        fieldset.sliderRow
+                          div.fieldsetcontent
+                            div.sliderContainer
+                              div(class="slider disabled single_slider", id="")
+                                span.min 1930
+                                span.max
+                                  span 1995
+                                  span.unit
+                                  input(type="hidden", value="1930", name="")
+                                  a(class="slider-handle left inputTopRight", data-num="0", data-max="1995", data-min="1930", data-offset="0", style="left:0%;")
+                                    span.lines
+                                    span.value
+                                      input(disabled="disabled", data-val="1930", value="1930")
+                                    div.handle
+                                      span(class="cur left", style="width:0%;")
+                      td.enable
+                        div(data-index="1", data-portindex="2", data-id="2", data-position="1-1-1")
+                          span(class="checkbox checked disabled", data-keep="mep")
+                            span(class="icon checkbox")
+                            span false
+                    tr(data-unit="4")
+                      td.color.unit
+                      td(class="color", rowspan="2") 1
+                      td(class="color", rowspan="2") 1
+                      td(class="color", rowspan="2") 4
+                      td(class="color port") 1
+                      td(class="color operator")
+                        span(class="icon providerId", title="undefined")
+                      td.color.standard LTE 2100.0
+                      td.secID ipoi4
+                      td.offsetUL
+                      td.offsetDL
+                      td.color.generator 23.5
+                      td.dlFrequency
+                        fieldset.sliderRow
+                          div.fieldsetcontent
+                            div.sliderContainer
+                              div.slider.single_slider
+                                span.min 2110
+                                span.max
+                                  span 2155
+                                  span.unit
+                                    input(type="hidden", value="2110", name="")
+                                    a(class="slider-handle left inputTopRight", data-num="0", data-max="2155", data-min="2110", data-offset="0", style="left:0%;")
+                                      span.lines
+                                      span.value
+                                        input(data-val="2110", value="2110")
+                                        div.handle
+                                          span(class="cur left", style="width:0%;")
+                      td.enable
+                        div(data-index="2", data-portindex="1", data-id="4", data-position="1-1-4")
+                          span(class="checkbox checked disabled", data-keep="mep", id="id")
+                          span.icon.checkbox
+                          span false
+                    tr(data-unit="3")
+                      td.color.unit
+                      td.color.port 2
+                      td.color.operator
+                        span(class="icon providerId", title="undefined")
+                      td.color.standard LTE 700.0
+                      td.secID ipoi3
+                      td.offsetUL
+                      td.offsetDL
+                      td.color.generator
+                      td.dlFrequency
+                        fieldset.sliderRow
+                          div.fieldsetcontent
+                            div.sliderContainer
+                              div(class="slider disabled single_slider", id="")
+                                span.min 0
+                                span.max
+                                  span 100
+                                  span.unit
+                                    input(type="hidden", value="50", name="")
+                                    a(class="slider-handle left inputTopRight", data-num="0", data-max="100", data-min="0", data-offset="0.5", style="left:50%;")
+                                      span.lines
+                                      span.value
+                                        input(disabled="disabled", data-val="50", value="50")
+                                        div.handle
+                                          span(class="cur left", style="width:50%;")
+                      td.enable
+                        div(data-index="3", data-portindex="2", data-id="3", data-position="1-1-4")
+                          span(class="checkbox checked disabled", data-keep="mep", id="id")
+                          span.icon.checkbox
+                          span false
+                  tbody
+                    tr.buttons
+                      td(colspan="8")
+                      td
+                        div.relative
+                          div(class="ion-btn", id="apply_ulGains")
+                            span Apply
+                      td
+                        div.relative
+                          div(class="ion-btn", id="apply_dlGains")
+                            span Apply
+                      td(colspan="2")
+                      td
+                        div.relative
+                        div(class="ion-btn", id="transmit")
+                          span Transmit
+                          span.loader
+*/
+
+@tableGrey:	#ddd;
+@borderGrey: #a4a4a4;
+@overlayGrey: #FFFFFF;
+
+.preoptimization {
+	margin-bottom: 50px;
+}
+
+.frequencies, .zones{
+
+	.overlay {
+		bottom: 0;
+		left: 0;
+		opacity: .6;
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 10;
+		background: @overlayGrey;
+	}
+
+	.transmissonbox {
+		position: absolute;
+		bottom: -50px;
+		width: 100%;
+
+		#transmit,
+		#stopTransmission {
+			float: right;
+		}
+	}
+
+	.zone_wrapper{
+		position: relative;
+		width: 50%;
+		float: left;
+	}
+
+	.widgetTable{
+
+		&.zones {
+			margin-top: 0;
+			border: 1px solid @borderGrey;
+			border-bottom-right-radius: 4px;
+			border-bottom-left-radius: 4px;
+		}
+
+		thead{
+
+			tr{
+
+				th{
+
+				> .icon {
+						margin: auto;
+					}
+
+					.port1, .port2{
+						width: 70px;
+						display: block;
+						input{
+							padding-left: 10px;
+						}
+					}
+
+					&.portEnable{
+						height: 30px;
+						margin-bottom: -20px;
+					}
+				}
+			}
+		}
+
+		tfoot {
+
+			tr {
+
+				td {
+					border-right: none;
+					border-left: none;
+					padding: 10px;
+				}
+			}
+		}
+
+		tbody{
+
+			tr{
+
+				&:last-child {
+
+					td:first-child {
+						border-bottom-left-radius: 3px;
+					}
+
+					td {
+						border-bottom: 0;
+					}
+				}
+
+				.color{
+					background: @grey10;
+					width: 2%;
+				}
+
+				.operator{
+
+					.icon {
+						margin: auto;
+					}
+				}
+
+				.secID {
+					width: 7%;
+				}
+
+				.offsetUL, .offsetDL, .dlFrequency {
+					padding: 0;
+					overflow: hidden;
+					fieldset legend{
+						display:none;
+					}
+
+					.slider{
+						width: calc(~"100% - 30px");
+					}
+				}
+
+				.dlFrequency{
+
+					.sliderContainer {
+						min-width: 250px;
+					}
+
+					.sliderContainer .slider{
+						width: calc(~"100% - 30px");
+					}
+				}
+
+				.enable{
+					width: 70px;
+				}
+
+				.relative {
+					position: relative;
+				}
+			}
+		}
+	}
+}
+
+.zones {
+	margin-top: 20px;
+
+	#apply {
+		float: right;
+	}
+}
+
+.preoptimizationDialog {
+
+	.topline{
+		height: 100% !important;
+	}
+
+	.topline-title {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		position: relative !important;
+
+		.preoptimizationDialog {
+
+			&.statusIcon {
+
+				&.warning {
+
+					p {
+						padding-left: 75px;
+						height: inherit;
+					}
+				}
+			}
+		}
+	}
+
+	.buttons {
+		background: @tableGrey;
+		height: inherit;
+		border-top: 1px solid @borderGrey;
+
+		a {
+
+			.button {
+				padding-right: 10px;
+			}
+		}
+	}
+}
+
+.handover_optimization {
+
+	.zone_wrapper{
+		border-right: 1px solid #A7A7A7;
+
+		&+.zone_wrapper{
+			border: 0;
+		}
+
+		.zone {
+			line-height: 40px;
+			text-align: left;
+			vertical-align: middle;
+			padding: 6px;
+			width: 100%;
+
+			.helper{
+				.typo.contentHeader;
+				color: @blue;
+				margin: 0 0 12px 0;
+			}
+
+			span{
+				.typo.content;
+				color: @blue;
+				float: left;
+				line-height: 24px;
+				width: 90px;
+
+				& + span{
+					margin: 0;
+					width: calc(~"100% - 92px");
+				}
+			}
+
+			.caret{
+				width: auto;
+			}
+		}
+	}
+
+
+
+	.widgetTable.zones {
+
+		td {
+			padding: 6px;
+			border: 1px solid @borderGrey;
+		}
+
+		thead {
+			background: @tableGrey;
+
+			.curFreq, .curDL{
+				width: 115px;
+			}
+
+		}
+
+		tbody {
+
+			tr {
+
+				.color {
+					background: @grey10;
+				}
+
+				.offsetGain {
+					width: 350px;
+
+					fieldset {
+						padding-top: 10px;
+
+						legend {
+							display:none;
+						}
+
+						.fieldsetcontent {
+							height: 25px;
+							padding: 0;
+						}
+
+						.sliderContainer {
+							border-top: none;
+							height: 25px;
+							background: #fff;
+
+							div {
+
+								.min {
+									width: 50px;
+								}
+
+								.max {
+									text-align: left;
+									width: 70px;
+								}
+
+							}
+
+							.slider {
+								width: calc(~"100% - 10px");
+								height: 12px;
+								background: #fff;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	span.ruSelector {
+		padding-right: 20px;
+	}
+
+	select[name="zonevalue"] {
+		background: #fff;
+		height: 22px;
+		width: calc(~"100% - 35px");
+	}
+
+}
+
+span.ruSelector{
+	padding-right: 20px;
+}
+
+select[name="zonevalue"]{
+	background: #fff;
+	height: 22px;
+	width: calc(~"100% - 35px");
+}
+
+.stopTransmission {
+	display: none;
+
+	div{
+		position: relative;
+		text-align: right;
+		padding-left: calc(~"85% - 20px");
+
+		p.statusIcon{
+			width: 70px;
+			height: 49px;
+			float: left;
+		}
+
+		p.running{
+			float: left;
+			text-align: right;
+			padding-top: 20px;
+		}
+
+		.button.submit{
+			float: left;
+			padding-top: 4px;
+			padding-left: 18px;
+		}
+	}
+}
+
+.frequencies {
+	.sliderRow {
+		.sliderContainer {
+			border-top: 0;
+			margin-top: 45px;
+		}
+	}
+	.ulDlGainSlider {
+		margin-top: 45px;
+	}
+
+	tfoot {
+		td {
+			text-align: right;
+		}
+	}
+}
+
+.preoptimization{
+
+	.zones{
+		.content{
+			.clearfix;
+		}
+	}
+}
+
+.zones{
+
+	.dropdown-toggle{
+		padding: 2px 18px 2px 2px;
+
+		.default{
+			line-height: 18px!important;
+			margin: 0!important;
+			padding: 0 4px;
+			width: auto;
+		}
+
+		.selected{
+			width: auto!important;
+		}
+	}
+
+	.zone_wrapper{
+
+		.wrap{
+			.clearfix;
+
+			.widgetTable{
+
+				&.zones{
+					margin: 6px;
+					width: calc(~"100% - 12px");
+
+					.icon{
+						margin: 0 auto;
+					}
+
+					.ion-btn{
+						margin: 0;
+					}
+
+					.gain{
+						padding: 0 30px 0 0!important;
+
+						.sliderContainer{
+							border-top: 0;
+							margin-top: 45px;
+						}
+
+						.slider{
+							width: 160px!important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1600px) {
+
+	.zones{
+
+		.zone_wrapper{
+			border-right: 0;
+			border-bottom: 1px solid #A7A7A7;
+			float: left;
+			width: 100%;
+
+			&+.zone_wrapper{
+				border: none;
+			}
+		}
+	}
+}

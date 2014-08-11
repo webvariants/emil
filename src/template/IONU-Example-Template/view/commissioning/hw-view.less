@@ -1,0 +1,1144 @@
+@tempSliderBgWebkit: -webkit-gradient(linear,left center, right center,color-stop(0,@red),color-stop(25%, @yellow),color-stop(75%, @green),color-stop(1,@green));
+@tempSliderBgMoz: -moz-linear-gradient(left, @red 0, @yellow 25%, @green);
+@tempSliderBgMs: -ms-linear-gradient(left, @red 0, @yellow 25%, @green);
+
+@sliderBgCurWebkit: -webkit-gradient(linear,left bottom,left top,color-stop(0,#17698b),color-stop(1,#26afe8));
+@sliderBgCurMoz: -moz-linear-gradient(bottom,#17698b,1,#26afe8);
+@sliderBgCurMs: -ms-linear-gradient(bottom,#17698b,#26afe8);
+
+.container {
+	margin: 0;
+	max-width: 100%;
+	float: left;
+	display: inline-block;
+	width: 100%;
+}
+
+.rf_param_pic {
+	background: @grey10;
+}
+
+.rf_param_pic, .rf_param_fault_clearance {
+	float: left;
+	width: 100%;
+	min-width: 130px;
+
+	.prev {
+		height: 400px;
+		width: 25%;
+		float: left;
+
+		.prevIcon {
+			.icon;
+			background-position: center -2298px;
+			height: 30px;
+			width: 30px;
+			margin-top: 200px;
+			border: 1px solid @grey80;
+			border-radius: 50%;
+			margin-left: 20%;
+			cursor: pointer;
+		}
+	}
+
+	.rackPicture {
+		// background: @url_inventory_spr no-repeat;
+		height: 350px;
+		margin: 0 auto;
+		width: 50%;
+		float: left;
+		margin-top: 25px;
+	}
+
+	.next {
+		height: 400px;
+		width: 25%;
+		float: left;
+
+		.nextIcon {
+			.icon;
+			background-position: center -2322px;
+			height: 30px;
+			width: 30px;
+			margin-top: 200px;
+			border: 1px solid @grey80;
+			border-radius: 50%;
+			margin-left: 20%;
+			cursor: pointer;
+		}
+	}
+
+	.downLogBtn{
+		text-align: center;
+		width: 100%;
+
+		.downloadLog {
+			text-align: center;
+			margin-bottom: 20px;
+			margin-top: 10px;
+			width: 75%
+		}
+	}
+
+	.maintenanceMode {
+		text-align: center;
+
+		#MaintenanceMode {
+			margin-left: 15px;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+
+.rf_param_rf_path,
+.rf_param_active_alarms,
+.rf_param_alarm_history,
+.rf_param_temp {
+	width: 100%;
+
+	.icon.checkbox {
+		background-position: 0 -2448px;
+		float: right;
+		margin-left: 10px;
+	}
+
+	.widgetTable {
+
+		thead tr {
+
+			.date, .time {
+				background: @grey53;
+			}
+
+		}
+
+		tbody tr {
+
+			&.selected {
+				background: @orange;
+			}
+
+			td {
+				padding: 10px;
+
+				&.sever {
+					min-width: 130px;
+				}
+
+				&.remedy {
+					background-color: transparent;
+					// background-image: @url_icons_spr;
+					background-repeat: no-repeat;
+					background-position: center -488px;
+					cursor: pointer;
+				}
+
+				&.red {
+					background: @red;
+				}
+
+				&.orange {
+					background: @orange;
+				}
+
+			}
+
+		}
+
+	}
+
+	.widgetTable.temperature {
+
+		tbody tr td {
+			border: none;
+
+			&.temp {
+				margin: 25px 0 0 10px;
+				float: left;
+				width: 75%;
+
+				.title{
+					width: 100%;
+				}
+
+			}
+
+			&.tempSlider {
+				width: 70%;
+			}
+
+			.sliderRow {
+				width: 100%;
+			}
+
+			.sliderContainer {
+				border: none;
+				margin-top: 40px;
+
+				.slider {
+					background: @tempSliderBgWebkit;
+					background: @tempSliderBgMoz;
+					background: @tempSliderBgMs;
+
+					span.cur {
+						background: none;
+						border: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+.rf_param_opt_loss {
+
+	table thead {
+
+		.location {
+			width: 200px;
+		}
+	}
+
+	table tbody tr {
+		//background: @grey10;
+
+		.sliderContainer {
+			border: none;
+			margin-top: 40px;
+
+			.slider {
+				background: @sliderBgCurWebkit;
+				background: @sliderBgCurMoz;
+				background: @sliderBgCurMs;
+
+				span.cur {
+					background: none;
+					border: none;
+				}
+			}
+		}
+
+		.location {
+			border-right: 1px solid @grey30;
+		}
+	}
+}
+
+.rf_param_fibre_sig {
+
+	table tbody tr {
+
+		.switch{
+			width: 700px;
+			text-align: left;
+
+			#toggle_laser_switch {
+				margin-left: 15px;
+			}
+		}
+	}
+}
+
+.rf_param_unit {
+
+	table tbody tr {
+
+		td{
+			padding: 10px;
+		}
+
+		.info {
+			text-align: left;
+			padding-left: 15px;
+		}
+
+		.ion-inputfield {
+			border: none;
+			border-color: @white;
+			box-shadow: none;
+		}
+		.ion-inputfield:focus {
+			border: none;
+		}
+	}
+}
+
+.rf_param_service {
+
+	tbody tr td {
+		padding: 6px;
+
+		&.detailsHead {
+			background: @grey10;
+		}
+
+		&.leftText {
+			text-align: left;
+			padding-left: 50px;
+		}
+	}
+
+	.refresh {
+		text-align: right;
+	}
+}
+
+.alarmsCounter {
+	color: @grey60;
+	padding-left: 10px;
+	margin-top: -10px;
+}
+
+#toggle_all_active_alarms {
+	margin-top: 0;
+	cursor: pointer;
+}
+
+.saveSettingsFooter, .transferCheckbox {
+	text-align: right;
+}
+
+.rf_param_temp_table, .rf_param_output_profile {
+
+	tbody tr td {
+
+		&.tempSlider {
+			width: 75%;
+		}
+
+		&.rightText {
+			text-align: right;
+			padding: 10px;
+			width: 25%;
+		}
+
+		&.leftText {
+			text-align: left;
+			padding: 10px;
+		}
+
+		&.noBorder {
+			border: none;
+		}
+
+		&.dropDownSelector{
+			width: 80%;
+
+			.dropdown {
+				width: 50%;
+				text-align: left;
+
+				.dropdown-toggle {
+					margin-top: 10px;
+				}
+			}
+		}
+
+		.sliderContainer {
+			border: none;
+			margin-top: 40px;
+
+			.slider {
+				background: @tempSliderBgWebkit;
+				background: @tempSliderBgMoz;
+				background: @tempSliderBgMs;
+
+				span.cur {
+					background: none;
+					border: none;
+				}
+			}
+		}
+	}
+}
+
+.rf_param_return_loss, .rf_param_alarm_threshold, .rf_param_inputs, .rf_param_outputs,
+.rf_param_psu_status, .ru_alarmsThresholds {
+
+	.latency {
+		padding: 10px;
+		text-align: right;
+		border: none;
+	}
+
+	.minutesSlider {
+		border: none;
+		padding: 10px 0 10px 40px;
+	}
+
+	.powAmp {
+		width: 10%;
+	}
+
+	.tempHead th {
+		border: 1px solid @grey40;
+	}
+
+	tbody tr td {
+		position: relative;
+
+		.overlayRed {
+			left: 0;
+			opacity: .4;
+			top: 0;
+			right: 0;
+			background: @red;
+			height: 90px;
+			width: 100%;
+			z-index: 10;
+			position: absolute;
+		}
+
+		.overlayGrey {
+			left: 0;
+			opacity: .4;
+			top: 0;
+			right: 0;
+			background: @grey30;
+			height: 95px;
+			width: 100%;
+			z-index: 10;
+			position: absolute;
+		}
+
+		&.thresholdSlider {
+			width: 35%;
+		}
+
+		&.signalSlider {
+			width:40%;
+		}
+
+		&.statusSwitch {
+			width: 20%;
+
+			#toggle_threshold_status {
+				width: 80%;
+
+				.left, .right {
+					width: 49%;
+				}
+			}
+		}
+
+		&.powAmpPro {
+			width: 35%;
+
+			#toggle_switch_dis_enable {
+				width: 70%;
+				margin-bottom: 10px;
+				margin-top: 7px;
+
+				.left, .right {
+					width: 49%;
+				}
+			}
+
+			.selector {
+				width: 100%;
+
+				#toggle_automatic_restart {
+					float: left;
+					width: 40%;
+					text-align: right;
+					padding-top: 1px;
+					padding-right: 10px;
+				}
+
+				#time_after_shutdown {
+					width: 15%;
+					float: left;
+				}
+
+				.minutes {
+					padding-top: 4px;
+					width: 40%;
+					float: right;
+					text-align: left;
+				}
+			}
+		}
+
+		&.nrField {
+			width: 4%;
+		}
+
+		&.noField {
+			width: 20%;
+			padding: 10px;
+
+			.statusColor {
+			}
+		}
+
+		&.leftText {
+			text-align: left;
+			padding: 10px;
+			padding-left: 50px;
+
+			.delete {
+				margin-left: 10%;
+				color: @blue;
+			}
+		}
+
+		&.alarmsSwitch {
+			width: 55%;
+			text-align: left;
+
+			#toggle_alarms_switch {
+				width: 30%;
+
+				.left, .right {
+					width: 49%;
+				}
+			}
+		}
+
+		&.powerSwitch {
+			width: 45%;
+			text-align: left;
+
+			#toggle_power_switch {
+				width: 20%;
+				margin-left: 10px;
+				margin-right: 10px;
+
+				.left, .right {
+					width: 49%;
+				}
+			}
+		}
+
+		&.userDefName {
+			width: 30%;
+		}
+
+		&.outputActions {
+			width: 10%;
+
+			.btn-edit {
+				height: 25px;
+
+				.ion-btn.outputs {
+					margin-top: 0;
+					min-width: 20px;
+					height: 100%;
+				}
+			}
+		}
+
+		&.present {
+			background: @green;
+		}
+
+		&.missing {
+			background: @red;
+		}
+
+		&.notEq {
+			background: @grey15;
+		}
+	}
+
+	.refresh {
+		text-align: right;
+	}
+
+	.sliderContainer {
+		border: none;
+		margin-top: 40px;
+	}
+}
+
+.rf_param_alarm_threshold {
+
+	.widgetTable.temperature {
+
+		tbody tr td {
+
+			&.thresholdSlider {
+				width: 35%;
+			}
+		}
+	}
+}
+
+.rf_param_amplifier, .rf_param_psu_pc, .rf_param_psu_watchdog {
+
+	.warningContainer {
+
+		.statusIcon {
+			&.warning, &.info {
+				height: 100%;
+				margin-left: 30px;
+
+				p {
+					padding-left: 10%;
+					height: inherit;
+					padding-top: 2%;
+				}
+			}
+		}
+	}
+
+	.resetBtn {
+		margin-bottom: 10px;
+		margin-top: 10px;
+		text-align: center;
+		width: 100%;
+	}
+
+	.intervalSlider {
+		width: 100%;
+		margin-left: 10%;
+
+		.sliderContainer {
+			border: none;
+			margin-top: 40px;
+			text-align: center;
+
+			.slider {
+				background: @sliderBgCurWebkit;
+				background: @sliderBgCurMoz;
+				background: @sliderBgCurMs;
+
+				span.cur {
+					background: none;
+					border: none;
+				}
+			}
+		}
+	}
+}
+
+.rf_param_amplifier {
+
+	.resetBtn {
+		margin: 1% 0 2% -3%;
+		text-align: right;
+	}
+
+}
+
+.rf_param_unit {
+
+	.widgetTable.unitId tbody tr td {
+		text-align: right;
+
+		&.bgGrey30 {
+			background: @grey10;
+		}
+
+		&.infoLabel {
+			width: 75%;
+			text-align: left;
+		}
+	}
+}
+
+.rf_param_subrack_lines, .rf_param_fan_trays {
+
+	.widgetTable.subLines, .widgetTable.fanTrays {
+
+		tbody tr td {
+			padding: 6px;
+			position: relative;
+
+			&.head {
+				background: @grey15;
+			}
+
+			.overlayGrey {
+				left: 0;
+				opacity: .4;
+				top: 0;
+				right: 0;
+				background: @grey30;
+				height: 54px;
+				width: 100%;
+				z-index: 10;
+				position: absolute;
+			}
+		}
+	}
+}
+
+.pdu_alarm_thresholds {
+
+	.widgetTable.alarmThresholdsPDU {
+
+		tbody tr td {
+
+			&.text {
+				width: 20%;
+			}
+		}
+	}
+}
+
+.sm_status_system, .sm_status_battery, .sm_status_temp, .sm_status_summary {
+
+	.temp_alarm_threshold {
+		.slider {
+			background-color: @red;
+
+			span.cur.left {
+				background:  @green;
+				border-color: @greenDark;
+			}
+		}
+	}
+
+	.widgetTable {
+
+		tbody tr td {
+			padding: 10px;
+
+			&.rightText {
+				width: 20%;
+				text-align: right;
+			}
+
+			&.leftText {
+				text-align: left;
+			}
+
+			&.discharge {
+				width: 20%;
+			}
+			&.battery {
+
+				.batteryContainer {
+					width: 35%;
+				}
+			}
+
+			.small {
+				width: 70px;
+			}
+
+			&.severityGroup {
+
+				span.box {
+					padding: 8px 14px 8px 14px;
+					margin: 3px 3px 3px 3px;
+					cursor: pointer;
+
+					&.checked {
+						.icon;
+						background-position: center -298px;
+					}
+
+					&[data-val="1"] {
+						background-color: @red;
+					}
+
+					&[data-val="2"] {
+						background-color: @orange;
+					}
+
+					&[data-val="3"] {
+						background-color: @yellow;
+					}
+
+					&[data-val="4"] {
+						background-color: @azure;
+					}
+				}
+			}
+		}
+	}
+}
+
+.leftText {
+	text-align: left;
+}
+
+.rightText {
+	text-align: right;
+}
+
+.ipoi_alarm_threshold {
+
+	table tbody tr td{
+
+		.topText {
+			border-bottom: 1px solid @grey30;
+			line-height: 50px;
+		}
+
+		.botText {
+			line-height: 50px;
+		}
+	}
+
+	.latencySlider {
+
+		.sliderContainer {
+			border: none;
+			margin-top: 40px;
+			text-align: center;
+
+			.slider {
+				background: @sliderBgCurWebkit;
+				background: @sliderBgCurMoz;
+				background: @sliderBgCurMs;
+
+				span.cur {
+					background: none;
+					border: none;
+				}
+			}
+		}
+	}
+}
+
+.sm_battery_widget {
+
+	.battery {
+		width: 100%;
+		text-align: center;
+		padding-top: 20px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.discharge {
+		text-align: center;
+		margin-bottom: 10px;
+	}
+}
+
+.dialogBatterySetup.modalView {
+
+	.widgetTable.dialogTable {
+
+		tbody tr td {
+
+			&.rightText {
+				width: 30%;
+			}
+
+			.sliderContainer {
+				border-top: none;
+				margin-top: 38px;
+			}
+
+			&.switch_td {
+				padding: 6px;
+				text-align: center;
+			}
+		}
+	}
+}
+
+
+
+
+.leftText {
+	text-align: left;
+}
+
+.rightText {
+	text-align: right;
+}
+
+.ipoi_alarm_threshold {
+
+	table tbody tr td{
+
+		.topText {
+			border-bottom: 1px solid @grey30;
+			line-height: 50px;
+		}
+
+		.botText {
+			line-height: 50px;
+		}
+	}
+
+	.latencySlider {
+
+		.sliderContainer {
+			border: none;
+			margin-top: 40px;
+			text-align: center;
+
+			.slider {
+				background: @sliderBgCurWebkit;
+				background: @sliderBgCurMoz;
+				background: @sliderBgCurMs;
+
+				span.cur {
+					background: none;
+					border: none;
+				}
+			}
+		}
+	}
+}
+
+.zc_rf_path_monitor {
+
+	.container {
+		width: 95%;
+		margin: 0 auto;
+		margin-top: 10px;
+		margin-bottom: 5px;
+
+		.green {
+			// .successIcon;
+			.stateIconStyling;
+			width: 10%;
+			float: left;
+			height: 50px;
+			margin-top: 10px;
+			margin-bottom: 5px;
+		}
+
+		.text {
+			width: 90%;
+			margin-top: 10px;
+			margin-bottom: 10px;
+
+			.info {
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+.zc_rf_path_paths {
+
+	.title {
+
+		span.right {
+			background-color: transparent;
+			// background-image: @url_icons_spr;
+			background-repeat: no-repeat;
+			width: 16px;
+			height: 16px;
+			display: block;
+			cursor: pointer;
+
+			&.filter {
+				background-position: 0 -3753px;
+			}
+
+			&.filter_enabled {
+				background-position: 0 -3776px;
+			}
+		}
+	}
+
+	.container {
+		background: @grey15;
+	}
+
+	.port_selector {
+		width: 10%;
+		float: left;
+		background: @grey15;
+		text-align: center;
+		border-right: 1px solid @grey30;
+
+		.head {
+			font-weight: bold;
+			padding: 6px;
+		}
+
+		.select_all {
+			margin-top:10px;
+			margin-bottom: 10px;
+
+			span.checkbox {
+				float: none;
+			}
+		}
+
+		.select_single {
+			float: none;
+			margin-bottom: 10px;
+		}
+	}
+
+	.widgetTable.zcPaths {
+		width: 90%;
+
+		thead tr th {
+
+			.icon.filter, .icon.filter_enabled {
+				height: 15px;
+
+				.selectFilter {
+					z-index: 10;
+				}
+			}
+
+			&.operator {
+				width: 10%;
+			}
+		}
+
+		tbody tr td {
+			padding: 6px;
+			background: @white;
+		}
+	}
+}
+
+.widgetTable.localDisplay {
+
+	tbody tr td {
+		text-align: left;
+
+		&.head {
+			width: 15%;
+			text-align: right;
+		}
+
+		span.edit {
+		}
+	}
+}
+
+.widgetTable.BTSInput {
+
+	thead tr th {
+
+		#choose_profile {
+			margin: 0 auto;
+			width: 75%;
+			margin-top: 4px;
+			margin-bottom: 5px;
+		}
+	}
+
+	tbody tr {
+
+		td {
+
+			&.head {
+				text-align: right;
+				width: 20%;
+			}
+
+			&.selector {
+
+				.dropdown.selector {
+					width: 50%;
+					margin-top: 4px;
+					margin-bottom: 5px;
+					text-align: left;
+				}
+			}
+
+			.ion-inputfieldContainer {
+				width: 50%;
+
+				.ion-inputfield {
+					width: 100%;
+					max-width: 100%;
+				}
+			}
+
+			.sliderContainer {
+				border-top: none;
+				margin-top: 38px;
+			}
+		}
+
+		&.addProfileBtn, &.delProfileBtn {
+
+			td {
+				text-align: right;
+			}
+		}
+	}
+}
+
+
+.dialogBatterySetup, .changePwdDialog {
+
+	.topline {
+		margin-top: 30px;
+	}
+
+	.selector {
+
+		.dropdown.selector {
+			margin-top: 4px;
+			margin-bottom: 5px;
+			text-align: left;
+		}
+	}
+
+	#toggle_auto_bat_dis {
+		width: 50%;
+
+		.left, .right {
+			width: 49%;
+		}
+	}
+}
+
+.rf_param_unit {
+
+	.ion-inputfieldContainer {
+		.ion-inputfield:focus {
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+	}
+
+}
+
+.rf_param_psu_status {
+	.psuStat {
+		thead tr {
+			th:last-child {
+				text-align: left;
+				padding-left: 1%
+			}
+		}
+		tbody tr {
+			height: 37px;
+			td {
+				&.noField {
+					width: 15%;
+				}
+				&.leftText {
+					padding: 0;
+					padding-left: 1%;
+
+					.deleteBtn {
+						padding-left: 2%;
+
+						.ion-btn.delPSU {
+							margin: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.ru_hp_reboot_button {
+	.downLogBtn {
+		margin: 0 auto;
+		text-align: center;
+
+		.rebootRu {
+			width: 80%;
+
+			.loader {
+				height: 24px;
+			}
+		}
+	}
+}

@@ -1,0 +1,148 @@
+.tableCell {
+	// border-bottom: 0;
+
+	&:hover,
+	&.selected {
+		background: none;
+	}
+
+	&.subrack {
+		padding: 0;
+
+		div {
+			float: none;
+		}
+
+		.subrackCellTitle {
+			border-bottom: 1px solid @borderColor;
+			padding: 5px 10px;
+			.clearfix;
+
+			h2 {
+				float: left;
+			}
+
+			.ion-btn {
+				float: right;
+			}
+		}
+
+		.subrackContent {
+			border-bottom: 1px solid @borderColor;
+			padding: 5px 10px;
+			.clearfix;
+
+			&:hover,
+			&.selected {
+				.cyanLighten70;
+			}
+
+			div {
+
+				&.iconBox {
+					float: left;
+
+					img {
+						display: block;
+						height: auto;
+						width: 25px;
+					}
+
+					p {
+						padding: 5px 0 0 0;
+						text-align: center;
+					}
+				}
+
+				&.adressBox {
+					float: left;
+					margin: 0 10px;
+					width: 105px;
+
+					ul {
+						.clearfix;
+						padding: 20px 0 0 0;
+
+						li {
+							float: left;
+							margin: 0 5px 0 0;
+
+							.icon {
+								height: 8px;
+								width: 8px;
+							}
+						}
+					}
+				}
+
+				&.alarmDiagram {
+					float: left;
+					background: url("../img/icons/diagram.svg") no-repeat center center;
+					background-size: 60px 60px;
+					display: block;
+					height: 60px;
+					opacity: 0.3;
+					position: relative;
+					width: 60px;
+
+					span {
+						display: block;
+						font-size: 12px;
+						line-height: 12px;
+						min-height: 12px;
+						text-align: center;
+						position: relative;
+						top: 18px;
+
+						& + span {
+							font-size: 8px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.subrackContainer {
+
+	&.Lade {
+
+		.deviceImage {
+			left: 0;
+			border-radius: 5px;
+			padding: 2px;
+
+			img {
+				display: block;
+				height: 164px!important;
+			}
+
+			& + .deviceImage {
+				left: 61px;
+
+				& + .deviceImage {
+					left: 94px;
+				}
+			}
+
+			&.selected {
+				background: @cyanLighten40;
+
+			}
+		}
+	}
+}
+
+#serviceDetailView {
+
+	.viewContainer {
+
+		.viewHeader {
+
+			#closeBtn {
+				float: right;
+			}
+		}
+	}
+}

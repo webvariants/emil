@@ -1,0 +1,317 @@
+/* topdoc
+  application: ION-U web application
+  copyright: Copyright (c) 2013, CommScope/webvariants
+  author:  Steven David <steven.david@webvariants.de>
+  name: RF-Measurement
+  description: RF-Measurement
+  example: Link to an example on sites like Codepen.io or jsfiddle.net
+  tags: ui, components, RF-Measurement
+  markup: Markup Example to demonstrate usage
+
+  div(data-template="templates/maintenance/rf_measurement", data-module="maintenance", data-uid="44", class="container rfMeasurementContainer")
+    div(data-template="templates/maintenance/pim", data-module="maintenance", data-uid="45", class="intermoduleContainer")
+      div.row
+        div.basic_widget.col-12.alpha.omega
+          div.widget rf_measurement_parameters
+            div.title
+              div(class="ion-btn toggle toggleBtn", title="toggle open or close")
+                span Measurement parameters
+              div(class="ion-btn help helpBtn withIcon", title="open help", data-help="pim")
+                span.icon.help
+              div.widgetLoader-overlay
+                div.widgetLoader-box
+                  div.circleG_1.circleG
+                  div.circleG_2.circleG
+                  div.circleG_3.circleG
+                div.content
+                  form(id="intermoduleForm", method="post")
+                    fieldset
+                      legend
+                        span RF source
+                div.fieldsetcontent
+                  div.dropdowngroup
+                    div(class="dropdown selector", id="zones")
+                      div.dropdown-toggle
+                        span.caret
+                        span.default All Zones
+                        ul.dropdown-menu
+                          li(class="", data-id="zone1", data-index="0", data-name="zones")
+                            span Zone 1
+                          li(class="", data-id="zone2", data-index="1", data-name="zones")
+                            span Zone 2
+                    div(class="dropdown selector", id="rus")
+                      div.dropdown-toggle
+                        span.caret
+                        span.default All RUs
+                        ul.dropdown-menu
+                          li(class="", data-id="ru1floor", data-index="0", data-name="rus")
+                            span RU 1 Floor 1/2
+                          li(class="", data-id="ru2floor", data-index="1", data-name="rus")
+                            span RU 2 Floor 3/4
+                          li(class="", data-id="ru3floor", data-index="2", data-name="rus")
+                            span RU 3 Floor 5/6
+                    div.startMeasurementBtn
+                      div(class="ion-btn  disabled", id="pim_measurement")
+                        span Start measurement
+                        span.loader
+ */
+
+.widget {
+
+	&.rf_measurement_path {
+
+		> .title {
+
+			.right {
+				position: absolute;
+				right: 30px;
+				display: inline-block;
+
+				input[type=checkbox] {
+					margin-top: 3px;
+				}
+
+				span {
+					padding-left: 0;
+					margin-left: 5px;
+					float: right;
+					font-weight: normal;
+				}
+			}
+		}
+
+		> .content {
+
+			fieldset {
+
+				legend {
+					.grid-columns(4);
+				}
+
+				.fieldsetcontent {
+					.grid-columns(8);
+				}
+			}
+		}
+	}
+
+	&.rf_measurement_parameters {
+		form > fieldset > .fieldsetcontent {
+			padding: 0;
+		}
+	}
+
+	&.rf_measurement_general, &.rf_measurement_path {
+
+		fieldset select {
+			background: none;
+			border: none;
+			font-weight: normal;
+			font-size: 12px;
+			color: #000;
+			padding-bottom: 2px;
+		}
+	}
+
+	.rfMParams, .rfMResults, .generalParams, {
+
+		tbody tr td {
+			padding: 6px;
+
+			&.right {
+				text-align: right;
+			}
+
+			.dropdown {
+				margin-bottom: 1px;
+				width: 30%;
+
+				&#rf_source_zone_dd {
+					float: left;
+				}
+
+				&#rf_source_ru_dd {
+					float: left;
+					margin-left: 10px;
+				}
+			}
+
+			&.power {
+				width: 30%;
+
+				div {
+					text-align: left;
+
+					.icon {
+						float: right;
+						margin-top: 3px;
+					}
+				}
+			}
+
+			#custom {
+				border-top: 1px solid @grey30;
+			}
+		}
+	}
+
+	.rfMResults {
+
+		tbody tr td {
+
+			div {
+				border-bottom: 1px solid @grey30;
+				line-height: 22px;
+				margin: 0 -6px 0 -6px;
+				padding: 0 6px 0 6px;
+
+				&:last-child {
+					border: none;
+				}
+			}
+		}
+	}
+
+	.generalParams {
+
+		tbody tr td {
+			padding: 6px;
+
+			&.right {
+				text-align: right;
+				width: 20%;
+			}
+
+			.dropdown {
+				margin-bottom: 1px;
+				width: 30%;
+				text-align: left;
+			}
+		}
+	}
+
+	.rfMParams1, .rfMParams2 {
+
+		tbody tr td {
+
+			&.right {
+				text-align: right;
+				width: 30%;
+			}
+
+			&.noiseSpec {
+				text-align: left;
+			}
+
+			.dropdown {
+				margin-bottom: 1px;
+				width: 48%;
+				text-align: left;
+
+				&#rf_source_zone_dd_one, &#rf_source_zone_dd_two {
+					float: left;
+				}
+
+				&#rf_source_ru_dd_one, &#rf_source_ru_dd_two {
+					float: left;
+					margin-left: 10px;
+				}
+
+			}
+
+			&.sensGroup, &.traceGroup {
+				text-align: left;
+				padding-top: 14px;
+				padding-bottom: 14px;
+
+				span.box {
+					padding: 8px 14px 8px 25px;
+					margin: 3px 3px 3px 3px;
+
+					&.checked {
+						.icon;
+						background-position: 0 -298px;
+						background-color: @grey53;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.rfMeasurementContainer, .alarms_simple {
+
+	.tabPanelContainer {
+		float: none;
+		margin-bottom: 12px;
+
+		ul {
+			float: none;
+			.clearfix;
+		}
+
+		li.ion-tabPanel.tab {
+			border-bottom: 1px solid @grey53;
+			border-bottom-right-radius: 3px;
+			border-bottom-left-radius: 3px;
+		}
+	}
+
+	.startMeasurementBtn {
+		text-align: right;
+		margin-bottom: 20px;
+		margin-top: 5px;
+	}
+}
+
+.measurementContainer {
+
+	.rfServices, .rfMarkers {
+
+		td {
+			padding: 6px;
+		}
+
+		.addMarkerBtn {
+			text-align: right;
+		}
+	}
+}
+.row{
+
+  & > .col-6{
+    padding: 0 6px 0 0;
+
+    & + .col-6{
+      padding: 0 0 0 6px;
+    }
+  }
+}
+
+#intermoduleForm {
+
+	legend {
+		width: 150px;
+	}
+
+	.fieldsetcontent {
+		width: calc(~"100% - 150px");
+	}
+
+	.dropdown {
+		min-width: 200px;
+	}
+
+	#rus {
+
+		.dropdown-menu {
+			width: auto;
+
+			span {
+				margin: 0 9px;
+				width: auto;
+			}
+		}
+	}
+}

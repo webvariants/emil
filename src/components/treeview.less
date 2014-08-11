@@ -1,0 +1,246 @@
+/* topdoc
+  application: ION-U web application
+  copyright: Copyright (c) 2013, CommScope/webvariants
+  author:  Dirk Sommerfeld <dirk.sommerfeld@freelancer.webvariants.de>
+  name: Treeview
+  description: A simple treeview
+  example: Link to an example on sites like Codepen.io or jsfiddle.net
+  tags: ui, components, treeview
+  markup:
+  div.ion-treenode
+	//- start topleft
+	div(class="#{left ? 'ion-tree connector topleft borderbottom' : 'ion-tree connector topleft'} ")
+
+	//- topright
+	div(class=" #{top ? 'ion-tree connector topright borderleft': 'ion-tree connector topright '}     #{right ? 'borderbottom' : ''}")
+
+	//- bottomright
+	div.ion-tree.connector.bottomleft
+
+	//- bottomleft
+	div(class="#{bottom ? 'ion-tree connector bottomright borderleft' : 'ion-tree connector bottomright'} ")
+
+
+	div(class="ion-treenode lvl#{lvl ? lvl : ''}")
+		div(class="ion-treenode square middle #{grey ? 'grey' : ''}")
+			span(class="ion-treenode square middle sign_plus #{open ? 'hide' : ''}")
+				div.ion-treenode.square.middle.sign_plus.sub.tl
+				div.ion-treenode.square.middle.sign_plus.sub.tr
+				div.ion-treenode.square.middle.sign_plus.sub.bl
+				div.ion-treenode.square.middle.sign_plus.sub.br
+			span(class="ion-treenode square middle sign_minus #{open ? '' : 'hide'}")
+				div.ion-treenode.square.middle.sign_minus.sub.top
+				div.ion-treenode.square.middle.sign_minus.sub.bottom
+*/
+
+	@tree_size: 			20px;	//18px;
+	@tree_size_half: 		round(@tree_size/2);
+	@square_size:  	 		floor((@tree_size*2/3) - 1);
+	@square_size_half: 		floor(@square_size/2);
+
+	@square_connector_size: 		(@tree_size - @square_size)/2;
+	@square_connector_size_half: 	round(@square_connector_size/2);
+	@tree_connector_size: 			round(@tree_size/2);
+
+	@sign_size: 			floor(@square_size - 2);
+	@sign_size_half:   		floor(@sign_size/2);
+
+/*# colors */
+	@tree_backgroundcolor: 	transparent;
+	@tree_color: 			@blueDark;
+	@grey_square_color: 	@blueDark;
+
+/*# border box */
+	@square_border: 						1px solid;
+	@square_border_grey: 					1px solid @grey_square_color;
+	@square_border_connector_right_grey:  	1px dotted @grey_square_color;
+	@connector_border: 						1px solid;
+	@sign_border: 							2px solid @tree_color;
+
+
+/****************************************************************
+	main tree element
+****************************************************************/
+.ion-treenode {
+    display: block;
+    float: left;
+    height: round(20px/2);
+    width: round(20px/2);
+    border-color: @blueDark;
+    background-color: transparent;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    margin: 1px 0 0 1px;
+
+    &.marker {
+        background-color: @cyanDark;
+        z-index: 0;
+      }
+
+      &.square {
+            cursor: 	pointer;
+
+            &.topleft {
+                  width: 	(@tree_size_half - 0.5);
+                  height: @square_connector_size ;
+                }
+		/* without connector*/
+		&.topright {
+			width: 	(@tree_size_half + 0.5);
+			height: @square_connector_size ;
+			/* with connector*/
+			&.connect {
+				border-left:  @connector_border;
+			}
+		}
+		&.left{
+			width: 	@square_connector_size;
+			height: @square_size;
+		}
+		&.middle{
+			width: 	@square_size;
+			height: @square_size;
+			border: @square_border;
+
+			/*
+			sign + or -
+			*/
+			&.sign_plus {
+				padding-top: 	1px;
+				padding-left: 	1px;
+				width: 		@sign_size;
+				height:  	@sign_size;
+				border: 	none;
+				margin: 0;
+				&.sub{
+					width: 	5px;
+					height: 5px;
+
+					&.tl{
+						border-right: 	@sign_border;
+						border-bottom: 	@sign_border;
+					}
+					&.tr {
+						border-bottom: 	@sign_border;
+						width: 	(@sign_size_half - 2);
+					}
+					&.bl {
+						border-right: 	@sign_border;
+						height: (@sign_size_half - 2);
+					}
+					&.br{
+					}
+				}
+			}
+			&.sign_minus {
+				padding-top: 	1px;
+				padding-left: 	1px;
+				width: 		@sign_size;
+				height:  	@sign_size;
+				border: 	none;
+				margin: 0;
+				&.sub {
+					width: 	8px;
+					height: 5px;
+					&.top {
+						border-bottom: 	@sign_border;
+					}
+					&.bottom{
+						/* for a bigger minus do this:
+						border-top: 	@sign_border;
+						*/
+					}
+				}
+			}
+		}
+		&.right{
+			width: 	@square_connector_size;
+			height: @square_size;
+			/* without connector*/
+			&.top{
+				width: 	@square_connector_size;
+				height: @square_size_half+1;
+				/* with connector*/
+				&.connect{
+					border-bottom: @connector_border;
+				}
+			}
+			&.bottom{
+				width: 	@square_connector_size;
+				height: @square_size_half;
+			}
+		}
+		&.bottomleft {
+			width: 	(@tree_size_half - 0.5);
+			height: @square_connector_size;
+		}
+		/* without connector*/
+		&.bottomright {
+			width: 	(@tree_size_half + 0.5);
+			height: @square_connector_size;
+			/* with connector*/
+			&.connect {
+				border-left:  @connector_border;
+			}
+		}
+	}
+
+	/***************
+	grey variant of square
+	***************/
+	&.grey{
+		&.square.middle{
+			border: 	@square_border_grey;
+		}
+		&.square.right.top.connect{
+			border-bottom: 	@square_border_connector_right_grey;
+		}
+	}
+
+	/*******************************
+	connector-div divided in 4 divs
+		*******
+		*  *  *
+		*******
+		*  *  *
+		*******
+
+		set quadrant with possible borders (as connector):
+		-left
+		-bottom
+
+	*******************************/
+	&.connector {
+		height: 	@tree_connector_size;
+		width: 		@tree_connector_size;
+		border:  			none;
+
+		/* four sub divs */
+		&.topleft{
+			height: 	(@tree_connector_size + 0.5);
+			width: 		(@tree_connector_size - 0.5);
+		}
+		&.topright{
+			height: 	(@tree_connector_size + 0.5);
+			width: 		(@tree_connector_size + 0.5);
+		}
+		&.bottomleft{
+			height: 	(@tree_connector_size - 0.5);
+			width: 		(@tree_connector_size - 0.5);
+		}
+		&.bottomright{
+			height: 	(@tree_connector_size - 0.5);
+			width: 		(@tree_connector_size + 0.5);
+		}
+
+		/* define border ass connection*/
+		&.borderleft {
+			border-left: 	@connector_border;
+		}
+		&.borderbottom{
+			border-bottom: 	@connector_border;
+		}
+
+	}
+}

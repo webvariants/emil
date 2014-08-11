@@ -1,0 +1,96 @@
+/* topdoc
+  application: ION-U web application
+  copyright: Copyright (c) 2013, CommScope/webvariants
+  author: Steven David <steven.david@webvariants.de>, Marko Ladngast <marko.ladengast@webvariants.de>
+  name: Dropdown Selector
+  description: Dropdown Selector Styling
+  example: Link to an example on sites like Codepen.io or jsfiddle.net
+  tags: styleguide, dropdown-selector
+  markup:
+  div.dropdown.EditTimeDropDown
+  	div.dropdown-toggle
+  	span.caret
+  	input
+  	ul.dropdown-menu
+  		li.selected root
+  		li user
+  		li guest
+*/
+
+ .dropdown.selector {
+
+ 	.dropdown-toggle {
+
+		span {
+			margin-left: 9px;
+			margin-top: 2px;
+			display: block;
+
+			&.caret {
+				margin-top: 0;
+			}
+
+			&.default {
+				color: @grey40;
+			}
+
+			&.selected {
+				// background: @grey30;
+				background: @cyan;
+				border-radius: 2px;
+				display: inline-block;
+				line-height: 18px;
+				padding: 0px 5px;
+				padding-right: 15px;
+				margin-left: 2px;
+				margin-right: 0;
+				position: relative;
+				cursor: default;
+				// color: @grey70;
+				color: white;
+
+				span.close {
+					display: inline;
+					font-size: 10px;
+					line-height: 18px;
+					margin: 0;
+					position: absolute;
+					right: 4px;
+					text-align: right;
+					top: -1px;
+					width: 10px;
+					color: white;
+					opacity: 1;
+					text-shadow: none;
+				}
+			}
+
+			&.dropdownInput {
+				margin-top: 0;
+				margin-left: 0;
+				float: left;
+
+				.datalistOption {
+					cursor: pointer;
+				}
+			}
+		}
+
+		&.input {
+			height: 26px;
+
+			.selected {
+				float: left;
+				margin-right: 5px;
+			}
+		}
+ 	}
+
+ 	.dropdown-menu {
+ 		li:hover {
+ 			background-color: @cyanLight;
+ 		}
+ 	}
+ }
+
+

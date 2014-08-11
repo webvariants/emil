@@ -1,0 +1,350 @@
+/* topdoc
+  application: ION-U web application
+  copyright: Copyright (c) 2013, CommScope/webvariants
+  author: Steven David <steven.david@webvariants.de>, Marko Ladngast <marko.ladengast@webvariants.de>
+  name: Dialog
+  description: Dialog Styling
+  example: Link to an example on sites like Codepen.io or jsfiddle.net
+  tags: styleguide, dialog
+  markup:
+  div.dialog-container
+	div.ion-dialog lg
+		div.dialog-header
+			div.title Dialog
+			div.ion-btn grey.onlyIcon.withIcon
+				span.icon.close
+		div.dialog-content
+			div.dialogEditUser.modalView
+				div.topline
+					span.topline-title.typo.content Please edit the following informations.
+				div.userDialog
+					table.widgetTable.dialogTable
+						thead
+						tbody
+							tr
+								td.labelCell
+									span Username
+								td
+									div.ion-inputfieldContainer
+										span.placeholder
+										input.ion-inputfield
+		div.button-bar
+			div.button-bar-row
+				div.button-bar-text
+				div.button-bar-preloader
+				div.button-container
+					div.ion-btn.btnBarBtn.cancel.grey
+						span Cancel
+						span.loader
+					div.ion-btn.btnBarBtn.save.blue
+						span Save
+						span.loader
+  div.dialog-overlay
+*/
+.ion-dialog {
+	.rounded(3px);
+	box-shadow: 0px 1px 2px 0 rgba(0, 0, 0, 0.65);
+	background-color: @white;
+	position: fixed !important;
+	z-index: @zindexDialog;
+	top: 120px;
+
+	.dialog-header {
+
+		.title {
+			float: left;
+			padding: 0 12px;
+			.typo.contentHeader;
+			line-height: 36px;
+			height: 100%;
+		}
+
+		background-color: @black;
+		color: @white;
+		height: 36px;
+
+		.title {
+			float: left;
+			padding: 11px 8px;
+			.typo.contentHeader;
+		}
+
+		.ion-btn {
+			float: right;
+			margin: 6px 5px;
+		}
+	}
+
+	.dialog-content {
+		box-sizing: border-box;
+		color: @blueDark;
+		margin: 12px;
+		padding: 12px;
+
+
+	   .topline {
+			display: block;
+			margin: 12px 0;
+		}
+
+		.widgetLoader-overlay {
+			top: 0px;
+			left: 0px;
+		}
+	}
+
+	.dialogTable {
+		width: 100%;
+
+		tr:first-child td {
+			border-top: none;
+		}
+
+		td {
+			line-height: 30px;
+			text-align: left;
+			width: 70%;
+		}
+
+		.labelCell {
+			padding: 0 10px;
+			text-align: right;
+			width: 30%;
+			.typo.contentSubNavigation;
+		}
+
+		.dropdown{
+			margin: 0;
+
+			.dropdown-menu{
+
+				li{
+					padding: 2px 8px;
+					.typo.content;
+
+					&:hover,
+					&.selected{
+						background: @blueDark;
+						color: white;
+					}
+				}
+			}
+
+			input{
+				border: 0;
+				box-shadow: none;
+				color: @blueDark;
+				display: block;
+				height: 22px;
+				padding: 0 0 0 6px;
+				width: 80%;
+				cursor: pointer;
+				.typo.content;
+			}
+		}
+	}
+
+	.ion-inputfieldContainer {
+		width: 100%;
+
+		.ion-inputfield {
+			box-shadow: none;
+			color: @blueDark;
+			width: 100%;
+			.typo.content;
+
+			&::-webkit-input-placeholder {color: @blueDark;}
+			&:-moz-placeholder {color: @blueDark;} /* Firefox 18- */
+			&::-moz-placeholder {color: @blueDark;}  /* Firefox 19+ */
+			&:-ms-input-placeholder {color: @blueDark;}
+
+			&:hover,
+			&:focus {
+				box-shadow: none;
+			}
+		}
+	}
+
+	&.sm {
+		@dialog-width: 320px;
+		@dialog-height: auto;
+		.size(@dialog-width, @dialog-height);
+		.centerCalc(@dialog-width, @dialog-height);
+		height: auto;
+	}
+
+	&.md {
+		@dialog-width: 540px;
+		@dialog-height: auto;
+		.size(@dialog-width, @dialog-height);
+		.centerCalc(@dialog-width, @dialog-height);
+
+		.userDialog{
+			width: @dialog-width - 12*2;
+		}
+	}
+
+	&.lg {
+		@dialog-width: 960px;
+		@dialog-height: 540px;
+		.size(@dialog-width, @dialog-height);
+		.centerCalc(@dialog-width, @dialog-height);
+		overflow: hidden;
+
+		.dialog-content {
+			height: 467px;
+			overflow-y: scroll;
+			margin: 0 12px;
+			padding: 12px;
+		}
+
+		&.update-dialog{
+
+			.dialog-content{
+				height: 466px;
+				margin: 0;
+				overflow: hidden;
+				padding: 0;
+
+				.ion-state{
+
+					.stateLabel{
+					}
+				}
+
+				.ion-progress{
+
+					#update-dialog-progress{
+
+					}
+				}
+			}
+		}
+	}
+
+	.userDialog {
+		border: 1px solid @grey30;
+		.rounded(3px);
+
+		.ion-inputfieldContainer{
+
+			.ion-inputfield{
+				border: none;
+			}
+		}
+	}
+
+	.button-bar {
+		background: #bbb;
+		border-radius: 0 0 3px 3px;
+		height: 38px;
+		width: 100%;
+
+		.button-bar-row {
+			height: 38px;
+
+			.button-bar-text {
+				height: 38px;
+				padding: 15px 20px;
+				text-align: right;
+				display: table-cell;
+				vertical-align: bottom;
+			}
+
+			.button-container {
+				position: absolute;
+				right: 6px;
+				top: 0px;
+
+
+				.ion-btn {
+					margin-top: 6px;
+					margin-left: 6px;
+				}
+			}
+		}
+	}
+}
+
+// DIALOG OVERVIEW
+.dialog-overlay {
+	background-color: @black;
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	top: 0;
+	opacity: .35;
+	right: 0;
+	z-index: @zindexDialogOverlay;
+}
+
+// WE USE THE DIALOG-MESSAGE ALSO IN LOGIN VIEW
+.dialog_message {
+	border-radius: 3px;
+	margin: 12px 0;
+	overflow: hidden;
+	padding: 12px;
+
+	&.warning {
+		background: @red;
+		border: 1px solid @redDark;
+
+		table{
+			color: @redDark;
+		}
+	}
+
+	&.success{
+		background: @green;
+		border: 1px solid @greenDark;
+
+		table{
+			color: @greenDark;
+		}
+	}
+
+	table {
+		width: 100%;
+
+		td{
+			vertical-align: middle;
+		}
+	}
+
+	.iconCell {
+		width: 10%;
+
+		.statusIcon{
+			display: block;
+			padding: 0;
+			width: 55px;
+		}
+	}
+
+	.messageCell {
+		padding: 0 0 0 12px;
+
+		h2 {
+			.typo.contentHeader;
+		}
+
+		p {
+			.typo.contentHeader;
+		}
+	}
+}
+
+.timeInputs{
+
+	.dropdown{
+		float: left;
+	 }
+
+	.dots{
+		display: block;
+		float: left;
+		padding: 0 5px;
+		.typo.content;
+		line-height: 24px;
+	}
+}
