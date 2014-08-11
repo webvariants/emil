@@ -1,0 +1,5 @@
+<job>
+<script language="JScript">
+  WSH.echo("hello world (from js)");
+</script>
+</job>
