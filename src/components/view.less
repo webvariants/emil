@@ -14,7 +14,7 @@
     }
 
     .viewHeader {
-        border-bottom: 1px solid @borderColor;
+        border-bottom: 1px solid grey;
         height: 40px;
         width: 100%;
         position: relative;
@@ -24,7 +24,7 @@
         }
 
         .viewTitle {
-            color: @blackLighten40;
+            color: grey;
             height: 40px;
             line-height: 40px;
             font-size: 18px;
@@ -35,31 +35,9 @@
             bottom: 0;
             left: 0;
         }
-        #sidebarBtn {
-            position: absolute;
-            left: 3px;
-            top: 6px;
-            margin-top: 0;
-
-            &.rotateBtn {
-                transform-style: preserve-3d;
-                .transition(0.1s, ease-in-out, all);
-                // backface-visibility: hidden;
-                transform: rotateY( 180deg );
-            }
-        }
-        .maximizeBtn {
-            position: absolute;
-            right: 3px;
-            top: 6px;
-            margin-top: 0;
-        }
     }
     .viewContent {
         height: calc(~"100% - 40px");
 
-        .masterdetail {
-            height: 100%;
-        }
     }
 }

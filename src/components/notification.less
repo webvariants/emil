@@ -30,7 +30,7 @@
 	opacity: 0.5;
 	cursor: pointer;
 	top: 0;
-	z-index: @zindexNotifications;
+	z-index: 10000; /* TODO define variable*/
 
 	&.visible {
 		top: 55px;
@@ -59,11 +59,11 @@
 	}
 
 	&.info {
-		color: @blue;
+		color: blue;
 	}
 
 	&.error {
-		color: @red;
+		color: red;
 	}
 
 	span {
@@ -82,39 +82,28 @@
 	}
 
 	&.alert {
-		background-color: lighten(@red, 10%);
-		color: @redDark;
+		background-color: lighten(red, 10%);
+		color: darkRed;
 		border: none;
 	}
 
 	&.success {
-		background-color: lighten(@green, 10%);
-		color: @greenDark;
+		background-color: lighten(green, 10%);
+		color: darkGreen;
 		border: none;
 	}
 
 	&.info {
-		background-color: lighten(@azure, 10%);
-		color: @cyanDark;
+		background-color: lighten(cyan, 10%);
+		color: darkCyan;
 		border: none;
 	}
 
 
 	&.error {
-		background-color: lighten(@red, 10%);
-		color: @redDark;
+		background-color: lighten(red, 10%);
+		color: darkRed;
 		border: none;
-	}
-}
-
-.rf_param_amplifier{
-
-	.statusIcon{
-
-		p{
-			.typo.content;
-			line-height: 50px;
-		}
 	}
 }
 
@@ -123,7 +112,7 @@
 	padding: 7px;
 
 	&.error {
-		background: @red;
-		color: @blackLighten90;
+		background: red;
+		color: lightGrey;
 	}
 }

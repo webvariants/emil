@@ -44,7 +44,7 @@
     }
 
     .ui-datepicker-header{
-        background: @blueDark;
+        background: darkBlue;
         border: none;
         height: 23px;
         overflow: hidden;
@@ -69,7 +69,7 @@
             padding-top: 6px;
 
             .ui-datepicker-month, .ui-datepicker-year {
-                color: @white;
+                color: white;
                 font-weight: bold;
                 font-size: 12px;
             }
@@ -78,7 +78,7 @@
         .ui-datepicker-next {
 
             span {
-                background-color: @grey15;
+                background-color: grey;
                 background-position: 0 -2324px;
             }
         }
@@ -87,19 +87,19 @@
 
             span {
                 background-position: 0 -2300px;
-                background-color: @grey15;
+                background-color: grey;
             }
         }
     }
 
     table.ui-datepicker-calendar{
         border-collapse: collapse;
-        border-color: @white;
+        border-color: white;
         border-width: 0 1px 1px;
         font-size: 11px;
 
         td {
-            border: 1px solid @white;
+            border: 1px solid white;
         }
 
         thead{
@@ -108,7 +108,7 @@
                 padding: 0px;
 
                 span{
-                    color: @black;
+                    color: black;
                     font-weight: bold;
                     height: 23px;
                 }
@@ -119,28 +119,28 @@
             td{
 
                 a.ui-state-default{
-                    background: @grey15;
-                    color: @black;
+                    background: grey;
+                    color: black;
                     height: 23px;
                     width: 23px;
 
                     &.ui-state-hover{
-                        color: @grey100;
-                        border: @blueDark solid 2px;
-                        background: @grey15;
+                        color: black;
+                        border: darkBlue solid 2px;
+                        background: grey;
                         padding: 2px;
                     }
                 }
             }
 
             td.ui-datepicker-week-end a{
-                background: @grey10;
-                color: @grey80;
+                background: lightGrey;
+                color: darkGrey;
             }
 
             td.ui-datepicker-current-day a{
-                background: @blueDark;
-                color: @white;
+                background: darkBlue;
+                color: white;
             }
         }
     }
@@ -166,14 +166,12 @@
 }
 
 .inputs{
-
     &.date{
+        .ion-inputfieldContainer {
+            width: 130px;
 
-        .ion-inputfieldContainer{
-            width: 130px!important;
-
-            .calendar{
-                right: 37px!important;
+            .calendar {
+                right: 37px;
             }
         }
     }
