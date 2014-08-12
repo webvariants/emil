@@ -3,9 +3,7 @@ module.exports = function(grunt) {
   grunt.config.merge({
     watch: {
       files: [
-        '<%= pkg.project.directories.src %>**/src/**/*',
-        '<%= pkg.project.directories.src %>client/*',
-        '<%= pkg.project.directories.src %>client/components/**/*',
+        '<%= pkg.project.directories.src %>',
       ],
       tasks: ['build'],
       options: {
@@ -14,28 +12,18 @@ module.exports = function(grunt) {
     },
 
     clean: {
-      build: ['<%= pkg.project.directories.bin %>']
+      build: ['<%= pkg.project.directories.bin %>/*']
     },
 
-    copy: {
-      client: {
-        files: [{
-          expand: true,
-          cwd: '<%= pkg.project.directories.src %>client/bin/',
-          src: ['**'],
-          dest: '<%= pkg.project.directories.bin %>client/'
-        }]
-      },
-      udo: {
-        src: '<%= pkg.project.directories.src %>udo/bin/udo.js',
-        dest: '<%= pkg.project.directories.bin %>client/udo.js'
-      }
-    },
-
-    externalcomponents: {
+    less: {
       build: {
         options: {
-          cmd: 'build'
+          ieCompat: true,
+          relativeUrls: false,
+          paths: ['<%= pkg.project.directories.src %>']
+        },
+        files: {
+          '<%= pkg.project.directories.bin %>emil.css': '<%= pkg.project.directories.src %>/emil.less' 
         }
       }
     }
@@ -58,23 +46,8 @@ module.exports = function(grunt) {
     });
   };
 
-  grunt.registerMultiTask('externalcomponents', '', function () {
-    var terminate = this.async();
-    var cmd = this.options().cmd;
-    var j = 0;
-    var done = function () {
-      j--;
-      if (j === 0) terminate();
-    };
-    var components = grunt.config('pkg.project.components');
-    for (var c in components) {
-      j++;
-      gruntRemote(cmd, components[c], done);
-    }
-  });
-
   grunt.registerTask('build', '', [
       'clean:build',
-      'externalcomponents:build',
+      'less:build'
   ]);
 };
