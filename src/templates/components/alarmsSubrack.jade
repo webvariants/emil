@@ -1,0 +1,115 @@
+include icon
+
+mixin subrackContainer
+	div.subrackContainer
+		div.content
+			block
+
+mixin leftSubrackBox
+	div.leftSubrackBox
+		div.title
+			h3.typo.detailTabsContent Subrack 1
+			+icon({type: 'subrack'})
+		block
+
+mixin rightSubrackBox
+	div.rightSubrackBox
+		block
+
+mixin alarmDiagram
+	div.alarmDiagram
+		div.alarm
+			span.line.critical
+			span.typo.alarmCount 24
+		div.alarm
+			span.line.warning
+			span.typo.alarmCount 24
+		div.alarm
+			span.line.minor
+			span.typo.alarmCount 24
+		div.alarm
+			span.line.information
+			span.typo.alarmCount 24
+	block
+
+mixin pieDiagram
+	div.pieDiagram
+		span.count.typo.serviceTableHeader.lineHeight120 123
+		span.typo.serviceTableContent.lineHeight120 Alarms
+
+mixin subrack(id)
+	div.subrackBox
+		p.typo.detailTabsContent.subrackOpenButton(data-key="#{id}") open Detail
+		div.subrackImage
+			img(src='img/devices/flatDevices/subrack_flat.svg')
+			div.deviceImage1.deviceImage.selected(data-type="1")
+				div.alarmMarker.critical
+				img(src='img/devices/flatDevices/IFC_Webserver.svg')
+			div.deviceImage2.deviceImage(data-type="2")
+				div.alarmMarker.critical
+				img(src='img/devices/flatDevices/IFC_Webserver.svg')
+
+
+mixin alarmDescription
+	div.subrackDescription.typo.description
+		div.subrackDesc.subrackDescOpen(data-type="1")
+			div.descHeader
+				h3 iPoi UMTS
+				p information
+			div.descText
+				p.typo Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+			div.descFooter
+				div.descType
+					span Device
+				div.descPager
+					+icon({type: 'prev end'})
+					span.pageCounter 1/2
+					+icon({type: 'next'})
+				div.descTime
+					span 25min ago
+		div.subrackDesc(data-type="2")
+			div.descHeader
+				h3 iPoi LTE
+				p information
+			div.descText
+				p.typo Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+			div.descFooter
+				div.descType
+					span Service
+				div.descPager
+					+icon({type: 'prev'})
+					span.pageCounter 2/2
+					+icon({type: 'next end'})
+				div.descTime
+					span 45min ago
+
+mixin subrackContainerOnlyDevice
+	div.subrackContainer.onlyDevice
+		h3.typo.detailTabsContent Subrack 1
+		div.subrackImage
+			img(src='img/devices/flatDevices/subrack_flat.svg')
+			div.deviceImage.selected
+				div.alarmMarker.critical
+				img(src='img/devices/flatDevices/IFC_Webserver.svg')
+
+
+mixin subrackContainerOnlyDeviceLade
+	div.subrackContainer.onlyDevice.Lade
+		h3.typo.detailTabsContent Subrack 1
+		div.subrackImage
+			img(src='img/devices/flatDevices/subrack_flat.svg')
+			div.deviceImage.selected
+				div.alarmMarker.critical
+				img(src='img/devices/flatDevices/IFC_Webserver.svg')
+			div.deviceImage
+				div.alarmMarker.critical
+				img(src='img/devices/flatDevices/IFC_Webserver.svg')
+			div.deviceImage
+				div.alarmMarker.critical
+				img(src='img/devices/flatDevices/IFC_Webserver.svg')
+
+mixin device
+	div.deviceBox
+			div.deviceImage.selected
+				div.alarmMarker.critical
+				img(src='img/devices/flatDevices/IFC_Webserver.svg')

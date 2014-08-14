@@ -11,7 +11,6 @@
 .col-11 { min-width: percentage((11/ @grid-columns)); }
 .col-12 { min-width: 100%;}
 
-
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
 	//width: auto;
 	padding-left:  6px;
@@ -25,34 +24,9 @@
 		padding-right: 0px; /* last col */ 
 	}
 
-	/* remove padding from childs */
+	/* remove padding from children */
 	& .basic_widget.col-1, & .basic_widget.col-2, & .basic_widget.col-3, & .basic_widget.col-4, & .basic_widget.col-5, & .basic_widget.col-6, & .basic_widget.col-7, & .basic_widget.col-8, & .basic_widget.col-9, & .basic_widget.col-10, & .basic_widget.col-11, & .basic_widget.col-12 {
 		padding-left: 0px;
 		padding-right: 0px;
-	}
-	
-	@media (max-width: @screen-small) {
-		//background-color: #F00;
-		width: 100%;
-		padding-left: 0px;
-		padding-right: 0px;
-		min-width: 0;
-
-		+ .col-1, + .col-2, + .col-3, + .col-4, + .col-5, + .col-6, + .col-7, + .col-8, + .col-9, + .col-10, + .col-11, + .col-12 {
-			margin-top: 12px;
-		}
-	}
-
-	@media (min-width: @screen-tablet) AND (max-width: @screen-desktop) {
-		//width: auto;
-		width: 100%;
-		padding-left: 0px;
-		padding-right: 0px;
-		//background-color: #0F0;
-	}
-
-	@media (min-width: @screen-desktop) {
-		//width: auto;
-		//background-color: #00F;
 	}
 }

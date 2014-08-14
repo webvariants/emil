@@ -1,0 +1,14 @@
+mixin form_ip(name, value, disabled)
+	div.ip(id=name, class="#{disabled ? 'disabled' : ''}")
+		- vals =value.split('.')
+		//- input.ip(type='text', name='#{M.name}', size='15', value='#{M.address}')
+		- for (i = 0; i<4; i++) {
+			- if (disabled)
+				input(name=name+'[#{i}]',value=vals[i], size=3, maxlength=3, disabled=true, id="#{i}")
+			- if (!disabled)
+				input(name=name+'[#{i}]',value=vals[i], size=3, maxlength=3, id="#{i}")
+			- if (i<3) {
+				span
+					|.
+			-}
+		- }

@@ -1,0 +1,19 @@
+//- Options
+        label     => String containing the text to show in the label
+        id        => Element id
+        classes   => Element classes
+        translate => translate label true/false
+        value     => value next to label
+
+mixin label(options)
+    - options              = options              || {};
+    - options['label']     = options.label        || '';
+    - options['id']        = options.id           || '';
+    - options['classes']   = options.classes      || '';
+    - options['value']     = options.value        || '';
+    - options['translate'] = options.translate    || false;
+
+    span.ion-label(class=options.classes, id=options.id)
+        span.labelText #{!options.translate ? 'translate:' : ''}#{options.label}
+            if options.value != ''
+                span.labelValue #{options.value}

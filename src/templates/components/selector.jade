@@ -1,0 +1,27 @@
+mixin roomSelector
+	div.selector
+		h2.typo.detailTabsContent Room
+		div.selectorBox
+			+icon({type: 'prev'})
+			div.selectorContainer
+				div.selected(data-type="1")
+					span.typo.selector Room 1
+				div(data-type="2")
+					span.typo.selector Room 2
+				div(data-type="3")
+					span.typo.selector Room 3
+			+icon({type: 'next'})
+
+mixin rackSelector
+	div.selector
+		h2.typo.detailTabsContent Room
+		div.selectorBox
+			+icon({type: 'prev'})
+			div.selectorContainer
+				div(data-type="1")
+					span.typo.selector Rack 1
+				div.selected(data-type="2")
+					span.typo.selector Rack 2
+				div(data-type="3")
+					span.typo.selector Rack 3
+			+icon({type: 'next'})

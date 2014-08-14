@@ -1,0 +1,12 @@
+include button
+include icon
+
+mixin accordionSection(options)
+	- options['class']     = options.class     || '';
+	div.accordionSection(class='#{options.class}')
+		div.accordionHeader
+			h2=options.class
+			+button({classes: 'accordionToggler', id:''})
+				+icon({type: 'accordionTogglerIcon'})
+		div.accordionContent
+			block
