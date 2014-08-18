@@ -1,0 +1,65 @@
+include components/master-detail/master-detail
+
+doctype
+html.no-js
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='emil.css')
+  body
+    +master-detail
+        +master
+            //- Add your site or application content here
+            h1 EMIL
+            h3 Emil is an Extended Mixin library in Less
+            p EMIL is heavily based on Bootstrap. The aim of EMIL is to provide an extended set of Front-End Components based on Bootstrap.
+            .toc // Todo Mixin
+                ul 
+                    li Components
+                        ul
+                            li Buttons
+                                ul
+                                    li Wait Loader Buttons
+                                    li Icon Button
+                                    li Simple Button
+                                    li Button Bar
+                            li Dropdowns
+                                ul
+                                    li Navigation Dropdowns
+                            li Table View
+                                ul 
+                                    li Table Cells
+                                    li Navigation Table Cells
+                                    li Progress in Cells
+                                    li Expandable Table Cells
+                                    li Table Section Header
+                            li Gallery
+                                ul
+                                    li Thumbnails
+                                    li Gallery (UDO required)
+                                    li 
+
+                            li Slider
+                                ul
+                                    li Simple Slider
+                                    li Multiple Handles
+                                    li Threshold Slider
+                                    li Stepped Slider
+                                    li 
+                            li Sidebar
+                                ul
+                                    li 
+                                    li Mobile
+                                    li 
+        +detail
+    <!--[if lt IE 8]>
+    p.browsehappy
+      | You are using an <strong>outdated</strong> browser.
+      | Please <a href="http://browsehappy.com/">upgrade your browser</a>
+      | to improve your experience.
+    <![endif]-->
+
+    
