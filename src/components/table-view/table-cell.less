@@ -1,0 +1,81 @@
+
+.table-cell {
+    .list-group-item;
+    .typo.table-cell;
+    .transition(0.1s, ease-in-out, all);
+    background-color: transparent;
+    border-bottom: 1px solid @table-cell-border-color;
+    position: relative;
+    padding: 13px 15px;
+    height: 60px;
+    cursor: pointer;
+    overflow: hidden;
+    
+    &:hover,
+    &.selected {
+        .cyanLighten70;
+    }
+
+    &:active {
+        .cyanLighten40;
+        .scale(0.98);
+    }
+}
+
+.nav-table-cell {
+    .table-cell;
+    .typo.nav-table-cell;
+    border: none;
+    
+    .title {
+        .no-user-selection;
+    }
+
+    &:hover, &.selected {
+        background-color: @table-cell-hover-color;
+    }
+
+    &:active {
+        background-color: @table-cell-active-color;
+    }
+
+    .icon {
+        z-index: 1;
+        float: left;
+        margin: 10px 25px 10px 10px;
+    }
+
+    .title, .percentage {
+        z-index: 1;
+        display: block;
+        height: 40px;
+        line-height: 39px;
+        color: lightGrey;
+    }
+
+    .emil-label {
+        float: left;
+        color: @nav-table-cell-typo-color;
+    }
+
+    .percentage {
+        opacity: 0.65;
+        margin-right: 12px;
+        float: right;
+        color: white;
+        z-index: 1;
+    }
+
+    .loader {
+        .diagonal-lines-pattern (grey, 20px, 25%);
+        .transition;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 66%;
+        opacity: 0.15;
+        z-index: -1;
+    }
+}

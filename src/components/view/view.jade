@@ -1,0 +1,16 @@
+mixin view
+    .view
+        block
+
+mixin app-view(options)
+    - options = options || {};
+    body.app-view
+        block
+
+mixin view-header
+    .view-header
+        block
+
+mixin view-content
+    .view-content
+        block

@@ -1,0 +1,330 @@
+/* topdoc
+  application: ION-U web application
+  copyright: Copyright (c) 2013, CommScope/webvariants
+  author: Steven David <steven.david@webvariants.de>, Christian Sonderfeld <christian.sonderfeld@webvaraints.de>
+  name: Colors
+  description: A list of all color.
+  example: Link to an example on sites like Codepen.io or jsfiddle.net
+  tags: styleguide, colors
+*/
+
+@cyanDark: #043751;
+
+// Styleguide Colors
+@red                     : #F96A66;
+@redDark                 : #731717;
+@orange                  : #FFB648;
+@orangeDark              : #824100;
+@yellow                  : #FEDE79;
+@yellowDark              : #6F5300;
+@green                   : #6DC77B;
+@greenDark               : #325237;
+@azure                   : #99E5FF;
+@cyan                    : #0099D7;
+@cyanLight               : #50D2FF;
+@blue                    : #004993;
+@blueDark                : #003162;
+
+// Black & White
+@black                   : #000000;
+@grey100                 : #242424;
+@grey80                  : #4C4C4C;
+@grey70                  : #777777;
+@grey67                  : #909090;
+@grey60                  : #A7A7A7;
+@grey53                  : #999999;
+@grey40                  : #A7A7A7;
+@grey30                  : #CCCCCC;
+@grey15                  : #DFDFDF;
+@grey12                  : #EBEBEB;
+@grey10                  : #F1F1F1;
+@grey5                   : #F7F7F7;
+@white                   : #FFFFFF;
+
+// Contrast Colors
+@contrastColor1          : #000433;
+@contrastColor2          : #4A4E70;
+
+// Slider Range, Measurement Bar
+@sliderBorderRed         : #CF2929;
+@sliderBgRed             : #E47A7A;
+@sliderRangeGreen        : #6EA355;
+@sliderBorderBlue        : #003D58;
+@sliderBgBlue            : #26AFE8;
+@sliderBgDarkBlue        : #17698B;
+@sliderDarkGreen         : #6F5300;
+
+// Dialogs
+@progressBlue            : #09C;
+
+// Commisioning
+@successGreen            : #6C0;
+
+// Mobile
+@errorRed                : #F00;
+@emBlue                  : #036;
+@headlineGrey            : #7F7F7F;
+
+// Alarm Types
+@criticalRed             : #D94040;
+@criticalFontRed         : #B12525;
+@majorOrange             : #E5790C;
+@majorFontOrange         : #E37406;
+@minorYellow             : #D8AD00;
+@minorFontYellow         : #D4AA00;
+@warningBlue             : #5DADFF;
+@warningFontBlue         : #4AA5FF;
+@scrollBarBG             : #787878;
+
+@color_font_input-normal : @blue;
+@color_font_input-empty  : @grey30;
+
+// Gradients
+.ion-btn-gradient-blue{ .gradient(@cyanLight, @cyan, @cyanLight); }
+.ion-btn-gradient-blue-active{ .gradient( lighten(@cyanLight, 4%), lighten(@cyan, 4%), lighten(@cyanLight, 4%)); }
+.ion-btn-gradient-grey{ .gradient(@grey40, @grey80, @grey40); }
+.ion-btn-gradient-grey-active{ .gradient(lighten(@grey40, 4%), lighten(@grey80, 4%), lighten(@grey40, 4%)); }
+.ion-submenu-gradient{ .gradient(@grey15, @grey15, @white); }
+.ion-login-input-addon-gradient{ .gradient(@white, @grey15, @white); }
+
+// Flat
+.ion-btn-flat-blue{ background: @sliderBgBlue; }
+.ion-btn-flat-blue-active{ background: @cyanLight; }
+.ion-btn-flat-grey{ background: @grey67; border-color: @grey70; }
+.ion-btn-flat-mainmenu-grey{ background: lighten(@grey80, 4%); }
+.ion-btn-flat-mainmenu-grey-active{ background: @grey67; }
+.ion-btn-flat-grey-active { background: @grey40; border-color: lighten(@grey70, 5%); }
+
+// Diagonal Lines Pattern
+.ion-diagonal-lines-pattern (@color1: #ccc, @size: 22px, @lighten: 5%) {
+  @color2: lighten(@color1, @lighten);
+  background-image: -webkit-gradient(linear, left bottom, right top, color-stop(0, @color1), color-stop(0.25, @color1), color-stop(0.25, @color2), color-stop(0.5, @color2), color-stop(0.5, @color1), color-stop(0.75, @color1), color-stop(0.75, @color2));
+  background-image: -webkit-linear-gradient(left bottom, @color1 0%, @color1 25%, @color2 25%, @color2 50%, @color1 50%, @color1 75%, @color2 75%);
+  background-image: -moz-linear-gradient(left bottom, @color1 0%, @color1 25%, @color2 25%, @color2 50%, @color1 50%, @color1 75%, @color2 75%);
+  background-image: -ms-linear-gradient(left bottom, @color1 0%, @color1 25%, @color2 25%, @color2 50%, @color1 50%, @color1 75%, @color2 75%);
+  background-image: -o-linear-gradient(left bottom, @color1 0%, @color1 25%, @color2 25%, @color2 50%, @color1 50%, @color1 75%, @color2 75%);
+  filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='@{color1}', endColorstr='@{color2}',GradientType=0 )"; /* IE6-8 */
+  background-image: linear-gradient(left bottom, @color1 0%, @color1 25%, @color2 25%, @color2 50%, @color1 50%, @color1 75%, @color2 75%);
+  background-size: @size @size;
+}
+
+/* New Colors */
+@cyan: #043751;
+@cyanLighten10: lighten(@cyan, 10%);
+@cyanLighten20: lighten(@cyan, 20%);
+@cyanLighten30: lighten(@cyan, 30%);
+@cyanLighten40: lighten(@cyan, 40%);
+@cyanLighten50: lighten(@cyan, 50%);
+@cyanLighten60: lighten(@cyan, 60%);
+@cyanLighten70: lighten(@cyan, 70%);
+@cyanLighten80: lighten(@cyan, 80%);
+
+@cyanLightTransparent: rgba(4, 55, 81, 0.25);
+
+@green: #83BC12;
+@greenLighten10: lighten(@green, 10%);
+@greenLighten20: lighten(@green, 20%);
+
+@yellow: #FFF200;
+@yellowLighten20: lighten(@yellow, 20%);
+@yellowLighten30: lighten(@yellow, 30%);
+@yellowDarken20: darken(@yellow, 20%);
+@yellowDarken30: darken(@yellow, 30%);
+
+@red: #B30928;
+@redLighten10: lighten(@red, 10%);
+@redLighten20: lighten(@red, 20%);
+@redLighten30: lighten(@red, 30%);
+@redLighten40: lighten(@red, 40%);
+@redLighten50: lighten(@red, 50%);
+@redDarken10: darken(@red, 10%);
+@redDarken20: darken(@red, 20%);
+@redTransparent: rgba(179, 9, 40, 0.3);
+
+@orange: #E5790C;
+@orangeLighten10: lighten(@orange, 10%);
+@orangeLighten20: lighten(@orange, 20%);
+@orangeDarken10: darken(@orange, 10%);
+@orangeDarken20: darken(@orange, 20%);
+
+@black: #000000;
+@blackLighten10: lighten(@black, 10%);
+@blackLighten20: lighten(@black, 20%);
+@blackLighten30: lighten(@black, 30%);
+@blackLighten40: lighten(@black, 40%);
+@blackLighten50: lighten(@black, 50%);
+@blackLighten60: lighten(@black, 60%);
+@blackLighten70: lighten(@black, 70%);
+@blackLighten80: lighten(@black, 80%);
+@blackLighten90: lighten(@black, 90%);
+
+
+.colorExample {
+  background: #FAFAFA;
+  height: 50px;
+  margin: 0 0 10px 0;
+}
+
+.red {
+  background: @red;
+}
+
+.redLighten10 {
+  background: @redLighten10;
+}
+
+.redLighten20 {
+  background: @redLighten20;
+}
+
+.redLighten30 {
+  background: @redLighten30;
+}
+
+.redLighten40 {
+  background: @redLighten40;
+}
+
+.redLighten50 {
+  background: @redLighten50;
+}
+
+.orange {
+  background: @orange;
+}
+.orangeLighten10 {
+  background: @orangeLighten10;
+}
+.orangeLighten20 {
+  background: @orangeLighten20;
+}
+.green {
+  background: @green;
+}
+
+.greenLighten10 {
+  background: @greenLighten10;
+}
+
+.greenLighten20 {
+  background: @greenLighten20;
+}
+
+.cyan {
+  background: @cyan;
+}
+
+.cyanLighten10 {
+  background: @cyanLighten10;
+}
+
+.cyanLighten20 {
+  background: @cyanLighten20;
+}
+
+.cyanLighten30 {
+  background: @cyanLighten30;
+}
+
+.cyanLighten40 {
+  background: @cyanLighten40;
+}
+
+.cyanLighten60 {
+  background: @cyanLighten60;
+}
+
+.cyanLighten70 {
+  background: @cyanLighten70;
+}
+
+.cyanLighten80 {
+  background: @cyanLighten80;
+}
+
+.yellow {
+  background: @yellow;
+}
+
+.yellowLighten20 {
+  background: @yellowLighten20;
+}
+
+.yellowLighten30 {
+  background: @yellowLighten30;
+}
+
+.black {
+  background: @black;
+}
+
+.blackLighten10 {
+  background: @blackLighten10;
+}
+
+.blackLighten20 {
+  background: @blackLighten20;
+}
+
+.blackLighten30 {
+  background: @blackLighten30;
+}
+
+.blackLighten40 {
+  background: @blackLighten40;
+}
+
+.blackLighten50 {
+  background: @blackLighten50;
+}
+
+.blackLighten60 {
+  background: @blackLighten60;
+}
+
+.blackLighten70 {
+  background: @blackLighten70;
+}
+
+.blackLighten80 {
+  background: @blackLighten80;
+}
+
+.blackLighten90 {
+  background: @blackLighten90;
+}
+
+
+
+.critical {
+  .redLighten20;
+}
+.minor {
+  .yellowLighten20;
+}
+.information {
+  .orangeLighten10;
+}
+.warning {
+  .cyanLighten30;
+}
+
+// General
+@emil-border-color: @blackLighten90;
+@emil-bg: @cyan;
+
+// App View
+@app-bg-color: @emil-bg;
+@app-border-color: @emil-border-color;
+
+// View
+@view-border-color: @emil-border-color;
+
+// Master / Detail
+@master-detail-bg: white;
+
+// Table View
+@table-cell-border-color: @emil-border-color;
+@table-cell-hover-color: rgba(255, 255, 255, 0.15);
+@table-cell-active-color: rgba(255, 255, 255, 0.2);
+@nav-table-cell-typo-color: @blackLighten90;

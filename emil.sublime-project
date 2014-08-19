@@ -1,0 +1,34 @@
+{
+	"folders":
+	[
+		{
+			"path": "src/components",
+			"name": "Components"
+		},
+		{
+			"path": "src/template",
+			"name": "Template"
+		},
+		{
+			"path": "vendor",
+			"name": "Vendor"
+		},
+		{
+			"path": ".",
+			"name": "Project"
+		}
+	],
+
+	"settings": {
+		"xdebug": {
+			"path_mapping": {
+				"." : "/"
+			},
+			"super_globals": true,
+			"close_on_stop": false,
+			"break_on_exception": true,
+			"break_on_start": true,
+			"debug": true
+		}
+	}
+}

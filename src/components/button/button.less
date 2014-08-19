@@ -1,0 +1,40 @@
+.button {
+    cursor: pointer;
+    font-size: 11px;
+    line-height: 16px;
+    overflow: hidden;
+    padding: 4px 12px;
+    position: relative;
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.15);
+    .clearfix;
+
+    .icon {
+        float: left;
+        margin: 0 10px 0 0;
+    }
+
+    &.big {
+        float: left;
+        padding: 4px 0;
+        width: 20px;
+    }
+
+    &.simple-button {
+        font-weight: normal;
+        .clearfix;
+    }
+
+    &.icon-button {
+        padding: 4px;
+        width: 60px;
+
+        .icon {
+            margin: 3px 10px 3px 3px;
+        }
+
+        .text {
+            color: white;
+            text-shadow: none;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+//- @TODO rewrite in topdoc syntax
+//- Options:
+    label      : caption - will be translated
+    icon       : Icon Class (from icons.less (.icon)) - will be passed to __buttonIconLabel Mixin
+    classes    : several css classes like grey, loginBtn etc.
+    selected   : Define Selected State
+    dataTarget : data-target attribute for target handling
+    dataLang   : data-lang attribute for language handling
+    dataIndex  : data-index attribute for indexing
+    dataHelp   : data-help attribute to handle help Button event
+    dataEvent  : data-event attribute to handle trigger event
+    loader     : true, to enable loading animation
+
+mixin button(options)
+    //- Set default values
+    - options['classes']     = options.classes     || '';
+    - options['id']          = options.id          || '';
+    - options['title']       = options.title       || '';
+    - options['data']        = options.data        || '';
+    - options['disabled']    = options.disabled    || false;
+    - options.data['type']   = options.data.type   || '';
+    - options.data['target'] = options.data.target || '';
+    - options.data['event']  = options.data.event  || '';
+    - options.data['help']   = options.data.help   || '';
+    - options.data['lang']   = options.data.lang   || '';
+    - options.data['index']  = options.data.index  || '';
+    - options.data['state']  = options.data.state  || '';
+    - options.data['id']     = options.data.id     || '';
+
+    - if (options.disabled) options.classes =+ ' disabled ';
+
+    //- Markup
+    .button(class=options.classes, id=options.id, data-type=options.data.type, data-target= options.data.target, data-event=options.data.event, data-help=options.data.help, data-lang=options.data.lang, data-index=options.data.index, data-state=options.data.state, data-id=options.data.id)
+        block
+
+mixin button-loader
+    span.button-loader
+
+mixin button-group(options)
+    - options['data']         = options.data || []
+    - options['selectedData'] = options.selectedData || []
+    - options['buttons']      = options.buttons || []
+    - options['classes']      = options.classes || ''
+    - if(options.buttons.length > 0 && options.classes.indexOf('justified') < 0) options.classes = options.classes + ' btn-group-justified'
+    .button-group
+        div(class='btn-group btn-group-#{options.size} #{options.classes}')
+            block

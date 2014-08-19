@@ -1,0 +1,15 @@
+
+mixin table-cell(options)
+    //- Set default values
+    - options             = options          || {};
+    - options['classes'] = options.classes || '';
+
+    li.table-cell(data-id=options.dataID, class=options.classes)
+
+mixin nav-table-cell
+    //- Set default values
+    - options             = options          || {};
+    - options['classes'] = options.classes || '';
+
+    li.nav-table-cell.table-cell(class=options.classes)
+        block
