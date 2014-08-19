@@ -1,11 +1,15 @@
-
-mixin master
-    .master
+mixin master(options)
+    - options = options || {};
+    - options['columns'] = options.columns || 3;
+    .master(class='col-md-#{options.columns}')
         block
 
-mixin detail
-    .detail
+mixin detail(options)
+    - options = options || {};
+    - options['columns'] = options.columns || 9;
+    .detail(class='col-md-#{options.columns}')
         block
 
-mixin master-detail (options)
+mixin master-detail
     .master-detail
+        block

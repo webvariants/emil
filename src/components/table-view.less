@@ -1,20 +1,22 @@
-.tableView {
+.table-view {
 	width: 100%;
 	height: auto;
 }
 
-.tableCell {
+.table-cell {
+	.no-user-selection;
+	.transition(0.1s, ease-in-out, all);
 	background: white;
 	border-bottom: 1px solid lightGrey;
 	position: relative;
-	.transition(0.1s, ease-in-out, all);
 	width: 100%;
-	height: auto;
+	height: 60px;
 	cursor: pointer;
 	padding: 5px 10px;
 	overflow: hidden;
 
 	.title {
+		.no-user-selection;
 		color: darkGrey;
 	}
 
@@ -28,7 +30,7 @@
 	}
 }
 
-.navigationTableCell {
+.nav-table-cell{
 	.title {
 		.no-select;
 	}

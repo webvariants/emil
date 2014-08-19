@@ -35,6 +35,9 @@ module.exports = function(grunt) {
     },
 
     jade: {
+      options: {
+        pretty: true
+      },
       build: {
         options: {
           client: false,
@@ -45,12 +48,19 @@ module.exports = function(grunt) {
           expand: true,
           dest: '<%= pkg.project.directories.bin %>',
           cwd: '<%= pkg.project.directories.src %>',
-          src: ['**/*.jade'],
+          src: ['demo.jade'],
           ext: '.html'
         }]
       }
     },
-
+    copy: {
+      build: {
+        expand: true,
+        cwd: '<%= pkg.project.directories.src %>/font',
+        src: [ '**/*' ],
+        dest: '<%= pkg.project.directories.bin %>/font/'
+      }
+    },
     concat: {
       build: {
         src: '<%= pkg.project.directories.bin %>/templates/components/*.html',
@@ -78,6 +88,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', '', [
       'clean:build',
       'less:build',
-      'jade:build'
+      'jade:build',
+      'copy:build'
   ]);
 };

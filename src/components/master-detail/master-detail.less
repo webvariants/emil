@@ -1,26 +1,33 @@
-
 .master-detail {
-	height: 100%;
 	.clearfix;
+	height: 100%;
 	-ms-overflow-style: -ms-autohiding-scrollbar; //MAKE SCROLLBARS ON IE HALFTRANSPARENT
-
+	position: relative;
+	background-color: @master-detail-bg;
+	
 	.master {
-		border-right: 1px solid lightGrey;
-		float: left;
+		.transition(0.2s);
 		height: 100%;
-		overflow-y: auto;
-		width: 240px;
+		overflow-y: scroll;
+		background-color: @app-bg-color;
+		padding-right: 0;
+		padding-left: 0;
+		
+		&.open {
+			
+		}
+		&.closed {
+			width: 60px;
+		}
 	}
 
 	.detail {
-		float: left;
+		.box-shadow(-1px 0 2px rgba(0,0,0,.35));
+		padding: 10px;
 		height: 100%;
-		overflow-y: auto;
-		position: relative;
-		width: 480px;
-
-		.container {
-			height: 100%;
+		overflow-y: scroll;
+		
+		.detail-content {
 		}
 	}
 }

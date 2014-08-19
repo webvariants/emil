@@ -1,9 +1,0 @@
-mixin anchor(module, template, content)
-	- var uid = ion.viewHelper.anchor++;
-	- ion.viewHelper.addAnchor({uid: uid, module: module, template: template, content: content});
-	if (module == 'commissioning')
-		- var addclass = true
-	else
-		- var addclass = false
-	div(data-anchor="#{uid}", class=' #{addclass ? "helper2":""}')
-		
