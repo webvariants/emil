@@ -33,7 +33,26 @@ module.exports = function(grunt) {
         }
       }
     },
-
+    svgmin: {
+      build: {
+        files: [{
+          expand: true,
+          cwd: '<%= pkg.project.directories.src %>/icons',
+          src: ['*.svg'],
+          dest: '<%= pkg.project.directories.bin %>/icons'
+        }]
+      }
+    },
+    grunticon: {
+      build: {
+        files: [{
+          expand: true,
+          cwd: '<%= pkg.project.directories.bin %>/icons',
+          src: ['*.svg'],
+          dest: '<%= pkg.project.directories.bin %>/icons'
+        }]
+      }
+    },
     jade: {
       options: {
         pretty: true
@@ -59,6 +78,12 @@ module.exports = function(grunt) {
         cwd: '<%= pkg.project.directories.src %>/font',
         src: [ '**/*' ],
         dest: '<%= pkg.project.directories.bin %>/font/'
+      },
+      glyphicon: {
+        expand: true,
+        cwd: '<%= pkg.project.directories.vendor %>/bootstrap/fonts',
+        src: [ '**' ],
+        dest: '<%= pkg.project.directories.bin %>/font'
       }
     },
     concat: {
@@ -88,7 +113,10 @@ module.exports = function(grunt) {
   grunt.registerTask('build', '', [
       'clean:build',
       'less:build',
+      'svgmin:build',
+      'grunticon:build',
       'jade:build',
-      'copy:build'
+      'copy:build',
+      'copy:glyphicon'
   ]);
 };

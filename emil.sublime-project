@@ -2,12 +2,16 @@
 	"folders":
 	[
 		{
+			"path": "src",
+			"name": "Source"
+		},
+		{
 			"path": "src/components",
 			"name": "Components"
 		},
 		{
 			"path": "src/template",
-			"name": "Template"
+			"name": "Templates"
 		},
 		{
 			"path": "vendor",
@@ -15,7 +19,7 @@
 		},
 		{
 			"path": ".",
-			"name": "Project"
+			"name": "Project Directory"
 		}
 	],
 

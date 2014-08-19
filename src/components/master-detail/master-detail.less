@@ -4,9 +4,10 @@
 	-ms-overflow-style: -ms-autohiding-scrollbar; //MAKE SCROLLBARS ON IE HALFTRANSPARENT
 	position: relative;
 	background-color: @master-detail-bg;
-	
+
 	.master {
-		.transition(0.2s);
+		.no-user-selection;
+		.transition(0.1s);
 		height: 100%;
 		overflow-y: scroll;
 		background-color: @app-bg-color;
