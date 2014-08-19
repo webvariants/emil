@@ -2,6 +2,10 @@
 	"folders":
 	[
 		{
+			"path": ".",
+			"name": "Project Directory"
+		},
+		{
 			"path": "src",
 			"name": "Source"
 		},
@@ -16,10 +20,6 @@
 		{
 			"path": "vendor",
 			"name": "Vendor"
-		},
-		{
-			"path": ".",
-			"name": "Project Directory"
 		}
 	],
 

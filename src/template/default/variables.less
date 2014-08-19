@@ -1,6 +1,15 @@
+
+//== Webfont Handling
+// 
+//## Specify custom Location for your own webfonts. Please respect the Licenses of these webfonts at any time.
+// 
+//** Set custom font path 
 @font-path: 'font';
 
-// For Bootstrap Grid
+//== Grid Settings
+// 
+// Specify custom Grid size for the bootstrap Grid
+// 
 //** Number of columns in the grid.
 @grid-columns:              16;
 //** Padding between columns. Gets divided in half for the left and right.
@@ -14,10 +23,33 @@
 //== Iconography
 //
 //## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
-
+// 
 //** Load fonts from this directory.
 @icon-font-path:          "font/";
 //** File name for all font files.
 @icon-font-name:          "glyphicons-halflings-regular";
 //** Element ID within SVG icon file.
 @icon-font-svg-id:        "glyphicons_halflingsregular";
+
+
+//== Color Settings
+// 
+//## Set component colors.
+// 
+//** General
+@emil-border-color: @blackLighten90;
+@emil-bg: blue;
+//** App View
+@app-bg-color: @emil-bg;
+@app-border-color: @emil-border-color;
+//** View
+@view-border-color: @emil-border-color;
+//** Master / Detail
+@master-detail-bg: white;
+//** Table View
+@table-cell-border-color: @emil-border-color;
+@table-cell-hover-color: rgba(255, 255, 255, 0.15);
+@table-cell-active-color: rgba(255, 255, 255, 0.2);
+@nav-table-cell-typo-color: @blackLighten90;
+@nav-table-cell-icon-color: @nav-table-cell-typo-color;
+

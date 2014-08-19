@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 
   grunt.config.merge({
     watch: {
-      files: ['<%= pkg.project.directories.src %>/**/.less', '<%= pkg.project.directories.src %>/**/*.jade'],
+      files: ['<%= pkg.project.directories.src %>/**/*'],
       tasks: ['build'],
       options: {
         spawn: false,
@@ -11,8 +11,8 @@ module.exports = function(grunt) {
       },
       clear: {
         //clear terminal on any watch task. beauty.
-        files: ['<%= pkg.project.directories.src %>/*.less', '<%= pkg.project.directories.src %>/*.jade'],
-        tasks: ['build']
+        files: ['<%= pkg.project.directories.src %>/**/*'],
+        tasks: ['clear']
       }
     },
 
