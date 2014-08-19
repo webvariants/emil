@@ -6,7 +6,7 @@ include components/icon/icon
 include components/label/label
 
 doctype
-html.no-js
+html
     head
         meta(charset='utf-8')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
@@ -14,10 +14,15 @@ html.no-js
         meta(name='description', content='')
         meta(name='viewport', content='width=device-width, initial-scale=1')
         link(rel='stylesheet', href='emil.css')
+        script(type='text/javascript', src='icons/grunticon.loader.js')
     +app-view
         +master-detail
                 +master({columns: 3})
                     +table-view
+                        +nav-table-cell
+                            +icon({type: 'emil-icon'})
+                            +label({label: 'EMIL'})
+                        +nav-table-cell
                         +nav-table-cell
                             +icon({type: 'glyphicon glyphicon-th-large'})
                             +label({label: 'Buttons'})
