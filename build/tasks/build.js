@@ -49,7 +49,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: '<%= pkg.project.directories.bin %>/icons',
           src: ['*.svg'],
-          dest: '<%= pkg.project.directories.bin %>/icons'
+          dest: '<%= pkg.project.directories.bin %>/grunticon'
         }]
       }
     },

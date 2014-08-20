@@ -5,17 +5,18 @@ include components/table-view/table-cell
 include components/icon/icon
 include components/label/label
 
+
 doctype
 html
     head
         meta(charset='utf-8')
+        title Emil Demo Page
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
-        title
         meta(name='description', content='')
         meta(name='viewport', content='width=device-width, initial-scale=1')
         link(rel='stylesheet', href='emil.css')
-        link(rel='stylesheet', href='/icons/icons.data.svg.css')
-        script(type='text/javascript', src='icons/grunticon.loader.js')
+        link(rel='stylesheet', href='grunticon/icons.data.svg.css')
+        script(type='text/javascript', src='grunticon/grunticon.loader.js')
     +app-view
         +master-detail
                 +master({columns: 3})
