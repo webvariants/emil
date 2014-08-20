@@ -18,6 +18,10 @@
 			"name": "Templates"
 		},
 		{
+			"path": "build",
+			"name": "Build"
+		},
+		{
 			"path": "vendor",
 			"name": "Vendor"
 		}

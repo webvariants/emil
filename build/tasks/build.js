@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   grunt.config.merge({
     watch: {
       files: ['<%= pkg.project.directories.src %>/**/*'],
-      tasks: ['build'],
+      tasks: ['dev'],
       options: {
         spawn: false,
         interrupt: true,
@@ -15,26 +15,11 @@ module.exports = function(grunt) {
         tasks: ['clear']
       }
     },
-
     clean: {
-      build: ['<%= pkg.project.directories.bin %>/*'],
-      removeTemp: ['<%= pkg.project.directories.bin %>/templates']
-    },
-
-    less: {
-      build: {
-        options: {
-          ieCompat: true,
-          relativeUrls: false,
-          paths: ['<%= pkg.project.directories.src %>']
-        },
-        files: {
-          '<%= pkg.project.directories.bin %>emil.css': '<%= pkg.project.directories.src %>/emil.less' 
-        }
-      }
+      all: ['<%= pkg.project.directories.bin %>/*']
     },
     svgmin: {
-      build: {
+      icons: {
         files: [{
           expand: true,
           cwd: '<%= pkg.project.directories.src %>/icons',
@@ -44,7 +29,7 @@ module.exports = function(grunt) {
       }
     },
     grunticon: {
-      build: {
+      icons: {
         files: [{
           expand: true,
           cwd: '<%= pkg.project.directories.bin %>/icons',
@@ -53,43 +38,30 @@ module.exports = function(grunt) {
         }]
       }
     },
-    jade: {
-      options: {
-        pretty: true
-      },
-      build: {
-        options: {
-          client: false,
-          compileDebug: false,
-          debug: false
-        },
-        files: [{
-          expand: true,
-          dest: '<%= pkg.project.directories.bin %>',
-          cwd: '<%= pkg.project.directories.src %>',
-          src: ['demo.jade'],
-          ext: '.html'
-        }]
-      }
-    },
     copy: {
-      build: {
+      src: {
         expand: true,
-        cwd: '<%= pkg.project.directories.src %>/font',
-        src: [ '**/*' ],
-        dest: '<%= pkg.project.directories.bin %>/font/'
+        cwd: '<%= pkg.project.directories.src %>',
+        src: [ '**' ],
+        dest: '<%= pkg.project.directories.bin %>'
       },
       glyphicon: {
         expand: true,
         cwd: '<%= pkg.project.directories.vendor %>/bootstrap/fonts',
         src: [ '**' ],
         dest: '<%= pkg.project.directories.bin %>/font'
+      },
+      bootstrap: {
+        expand: true,
+        cwd: '<%= pkg.project.directories.vendor %>',
+        src: ['**/*'],
+        dest: '<%= pkg.project.directories.bin %>/vendor'
       }
     },
     concat: {
       build: {
-        src: '<%= pkg.project.directories.bin %>/templates/components/*.html',
-        dest: '<%= pkg.project.directories.bin %>/mixins.html'
+        src: '<%= pkg.project.directories.bin %>/templates/components/*.jade',
+        dest: '<%= pkg.project.directories.bin %>/mixins.jade'
       }
     }
   });
@@ -111,12 +83,11 @@ module.exports = function(grunt) {
   };
 
   grunt.registerTask('build', '', [
-      'clean:build',
-      'less:build',
-      'svgmin:build',
-      'grunticon:build',
-      'jade:build',
-      'copy:build',
-      'copy:glyphicon'
+      'clean:all',
+      'svgmin:icons',
+      'grunticon:icons',
+      'copy:src',
+      'copy:glyphicon',
+      'copy:bootstrap'
   ]);
 };
