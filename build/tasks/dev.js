@@ -1,18 +1,56 @@
 module.exports = function(grunt) {
 
   grunt.config.merge({
-
+    watch: {
+      files: ['<%= pkg.project.directories.src %>/**/*'],
+      tasks: ['dev'],
+      options: {
+        spawn: false,
+        interrupt: true,
+        livereload: true
+      },
+      clear: {
+        //clear terminal on any watch task. beauty.
+        files: ['<%= pkg.project.directories.src %>/**/*'],
+        tasks: ['clear']
+      }
+    },
     clean: {
       all: ['<%= pkg.project.directories.bin %>/*'],
-      vendor: ['<%= pkg.project.directories.src %>/vendor/*']
+      src: ['<%= pkg.project.directories.bin %>/src/*']
     },
-
+    copy: {
+      vendor: {
+        expand: true,
+        cwd: '<%= pkg.project.directories.vendor %>',
+        src: ['**/*'],
+        dest: '<%= pkg.project.directories.bin %>/src/vendor'
+      },
+      src: {
+        expand: true,
+        cwd: '<%= pkg.project.directories.src %>',
+        src: [ '**/*' ],
+        dest: '<%= pkg.project.directories.bin %>/src'
+      },
+      glyphicon: {
+        expand: true,
+        cwd: '<%= pkg.project.directories.vendor %>/bootstrap/fonts',
+        src: [ '**' ],
+        dest: '<%= pkg.project.directories.bin %>/font'
+      },
+      fonts: {
+        expand: true,
+        cwd: '<%= pkg.project.directories.src %>/font',
+        src: [ '**/*' ],
+        dest: '<%= pkg.project.directories.bin %>/font'
+      },
+    },
     less: {
       build: {
         options: {
           ieCompat: true,
           relativeUrls: false,
-          paths: ['<%= pkg.project.directories.src %>']
+          paths: ['<%= pkg.project.directories.bin %>/src']
         },
         files: {
           '<%= pkg.project.directories.bin %>emil.css': '<%= pkg.project.directories.src %>/emil.less' 
@@ -20,12 +58,12 @@ module.exports = function(grunt) {
       }
     },
     svgmin: {
-      build: {
+      dev: {
         files: [{
           expand: true,
-          cwd: '<%= pkg.project.directories.src %>/icons',
+          cwd: '<%= pkg.project.directories.bin %>/src/icons',
           src: ['*.svg'],
-          dest: '<%= pkg.project.directories.bin %>/icons'
+          dest: '<%= pkg.project.directories.bin %>/src/icons'
         }]
       }
     },
@@ -33,7 +71,7 @@ module.exports = function(grunt) {
       build: {
         files: [{
           expand: true,
-          cwd: '<%= pkg.project.directories.bin %>/icons',
+          cwd: '<%= pkg.project.directories.bin %>src/icons',
           src: ['*.svg'],
           dest: '<%= pkg.project.directories.bin %>/grunticon'
         }]
@@ -52,32 +90,13 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           dest: '<%= pkg.project.directories.bin %>',
-          cwd: '<%= pkg.project.directories.src %>',
+          cwd: '<%= pkg.project.directories.bin %>/src',
           src: ['demo.jade'],
           ext: '.html'
         }]
       }
     },
-    copy: {
-      vendor: {
-        expand: true,
-        cwd: '<%= pkg.project.directories.vendor %>',
-        src: ['**/*'],
-        dest: '<%= pkg.project.directories.src %>/vendor'
-      },
-      build: {
-        expand: true,
-        cwd: '<%= pkg.project.directories.src %>/font',
-        src: [ '**/*' ],
-        dest: '<%= pkg.project.directories.bin %>/font/'
-      },
-      glyphicon: {
-        expand: true,
-        cwd: '<%= pkg.project.directories.vendor %>/bootstrap/fonts',
-        src: [ '**' ],
-        dest: '<%= pkg.project.directories.bin %>/font'
-      }
-    },
+    
     concat: {
       build: {
         src: '<%= pkg.project.directories.bin %>/templates/components/*.html',
@@ -102,17 +121,17 @@ module.exports = function(grunt) {
     });
   };
 
-  grunt.registerTask('dev', 'default', [
+  grunt.registerTask('dev', '', [
       'clean:all',
-      'clean:vendor',
       'copy:vendor',
+      'copy:src',
+      'copy:fonts',
       'less:build',
-      'clean:vendor',
-      'svgmin:build',
+      'svgmin:dev',
       'grunticon:build',
       'jade:build',
-      'copy:build',
-      'copy:glyphicon'
+      'copy:glyphicon',
+      'clean:src'
   ]);
-  grunt.registerTask('default', ['dev']);
+  grunt.registerTask('default', ['dev', 'watch']);
 };

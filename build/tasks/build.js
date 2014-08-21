@@ -1,20 +1,6 @@
 module.exports = function(grunt) {
 
   grunt.config.merge({
-    watch: {
-      files: ['<%= pkg.project.directories.src %>/**/*'],
-      tasks: ['dev'],
-      options: {
-        spawn: false,
-        interrupt: true,
-        livereload: true
-      },
-      clear: {
-        //clear terminal on any watch task. beauty.
-        files: ['<%= pkg.project.directories.src %>/**/*'],
-        tasks: ['clear']
-      }
-    },
     clean: {
       all: ['<%= pkg.project.directories.bin %>/*']
     },
