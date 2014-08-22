@@ -44,6 +44,13 @@ module.exports = function(grunt) {
         src: [ '**/*' ],
         dest: '<%= pkg.project.directories.bin %>/font'
       },
+      jade: {
+        flatten: true,
+        expand: true,
+        cwd: '<%= pkg.project.directories.src %>/components',
+        src: ['**/*.jade'],
+        dest:' <%= pkg.project.directories.bin %>/mixins'
+      }
     },
     less: {
       build: {
@@ -90,8 +97,8 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           dest: '<%= pkg.project.directories.bin %>',
-          cwd: '<%= pkg.project.directories.bin %>/src',
-          src: ['demo.jade'],
+          cwd: '<%= pkg.project.directories.bin %>/mixins',
+          src: ['**/*.jade'],
           ext: '.html'
         }]
       }
