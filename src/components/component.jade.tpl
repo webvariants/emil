@@ -4,4 +4,3 @@ mixin component-name(options)
     - options['option2'] = options.option2 || NULL;
     .component-name
         block
-            block

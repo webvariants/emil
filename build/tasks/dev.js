@@ -49,8 +49,18 @@ module.exports = function(grunt) {
         expand: true,
         cwd: '<%= pkg.project.directories.src %>/components',
         src: ['**/*.jade'],
-        dest:' <%= pkg.project.directories.bin %>/mixins'
+        dest:'<%= pkg.project.directories.bin %>/mixins'
       }
+    },
+    concat: {
+      options: {
+        stripBanners: true
+      },
+      jade: {
+        cwd: '<%= pkg.project.directories.bin %>/mixins',
+        src: ['**/*.jade'],
+        dest: '<%= pkg.project.directories.bin %>/mixins/emil.jade',
+      },
     },
     less: {
       build: {
@@ -88,7 +98,7 @@ module.exports = function(grunt) {
       options: {
         pretty: true
       },
-      build: {
+      dev: {
         options: {
           client: false,
           compileDebug: false,
@@ -97,17 +107,19 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           dest: '<%= pkg.project.directories.bin %>',
-          cwd: '<%= pkg.project.directories.bin %>/mixins',
-          src: ['**/*.jade'],
+          cwd: '<%= pkg.project.directories.bin %>/src',
+          src: ['*.jade', '!emil.jade'],
           ext: '.html'
         }]
       }
     },
-    
     concat: {
-      build: {
-        src: '<%= pkg.project.directories.bin %>/templates/components/*.html',
-        dest: '<%= pkg.project.directories.bin %>/mixins.html'
+      jade: {
+        files: [{
+          flatten: true,
+          src: ['<%= pkg.project.directories.bin %>/src/components/**/*.jade'],
+          dest: '<%= pkg.project.directories.bin %>/src/emil.jade'
+        }]
       }
     }
   });
@@ -136,9 +148,9 @@ module.exports = function(grunt) {
       'less:build',
       'svgmin:dev',
       'grunticon:build',
-      'jade:build',
-      'copy:glyphicon',
-      'clean:src'
+      'concat:jade',
+      'jade:dev',
+      'copy:glyphicon'
   ]);
   grunt.registerTask('default', ['dev', 'watch']);
 };
