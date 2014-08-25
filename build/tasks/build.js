@@ -45,9 +45,12 @@ module.exports = function(grunt) {
       }
     },
     concat: {
-      build: {
-        src: '<%= pkg.project.directories.bin %>/templates/components/*.jade',
-        dest: '<%= pkg.project.directories.bin %>/mixins.jade'
+      jade: {
+        files: [{
+          flatten: true,
+          src: ['<%= pkg.project.directories.bin %>/src/**/*.jade'],
+          dest: '<%= pkg.project.directories.bin %>/emil.jade'
+        }]
       }
     }
   });
@@ -73,6 +76,7 @@ module.exports = function(grunt) {
       'svgmin:icons',
       'grunticon:icons',
       'copy:src',
+      'concat:jade',
       'copy:glyphicon',
       'copy:bootstrap'
   ]);
