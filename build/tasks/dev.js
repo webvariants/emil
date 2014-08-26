@@ -108,13 +108,13 @@ module.exports = function(grunt) {
     });
   };
 
-  grunt.registerTask('dev', '', [
+  grunt.registerTask('dev', '',[
       'clean:all',
       'copy:vendor',
       'copy:src',
       'less:build',
       'concat:jade',
-      'jade:dev',
+      'jade:dev'
   ]);
-  grunt.registerTask('default', ['dev', 'watch']);
+  grunt.registerTask('default', ['dev','watch']);
 };
