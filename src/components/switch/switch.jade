@@ -1,0 +1,43 @@
+mixin switch_unit_div(name, leftActive, disabled, leftLabel, rightLabel, classes)
+  - leftActive = (leftActive && !!leftActive) || false;
+  - leftLabel  = leftLabel  || false;
+  - rightLabel = rightLabel || false;
+  - classes    = classes    || ''
+
+  .switchUnit(class="#{disabled ? 'disabled' : ''} #{classes} #{leftActive ? 'active' : ''}", id='#{name}')
+    .handle
+    .clippingDiv
+      .switchLabel.on(class="#{leftActive ? 'active' : ''}", id="#{name}_left", data-value="1")
+        span
+          if leftLabel
+            |translate:#{leftLabel}
+          else
+            |translate:general.button.on
+          if leftActive
+            input(name='#{name}_left', type='radio', value='1', checked='true')
+          if !leftActive
+            input(name='#{name}_left', type='radio', value='1')
+
+    .switchLabel.off(class="#{leftActive ? '' : 'active'}", id="#{name}_right", data-value="0")
+      span
+        if rightLabel
+          |translate:#{rightLabel}
+        else
+          |translate:general.button.off
+        if !leftActive
+          input(name='#{name}_right', type='radio', value='0', checked='true')
+        if leftActive
+          input(name='#{name}_right', type='radio', value='0')
+    .shutter
+    .switchLabel.hidden
+      span
+        if leftLabel
+          |translate:#{leftLabel}
+        else
+          |translate:general.button.on
+    .switchLabel.hidden
+      span
+        if rightLabel
+          |translate:#{rightLabel}
+        else
+          |translate:general.button.off
