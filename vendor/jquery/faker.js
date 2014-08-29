@@ -8,7 +8,14 @@ $(document).ready(function(){
 
 
     $('.header #info-button').click(function() {
-        // $('.nav-table-cell.configuration').toggleClass('open');
-        alert('INFO');
+        $('.view #info-panel').toggleClass('shown');
     });
-});
+
+    $('.switch').click(function(){
+
+        $('.switch-container').css({
+            left: "-50px"
+        });
+    });
+
+}); // End ready()
