@@ -1,5 +1,8 @@
-mixin article
-    .article
+mixin article(options)
+    - options = options || {};
+    - options['id'] = options.id || '';
+    - options['classes'] = options.classes || '';
+    .article(class=options.classes, id=options.id)
         .overlay
         block
 

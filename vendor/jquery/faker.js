@@ -13,9 +13,10 @@ $(document).ready(function(){
 
     $('.switch').click(function(){
 
-        $('.switch-container').css({
-            left: "-50px"
-        });
+        $('#ntp').toggleClass('shown');
+        $('#timezone').toggleClass('shown');
+        $('#time').toggleClass('shown');
+        $('#date').toggleClass('shown');
     });
 
 }); // End ready()
