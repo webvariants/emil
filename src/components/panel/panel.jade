@@ -1,0 +1,19 @@
+mixin panel(options)
+    - options = options || {};
+    - options['id'] = options.id || '';
+    - options['classes'] = options.classes || '';
+
+    .panel.panel-default(class=options.classes)
+        block
+
+mixin panel-header
+    .panel-heading
+        block
+
+mixin panel-body
+    .panel-body
+        block
+
+mixin panel-footer
+    .panel-footer
+        block
