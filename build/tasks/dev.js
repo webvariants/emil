@@ -32,18 +32,6 @@ module.exports = function(grunt) {
         src: [ '**/*' ],
         dest: '<%= pkg.project.directories.bin %>/src'
       },
-      glyphicon: {
-        expand: true,
-        cwd: '<%= pkg.project.directories.vendor %>/bootstrap/fonts',
-        src: [ '**' ],
-        dest: '<%= pkg.project.directories.bin %>/font'
-      },
-      fonts: {
-        expand: true,
-        cwd: '<%= pkg.project.directories.src %>/font',
-        src: [ '**/*' ],
-        dest: '<%= pkg.project.directories.bin %>/font'
-      },
       jade: {
         flatten: true,
         expand: true,
@@ -72,26 +60,6 @@ module.exports = function(grunt) {
         files: {
           '<%= pkg.project.directories.bin %>emil.css': '<%= pkg.project.directories.src %>/emil.less' 
         }
-      }
-    },
-    svgmin: {
-      dev: {
-        files: [{
-          expand: true,
-          cwd: '<%= pkg.project.directories.bin %>/src/icons',
-          src: ['*.svg'],
-          dest: '<%= pkg.project.directories.bin %>/src/icons'
-        }]
-      }
-    },
-    grunticon: {
-      build: {
-        files: [{
-          expand: true,
-          cwd: '<%= pkg.project.directories.bin %>src/icons',
-          src: ['*.svg'],
-          dest: '<%= pkg.project.directories.bin %>/grunticon'
-        }]
       }
     },
     jade: {
@@ -140,17 +108,13 @@ module.exports = function(grunt) {
     });
   };
 
-  grunt.registerTask('dev', '', [
+  grunt.registerTask('dev', '',[
       'clean:all',
       'copy:vendor',
       'copy:src',
-      'copy:fonts',
       'less:build',
-      'svgmin:dev',
-      'grunticon:build',
       'concat:jade',
-      'jade:dev',
-      'copy:glyphicon'
+      'jade:dev'
   ]);
-  grunt.registerTask('default', ['dev', 'watch']);
+  grunt.registerTask('default', ['dev','watch']);
 };

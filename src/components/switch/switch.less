@@ -1,0 +1,200 @@
+.switchUnit {
+  @switchUnitHandleSize: 22px;
+  @transDuration: .25s;
+
+  .inner-shadow(0, 0, 2px, .3);
+  .no-user-selection;
+  border-radius: @switchUnitHandleSize / 2;
+  height: @switchUnitHandleSize;
+  background: @grey10;
+  position: relative;
+  padding: 0 ceil(@switchUnitHandleSize / 3);
+  cursor: pointer;
+
+  &.active {
+    .handle {
+      left: calc(~"100% - 22px");
+    }
+    .shutter {
+        width: 100%;
+    }
+  }
+  &:not(.active) .switchLabel.on {
+    right: calc(~"100% - -22px");
+  }
+  &, .handle, .shutter {
+    .transition(@transDuration, ease-in-out, all);
+  }
+
+  .handle {
+    .drop-shadow(0px, 0px, 2px, .2);
+    .transition(0.15s, ease-in-out, all);
+    border-radius: 50%;
+    background: rgba(255,255,255,1);
+    border: 1px solid rgba(0,0,0,.2);
+    position: absolute;
+    left: 0;
+    height: @switchUnitHandleSize;
+    width: @switchUnitHandleSize;
+    z-index: 5;
+
+    &.noTransitions {
+      .transition(0s, ease-in, none);
+    }
+
+    &:hover {
+      border: 1px solid rgba(0,0,0,.3);
+    }
+    span.dot {
+      top: floor(@switchUnitHandleSize / 2) - 4px;
+      left: floor(@switchUnitHandleSize / 2) - 4px;
+    }
+  }
+  .switchLabel {
+    float: left;
+    opacity: 1;
+    .transition(0.15s, ease-in-out, all);
+    color: @grey53;
+    position: absolute;
+    z-index: 3;
+    overflow: hidden;
+
+    &.on {
+      color: @white;
+      width: calc(~"100% - 22px");
+      right: @switchUnitHandleSize;
+
+      &.noTransitions {
+        .transition(0s, ease-in, none);
+      }
+    }
+
+    &.off {
+      right: ceil(@switchUnitHandleSize / 3);
+      left: @switchUnitHandleSize + ceil(@switchUnitHandleSize / 5);
+      z-index: 1;
+    }
+
+    &.hidden {
+        display: block !important;
+        float: none;
+        opacity: 0;
+        position: relative;
+        margin-left: @switchUnitHandleSize - ceil(@switchUnitHandleSize / 3) + ceil(@switchUnitHandleSize / 5);
+    }
+
+    span {
+      width: 100%;
+      display: block;
+      height: @switchUnitHandleSize;
+      //font-family: Arial;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+      line-height: @switchUnitHandleSize;
+      text-align: center;
+    }
+  }
+
+  .shutter {
+    .inner-shadow(0, 0, 2px, .3);
+    .transition(0.15s, ease-in-out, all);
+      border-radius: @switchUnitHandleSize / 2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: @switchUnitHandleSize;
+      background: @sliderBgBlue;
+      z-index: 2;
+
+      &:hover {
+        background: lighten(@sliderBgBlue, 10%);
+      }
+
+      &.noTransitions {
+      .transition(0s, ease-in, none);
+    }
+  }
+
+  .clippingDiv {
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      overflow: hidden;
+      background: none;
+      position: absolute;
+      pointer-events: none;
+  }
+
+  &.disabled {
+    div {
+      text-shadow: none;
+      box-shadow: none;
+      cursor: default;
+
+      span {
+        opacity: 0.8;
+      }
+
+      &:not(.active) {
+        background: none;
+        box-shadow: none;
+
+        span {
+          color: @grey40;
+        }
+      }
+    }
+    .left, .right {
+      &.active {
+        text-shadow: none;
+      }
+    }
+
+    .left.active {
+      background: @cyanLight;
+    }
+
+    .right.active {
+      background: @grey40;
+    }
+  }
+
+  &:not(.disabled):hover {
+    &:not(.active) {
+      background: @grey5;
+    }
+  }
+  input[type="radio"] {
+    display: none;
+  }
+}
+// fieldset.switchUnitRow {
+//   legend {
+//     @media (min-width: @screen-small) {
+//       min-height: 42px;
+//       span {
+//         padding-top: 10px;
+//       }
+//     }
+//   }
+//   .switchUnit {
+//     margin: 9px auto;
+//   }
+// }
+
+/*  This is awkward but it works for now */
+#maintenance_mode.switchUnit {
+  width: 60px;
+}
+.noiseSpec {
+  .switchUnit {
+    width: 50px;
+  }
+}
+
+.switchUnit {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

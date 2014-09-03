@@ -27,7 +27,8 @@
     "grunt-shell": "^0.7.0",
     "grunt-svgmin": "^0.4.0",
     "load-grunt-tasks": "^0.5.0",
-    "time-grunt": "^0.3.2"
+    "time-grunt": "^0.3.2",
+    "grunt-contrib-copy": "^0.5.0"
   },
   "project": {
     "directories": {
@@ -40,8 +41,5 @@
     "components": {
       "udo": "src/udo"
     }
-  },
-  "devDependencies": {
-    "grunt-contrib-copy": "^0.5.0"
   }
 }
