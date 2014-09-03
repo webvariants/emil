@@ -1,6 +1,5 @@
 syntax: glob
 node_modules
 npm-debug.log
-bin
 components.old
-
+bin
