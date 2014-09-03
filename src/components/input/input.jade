@@ -1,0 +1,95 @@
+include icon
+
+//-
+	Mixins
+		_input 			: is a mixin for a single inputfield without unit
+		_input_unit 	: is a mixin for a inputfield with unitlabel
+
+
+	options:  Attributes
+		name 		: string, 	id, name of element
+		placeholder : string, 	placeholder when input empty
+		value		: string, 	text in inputfield
+		unit 		: string, 	unit (string, exp.:  MHz, KHz)
+		size 		: string/number, 	characters
+		maxlength 	: string/number, 	max characters
+		minlength 	: string/number, 	max characters
+		inactiv		: boolean, 	inactive field, means different style
+		error		: boolean, 	error style -> red version
+		icon 		: string,	icon.classname
+		iconOutside : boolean,	icon is right next to inputfield
+
+		iconLabel 	: string, 	label right beside inputfield and icon
+
+		autofocus 	: boolean,	autofocus on inputfield
+
+		insideTable : boolean,  input needs different styling to adjust to table
+
+		type:		: string, 	kind of inputfield
+			ip 			: ip field
+
+		autocomplete	: bool, true as default
+		disabled		: bool, false as default
+		listId			: identifier for datalist (necessary for list)
+		list			: Refers to a <datalist> element that contains pre-defined options for an <input> element
+
+		multiple		: for selecting multiple files when browsing for files
+		readonly		: bool, default false
+		classes			: string, input field classes
+		id 				' string or int, id of inputfield
+		autocomplete	: bool, default off, to enable use true or 'on'
+
+//- mixin for normal inputfield
+mixin inputfields(options)
+
+	if (options.inactive == true)
+		-options.disabled = true
+
+	if (options.value === 0)
+		-options.value = '0'
+
+	if (options.value == "")
+		-options.value = ''
+
+	if (options.type == 'ip')
+		div.ip(id="#{options.name}", class="#{options.disabled ? 'disabled' : ''}")
+			- vals = options.value.split('.')
+			- for (i = 0; i<4; i++) {
+				-if (options.disabled)
+					input(name="#{options.name}+#{i}",value=vals[i], size=3, maxlength=3, disabled=true, id="#{i}")
+				-if (!options.disabled)
+					input(name="#{options.name}+#{i}",value=vals[i], size=3, maxlength=3, id="#{i}")
+				-if (i<3) {
+					span
+						|.
+				-}
+			- }
+	else
+		.ion-inputfieldContainer(class="#{options.ipField ? options.ipField : ''} #{options.unit ? ' unit' : ''} #{options.insideTable ? 'insideTable':''} #{options.error ? 'error':''}", name="#{options.id ? options.id : ''}")
+			if options.label
+				.labels translate:#{options.label}
+			.inputBox(class="#{options.spinner ? 'spinnerInside' : ''}")
+				if (options.autofocus == true)
+					input.ion-inputfield(type="#{options.type ? options.type : 'text'}", name="#{options.name}", id="#{options.id ? options.id : ''}", placeholder="#{options.placeholder ? 'translate:'+options.placeholder : ''}", value="#{options.value ? options.value : ''}", size="#{options.size ? options.size : ''}", maxlength="#{options.maxlength ? options.maxlength : '255'}", minlength="#{options.minlength ? options.minlength : '4'}", class="#{options.classes ? options.classes : ''} #{options.ipField ? options.ipField : ''}", list="#{options.listId ? options.listId : ''}", minHelp="#{options.minHelp ? options.minHelp : ''}", maxHelp="#{options.maxHelp ? options.maxHelp : ''}", data-target="#{options.target ? options.target : ''}", autofocus)
+				else if (options.readonly == true)
+					input.ion-inputfield(type="#{options.type ? options.type : 'text'}", name="#{options.name}", id="#{options.id ? options.id : ''}", placeholder="#{options.placeholder ? 'translate:'+options.placeholder : ''}", value="#{options.value ? options.value : ''}", size="#{options.size ? options.size : ''}", maxlength="#{options.maxlength ? options.maxlength : '255'}", minlength="#{options.minlength ? options.minlength : '4'}", class="#{options.classes ? options.classes : ''} #{options.ipField ? options.ipField : ''} ", list="#{options.listId ? options.listId : ''}", minHelp="#{options.minHelp ? options.minHelp : ''}", maxHelp="#{options.maxHelp ? options.maxHelp : ''}", data-target="#{options.target ? options.target : ''}", readonly)
+				else if (options.disabled == true)
+					input.ion-inputfield(type="#{options.type ? options.type : 'text'}", name="#{options.name}", id="#{options.id ? options.id : ''}", placeholder="#{options.placeholder ? 'translate:'+options.placeholder : ''}", value="#{options.value ? options.value : ''}", size="#{options.size ? options.size : ''}", maxlength="#{options.maxlength ? options.maxlength : '255'}", minlength="#{options.minlength ? options.minlength : '4'}", class="#{options.classes ? options.classes : ''} #{options.ipField ? options.ipField : ''} ", list="#{options.listId ? options.listId : ''}", minHelp="#{options.minHelp ? options.minHelp : ''}", maxHelp="#{options.maxHelp ? options.maxHelp : ''}", data-target="#{options.target ? options.target : ''}", disabled)
+				else
+					input.ion-inputfield(type="#{options.type ? options.type : 'text'}", name="#{options.name}", id="#{options.id ? options.id : ''}", placeholder="#{(options.placeholder != '********') ? ((options.placeholder) ? 'translate:'+options.placeholder : '' ) : '********'}", value="#{options.value ? options.value : ''}", size="#{options.size ? options.size : ''}", maxlength="#{options.maxlength ? options.maxlength : '255'}", minlength="#{options.minlength ? options.minlength : '4'}", class="#{options.classes ? options.classes : ''} #{options.ipField ? options.ipField : ''} ", list="#{options.listId ? options.listId : ''}", minHelp="#{options.minHelp ? options.minHelp : ''}", maxHelp="#{options.maxHelp ? options.maxHelp : ''}", data-target="#{options.target ? options.target : ''}")
+
+				if (options.unit)
+					span.unitLabel(class="#{options.error ? 'error':''} #{options.success ? 'success':''}") #{options.unit}
+
+				if (options.icon)
+					span.icon(class="#{options.icon}")
+				if (options.iconLabel)
+					span.iconLabel translate:#{options.iconLabel}
+				block
+
+mixin spinner
+	.spinnerContainer
+		.spinner.spinnerUp(data-type="up")
+			+icon('caretUp')
+		.spinner.spinnerDown(data-type="down")
+			+icon('caretDown')
