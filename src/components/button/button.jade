@@ -13,11 +13,12 @@
 
 mixin button(options)
     //- Set default values
+    - options                = options             || {};
     - options['classes']     = options.classes     || '';
     - options['id']          = options.id          || '';
     - options['title']       = options.title       || '';
-    - options['data']        = options.data        || '';
-    - options['disabled']    = options.disabled    || false;
+    - options['data']        = options.data        || {};
+    - options['disabled']    = options.disabled    || false;    
     - options.data['type']   = options.data.type   || '';
     - options.data['target'] = options.data.target || '';
     - options.data['event']  = options.data.event  || '';
@@ -37,6 +38,7 @@ mixin button-loader
     span.button-loader
 
 mixin button-group(options)
+    //- @FIXME data redefine options structure
     - options['data']         = options.data || []
     - options['selectedData'] = options.selectedData || []
     - options['buttons']      = options.buttons || []
