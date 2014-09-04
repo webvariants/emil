@@ -1,0 +1,6 @@
+mixin icon(options)
+    //- Setting default values
+    - options['type']     = options.type     || '';
+
+    span.icon(class=options.type)
+        block
