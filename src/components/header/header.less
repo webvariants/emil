@@ -1,29 +1,58 @@
 .header {
-    padding: 14px 15px;
-    .clearfix;
+	padding: 14px 15px;
+	.clearfix;
 
-    .header-group-left {
-        float: left;
+	.header-group-left {
+		float: left;
 
-        .icon {
-            margin: 2px 20px 2px 7px;
-        }
-    }
+		.icon {
+			margin: 2px 20px 2px 7px;
+		}
+	}
 
-    .header-group-right {
-        float: right;
-    }
+	.header-group-right {
+		float: right;
 
-    #info-button {
+		#login {
+			right: 0;
+			position: relative;
+			transition: right 0.5s;
 
-        .icon {
-            margin: 0;
-        }
-    }
+			&.loaded {
+				right: -2000px;
+			}
+		}
 
-    h1 {
-        font-size: 20px;
-        font-weight: bold;
-    }
+		#logout {
+			position: relative;
+			right: -2000px;
+			transition: right 0.5s;
+
+			&.loaded {
+				right: 0;
+			}
+		}
+	}
+
+	#info-button {
+
+		.icon {
+			margin: 0;
+		}
+	}
+
+	.loginUser {
+		visibility: hidden;
+		transition: visibility 1.5s;
+
+		&.loaded {
+			visibility: visible;
+		}
+	}
+
+	h1 {
+		font-size: 20px;
+		font-weight: bold;
+	}
 }
 
