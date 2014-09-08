@@ -30,6 +30,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
   });
-  grunt.loadNpmTasks('grunt-clear');
+  
+  grunt.loadTasks(grunt.config('pkg.project.directories.build-lib'));
   grunt.loadTasks(grunt.config('pkg.project.directories.build-tasks'));
 };
