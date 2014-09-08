@@ -7,7 +7,7 @@ $(document).ready(function(){
     });
 
 
-    $('.header #info-button').click(function() {
+    $('.header #header-info-button').click(function() {
         $('.view #info-panel').toggleClass('shown');
     });
 
