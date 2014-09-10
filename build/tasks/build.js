@@ -4,26 +4,6 @@ module.exports = function(grunt) {
     clean: {
       all: ['<%= pkg.project.directories.bin %>/*']
     },
-    svgmin: {
-      icons: {
-        files: [{
-          expand: true,
-          cwd: '<%= pkg.project.directories.src %>/icons',
-          src: ['*.svg'],
-          dest: '<%= pkg.project.directories.bin %>/icons'
-        }]
-      }
-    },
-    grunticon: {
-      icons: {
-        files: [{
-          expand: true,
-          cwd: '<%= pkg.project.directories.bin %>/icons',
-          src: ['*.svg'],
-          dest: '<%= pkg.project.directories.bin %>/grunticon'
-        }]
-      }
-    },
     copy: {
       src: {
         expand: true,
@@ -73,11 +53,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', '', [
       'clean:all',
-      'svgmin:icons',
-      'grunticon:icons',
       'copy:src',
       'concat:jade',
-      'copy:glyphicon',
       'copy:bootstrap'
   ]);
 };
