@@ -11,6 +11,7 @@ mixin nav-table-cell(options)
     //- Set default values
     - options             = options          || {};
     - options['classes'] = options.classes || '';
+    - options['target'] = options.target || '';
 
-    li.nav-table-cell(class=options.classes)
+    li.nav-table-cell(class=options.classes, data-target=options.target)
         block
