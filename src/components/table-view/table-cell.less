@@ -31,7 +31,7 @@
     }
 }
 
-.nav-table-cell {
+.table-cell-nav {
     .table-cell;
     border: none;
     overflow: hidden;
@@ -51,7 +51,7 @@
         z-index: 1;
         float: left;
         margin: 7px 23px 20px 7px;
-        color: @nav-table-cell-icon-color;
+        color: @table-cell-nav-icon-color;
     }
 
     .title, .percentage {
@@ -64,7 +64,7 @@
 
     .emil-label {
         float: left;
-        color: @nav-table-cell-typo-color;
+        color: @table-cell-nav-typo-color;
     }
 
     .percentage {
@@ -87,4 +87,9 @@
         opacity: 0.15;
         z-index: -1;
     }
+}
+
+.table-cell-section-header {
+    .table-cell;
+    height: @table-cell-section-header-height;
 }

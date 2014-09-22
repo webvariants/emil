@@ -7,11 +7,15 @@ mixin table-cell(options)
     li.table-cell(data-id=options.dataID, class=options.classes)
         block
 
-mixin nav-table-cell(options)
+mixin table-cell-nav(options)
     //- Set default values
     - options             = options          || {};
     - options['classes'] = options.classes || '';
     - options['target'] = options.target || '';
 
-    li.nav-table-cell(class=options.classes, data-target=options.target)
+    li.table-cell-nav(class=options.classes, data-target=options.target)
+        block
+
+mixin table-cell-section-header
+    .table-cell-section-header
         block
