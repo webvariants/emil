@@ -3,10 +3,11 @@
     .translate3d(0,0,0);
     .transition(0.1s, ease-in-out, all);
     background-color: transparent;
-    border-bottom: 1px solid @table-cell-border-color;
+    border-bottom: @table-cell-border solid @table-cell-border-color;
+    border-radius: @table-cell-border-radius;
     position: relative;
-    padding: 14px 15px;
-    height: 60px;
+    padding: @table-cell-padding;
+    height: @table-cell-height;
     cursor: pointer;
     overflow: hidden;
 
@@ -17,9 +18,8 @@
 
     &:active {
         .cyanLighten40;
-        .scale(0.98);
     }
-    &.search:active {
+    &.search:active, {
         .scale(1);
         // .cyanLighten40;
     }
@@ -29,9 +29,13 @@
     &.open {
         height: auto;
     }
+    .caret {
+        float: right;
+        margin: @table-cell-nav-caret-margin;
+    }
 }
 
-.nav-table-cell {
+.table-cell-nav {
     .table-cell;
     border: none;
     overflow: hidden;
@@ -45,13 +49,14 @@
 
     &:active {
         background-color: @table-cell-active-color;
+        .scale(0.98);
     }
 
     .icon {
         z-index: 1;
         float: left;
         margin: 7px 23px 20px 7px;
-        color: @nav-table-cell-icon-color;
+        color: @table-cell-nav-icon-color;
     }
 
     .title, .percentage {
@@ -64,7 +69,7 @@
 
     .emil-label {
         float: left;
-        color: @nav-table-cell-typo-color;
+        color: @table-cell-nav-typo-color;
     }
 
     .percentage {
@@ -86,5 +91,35 @@
         width: 66%;
         opacity: 0.15;
         z-index: -1;
+    }
+}
+
+.table-cell-section-header {
+    .table-cell;
+    height: @table-cell-section-header-height;
+    border:  @table-cell-border solid @default-border-color;
+    background: @table-cell-section-header-bgc;
+    padding: @table-cell-section-header-padding;
+    
+    &:active {
+        .scale(1);
+    }
+}
+
+.table-cell-nav-section-header {
+    .table-cell;
+    border-bottom: @table-cell-border solid @table-cell-nav-section-header-border-color;
+    background: @table-cell-nav-section-header-bgc;
+    height: @table-cell-section-header-height;
+    padding: @table-cell-section-header-padding;
+    
+    .emil-label {
+        color: @table-cell-nav-section-header-color;
+    }
+    &:hover {
+        background-color: @table-cell-nav-section-hover-bgc;
+    }
+    &:active {
+        .scale(1);
     }
 }
