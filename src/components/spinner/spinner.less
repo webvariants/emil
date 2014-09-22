@@ -1,0 +1,29 @@
+.spinner{
+    width: 200px;
+
+    .spinner-up,
+    .spinner-down {
+        background: @spinner-background;
+        border-radius: @spinner-border-radius;
+        border: @spinner-border-color @spinner-border-width @spinner-border-style;
+        color: @spinner-font-color;
+        cursor: pointer;
+        line-height: @defaultLineHeight;
+        text-align: center;
+    }
+
+    .spinner-display {
+        background: @spinner-background;
+        border: @spinner-border-color @spinner-border-width @spinner-border-style;
+        border-radius: @spinner-border-radius;
+        height: @defaultLineHeight * 2;
+        margin: @defaultLineHeight 0;
+        overflow-y: scroll;
+
+        .spinner-item {
+            cursor: pointer;
+            line-height: @defaultLineHeight * 2 - 2;
+            text-align: center;
+        }
+    }
+}
