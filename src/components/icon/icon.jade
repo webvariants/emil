@@ -1,6 +1,7 @@
 mixin icon(options)
     //- Setting default values
     - options['type']     = options.type     || '';
+    - options['hidden']     = options.hidden     || '';
 
-    span.icon(class=options.type)
+    span.icon(class=options.type, aria-hidden=options.hidden)
         block
