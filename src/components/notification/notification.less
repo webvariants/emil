@@ -3,7 +3,18 @@
     margin: @defaultPadding;
     position: absolute;
     top: -100px;
+    padding: @defaultPadding / 2 0 @defaultPadding / 2 @defaultPadding;
     margin: 0 auto;
     width: 100%;
     z-index: 1000;
+
+    &.shown {
+        top: @defaultPadding / 2;
+    }
+
+    .close {
+        font-size: 21px;
+        margin: 0;
+        right: 0;
+    }
 }
