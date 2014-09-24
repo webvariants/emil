@@ -2,16 +2,25 @@
 mixin table-cell(options)
     //- Set default values
     - options             = options          || {};
-    - options['classes'] = options.classes || '';
+    - options['classes']  = options.classes || '';
 
     li.table-cell(data-id=options.dataID, class=options.classes)
         block
 
-mixin nav-table-cell(options)
+mixin table-cell-nav(options)
     //- Set default values
     - options             = options          || {};
     - options['classes'] = options.classes || '';
     - options['target'] = options.target || '';
 
-    li.nav-table-cell(class=options.classes, data-target=options.target)
+    li.table-cell-nav(class=options.classes, data-target=options.target)
         block
+
+mixin table-cell-section-header
+    li.table-cell-section-header
+        block
+
+mixin table-cell-nav-section-header
+    li.table-cell-nav-section-header
+        block
+
