@@ -1,12 +1,12 @@
 
 .table-cell {
+    .list-group-item;
     .translate3d(0,0,0);
     .transition(0.1s, ease-in-out, all);
     .emil-states;
     background-color: transparent;
     border-bottom: @table-cell-border solid @table-cell-border-color;
     border-radius: @table-cell-border-radius;
-    position: relative;
     padding: @table-cell-padding;
     height: @table-cell-height;
     cursor: pointer;
@@ -20,16 +20,26 @@
     &:active {
         .cyanLighten40;
     }
-    &.search:active, {
+
+    &.search:active, &.search:hover, &.search  {
         .scale(1);
-        // .cyanLighten40;
+        background-color: transparent;
+        cursor: auto;
+        padding: 10px;
+        
+        .icon {
+            padding-top: 8px;
+        }
     }
+
     & > .table-view {
         padding-left: 40px;
     }
+
     &.open {
         height: auto;
     }
+
     .caret {
         float: right;
         margin: @table-cell-nav-caret-margin;
@@ -56,7 +66,7 @@
     .icon {
         z-index: 1;
         float: left;
-        margin: 7px 23px 20px 7px;
+        margin: 0 20px 0 10px;
         color: @table-cell-nav-icon-color;
     }
 
