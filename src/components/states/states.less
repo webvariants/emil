@@ -1,26 +1,55 @@
 .emil-states {
     &.primary {
         background-color: @brand-primary;
+        
+        .emil-btn & {
+            color: @btn-primary-color;
+        }
     }
 
     &.default {
         background-color: transparent;
+        
+        .emil-btn & {
+            border-color: @btn-default-border;
+            color: @btn-default-color;
+        }
     }
 
     &.warning {
         background-color: @brand-warning;
+        
+        .emil-btn & {
+            color: @btn-warning-color;
+            border-color: @btn-warning-border;
+        }
     }
 
-    &.critical {
+    &.danger {
         background-color: @brand-danger;
+
+        .emil-btn & {
+            color: @btn-danger-color;
+            border-color: @btn-danger-border;
+        }
     }
 
     &.info {
         background-color: @brand-info;
+
+        .emil-btn & {
+            color: @btn-info-color;
+            border-color: @btn-info-border;
+        }
     }
 
     &.success {
         background-color: @brand-success;
+
+        .emil-btn & {
+            color: @btn-success-color;
+            border-color: @btn-success-border;
+        }
     }
 
     &.disabled {

@@ -8,8 +8,6 @@ mixin badge(options)
     //- Set default values
     - options                = options             || {};
     - options['classes']     = options.classes     || '';
-    - options['priority']    = options.priority    || 'default';
-    - options['size']        = options.size        || 'md';
 
-    .emil-badge(class='emil-badge-#{options.size} #{options.classes} #{options.priority}', id=options.id)
+    .badge(class='#{options.classes}', id=options.id)
         block
