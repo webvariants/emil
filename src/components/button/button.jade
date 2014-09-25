@@ -21,7 +21,7 @@ mixin button(options)
     - if (options.disabled) options.classes =+ ' disabled ';
 
     //- Markup
-    .emil-btn(class='emil-btn-#{options.size} #{options.classes} #{options.priority}', id='#{options.id}')
+    .btn(class='btn-#{options.size} #{options.classes} btn-#{options.priority}', id='#{options.id}')
         block
 
 mixin button-loader
