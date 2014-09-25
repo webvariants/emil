@@ -1,0 +1,15 @@
+mixin simple-notification(options)
+    - options = options || {};
+    - options['alertClass'] = options.alertClass || NULL;
+    div(class="notification simple-notification alert #{options.alertClass} shown", role="alert")
+        block
+
+mixin button-notification(options)
+    - options = options || {};
+    - options['alertClass'] = options.alertClass || NULL;
+    div(class="notification button-notification alert #{options.alertClass} alert-dismissible shown", role="alert")
+        +button({classes: 'close', data: {dismiss: 'alert'}})
+            +icon({hidden: 'true'})
+                | &times;
+            span.sr-only Close
+        block

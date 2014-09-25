@@ -1,0 +1,18 @@
+mixin input(options)
+    //- Set default values
+    - options                = options             || {};
+    - options['id']          = options.id          || '';
+    - options['classes']     = options.classes     || '';
+    - options['placeholder'] = options.placeholder || '';
+    - options['type'] = options.type || '';
+
+    .input-group
+        input(type=options.type, class='form-control #{options.classes}', id='#{options.id}', placeholder=options.placeholder)
+        block
+
+mixin input-group-addon(options)
+    //- Set default values
+    - options                = options             || {};
+    - options['classes']     = options.classes     || '';
+    span.input-group-addon
+        block

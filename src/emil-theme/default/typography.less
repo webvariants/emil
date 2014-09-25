@@ -1,15 +1,50 @@
-.typo {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 20px;
+.emil-typo {
+    font-family: @font-family-base;
+    font-size: @font-size-base;
+    line-height: @line-height-base;
+    
+    &.large {
+        font-size: @font-size-large;
+        line-height: @line-height-large;
+    }
+
+    &.small {
+        font-size: @font-size-small;
+        line-height: @line-height-small;
+    }
+}
+
+.emil-headings {
+    font-family: @headings-font-family;
+    font-weight: @headings-font-weight;
+    line-height: @headings-line-height;
+    color: @headings-color;
 }
 
 body {
-  .typo;
-  color: #333333;
-  background-color: #ffffff;
+    .emil-typo;
+}
+
+h1, h2, h3, h4, h5 {
+    .emil-headings;
+}
+
+h1 {
+    font-size: @font-size-h1;
+}
+
+h2 {
+    font-size: @font-size-h2;
+}
+
+h3 {
+    font-size: @font-size-h3;
 }
 
 h4 {
-  margin: 0 0 20px 0;
+    font-size: @font-size-h4;
+}
+
+h5 {
+    font-size: @font-size-h5;
 }

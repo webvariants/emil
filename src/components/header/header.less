@@ -1,29 +1,20 @@
 .header {
-	padding: 14px 15px;
-	.clearfix;
+    padding: @defaultPadding;
+    .clearfix;
 
-	.header-group-left {
-		float: left;
+    .header-group-left {
+        float: left;
 
-		.icon {
-			margin: 2px 20px 2px 7px;
-		}
-	}
+        * {
+            float: right;
+        }
+    }
 
-	.header-group-right {
-		float: right;
-	}
+    .header-group-right {
+        float: right;
 
-	#info-button {
-
-		.icon {
-			margin: 0;
-		}
-	}
-
-	h1 {
-		font-size: 20px;
-		font-weight: bold;
-	}
+        * {
+            float: left;
+        }
+    }
 }
-
