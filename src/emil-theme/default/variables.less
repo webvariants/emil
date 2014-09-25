@@ -25,20 +25,26 @@
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #fff;
+@body-bg:               @cyan;
+
+//** Master / Detail
+@master-detail-bg: white;
+
 //** Global text color on `<body>`.
 @text-color:            @gray-dark;
 
 //** General
-@default-border-color: @blackLighten90;
-@default-bg: @cyan;
+@border-color-base: @blackLighten90;
 @border-radius-base: 3px;
+@border-base: 1px;
 
 //** Global textual link color.
 @link-color:            @brand-primary;
 //** Link hover color set via `darken()` function.
 @link-hover-color:      darken(@link-color, 15%);
 
+@default-text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.15);
+@btn-text-shadow: @default-text-shadow;
 
 //== Typography
 //
@@ -765,6 +771,7 @@
 @badge-font-weight:           bold;
 @badge-line-height:           1;
 @badge-border-radius:         10px;
+@badge-border: @border-base;
 
 
 //== Breadcrumbs
@@ -900,13 +907,9 @@
 
 
 
-//** App View
-@app-bg-color: @default-bg;
-@app-border-color: @default-border-color;
 //** View
-@view-border-color: @default-border-color;
-//** Master / Detail
-@master-detail-bg: white;
+@view-border-color: @border-color-base;
+
 
 
 @primaryColor: @cyan;
@@ -942,18 +945,4 @@
 @table-cell-nav-padding: 20px 15px;
 @table-cell-nav-caret-margin: 10px 0px;
 
-@default-text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.15);
-@btn-text-shadow: @default-text-shadow;
-//** Badges
-@badge-border: @;
-@badge-border-radius: @border-radius-base;
 
-// TYPOGRAPHY
-@defaultLineHeight: 20px;
-@defaultFontSize: @defaultLineHeight - 4;
-
-// DEFAULTPADDING
-@defaultPadding: @defaultLineHeight / 2;
-
-// DEFAULTBORDERRADIUS
-@defaultBorderRadius: 3px;
