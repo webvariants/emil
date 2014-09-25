@@ -7,7 +7,7 @@ mixin input(options)
     - options['type'] = options.type || '';
 
     .input-group
-        input(type=options.type, class='form-control #{options.classes}', id='#{options.id}')
+        input(type=options.type, class='form-control #{options.classes}', id='#{options.id}', placeholder=options.placeholder)
         block
 
 mixin input-group-addon(options)
