@@ -15,11 +15,13 @@ mixin button(options)
     //- Set default values
     - options                = options             || {};
     - options['classes']     = options.classes     || '';
+    - options['priority']    = options.priority    || 'default';
     - options['id']          = options.id          || '';
+    - options['size']        = options.size        || 'md';
     - if (options.disabled) options.classes =+ ' disabled ';
 
     //- Markup
-    .emil-btn(class=options.classes, id=options.id)
+    .emil-btn(class='emil-btn-#{options.size} #{options.classes} ', id=options.id)
         block
 
 mixin button-loader

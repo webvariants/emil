@@ -1,16 +1,14 @@
+// Button
+// --------------------------------------------------
+
 .emil-btn {
     .btn;
     .emil-states;
-    cursor: pointer;
-    font-size: 11px;
-    line-height: 16px;
-    overflow: hidden;
-    margin: 0 @defaultPadding 0 0;
-    padding: 4px 12px;
-    position: relative;
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.15);
+    .button-size(@padding-base-vertical; @padding-base-horizontal; @font-size-base; @line-height-base; @border-radius-base);
+    text-shadow: @btn-text-shadow;
     width: auto;
     .clearfix;
+    color: @btn-default-color;
 
     .glyphicon {
         float: left;
@@ -18,18 +16,12 @@
         display: block;
     }
 
-    &.big {
-        float: left;
-        padding: 4px 0;
-        width: 20px;
-    }
-
-    &.simple-button {
+    &.simple-btn {
         font-weight: normal;
         .clearfix;
     }
 
-    &.icon-button {
+    &.icon-btn {
         padding: 4px;
         width: 60px;
 
@@ -44,13 +36,17 @@
     }
 }
 
-.btn-group {
+// Button Sizes
+// --------------------------------------------------
 
-    .button {
-        margin: 0;
-
-        .glyphicon {
-            margin: 7px 5px;
-        }
-    }
+.emil-btn-lg {
+  // line-height: ensure even-numbered height of button next to large input
+  .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
+}
+.emil-btn-sm {
+  // line-height: ensure proper height of button next to small input
+  .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+}
+.emil-btn-xs {
+  .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; @border-radius-small);
 }

@@ -1,35 +1,50 @@
-.typo {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: @defaultFontSize;
-    line-height: @defaultLineHeight;
-
-    &.font-header{
-        font-size: 20px;
-        font-weight: bold;
+.emil-typo {
+    font-family: @font-family-base;
+    font-size: @font-size-base;
+    line-height: @line-height-base;
+    
+    &.large {
+        font-size: @font-size-large;
+        line-height: @line-height-large;
     }
 
-    &.font-header-input {
-        font-size: @defaultFontSize;
+    &.small {
+        font-size: @font-size-small;
+        line-height: @line-height-small;
     }
+}
 
-    &.font-button {
-        font-size: @defaultFontSize;
-    }
-
-    &.font-file-box {
-        font-size: 12px;
-    }
+.emil-headings {
+    font-family: @headings-font-family;
+    font-weight: @headings-font-weight;
+    line-height: @headings-line-height;
+    color: @headings-color;
 }
 
 body {
-    .typo;
+    .emil-typo;
+}
+
+h1, h2, h3, h4, h5 {
+    .emil-headings;
+}
+
+h1 {
+    font-size: @font-size-h1;
 }
 
 h2 {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: @font-size-h2;
 }
 
 h3 {
-    font-weight: bold;
+    font-size: @font-size-h3;
+}
+
+h4 {
+    font-size: @font-size-h4;
+}
+
+h5 {
+    font-size: @font-size-h5;
 }

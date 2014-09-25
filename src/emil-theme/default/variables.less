@@ -29,6 +29,11 @@
 //** Global text color on `<body>`.
 @text-color:            @gray-dark;
 
+//** General
+@default-border-color: @blackLighten90;
+@default-bg: @cyan;
+@border-radius-base: 3px;
+
 //** Global textual link color.
 @link-color:            @brand-primary;
 //** Link hover color set via `darken()` function.
@@ -60,6 +65,8 @@
 @line-height-base:        1.428571429; // 20/14
 //** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
 @line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
+@line-height-large:       floor((@font-size-large * @line-height-base));
+@line-height-small:       floor((@font-size-small * @line-height-base));
 
 //** By default, this inherits from the `<body>`.
 @headings-font-family:    inherit;
@@ -142,7 +149,7 @@
 @btn-font-weight:                normal;
 
 @btn-default-color:              #333;
-@btn-default-bg:                 #fff;
+@btn-default-bg:                 transparent;
 @btn-default-border:             #ccc;
 
 @btn-primary-color:              #fff;
@@ -890,10 +897,7 @@
 //
 //## Set default component colors.
 //
-//** General
-@default-border-color: @blackLighten90;
-@default-bg: @cyan;
-@border-radius-base: 3px;
+
 
 
 //** App View
@@ -938,8 +942,10 @@
 @table-cell-nav-padding: 20px 15px;
 @table-cell-nav-caret-margin: 10px 0px;
 
+@default-text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.15);
+@btn-text-shadow: @default-text-shadow;
 //** Badges
-@badge-border: 1px;
+@badge-border: @;
 @badge-border-radius: @border-radius-base;
 
 // TYPOGRAPHY
