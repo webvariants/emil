@@ -98,7 +98,7 @@
 //
 //## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
 
-@padding-base-vertical:     6px;
+@padding-base-vertical:     12px;
 @padding-base-horizontal:   12px;
 
 @padding-large-vertical:    10px;
@@ -113,9 +113,9 @@
 @line-height-large:         1.33;
 @line-height-small:         1.5;
 
-@border-radius-base:        4px;
+@border-radius-base:        3px;
 @border-radius-large:       6px;
-@border-radius-small:       3px;
+@border-radius-small:       1px;
 
 //** Global color for active items (e.g., navs or dropdowns).
 @component-active-color:    #fff;
@@ -912,7 +912,6 @@
 @view-border-color: @border-color-base;
 
 
-
 @primaryColor: @cyan;
 @defaultColor: transparent;
 @warningColor: @minorYellow;
@@ -938,7 +937,8 @@
 //## Set default component dimensions.
 //** Table View / Table Cells
 @table-cell-height: 60px;
-@table-cell-padding: 20px 10px;
+@table-cell-padding-vertical: @padding-large-vertical;
+@table-cell-padding-horizontal: @padding-large-horizontal;
 @table-cell-border: 1px;
 @table-cell-border-radius: 0px;
 @table-cell-section-header-height: 30px;

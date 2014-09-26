@@ -24,3 +24,17 @@ mixin table-cell-nav-section-header
     li.table-cell-nav-section-header
         block
 
+mixin table-cell-search
+    //- Set default values
+    - options             = options          || {};
+    - options['classes']  = options.classes || '';
+    li.table-cell-search(class=options.classes)
+        block
+
+mixin table-cell-icon-container
+    //- Set default values
+    - options             = options          || {};
+    - options['classes']  = options.classes || '';
+    .icon-container(class=options.classes)
+        block
+

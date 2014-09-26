@@ -7,29 +7,18 @@
     background-color: transparent;
     border-bottom: @table-cell-border solid @table-cell-border-color;
     border-radius: @table-cell-border-radius;
-    padding: @table-cell-padding;
-    height: @table-cell-height;
     cursor: pointer;
+    height: @table-cell-height;
     overflow: hidden;
+    padding: (@table-cell-padding-vertical * 2) (@table-cell-padding-horizontal / 2);
 
     &:hover,
     &.selected {
-        .cyanLighten70;
+        .cyanLighten80;
     }
 
     &:active {
         .cyanLighten40;
-    }
-
-    &.search:active, &.search:hover, &.search  {
-        .scale(1);
-        background-color: transparent;
-        cursor: auto;
-        padding: 10px;
-        
-        .icon {
-            padding-top: 8px;
-        }
     }
 
     & > .table-view {
@@ -50,12 +39,17 @@
     .table-cell;
     border: none;
     overflow: hidden;
+    padding-left: 0;
     .title {
         .no-user-selection;
     }
 
-    &:hover, &.selected {
+    &:hover {
         background-color: @table-cell-hover-color;
+    }
+
+    &.selected {
+        background-color: lighten(@table-cell-hover-color, 30%);
     }
 
     &:active {
@@ -130,5 +124,27 @@
     }
     &:active {
         .scale(1);
+    }
+}
+
+.table-cell-search {
+    .table-cell-nav;
+    padding: @table-cell-padding-vertical 0; 
+    &:active, &:hover  {
+        .scale(1);
+        background-color: transparent;
+        cursor: auto;
+    }
+
+    input {
+        width: 80%;
+    }
+    .icon-container {
+        padding-top: 10px;
+        float: left;
+    }
+
+    .icon {
+        color: @table-cell-nav-icon-color;
     }
 }
