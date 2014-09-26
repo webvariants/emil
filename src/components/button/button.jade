@@ -13,15 +13,15 @@
 
 mixin button(options)
     //- Set default values
-    - options                = options             || {};
-    - options['classes']     = options.classes     || '';
-    - options['priority']    = options.priority    || 'default';
-    - options['id']          = options.id          || '';
-    - options['size']        = options.size        || 'md';
-    - if (options.disabled) options.classes =+ ' disabled ';
-
-    //- Markup
-    .btn(class='btn-#{options.size} #{options.classes} btn-#{options.priority}', id='#{options.id}')
+    - options             =                  options          || {};
+    - options['classes']  =                  options.classes  || '';
+    - options['priority'] =                  options.priority || 'default';
+    - options['id']       =                  options.id       || '';
+    - options['size']     =                  options.size     || 'md';
+    - options['navbar']   =                  options.navbar   || false;
+    - if (options.disabled)                  options.classes  = options.classes + ' disabled ';
+    - if (options.navbar)                    options.classes  = options.classes + ' navbar-btn ';
+    .btn(class='btn-#{options.size} #{options.classes} btn-#{options.priority} ', id='#{options.id}')
         block
 
 mixin button-loader

@@ -9,7 +9,7 @@
     cursor: pointer;
     height: @table-cell-height;
     overflow: hidden;
-    padding: (@table-cell-padding-vertical * 2) (@table-cell-padding-horizontal / 2);
+    padding: (@table-cell-padding-vertical * 2) @table-cell-padding-horizontal;
 
     &:hover,
     &.selected {
@@ -38,7 +38,6 @@
     .table-cell;
     border: none;
     overflow: hidden;
-    padding-left: 0;
 
     .title {
         .no-user-selection;
@@ -129,8 +128,7 @@
 
 .table-cell-search {
     .table-cell-nav;
-    padding: @table-cell-padding-vertical 0; 
-    
+    padding-top: (@padding-base-vertical * 2);
     &:active, &:hover  {
         .scale(1);
         background-color: transparent;
