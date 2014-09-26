@@ -1,6 +1,5 @@
 
 .table-cell {
-    // .list-group-item;
     .translate3d(0,0,0);
     .transition(0.1s, ease-in-out, all);
     .emil-states;
@@ -50,7 +49,7 @@
     }
 
     &.selected {
-        background-color: lighten(@table-cell-hover-color, 30%);
+        background-color: rgba(255, 255, 255, 0.2);
     }
 
     &:active {
@@ -131,6 +130,7 @@
 .table-cell-search {
     .table-cell-nav;
     padding: @table-cell-padding-vertical 0; 
+    
     &:active, &:hover  {
         .scale(1);
         background-color: transparent;
