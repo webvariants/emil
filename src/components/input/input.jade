@@ -1,0 +1,26 @@
+mixin input(options)
+    //- Set default values
+    - options                = options             || {};
+    - options['id']          = options.id          || '';
+    - options['classes']     = options.classes     || '';
+    - options['placeholder'] = options.placeholder || '';
+    - options['size']        = options.size        || 'md';
+    - options['type'] = options.type || '';
+
+    input.form-control(type=options.type, class='#{options.classes} input-#{options.size}', id='#{options.id}', placeholder=options.placeholder)
+    block
+
+mixin input-group(options)
+    //- Set default values
+    - options                = options             || {};
+    - options['classes']     = options.classes     || '';
+    .input-group
+        block
+
+
+mixin input-group-addon(options)
+    //- Set default values
+    - options                = options             || {};
+    - options['classes']     = options.classes     || '';
+    span.input-group-addon
+        block
