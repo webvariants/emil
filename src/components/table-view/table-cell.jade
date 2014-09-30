@@ -3,8 +3,9 @@ mixin table-cell(options)
     //- Set default values
     - options             = options          || {};
     - options['classes']  = options.classes || '';
+    - options['size']  = options.size || 'md';
 
-    li.table-cell(data-id=options.dataID, class=options.classes)
+    li.table-cell(data-id=options.dataID, class='#{options.classes} #{options.size}')
         block
 
 mixin table-cell-nav(options)

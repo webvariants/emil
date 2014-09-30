@@ -9,7 +9,7 @@
     cursor: pointer;
     height: @table-cell-height;
     overflow: hidden;
-    padding: (@table-cell-padding-vertical * 2) @table-cell-padding-horizontal;
+    padding: @table-cell-padding;
 
     &:hover,
     &.selected {
@@ -31,6 +31,18 @@
     .caret {
         float: right;
         margin: @table-cell-nav-caret-margin;
+    }
+    &.md {
+        height: @table-cell-height-base;
+    }
+    &.sm {
+        height: @table-cell-height-small;
+    }
+    &.lg {
+        height: @table-cell-height-large;
+    }
+    &.xl {
+        height: @table-cell-height-xlarge;
     }
 }
 
@@ -103,6 +115,10 @@
     background: @table-cell-section-header-bgc;
     padding: @table-cell-section-header-padding;
     
+    &:hover {
+        background: @table-cell-section-header-bgc;
+    }
+
     &:active {
         .scale(1);
     }
