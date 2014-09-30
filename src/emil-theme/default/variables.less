@@ -927,9 +927,13 @@
 //
 //## Set default component dimensions.
 //** Table View / Table Cells
-@table-cell-height: 60px;
-@table-cell-padding-vertical: @padding-large-vertical;
+@table-cell-height-base: 60px;
+@table-cell-height-small: 20px;
+@table-cell-height-large: 120px;
+@table-cell-height-xlarge: 320px;
+@table-cell-padding-vertical: @padding-large-vertical * 2;
 @table-cell-padding-horizontal: @padding-large-horizontal;
+@table-cell-padding: @table-cell-padding-vertical @table-cell-padding-horizontal;
 @table-cell-border: 1px;
 @table-cell-border-radius: 0px;
 @table-cell-section-header-height: 30px;
