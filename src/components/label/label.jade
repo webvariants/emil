@@ -10,9 +10,7 @@ mixin label(options)
     - options['label']     = options.label        || '';
     - options['id']        = options.id           || '';
     - options['classes']   = options.classes      || '';
-    - options['value']     = options.value        || '';
+    - options['size']     = options.size        || '';
 
-    span.emil-label(class=options.classes)
-        span.labelText #{options.label}
-            if options.value != ''
-                span.labelValue #{options.value}
+    span.emil-label(class='#{options.classes} #{options.size}')
+        span #{options.label}

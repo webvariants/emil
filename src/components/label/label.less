@@ -3,17 +3,22 @@
 .emil-label {
 	.emil-states;
 	.no-user-selection;
-	border-radius: 2px;
-	padding: auto 0;
-
+	
 	&.critical,
 	&.warning {
 		color: white;
 	}
 
-	.labelValue {
-		padding: 2px 5px;
-		border-radius: 3px;
-
+	&.sm {
+		font-size: @font-size-small;
+		line-height: @line-height-small;
+	}
+	&.md {
+		font-size: @font-size-base;
+		line-height: @line-height-base;
+	}
+	&.lg {
+		font-size: @font-size-large;
+		line-height: @line-height-large;
 	}
 }

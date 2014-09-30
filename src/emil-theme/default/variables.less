@@ -29,6 +29,7 @@
 
 //** Master / Detail
 @master-detail-bg: white;
+@master-detail-color: @gray-lighter;
 
 //** Global text color on `<body>`.
 @text-color:            @gray-dark;
@@ -112,9 +113,9 @@
 @line-height-large:         1.33;
 @line-height-small:         1.5;
 
-@border-radius-base:        4px;
+@border-radius-base:        3px;
 @border-radius-large:       6px;
-@border-radius-small:       3px;
+@border-radius-small:       2px;
 
 //** Global color for active items (e.g., navs or dropdowns).
 @component-active-color:    #fff;
@@ -154,29 +155,29 @@
 
 @btn-font-weight:                normal;
 
-@btn-default-color:              #333;
+@btn-default-color:              #ccc;
 @btn-default-bg:                 transparent;
 @btn-default-border:             #ccc;
 
-@btn-primary-color:              @brand-primary;
+@btn-primary-color:              lighten(@brand-primary, 12%);
 @btn-primary-bg:                 transparent;
-@btn-primary-border:             darken(@brand-primary, 5%);
+@btn-primary-border:             lighten(@brand-primary, 6%);
 
-@btn-success-color:              @brand-success;
+@btn-success-color:              lighten(@brand-success, 12%);
 @btn-success-bg:                 transparent;
-@btn-success-border:             darken(@brand-success, 5%);
+@btn-success-border:             lighten(@brand-success, 7%);
 
-@btn-info-color:                 @brand-info;
+@btn-info-color:                 lighten(@brand-info, 12%);
 @btn-info-bg:                    transparent;
-@btn-info-border:                darken(@brand-info, 5%);
+@btn-info-border:                lighten(@brand-info, 6%);
 
-@btn-warning-color:              @brand-warning;
+@btn-warning-color:              lighten(@brand-warning, 12%);
 @btn-warning-bg:                 transparent;
-@btn-warning-border:             darken(@brand-warning, 5%);
+@btn-warning-border:             lighten(@brand-warning, 7%);
 
-@btn-danger-color:               @brand-danger;
+@btn-danger-color:               lighten(@brand-danger, 12%);
 @btn-danger-bg:                  transparent;
-@btn-danger-border:              darken(@brand-danger, 5%);
+@btn-danger-border:              lighten(@brand-danger, 6%);
 
 @btn-link-disabled-color:        @gray-light;
 
@@ -758,10 +759,10 @@
 //
 //##
 
-@badge-color:                 #fff;
+@badge-color:                 #fff !important;
 //** Linked badge text color on hover
 @badge-link-hover-color:      #fff;
-@badge-bg:                    @cyanLight;
+@badge-bg:                    transparent;
 
 //** Badge text color in active nav link
 @badge-active-color:          @link-color;
@@ -771,7 +772,7 @@
 @badge-font-weight:           bold;
 @badge-line-height:           1;
 @badge-border-radius:         10px;
-@badge-border-color:          @border-base;
+@badge-border-color:          @btn-default-color;
 
 
 //== Breadcrumbs
@@ -905,21 +906,11 @@
 //## Set default component colors.
 //
 
-
-
 //** View
 @view-border-color: @border-color-base;
 
-
-
-@primaryColor: @cyan;
-@defaultColor: transparent;
-@warningColor: @minorYellow;
-@critColor: @criticalRed;
-@infoColor: @warningBlue;
-
 //** Table View / Table Cells
-@table-cell-border-color: @default-border-color;
+@table-cell-border-color: @border-color-base;
 @table-cell-hover-color: rgba(255, 255, 255, 0.15);
 @table-cell-active-color: rgba(255, 255, 255, 0.2);
 @table-cell-nav-typo-color: @blackLighten90;
@@ -937,7 +928,8 @@
 //## Set default component dimensions.
 //** Table View / Table Cells
 @table-cell-height: 60px;
-@table-cell-padding: 20px 10px;
+@table-cell-padding-vertical: @padding-large-vertical;
+@table-cell-padding-horizontal: @padding-large-horizontal;
 @table-cell-border: 1px;
 @table-cell-border-radius: 0px;
 @table-cell-section-header-height: 30px;

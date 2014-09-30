@@ -1,39 +1,27 @@
 
 .table-cell {
-    .list-group-item;
     .translate3d(0,0,0);
     .transition(0.1s, ease-in-out, all);
     .emil-states;
     background-color: transparent;
     border-bottom: @table-cell-border solid @table-cell-border-color;
     border-radius: @table-cell-border-radius;
-    padding: @table-cell-padding;
-    height: @table-cell-height;
     cursor: pointer;
+    height: @table-cell-height;
     overflow: hidden;
+    padding: (@table-cell-padding-vertical * 2) @table-cell-padding-horizontal;
 
     &:hover,
     &.selected {
-        .cyanLighten70;
+        .cyanLighten80;
     }
 
     &:active {
         .cyanLighten40;
     }
 
-    &.search:active, &.search:hover, &.search  {
-        .scale(1);
-        background-color: transparent;
-        cursor: auto;
-        padding: 10px;
-        
-        .icon {
-            padding-top: 8px;
-        }
-    }
-
     & > .table-view {
-        padding-left: 40px;
+        padding-left: (@padding-large-horizontal * 2) + 16px /* @TODO add global icon size*/;
     }
 
     &.open {
@@ -50,12 +38,17 @@
     .table-cell;
     border: none;
     overflow: hidden;
+
     .title {
         .no-user-selection;
     }
 
-    &:hover, &.selected {
+    &:hover {
         background-color: @table-cell-hover-color;
+    }
+
+    &.selected {
+        background-color: rgba(255, 255, 255, 0.2);
     }
 
     &:active {
@@ -66,7 +59,6 @@
     .icon {
         z-index: 1;
         float: left;
-        margin: 0 20px 0 10px;
         color: @table-cell-nav-icon-color;
     }
 
@@ -78,8 +70,7 @@
         color: lightGrey;
     }
 
-    .emil-label {
-        float: left;
+    .emil-label, .btn-default {
         color: @table-cell-nav-typo-color;
     }
 
@@ -108,7 +99,7 @@
 .table-cell-section-header {
     .table-cell;
     height: @table-cell-section-header-height;
-    border:  @table-cell-border solid @default-border-color;
+    border:  @table-cell-border solid @border-color-base;
     background: @table-cell-section-header-bgc;
     padding: @table-cell-section-header-padding;
     
@@ -132,5 +123,27 @@
     }
     &:active {
         .scale(1);
+    }
+}
+
+.table-cell-search {
+    .table-cell-nav;
+    padding-top: (@padding-base-vertical * 2);
+    &:active, &:hover  {
+        .scale(1);
+        background-color: transparent;
+        cursor: auto;
+    }
+
+    input {
+        width: 80%;
+    }
+    .icon-container {
+        padding-top: 10px;
+        float: left;
+    }
+
+    .icon {
+        color: @table-cell-nav-icon-color;
     }
 }
