@@ -3,9 +3,15 @@ mixin media(options)
     - options['size'] = options.size || 'md';
     - options['classes'] = options.classes || '';
     - options['pull'] = options.pull || 'pull-left';
-    .media(class='#{options.classes} #{options.size}')
-        div(class=options.pull)
-            block
+    .media(class='#{options.classes}')
+        block
+
+mixin media-pull(options)
+    - options = options || {};
+    - options['pull'] = options.pull || 'left';
+    - options['size'] = options.size || 'md';
+    div(class='pull-#{options.pull} #{options.size}')
+        block
 
 mixin media-body
     .media-body
