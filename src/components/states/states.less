@@ -1,61 +1,30 @@
-.emil-states {
-    &.primary {
-        border-color: @btn-primary-border;
-        color: @btn-primary-color;
-        background-color: @btn-primary-bg;
+.emil-state-factory(@brand; @contrast){
+    @border: ~"btn-@{brand}-border";
+    @color: ~"btn-@{brand}-color";
+    @bg: ~"btn-@{brand}-bg";
+    
+    &.@{brand} {
+        border-color: @@border;
+        color: @@color;
+        background-color: @@bg;
+        
         &:hover {
-            background: @btn-primary-color;
-            color: @body-bg;
+            background: @@color;
+            color: @contrast;
         }
+
         &:active {
-            background: lighten(@btn-primary-color, 5%);
+            background: @@color;
         }
     }
+}
 
-    &.default {
-        background-color: transparent;
-        
-        .emil-btn & {
-            border-color: @btn-default-border;
-            color: @gray-light;
-        }
-    }
-
-    &.warning {
-        background-color: @brand-warning;
-        
-        .emil-btn & {
-            color: @brand-warning;
-            border-color: @btn-warning-border;
-        }
-    }
-
-    &.danger {
-        background-color: @brand-danger;
-
-        .emil-btn & {
-            color: @brand-danger;
-            border-color: @btn-danger-border;
-        }
-    }
-
-    &.info {
-        background-color: @brand-info;
-
-        .emil-btn & {
-            color: @brand-info;
-            border-color: @btn-info-border;
-        }
-    }
-
-    &.success {
-        background-color: @brand-success;
-
-        .emil-btn & {
-            color: @brand-success;
-            border-color: @btn-success-border;
-        }
-    }
+.emil-states {
+    .emil-state-factory(@brand: primary; @body-bg);
+    .emil-state-factory(@brand: default; @body-bg);
+    .emil-state-factory(@brand: danger; @body-bg);
+    .emil-state-factory(@brand: success; @body-bg);
+    .emil-state-factory(@brand: info; @body-bg);
 
     &.disabled {
         .opacity(.35);
