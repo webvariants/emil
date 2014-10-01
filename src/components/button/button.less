@@ -3,31 +3,15 @@
 
 .emil-btn {
     .btn;
-    .button-size(@padding-base-vertical; @padding-base-horizontal; @font-size-base; @line-height-base; @border-radius-base);
+    // .button-size(@padding-base-vertical; @padding-base-horizontal; @font-size-base; @line-height-base; @border-radius-base);
     .emil-states;
-    
-    .glyphicon {
-        float: left;
-        font-size: 12px;
-        display: block;
+
+    &.emil-btn-simple {
+
     }
 
-    &.simple-btn {
-        font-weight: normal;
-    }
+    &.emil-btn-icon {
 
-    &.icon-btn {
-        padding: 4px;
-        width: 60px;
-
-        .icon {
-            margin: 3px 10px 3px 3px;
-        }
-
-        .text {
-            color: white;
-            text-shadow: none;
-        }
     }
 }
 

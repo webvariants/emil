@@ -1,9 +1,14 @@
 .emil-states {
     &.primary {
-        background-color: @brand-primary;
-        
-        .emil-btn & {
-            color: @btn-primary-color;
+        border-color: @btn-primary-border;
+        color: @btn-primary-color;
+        background-color: @btn-primary-bg;
+        &:hover {
+            background: @btn-primary-color;
+            color: @body-bg;
+        }
+        &:active {
+            background: lighten(@btn-primary-color, 5%);
         }
     }
 
@@ -12,7 +17,7 @@
         
         .emil-btn & {
             border-color: @btn-default-border;
-            color: @btn-default-color;
+            color: @gray-light;
         }
     }
 
@@ -20,7 +25,7 @@
         background-color: @brand-warning;
         
         .emil-btn & {
-            color: @btn-warning-color;
+            color: @brand-warning;
             border-color: @btn-warning-border;
         }
     }
@@ -29,7 +34,7 @@
         background-color: @brand-danger;
 
         .emil-btn & {
-            color: @btn-danger-color;
+            color: @brand-danger;
             border-color: @btn-danger-border;
         }
     }
@@ -38,7 +43,7 @@
         background-color: @brand-info;
 
         .emil-btn & {
-            color: @btn-info-color;
+            color: @brand-info;
             border-color: @btn-info-border;
         }
     }
@@ -47,7 +52,7 @@
         background-color: @brand-success;
 
         .emil-btn & {
-            color: @btn-success-color;
+            color: @brand-success;
             border-color: @btn-success-border;
         }
     }
