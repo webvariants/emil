@@ -4,6 +4,7 @@
     @bg: ~"btn-@{brand}-bg";
     
     &.@{brand} {
+        .transition(0.1s);
         border-color: @@border;
         color: @@color;
         background-color: @@bg;
@@ -14,7 +15,7 @@
         }
 
         &:active {
-            background: @@color;
+            background: darken(@@color, 5%);
         }
     }
 }
