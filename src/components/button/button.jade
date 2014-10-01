@@ -19,9 +19,11 @@ mixin button(options)
     - options['id']       =                  options.id       || '';
     - options['size']     =                  options.size     || 'md';
     - options['navbar']   =                  options.navbar   || false;
+    - options['block']   =                  options.block   || false;
     - if (options.disabled)                  options.classes  = options.classes + ' disabled ';
     - if (options.navbar)                    options.classes  = options.classes + ' navbar-btn ';
-    .btn(class='btn-#{options.size} #{options.classes} btn-#{options.priority} ', id='#{options.id}')
+    - if (options.block)                    options.classes  = options.classes + ' btn-block ';
+    .emil-btn(class='btn-#{options.size} #{options.classes} #{options.priority} ', id='#{options.id}')
         block
 
 mixin button-loader
