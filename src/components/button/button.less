@@ -2,29 +2,40 @@
 // --------------------------------------------------
 
 .emil-btn {
-    .btn;
-    .emil-states;
-    
-    &:active {
-        box-shadow: none;
-    }
+  .btn;
+  .emil-states;
+  
+  &:active {
+    box-shadow: none;
+  }
 
-    &.emil-btn-simple {
-        // @TODO create simple Button without borders and filling
+  &.emil-btn-simple {
+    // @TODO create simple Button without borders and filling
+    border-width: 0;
+    bgc: transparent;
+    
+    &:active, &:hover, .selected {
+      background-color: fade(white, 20%);
+      border-width: 0;
+      margin-bottom: 1px;
     }
+    &:active {
+      background-color: fade(white, 28%);
+    }
+  }
 }
 
 // Button Sizes
 // --------------------------------------------------
 
 .emil-btn-lg {
-  // line-height: ensure even-numbered height of button next to large input
-  .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
+ // line-height: ensure even-numbered height of button next to large input
+ .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
 }
 .emil-btn-sm {
-  // line-height: ensure proper height of button next to small input
-  .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+ // line-height: ensure proper height of button next to small input
+ .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
 }
 .emil-btn-xs {
-  .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+ .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; @border-radius-small);
 }
