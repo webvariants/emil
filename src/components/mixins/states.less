@@ -1,0 +1,34 @@
+.emil-state-factory(@brand; @contrast){
+    @border: ~"btn-@{brand}-border";
+    @color: ~"btn-@{brand}-color";
+    @bg: ~"btn-@{brand}-bg";
+    
+    &.@{brand} {
+        .transition(0.1s);
+        border-color: @@border;
+        color: @@color;
+        background-color: @@bg;
+        
+        &:hover {
+            background: @@color;
+            color: @contrast;
+        }
+
+        &:active {
+            background: darken(@@color, 5%);
+        }
+    }
+}
+
+.emil-states {
+    .emil-state-factory(@brand: primary; @body-bg);
+    .emil-state-factory(@brand: default; @body-bg);
+    .emil-state-factory(@brand: danger; @body-bg);
+    .emil-state-factory(@brand: success; @body-bg);
+    .emil-state-factory(@brand: info; @body-bg);
+
+    &.disabled {
+        .opacity(.35);
+        .no-user-selection;
+    }
+}
