@@ -1,5 +1,6 @@
 
 .table-cell {
+    .navbar;
     .translate3d(0,0,0);
     .transition(0.1s, ease-in-out, all);
     .emil-states;
@@ -44,7 +45,15 @@
     &.xl {
         height: @table-cell-height-xlarge;
     }
+    .emil-table-cell-left {
+        .pull-left();
+    }
+    .emil-table-cell-right {
+        .pull-right();
+    }
 }
+
+
 
 .table-cell-nav {
     .table-cell;
@@ -152,11 +161,17 @@
     }
 
     input {
-        width: 80%;
+        width: 78%;
+        margin-right: @padding-base-horizontal;
     }
     .icon-container {
         padding-top: 10px;
-        float: left;
+        &.right {
+            float: right;
+        }
+        &.left {
+            float: left;
+        }
     }
 
     .icon {

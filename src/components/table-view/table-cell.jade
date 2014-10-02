@@ -32,10 +32,20 @@ mixin table-cell-search
     li.table-cell-search(class=options.classes)
         block
 
-mixin table-cell-icon-container
+mixin table-cell-icon-container(options)
     //- Set default values
     - options             = options          || {};
-    - options['classes']  = options.classes || '';
-    .icon-container(class=options.classes)
+    - options['classes']  = options.classes  || '';
+    - options['side']     = options.side      || 'left';
+    .icon-container(class='#{options.classes} #{options.side}')
+        block
+
+
+mixin table-cell-container(options)
+    //- Set default values
+    - options             = options          || {};
+    - options['classes']  = options.classes  || '';
+    - options['side']     = options.side      || 'left';
+    div(class='#{options.classes} emil-table-cell-#{options.side} ')
         block
 
