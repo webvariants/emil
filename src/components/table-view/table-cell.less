@@ -11,7 +11,7 @@
     overflow: hidden;
     padding: @table-cell-padding;
     margin: 0;
-    
+
     &:hover,
     &.selected {
         .cyanLighten80;
@@ -58,7 +58,7 @@
     border: none;
     overflow-x: hidden;
     border-radius: @table-cell-border-radius;
-    
+
     .title {
         .no-user-selection;
     }
@@ -123,7 +123,7 @@
     background: @table-cell-section-header-bgc;
     padding: @table-cell-section-header-padding;
     border-radius: @table-cell-border-radius;
-    
+
     &:hover {
         background: @table-cell-section-header-bgc;
     }
@@ -140,7 +140,7 @@
     height: @table-cell-section-header-height;
     padding: @table-cell-section-header-padding;
     border-radius: @table-cell-border-radius;
-    
+
     .emil-label {
         color: @table-cell-nav-section-header-color;
     }
@@ -155,7 +155,7 @@
 .table-cell-search {
     .table-cell-nav;
     padding-top: (@padding-base-vertical * 2);
-    
+
     &:active, &:hover  {
         .scale(1);
         background-color: transparent;
@@ -169,7 +169,7 @@
 
     .icon-container {
         padding-top: 10px;
-        
+
         &.right {
             .pull-right();
         }
@@ -181,4 +181,41 @@
     .icon {
         color: @table-cell-nav-icon-color;
     }
+}
+
+
+// FIX FOR NEW SIDBAR
+.navbar-brand {
+    padding: 12px 16px 20px;
+
+    .emil-label {
+        white-space: nowrap;
+        position: absolute;
+    }
+}
+
+.table-cell-nav {
+
+    .icon {
+        float: left;
+    }
+
+    .emil-label {
+        padding: 0 0 0 5px;
+        position: absolute;
+    }
+}
+
+.table-cell-search {
+
+    input {
+        left: 50px;
+        margin-right: 12px;
+        position: absolute;
+        width: 70%;
+    }
+}
+
+.icon {
+    margin-right: 18px;
 }
