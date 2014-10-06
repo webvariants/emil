@@ -25,7 +25,7 @@ mixin button(options)
     - if (options.navbar)                    options.classes  = options.classes + ' navbar-btn ';
     - if (options.block)                    options.classes  = options.classes + ' btn-block ';
     - if (options.simple)                    options.classes  = options.classes + ' emil-btn-simple ';
-    .emil-btn(class='btn-#{options.size} #{options.classes} #{options.priority} ', id='#{options.id}')
+    .emil-btn(class='emil-btn-#{options.size} #{options.classes} #{options.priority} ', id='#{options.id}')
         block
 
 mixin button-loader

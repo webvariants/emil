@@ -1,5 +1,5 @@
 mixin view
-    .view
+    .view.fluid-container
         block
 
 mixin app-view(options)
@@ -7,7 +7,9 @@ mixin app-view(options)
     body.app-view
         block
 
-mixin view-header
+mixin view-header(options)
+    - options = options || {};
+    - options['classes'] = options.classes || '';
     .view-header
         block
 

@@ -1,30 +1,32 @@
 .master-detail {
-	height: 100%;
-	-ms-overflow-style: -ms-autohiding-scrollbar; //MAKE SCROLLBARS ON IE HALFTRANSPARENT
-	background-color: @body-bg;
+  .translate3d(0,0,0);
+  height: 100%;
+  -ms-overflow-style: -ms-autohiding-scrollbar; //MAKE SCROLLBARS ON IE HALFTRANSPARENT
+  background-color: @body-bg;
 
-	.master {
-		.no-user-selection;
-		.transition(0.1s);
-		height: 100%;
-		overflow-y: auto;
-		background-color: @body-bg;
-		padding-right: 0;
-		padding-left: 0;
+  .master {
+    .transition(.1s);
+    .no-user-selection;
+    display: block;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
 
-		&.open {
+    background-color: @body-bg;
+    padding-right: 0;
+    padding-left: 0;
 
-		}
-		&.closed {
-			width: 60px;
-		}
-	}
+    &.closed {
+      width: 50px;
+    }
+  }
 
-	.detail {
-		.box-shadow(-1px 0 2px rgba(0,0,0,.35));
-		padding: 10px;
-		height: 100%;
-		overflow-y: auto;
-		background-color: white;
-	}
+  .detail {
+    .transition(.1s);
+    .box-shadow(-1px 0 2px rgba(0,0,0,.35));
+    padding: 10px;
+    height: 100%;
+    overflow-y: auto;
+    background-color: white;
+  }
 }

@@ -1,6 +1,5 @@
 
 .table-cell {
-    .navbar;
     .translate3d(0,0,0);
     .transition(0.1s, ease-in-out, all);
     .emil-states;
@@ -11,7 +10,8 @@
     height: @table-cell-height;
     overflow: hidden;
     padding: @table-cell-padding;
-
+    margin: 0;
+    
     &:hover,
     &.selected {
         .cyanLighten80;
@@ -29,10 +29,6 @@
         height: auto;
     }
 
-    .caret {
-        float: right;
-        margin: @table-cell-nav-caret-margin;
-    }
     &.md {
         height: @table-cell-height-base;
     }
@@ -47,9 +43,11 @@
     }
     .emil-table-cell-left {
         .pull-left();
+        height: 100%;
     }
     .emil-table-cell-right {
         .pull-right();
+        height: 100%;
     }
 }
 
@@ -58,8 +56,9 @@
 .table-cell-nav {
     .table-cell;
     border: none;
-    overflow: hidden;
-
+    overflow-x: hidden;
+    border-radius: @table-cell-border-radius;
+    
     .title {
         .no-user-selection;
     }
@@ -79,7 +78,7 @@
 
     .icon {
         z-index: 1;
-        float: left;
+        // float: left;
         color: @table-cell-nav-icon-color;
     }
 
@@ -98,7 +97,7 @@
     .percentage {
         opacity: 0.65;
         margin-right: 12px;
-        float: right;
+        // float: right;
         color: white;
         z-index: 1;
     }
@@ -123,6 +122,7 @@
     border:  @table-cell-border solid @border-color-base;
     background: @table-cell-section-header-bgc;
     padding: @table-cell-section-header-padding;
+    border-radius: @table-cell-border-radius;
     
     &:hover {
         background: @table-cell-section-header-bgc;
@@ -139,6 +139,7 @@
     background: @table-cell-nav-section-header-bgc;
     height: @table-cell-section-header-height;
     padding: @table-cell-section-header-padding;
+    border-radius: @table-cell-border-radius;
     
     .emil-label {
         color: @table-cell-nav-section-header-color;
@@ -154,6 +155,7 @@
 .table-cell-search {
     .table-cell-nav;
     padding-top: (@padding-base-vertical * 2);
+    
     &:active, &:hover  {
         .scale(1);
         background-color: transparent;
@@ -164,13 +166,15 @@
         width: 78%;
         margin-right: @padding-base-horizontal;
     }
+
     .icon-container {
         padding-top: 10px;
+        
         &.right {
-            float: right;
+            .pull-right();
         }
         &.left {
-            float: left;
+            .pull-left();
         }
     }
 

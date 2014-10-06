@@ -9,9 +9,20 @@
         color: @@color;
         background-color: @@bg;
         
+        .icon {
+            div {
+                background-color: @@color;
+            }
+        }
         &:hover {
             background: @@color;
             color: @contrast;
+            
+            .icon {
+                div {
+                    background-color: @contrast;
+                }
+            }
         }
 
         &:active {
@@ -22,7 +33,7 @@
 
 .emil-states {
     .emil-state-factory(@brand: primary; @body-bg);
-    .emil-state-factory(@brand: default; @body-bg);
+    .emil-state-factory(@brand: default; @gray);
     .emil-state-factory(@brand: danger; @body-bg);
     .emil-state-factory(@brand: success; @body-bg);
     .emil-state-factory(@brand: info; @body-bg);
