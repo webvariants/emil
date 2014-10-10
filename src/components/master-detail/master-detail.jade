@@ -1,9 +1,9 @@
 mixin master(options)
     - options = options || {};
-    - options['columns'] = options.columns || 3;
+    - options['classes'] = options.classes || '';
+    - options['columns'] = options.columns || 'col-md-3';
     - options['closed'] = options.closed ? 'closed' : '';
-    - options['gridSize'] = options
-    .master(class='col-md-#{options.columns} #{options.closed}')
+    .master(class='#{options.columns} #{options.closed}')
         block
 
 mixin detail(options)
