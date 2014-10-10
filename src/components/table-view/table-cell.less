@@ -76,13 +76,12 @@
 
     &:active {
         background-color: @table-cell-active-color;
-        .scale(0.98);
     }
 
     .icon {
         z-index: 1;
-        // float: left;
         color: @table-cell-nav-icon-color;
+        float: left;
     }
 
     .title, .percentage {
@@ -97,10 +96,14 @@
         color: @table-cell-nav-typo-color;
     }
 
+    .emil-label {
+        padding: 0 0 0 5px;
+        position: absolute;   
+    }
+
     .percentage {
         opacity: 0.65;
         margin-right: 12px;
-        // float: right;
         color: white;
         z-index: 1;
     }
@@ -130,10 +133,6 @@
     &:hover {
         background: @table-cell-section-header-bgc;
     }
-
-    &:active {
-        .scale(1);
-    }
 }
 
 .table-cell-nav-section-header {
@@ -150,9 +149,6 @@
     &:hover {
         background-color: @table-cell-nav-section-hover-bgc;
     }
-    &:active {
-        .scale(1);
-    }
 }
 
 .table-cell-search {
@@ -160,14 +156,15 @@
     padding-top: (@padding-base-vertical * 2);
 
     &:active, &:hover  {
-        .scale(1);
         background-color: transparent;
         cursor: auto;
     }
 
     input {
-        width: 78%;
         margin-right: @padding-base-horizontal;
+        left: 50px;
+        position: absolute;
+        width: 78%;
     }
 
     .icon-container {
@@ -197,26 +194,10 @@
     }
 }
 
-.table-cell-nav {
-
-    .icon {
-        float: left;
-    }
-
-    .emil-label {
-        padding: 0 0 0 5px;
-        position: absolute;
-    }
-}
 
 .table-cell-search {
 
-    input {
-        left: 50px;
-        margin-right: 12px;
-        position: absolute;
-        width: 70%;
-    }
+
 }
 
 .icon {
