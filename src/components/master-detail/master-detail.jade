@@ -1,15 +1,22 @@
 mixin master(options)
     - options = options || {};
-    - options['columns'] = options.columns || 3;
-    .master(class='col-md-#{options.columns}')
+    - options['classes'] = options.classes || '';
+    - options['columns'] = options.columns || 'col-md-3';
+    - options['closed'] = options.closed ? 'closed' : '';
+    .master(class='#{options.columns} #{options.closed}')
         block
 
 mixin detail(options)
     - options = options || {};
     - options['columns'] = options.columns || 9;
-    .detail(class='col-md-#{options.columns}')
+    .detail.fluid-container
         block
 
 mixin master-detail
     .master-detail
+        block
+
+
+mixin sidebar-btn
+     .sidebar-btn
         block

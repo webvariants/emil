@@ -17,11 +17,16 @@ mixin button(options)
     - options['classes']  =                  options.classes  || '';
     - options['priority'] =                  options.priority || 'default';
     - options['id']       =                  options.id       || '';
+    - options['target']   =                  options.target   || '';
     - options['size']     =                  options.size     || 'md';
     - options['navbar']   =                  options.navbar   || false;
+    - options['block']    =                  options.block    || false;
+    - options['simple']   =                  options.simple   || false;
     - if (options.disabled)                  options.classes  = options.classes + ' disabled ';
     - if (options.navbar)                    options.classes  = options.classes + ' navbar-btn ';
-    .btn(class='btn-#{options.size} #{options.classes} btn-#{options.priority} ', id='#{options.id}')
+    - if (options.block)                    options.classes  = options.classes + ' btn-block ';
+    - if (options.simple)                    options.classes  = options.classes + ' emil-btn-simple ';
+    .emil-btn(class='emil-btn-#{options.size} #{options.classes} #{options.priority} ', id='#{options.id}', data-target="#{options.target}")
         block
 
 mixin button-loader

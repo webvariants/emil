@@ -1,13 +1,13 @@
 html {
-    height: 100%; /*  This is awkward, why can't the html cannot be fullscreen all the time? WTF */
     margin: 0;
 }
 
 .view {
     .emil-states;
-    height: 100%;
+    height: auto;
     background-color: white;
-
+    position: relative;
+    
     .view-header {
         width: 100%;
         height: 40px;
@@ -16,6 +16,7 @@ html {
 }
 
 .app-view {
+    .transition(.2s);
     .translate3d(0,0,0);
     -webkit-perspective: 1000;
     top: 0;
@@ -24,16 +25,6 @@ html {
     left: 0;
     background-color: @body-bg;
     height: 100%;
-    overflow: hidden;
-}
-
-
-.header {
-
-    .header-group-right {
-        input,
-        .btn {
-            float: left;
-        }
-    }
+    // overflow: hidden;
+    position: absolute;
 }
