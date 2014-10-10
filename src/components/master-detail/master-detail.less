@@ -8,13 +8,14 @@
     .translate3d(0,0,0);
     .transition(.1s);
     .no-user-selection;
-    display: block;
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
     background-color: @body-bg;
+    display: block;
+    height: auto;
     padding-right: 0;
     padding-left: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+   -webkit-overflow-scrolling: touch;
 
     &.closed {
       width: 50px;
@@ -27,7 +28,8 @@
     .translate3d(0,0,0);
     padding: 10px;
     height: 100%;
-    overflow-y: auto;
+    overflow-y: scroll; /* has to be scroll, not auto */
+    -webkit-overflow-scrolling: touch;
     background-color: white;
   }
 }
