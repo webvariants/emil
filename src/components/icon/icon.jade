@@ -3,5 +3,6 @@ mixin icon(options)
     - options['type']     = options.type     || '';
     - options['hidden']     = options.hidden     || '';
     - options['size']     = options.size     || 'sm';
-    span.icon(class='#{options.type} #{options.size}', aria-hidden=options.hidden)
+    - options['target']     = options.target     || '';
+    span.icon(class='#{options.type} #{options.size}', aria-hidden=options.hidden, data-target=options.target)
         block
