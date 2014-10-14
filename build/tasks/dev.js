@@ -92,21 +92,31 @@ module.exports = function(grunt) {
     }
   });
   //@TODO refactor and create as plugin
-  var gruntRemote = function (cmd, cwd, done) {
-    var spawn  = require('child_process').spawn,
-        remote = spawn('grunt', [cmd], {cwd: cwd});
+  
+    //@TODO refactor and create as plugin
+    var gruntRemote = function (cmd, cwd, done) {
+        var spawn = require('superspawn').spawn;
+        var remote = spawn('grunt', [cmd], {cwd: cwd}, function (err, data) {
+            if (err) {
+                console.error(err);
+                done();
+            }
+            grunt.log.ok(cmd+' '+cwd+' finished ('+data+')');
+            done();
+        });
 
-    remote.stdout.on('data', function (data) {
-      grunt.log.write(data);
-    });
-    remote.stderr.on('data', function (data) {
-      grunt.fail.fatal(data);
-    });
-    remote.on('close', function (code) {
-      grunt.log.ok(cmd+' '+cwd+' finished ('+code+')');
-      done();
-    });
-  };
+        // remote.stdout.on('data', function (data) {
+        //     grunt.log.write(data);
+        // });
+        // remote.stderr.on('data', function (data) {
+        //     grunt.fail.fatal(data);
+        // });
+        // remote.on('close', function (code) {
+        //     grunt.log.ok(cmd+' '+cwd+' finished ('+code+')');
+        //     done();
+        // });
+    };
+
 
   grunt.registerTask('dev', '',[
       'clean:all',
