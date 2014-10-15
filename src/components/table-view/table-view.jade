@@ -1,5 +1,6 @@
 mixin table-view(options)
     - options = options || {};
     - options['classes'] = options.classes || '';
-    ul.table-view(class=options.classes)
+    - options['hidden'] = options.hidden ? 'hidden' : '';
+    ul.table-view(class='#{options.classes} #{options.hidden}')
         block
