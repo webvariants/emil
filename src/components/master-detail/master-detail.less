@@ -13,16 +13,21 @@
     height: auto;
     padding-right: 0;
     padding-left: 0;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
    -webkit-overflow-scrolling: touch;
+  }
 
-    &.hidden-lg.closed {
-      height: 48px;
-    }
-    &.hidden-sm.closed {
-      width: 48px;
-    }
+  #menu-small {
+    margin-top: 10px;
+  }
+
+  .closed-horizontal {
+    height: 48px;
+  }
+
+  .closed-vertical {
+    width: 48px;
   }
 
   .detail {
