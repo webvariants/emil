@@ -3,7 +3,8 @@ mixin master(options)
     - options['classes'] = options.classes || '';
     - options['columns'] = options.columns || 'col-md-3';
     - options['closed'] = options.closed ? 'closed' : '';
-    .master(class='#{options.columns} #{options.closed}')
+    - options['collapsed'] = options.collapsed || '';
+    .master(class='#{options.columns} #{options.classes} #{options.closed} #{options.collapsed}')
         block
 
 mixin detail(options)
