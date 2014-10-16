@@ -15,7 +15,7 @@ mixin emil-gallery(options)
   //- Set default values
   - options             =                  options          || {};
   - options['classes']  =                  options.classes  || '';
-  .emil-gallery(class='#{options.classes}')
+  .emil-gallery.fluid-container(class='#{options.classes}')
     block
 
 mixin emil-pager(options)
