@@ -12,25 +12,31 @@
     loader     : true, to enable loading animation
 
 mixin emil-gallery(options)
-    //- Set default values
-    - options             =                  options          || {};
-    - options['classes']  =                  options.classes  || '';
-    - options['fullscreen']  =                  options.fullscreen  || '';
+  //- Set default values
+  - options             =                  options          || {};
+  - options['classes']  =                  options.classes  || '';
   .emil-gallery(class='#{options.classes}')
     block
 
 mixin emil-pager(options)
-    //- Set default values
-    - options             =                  options          || {};
-    - options['classes']  =                  options.classes  || '';
-    - options['pages']  =                  options.pages  || 1;
+  //- Set default values
+  - options             =                  options          || {};
+  - options['classes']  =                  options.classes  || '';
+  - options['pages']  =                  options.pages  || 1;
   .emil-pager(class='#{options.classes}')
     block
 
-mixin emil-slides
-  .emil-slides
+mixin emil-slides(options)
+  //- Set default values
+  - options             =                  options          || {};
+  - options['classes']  =                  options.classes  || '';
+  .emil-slides(class='#{options.classes}')
     block
 
-mixin emil-gallery-btns
-  .emil-gallery-btns
+mixin emil-gallery-btn(options)
+  //- Set default values
+  - options             =                  options          || {};
+  - options['classes']  =                  options.classes  || '';
+  - options['direction']  =                options.direction  || 'prev';
+  .emil-gallery-btn(class='#{options.classes} #{options.direction}')
     block

@@ -1,12 +1,45 @@
 .emil-gallery {
     background-color: blue;
-    .emil-pager{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+    .emil-pager {
+        position: absolute;
+        bottom: 20px;
+        left: 20px:
+        width: auto;
+        height: 20px;
         background: red;
     }
-    .emil-slides{
+    .emil-slides {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        .transition(0.1s);
         background: red;
+
+        .emil-slide {
+            .prev {
+                left: 100%;
+            }
+            .current {
+                left: 0;
+            }
+            .next {
+                right: 100%;
+            }
+        }
+
     }
-    .emil-gallery-btns{
+    .emil-gallery-btn {
         background: red;
+        &.prev {
+            
+        }
+        &.next {
+            
+        }
     }
 }
