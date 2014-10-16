@@ -3,7 +3,7 @@ mixin emil-navbar(options)
     - options['id']        = options.id           || '';
     - options['classes']   = options.classes      || '';
     - options['size']     = options.size        || '';
-    .emil-navbar(class='#{options.classes} #{options.size} navbar-fixed-top', role='navbar')
+    .emil-navbar(id='#{options.id}', class='#{options.classes} #{options.size} navbar-fixed-top', role='navbar')
         block
 
 mixin navbar-header
