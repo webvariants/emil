@@ -33,6 +33,15 @@ mixin emil-slides(options)
   .emil-slides(class='#{options.classes}')
     block
 
+mixin emil-slide(options)
+  //- Set default values
+  - options             =                  options          || {};
+  - options['classes']  =                  options.classes  || '';
+  - options['data']  =                  options.data  || {};
+  - options.data['index']  =                  options.data.index  || 0;
+  .emil-slide(class='#{options.classes}', data-index=options.data.index)
+    block
+
 mixin emil-gallery-btn(options)
   //- Set default values
   - options             =                  options          || {};
