@@ -2,11 +2,11 @@
 .emil-gallery {
     position: relative;
     height: 100%;
-    
+
     .emil-pager {
         position: absolute;
         bottom: 20px;
-        left: 20px:
+        left: 20px;
         width: auto;
         height: 20px;
         background: red;
@@ -18,12 +18,10 @@
 
         .emil-slide {
             .transition(0.4s);
-            background-color: red;
-            position: absolute;
-            width: 100%;
-            height: 100%;
+            background-color: #a6a6a6;
+            float: none;
             padding: @padding-base-vertical @padding-base-horizontal;
-            
+
             &.prev {
                 right: 100%;
             }
@@ -38,8 +36,8 @@
 
     .emil-gallery-btn {
         .size(24px, 24px);
-        position: absolute;
-        top: 50%;
+        // position: absolute;
+        // top: 50%;
         .emil-btn {
             border-radius: 50%;
             border: 2px solid white;
@@ -50,5 +48,19 @@
         &.next {
             right: 20px;
         }
+    }
+}
+
+.btn-box {
+    position: relative;
+
+    .next {
+        position: absolute;
+        right: 20px;
+    }
+
+    .prev {
+        position: absolute;
+        left: 20px;
     }
 }
