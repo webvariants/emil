@@ -2,7 +2,7 @@ mixin browser-switch(options)
     - options = options || {};
     - options['option1'] = options.option1 || NULL;
     - options['option2'] = options.option2 || NULL;
-    .browser-switch
+    .browser-switch(class='#{options.classes}')
         .col-md-4.col-md-offset-4
             block
 
