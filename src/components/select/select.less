@@ -1,0 +1,24 @@
+.select .btn-group {
+	position: absolute;
+	z-index: 1000;
+	padding: 0px;
+	.dropdown-toggle {
+		width: 100%;
+		text-align: left;
+		.caret {
+			float: right;
+			margin-top: 8px;
+		}
+	}
+
+	.dropdown-menu {
+		width: 100%;
+		.item {
+			padding: 0px 12px;
+			cursor: pointer;
+			&:hover {
+				background-color: @brand-info;
+			}
+		}
+	}
+}

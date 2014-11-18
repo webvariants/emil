@@ -1,0 +1,19 @@
+mixin select(options)
+    - options             = options          || {};
+    - options['id']       = options.id       || '';
+    - options['size']     = options.size     || '';
+    - options['classes']  = options.classes  || '';
+    - options['selected'] = options.selected || '';
+    - options['items']    = options.items    || '';
+
+    .select(id=options.id)
+      +button-group({ size: options.size, classes: options.classes })
+        +button({ classes: 'dropdown-toggle', toggle: 'dropdown' })
+          span #{options.selected}
+          span(class='caret')
+        ul(class='dropdown-menu', role='menu')
+          if options.items==''
+            li(class='item') no items available
+          else 
+            each item in options.items
+              li(class='item', data-id=item.id) #{item.name}
