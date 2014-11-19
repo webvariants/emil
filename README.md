@@ -10,7 +10,7 @@ EMIL is a collection of extended Mixins written in Less and Jade based on the mo
 Marko Ladengast, Stephan Wirsich, Tino Rusch
 
 ### Contributors on GitHub
-* [Contributors](https://github.com/quader/sw-name/graphs/contributors)
+* [Contributors](https://github.com/webvariants/emil/graphs/contributors)
 
 ### Third party libraries
 * see LIBRARIES files, for Third Party Licenses.
@@ -22,7 +22,7 @@ Marko Ladengast, Stephan Wirsich, Tino Rusch
 * Version 0.2.1
 
 ## How-to use this code
-* see [INSTRUCTIONS](https://github.com/username/sw-name/blob/master/INSTRUCTIONS.md) file
+* see [INSTRUCTIONS](https://github.com/webvariants/emil/blob/stable/INSTRUCTIONS.md) file
 
 ## Contact
 #### Developer/Company
