@@ -1,5 +1,7 @@
-EMIL - Extended Mixins in Less *and jade pssht!*
+EMIL - Extended Mixins in Less
 ======
+*and jade pssht!*
+
 EMIL is a collection of extended Mixins written in Less and Jade based on the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web, [Bootstrap](http://getbootstrap.com) by Twitter Inc.
 
 ## How to Get
