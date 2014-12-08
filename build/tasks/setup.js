@@ -1,15 +1,31 @@
 module.exports = function(grunt) {
 
+  var mapping = {
+    darwin: {
+      cmd: 'sh',
+      args: ['setup.sh']
+    },
+    linux: {
+      cmd: 'sh',
+      args: ['setup.sh']
+    },
+    windows: {
+      cmd: 'cmd',
+      args: ['setup.bat']
+    }
+  };
+
+  var platform = require('os').platform();
+
   grunt.config.merge({
-    externalcomponents: {
+    sudo_subcomponents: {
       setup: {
-        options: {
-          cmd: 'sh',
-          args: ['setup.sh']
-        }
+        options: mapping[platform]
       }
     }
   });
 
-  grunt.registerTask('setup', '', ['externalcomponents:setup']);
+  grunt.registerTask('setup', 'Triggers the setup script', [
+      'sudo_subcomponents:setup',
+  ]);
 };

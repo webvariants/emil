@@ -1,40 +1,45 @@
-.button {
-    cursor: pointer;
-    font-size: 11px;
-    line-height: 16px;
-    overflow: hidden;
-    padding: 4px 12px;
-    position: relative;
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.15);
-    .clearfix;
+// Button
+// --------------------------------------------------
 
-    .icon {
-        float: left;
-        margin: 0 10px 0 0;
+.emil-btn {
+  .btn;
+  .emil-states;
+  
+  &:active {
+    box-shadow: none;
+  }
+
+  &.emil-btn-simple {
+    // @TODO create simple Button without borders and filling
+    border-width: 0;
+    bgc: transparent;
+    
+    &:active, &:hover, .selected {
+      background-color: fade(white, 20%);
+      border-width: 0;
+      margin-bottom: 1px;
     }
-
-    &.big {
-        float: left;
-        padding: 4px 0;
-        width: 20px;
+    &:active {
+      background-color: fade(white, 28%);
     }
+  }
+}
 
-    &.simple-button {
-        font-weight: normal;
-        .clearfix;
-    }
+// Button Sizes
+// --------------------------------------------------
 
-    &.icon-button {
-        padding: 4px;
-        width: 60px;
-
-        .icon {
-            margin: 3px 10px 3px 3px;
-        }
-
-        .text {
-            color: white;
-            text-shadow: none;
-        }
-    }
+.emil-btn-lg {
+  // line-height: ensure even-numbered height of button next to large input
+  .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
+  .emil-states;
+}
+.emil-btn-sm {
+  // line-height: ensure proper height of button next to small input
+  .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+  .emil-states;
+}
+.emil-btn-xs {
+  // line-height: ensure proper height of button next to small input
+  .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; @border-radius-small);
+  .emil-states;
 }

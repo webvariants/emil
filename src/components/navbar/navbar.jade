@@ -1,0 +1,40 @@
+mixin emil-navbar(options)
+    - options              = options              || {};
+    - options['id']        = options.id           || '';
+    - options['classes']   = options.classes      || '';
+    - options['size']     = options.size        || '';
+    .emil-navbar(id='#{options.id}', class='#{options.classes} #{options.size} navbar-fixed-top', role='navbar')
+        block
+
+mixin navbar-header
+    .navbar-header
+        block
+
+mixin navbar-brand
+    .navbar-brand
+        block
+
+mixin navbar-left
+    div.navbar-left.nav-navbar.nav
+        block
+
+mixin navbar-right
+    div.navbar-right.nav-navbar.nav
+        block
+
+mixin navbar-form(options)
+    - options              = options              || {};
+    - options['id']        = options.id           || '';
+    - options['classes']   = options.classes      || '';
+    - options['right']     = options.right        || false;
+    - options['role']      = options.role         || '';
+    - if (options.right) options.classes = options.classes + ' navbar-right ';
+    - else options.classes = options.classes + ' navbar-left ';
+
+    form.navbar-form(class=options.classes, role=options.role)
+        block
+
+mixin form-group
+    .form-group
+        block
+

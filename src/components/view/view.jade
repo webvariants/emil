@@ -1,13 +1,17 @@
-mixin view
-    .view
+mixin view(options)
+    - options = options || {};
+    - options['classes'] = options.classes || '';
+    .view.fluid-container(class="#{options.classes}")
         block
 
 mixin app-view(options)
     - options = options || {};
-    body.app-view
+    div.app-view
         block
 
-mixin view-header
+mixin view-header(options)
+    - options = options || {};
+    - options['classes'] = options.classes || '';
     .view-header
         block
 

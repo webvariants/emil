@@ -1,31 +1,39 @@
 .master-detail {
-	.clearfix;
-	height: 100%;
-	-ms-overflow-style: -ms-autohiding-scrollbar; //MAKE SCROLLBARS ON IE HALFTRANSPARENT
-	position: relative;
-	background-color: @master-detail-bg;
+  .translate3d(0,0,0);
+  height: 100%;
+  -ms-overflow-style: -ms-autohiding-scrollbar; //MAKE SCROLLBARS ON IE HALFTRANSPARENT
+  background-color: @body-bg;
 
-	.master {
-		.no-user-selection;
-		.transition(0.1s);
-		height: 100%;
-		overflow-y: auto;
-		background-color: @app-bg-color;
-		padding-right: 0;
-		padding-left: 0;
+  .master {
+    .translate3d(0,0,0);
+    .transition(.1s);
+    .no-user-selection;
+    background-color: @body-bg;
+    display: block;
+    height: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+   -webkit-overflow-scrolling: touch;
+  }
 
-		&.open {
+  .closed-horizontal {
+    height: 48px;
+  }
 
-		}
-		&.closed {
-			width: 60px;
-		}
-	}
+  .closed-vertical {
+    width: 48px;
+  }
 
-	.detail {
-		.box-shadow(-1px 0 2px rgba(0,0,0,.35));
-		padding: 10px;
-		height: 100%;
-		overflow-y: auto;
-	}
+  .detail {
+    .transition(.1s);
+    .box-shadow(-1px 0 2px rgba(0,0,0,.35));
+    .translate3d(0,0,0);
+    position: relative;
+    padding: 10px;
+    height: 100%;
+    overflow-y: auto;
+    background-color: white;
+  }
 }

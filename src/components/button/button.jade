@@ -13,25 +13,21 @@
 
 mixin button(options)
     //- Set default values
-    - options                = options             || {};
-    - options['classes']     = options.classes     || '';
-    - options['id']          = options.id          || '';
-    - options['title']       = options.title       || '';
-    - options['data']        = options.data        || '';
-    - options['disabled']    = options.disabled    || false;
-    - options['type']        = options.dataType    || '';
-    - options.data['target'] = options.data.target || '';
-    - options.data['event']  = options.data.event  || '';
-    - options.data['help']   = options.data.help   || '';
-    - options.data['lang']   = options.data.lang   || '';
-    - options.data['index']  = options.data.index  || '';
-    - options.data['state']  = options.data.state  || '';
-    - options.data['id']     = options.data.id     || '';
-
-    - if (options.disabled) options.classes =+ ' disabled ';
-
-    //- Markup
-    .button(class=options.classes, id=options.id, data-type=options.type, data-target= options.data.target, data-event=options.data.event, data-help=options.data.help, data-lang=options.data.lang, data-index=options.data.index, data-state=options.data.state, data-id=options.data.id)
+    - options             =                  options          || {};
+    - options['classes']  =                  options.classes  || '';
+    - options['priority'] =                  options.priority || 'default';
+    - options['id']       =                  options.id       || '';
+    - options['target']   =                  options.target   || '';
+    - options['toggle']   =                  options.toggle   || '';
+    - options['size']     =                  options.size     || 'md';
+    - options['navbar']   =                  options.navbar   || false;
+    - options['block']    =                  options.block    || false;
+    - options['simple']   =                  options.simple   || false;
+    - if (options.disabled)                  options.classes  = options.classes + ' disabled ';
+    - if (options.navbar)                    options.classes  = options.classes + ' navbar-btn ';
+    - if (options.block)                     options.classes  = options.classes + ' btn-block ';
+    - if (options.simple)                    options.classes  = options.classes + ' emil-btn-simple ';
+    .emil-btn(class='emil-btn-#{options.size} #{options.classes} #{options.priority} ', id='#{options.id}', data-target="#{options.target}", data-toggle="#{options.toggle}")
         block
 
 mixin button-loader
@@ -39,10 +35,11 @@ mixin button-loader
 
 mixin button-group(options)
     //- @FIXME data redefine options structure
+    - options['id']           = options.id   || ''
     - options['data']         = options.data || []
     - options['selectedData'] = options.selectedData || []
     - options['buttons']      = options.buttons || []
     - options['classes']      = options.classes || ''
     - if(options.buttons.length > 0 && options.classes.indexOf('justified') < 0) options.classes = options.classes + ' btn-group-justified'
-    div(class='btn-group btn-group-#{options.size} #{options.classes}')
+    div(id='#{options.id}', class='btn-group btn-group-#{options.size} #{options.classes}')
         block

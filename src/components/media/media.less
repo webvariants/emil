@@ -1,0 +1,24 @@
+.media {
+    .pull-left {
+        &.sm, &.md, &.lg, &.xl {
+            img {
+                max-width: 100%;
+            }
+        }
+        &.sm {
+            .square(32px);
+        }
+        &.md {
+            .square(64px);
+        }
+        &.lg {
+            .square(128px);
+        }
+        &.xl {
+            .square(256px);
+        }
+        &.xxl {
+            .square(512px);
+        }
+    }
+}

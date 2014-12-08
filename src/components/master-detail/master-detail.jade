@@ -1,15 +1,21 @@
 mixin master(options)
     - options = options || {};
-    - options['columns'] = options.columns || 3;
-    .master(class='col-md-#{options.columns}')
+    - options['id']      = options.id || '';
+    - options['classes'] = options.classes || '';
+    - options['columns'] = options.columns || 'col-md-3';
+    .master(id='#{options.id}', class='#{options.columns} #{options.classes}')
         block
 
 mixin detail(options)
     - options = options || {};
-    - options['columns'] = options.columns || 9;
-    .detail(class='col-md-#{options.columns}')
+    - options['columns'] = options.columns || '';
+    .detail.fluid-container(class='#{options.columns}')
         block
 
 mixin master-detail
     .master-detail
+        block
+
+mixin sidebar-btn
+     .sidebar-btn
         block
