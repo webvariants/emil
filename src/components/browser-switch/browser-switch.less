@@ -1,34 +1,39 @@
+
 .browser-switch {
-    background: rgba(250, 250, 250, 0.99);
-    height: 100%;
-    padding-top: 40px;
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    z-index: 5000;
+    background: @browser-switch-overlay-bg;
+    height: @browser-switch-overlay-height;
+    padding-top: @browser-switch-apdding-top;
+    position: @browser-switch-position;
+    text-align: @browser-switch-text-align;
+    width: @browser-switch-overlay-width;
+    z-index: @brwoser-switch-z-index;
+
+    &.default {
+        display: @browser-switch-default-display;
+    }
 }
 
 .browser-switch-msg {
     background: @brand-danger;
-    margin: 20px 0;
-    padding: 20px;
+    margin: @browser-switch-msg-margin;
+    padding: @browser-switch-msg-padding;
 }
 
 .browser-switch-list {
     background: @cyan;
 
     .browser-switch-list-label {
-        display: block;
-        padding: 20px;
+        display: @browser-switch-list-display;
+        padding: @browser-switch-msg-padding;
     }
 
     &.browser-list {
 
         a {
-            color: white;
-            display: block;
-            text-decoration: none;
-            line-height: 40px;
+            color: @browser-switch-link-color;
+            display: @browser-switch-list-display;
+            text-decoration: @browser-switch-link-text-deco;
+            line-height: @browser-switch-line-height;
         }
     }
 }
