@@ -2,7 +2,7 @@
 .browser-switch {
     background: @browser-switch-overlay-bg;
     height: @browser-switch-overlay-height;
-    padding-top: @browser-switch-apdding-top;
+    padding-top: @padding-base-horizontal * 4;
     position: @browser-switch-position;
     text-align: @browser-switch-text-align;
     width: @browser-switch-overlay-width;
@@ -15,8 +15,8 @@
 
 .browser-switch-msg {
     background: @brand-danger;
-    margin: @browser-switch-msg-margin;
-    padding: @browser-switch-msg-padding;
+    margin: @padding-base-horizontal 0;
+    padding: @padding-base-horizontal;
 }
 
 .browser-switch-list {
@@ -24,7 +24,7 @@
 
     .browser-switch-list-label {
         display: @browser-switch-list-display;
-        padding: @browser-switch-msg-padding;
+        padding: @padding-base-horizontal;
     }
 
     &.browser-list {
