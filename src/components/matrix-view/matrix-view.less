@@ -1,16 +1,21 @@
 .matrix-view {
+    padding-bottom: @padding-base-horizontal;
 
     .matrix-row {
         border-bottom: 1px solid @border-color-base;
         .clearfix;
+
+        &:nth-of-type(even) {
+            background-color: @matrix-zebra-bg;
+        }
     }
 
     .matrix-col {
         border-right: 1px solid @border-color-base;
         box-sizing: border-box;
         float: left;
-        text-align: center;
-        padding: 5px;
+        padding: @padding-base-vertical @padding-base-horizontal;
+        text-align: @matrix-view-text-align;
 
         .icon {
             margin: 0;

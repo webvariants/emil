@@ -1,4 +1,11 @@
+//- EXAPMPLE ==========================================================================
+//- - var data = [
+//-         -   [{text : 'foo'}, {text : 'foo1'}, {text : 'foo2'}, {text : 'foo3'}],
+//-         -   [{text : 'bar'}, {text : 'bar1'}, {text : 'bar2'}, {text : 'bar3'}]
+//-         - ]
+//- +matrix-view({matrixCol: 4, matrixRow: 2, matrixContent: data})
 
+//- 12 columns maximal
 
 mixin matrix-view(options)
     - options = options || {};
@@ -13,7 +20,6 @@ mixin matrix-view(options)
                 - var col = 0
                 while col < options.matrixCol
                      div(class='matrix-col matrix-col-#{options.matrixCol}')
-                         //- p= 'matrixCol ' + options.matrixCol
                          if options.matrixContent[row] && options.matrixContent[row][col]
                             if options.matrixContent[row][col].mixin
                                 +#{options.matrixContent[row][col].mixin}(options.matrixContent[row][col].args)
