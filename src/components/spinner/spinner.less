@@ -1,15 +1,29 @@
 .spinner{
-    width: 200px;
 
-    .spinner-up,
-    .spinner-down {
-        background: @spinner-background;
-        border-radius: @spinner-border-radius;
-        border: @spinner-border-color @spinner-border-width @spinner-border-style;
-        color: @spinner-font-color;
-        cursor: pointer;
+    .emil-btn {
+        cursor: @spinner-cursor;
         line-height: @line-height-base;
-        text-align: center;
+        text-align: @spinner-align;
+        width: @spinner-width;
+
+        .icon {
+            display: @spinner-display;
+            margin: @spinner-margin;
+            padding: @spinner-padding;
+            width: @spinner-width;
+        }
+    }
+
+    .hour-spinner,
+    .minute-spinner {
+        float: @spinner-float;
+        width: @spinner-width;
+    }
+
+    .divider {
+        background: gold;
+        float: @spinner-float;
+        width: @spinner-divider-width;
     }
 
     .spinner-display {
@@ -17,13 +31,12 @@
         border: @spinner-border-color @spinner-border-width @spinner-border-style;
         border-radius: @spinner-border-radius;
         height: @line-height-base * 2;
-        margin: @line-height-base 0;
-        overflow-y: scroll;
+        margin: @spinner-distance 0;
 
         .spinner-item {
-            cursor: pointer;
+            cursor: @spinner-cursor;
             line-height: @line-height-base * 2 - 2;
-            text-align: center;
+            text-align: @spinner-align;
         }
     }
 }
