@@ -67,4 +67,5 @@ module.exports = function(grunt) {
       'concat:jade',
       'copy:bootstrap'
   ]);
+  grunt.registerTask('development',['build']);
 };
