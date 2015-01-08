@@ -1,0 +1,487 @@
++docu-component
+    h2 Badges
+
+    +code
+        | mixin badge(options)
+        |     - options                = options             || {};
+        |     - options['classes']     = options.classes     || '';
+        |     .badge(class='#{options.classes}', id=options.id)
+        |         block
+
+    +code
+        .table-view
+            .table-cell
+                .emil-table-cell-right
+                    .badge 12
+            .table-cell
+                .emil-table-cell-right
+                    .badge 12
+            .table-cell
+                .emil-table-cell-right
+                    .badge 12
+            .table-cell
+                .emil-table-cell-right
+                    .badge 12
+
+
+
+
+mixin browser-switch(options)
+    - options = options || {};
+    - options['option1'] = options.option1 || NULL;
+    - options['option2'] = options.option2 || NULL;
+    .browser-switch(class='#{options.classes}')
+        .col-md-4.col-md-offset-4
+            block
+
+mixin browser-switch-msg(options)
+    - options = options || {};
+    - options['option1'] = options.option1 || NULL;
+    - options['option2'] = options.option2 || NULL;
+    .browser-switch-msg
+        +label({label: 'Your browser is not supported.', classes: 'emil-typo browser-switch-msg'})
+
+mixin browser-switch-list(options)
+    - options = options || {};
+    - options['classes'] = options.classes || NULL;
+    - options['option2'] = options.option2 || NULL;
+    div(class='browser-switch-list #{options.classes}')
+        +label({label: 'Please use one of this browsers.', classes: 'emil-typo browser-switch-list-label'})
+        +table-view({})
+          +table-cell-nav({})
+            a(href='https://www.mozilla.org/de/firefox/new/', target='_blank', title='Download Firefox') Firefox
+          +table-cell-nav({})
+            a(href='https://www.google.de/intl/de/chrome/browser/', target='_blank', title='Download Chrome') Chrome
+          +table-cell-nav({})
+            a(href='https://www.apple.com/de/safari/', target='_blank', title='Download Safari') Safari
+
+mixin button(options)
+    - options             =                  options          || {};
+    - options['classes']  =                  options.classes  || '';
+    - options['priority'] =                  options.priority || 'default';
+    - options['id']       =                  options.id       || '';
+    - options['target']   =                  options.target   || '';
+    - options['toggle']   =                  options.toggle   || '';
+    - options['size']     =                  options.size     || 'md';
+    - options['navbar']   =                  options.navbar   || false;
+    - options['block']    =                  options.block    || false;
+    - options['simple']   =                  options.simple   || false;
+    - if (options.disabled)                  options.classes  = options.classes + ' disabled ';
+    - if (options.navbar)                    options.classes  = options.classes + ' navbar-btn ';
+    - if (options.block)                     options.classes  = options.classes + ' btn-block ';
+    - if (options.simple)                    options.classes  = options.classes + ' emil-btn-simple ';
+    .emil-btn(class='emil-btn-#{options.size} #{options.classes} #{options.priority} ', id='#{options.id}', data-target="#{options.target}", data-toggle="#{options.toggle}")
+        block
+
+mixin button-loader
+    span.button-loader
+
+mixin button-group(options)
+    //- @FIXME data redefine options structure
+    - options['id']           = options.id   || ''
+    - options['data']         = options.data || []
+    - options['selectedData'] = options.selectedData || []
+    - options['buttons']      = options.buttons || []
+    - options['classes']      = options.classes || ''
+    - if(options.buttons.length > 0 && options.classes.indexOf('justified') < 0) options.classes = options.classes + ' btn-group-justified'
+    div(id='#{options.id}', class='btn-group btn-group-#{options.size} #{options.classes}')
+        block
+
+mixin emil-gallery(options)
+  //- Set default values
+  - options             =                  options          || {};
+  - options['classes']  =                  options.classes  || '';
+  .emil-gallery.fluid-container(class='#{options.classes}')
+    block
+
+mixin emil-pager(options)
+  //- Set default values
+  - options             =                  options          || {};
+  - options['classes']  =                  options.classes  || '';
+  - options['pages']  =                  options.pages  || 1;
+  .emil-pager(class='#{options.classes}')
+    block
+
+mixin emil-slides(options)
+  //- Set default values
+  - options             =                  options          || {};
+  - options['classes']  =                  options.classes  || '';
+  .emil-slides(class='#{options.classes}')
+    block
+
+mixin emil-slide(options)
+  //- Set default values
+  - options             =                  options          || {};
+  - options['classes']  =                  options.classes  || '';
+  - options['data']  =                  options.data  || {};
+  - options.data['index']  =                  options.data.index  || 0;
+  .emil-slide(class='#{options.classes}', data-index=options.data.index)
+    block
+
+mixin emil-gallery-btn(options)
+  //- Set default values
+  - options             =                  options          || {};
+  - options['classes']  =                  options.classes  || '';
+  - options['direction']  =                options.direction  || 'prev';
+  .emil-gallery-btn(class='#{options.classes} #{options.direction}')
+    block
+
+mixin icon(options)
+    //- Setting default values
+    - options['type']     = options.type     || '';
+    - options['hidden']     = options.hidden     || '';
+    - options['size']     = options.size     || 'sm';
+    - options['target']     = options.target     || '';
+    span.icon(class='#{options.type} #{options.size}', aria-hidden=options.hidden, data-target=options.target)
+        block
+
+mixin input(options)
+    //- Set default values
+    - options                = options             || {};
+    - options['id']          = options.id          || '';
+    - options['classes']     = options.classes     || '';
+    - options['placeholder'] = options.placeholder || '';
+    - options['value']       = options.value       || '';
+    - options['size']        = options.size        || 'md';
+    - options['type']        = options.type || '';
+    - options['name']        = options.name || '';
+    - options['target']      = options.target || '';
+
+    input.form-control(type=options.type, class='#{options.classes} input-#{options.size}', id='#{options.id}', placeholder=options.placeholder, value=options.value, name=options.name, data-target=options.target)
+    block
+
+mixin input-group(options)
+    //- Set default values
+    - options                = options             || {};
+    - options['classes']     = options.classes     || '';
+    .input-group(class='#{options.classes}')
+        block
+
+
+mixin input-group-addon(options)
+    //- Set default values
+    - options                = options             || {};
+    - options['classes']     = options.classes     || '';
+    span.input-group-addon
+        block
+
+//- Options
+    label     => String containing the text to show in the label
+    id        => Element id
+    classes   => Element classes
+    translate => translate label true/false
+    value     => value next to label
+
+mixin label(options)
+    - options              = options              || {};
+    - options['label']     = options.label        || '';
+    - options['id']        = options.id           || '';
+    - options['classes']   = options.classes      || '';
+    - options['size']      = options.size         || '';
+
+    span.emil-label(class='#{options.classes} #{options.size}')
+        span #{options.label}
+
+mixin master(options)
+    - options = options || {};
+    - options['id']      = options.id || '';
+    - options['classes'] = options.classes || '';
+    - options['columns'] = options.columns || 'col-md-3';
+    .master(id='#{options.id}', class='#{options.columns} #{options.classes}')
+        block
+
+mixin detail(options)
+    - options = options || {};
+    - options['columns'] = options.columns || '';
+    .detail.fluid-container(class='#{options.columns}')
+        block
+
+mixin master-detail
+    .master-detail
+        block
+
+mixin sidebar-btn
+     .sidebar-btn
+        block
+
+
+
+mixin matrix-view(options)
+    - options = options || {};
+    - options['matrixContent'] = options.matrixContent || NULL;
+    - options['matrixCol'] = options.matrixCol || NULL;
+    - options['matrixRow'] = options.matrixRow || NULL;
+    .matrix-view
+        - var row = 0
+        while row < options.matrixRow
+            div(class='matrix-row matrix-row-#{options.matrixRow}')
+                //- p= 'matrixRow ' + options.matrixRow
+                - var col = 0
+                while col < options.matrixCol
+                     div(class='matrix-col matrix-col-#{options.matrixCol}')
+                         //- p= 'matrixCol ' + options.matrixCol
+                         if options.matrixContent[row] && options.matrixContent[row][col]
+                            if options.matrixContent[row][col].mixin
+                                +#{options.matrixContent[row][col].mixin}(options.matrixContent[row][col].args)
+                            if options.matrixContent[row][col].text
+                                | #{options.matrixContent[row][col].text}
+                        - col++
+                - row++
+mixin media(options)
+    - options = options || {};
+    - options['size'] = options.size || 'md';
+    - options['classes'] = options.classes || '';
+    - options['pull'] = options.pull || 'pull-left';
+    .media(class='#{options.classes}')
+        block
+
+mixin media-pull(options)
+    - options = options || {};
+    - options['pull'] = options.pull || 'left';
+    - options['size'] = options.size || 'md';
+    div(class='pull-#{options.pull} #{options.size}')
+        block
+
+mixin media-body
+    .media-body
+        block
+
+mixin media-heading
+    .media-heading
+        block
+
+
+mixin emil-navbar(options)
+    - options              = options              || {};
+    - options['id']        = options.id           || '';
+    - options['classes']   = options.classes      || '';
+    - options['size']     = options.size        || '';
+    .emil-navbar(id='#{options.id}', class='#{options.classes} #{options.size} navbar-fixed-top', role='navbar')
+        block
+
+mixin navbar-header
+    .navbar-header
+        block
+
+mixin navbar-brand
+    .navbar-brand
+        block
+
+mixin navbar-left
+    div.navbar-left.nav-navbar.nav
+        block
+
+mixin navbar-right
+    div.navbar-right.nav-navbar.nav
+        block
+
+mixin navbar-form(options)
+    - options              = options              || {};
+    - options['id']        = options.id           || '';
+    - options['classes']   = options.classes      || '';
+    - options['right']     = options.right        || false;
+    - options['role']      = options.role         || '';
+    - if (options.right) options.classes = options.classes + ' navbar-right ';
+    - else options.classes = options.classes + ' navbar-left ';
+
+    form.navbar-form(class=options.classes, role=options.role)
+        block
+
+mixin form-group
+    .form-group
+        block
+
+
+mixin simple-notification(options)
+    - options = options || {};
+    - options['alertClass'] = options.alertClass || NULL;
+    div(class="notification simple-notification alert #{options.alertClass}", role="alert")
+        block
+
+mixin button-notification(options)
+    - options = options || {};
+    - options['alertClass'] = options.alertClass || NULL;
+    div(class="notification button-notification alert #{options.alertClass} alert-dismissible", role="alert")
+        +button({classes: 'close', data: {dismiss: 'alert'}})
+            +icon({hidden: 'true'})
+                | &times;
+            span.sr-only Close
+        block
+
+mixin panel(options)
+    - options = options || {};
+    - options['id'] = options.id || '';
+    - options['classes'] = options.classes || '';
+
+    .panel.panel-default(class=options.classes)
+        block
+
+mixin panel-left-side(options)
+    - options = options || {};
+    - options['classes'] = options.classes || '';
+
+    .panel-left-side(class=options.classes)
+        block
+
+mixin panel-right-side(options)
+    - options = options || {};
+    - options['classes'] = options.classes || '';
+
+    .panel-right-side(class=options.classes)
+        block
+
+mixin panel-header(options)
+    - options = options || {};
+    - options['classes'] = options.classes || '';
+
+    .panel-heading(class=options.classes)
+        block
+
+mixin panel-body(options)
+    - options = options || {};
+    - options['classes'] = options.classes || '';
+
+    .panel-body(class=options.classes)
+        block
+
+mixin panel-footer(options)
+    - options = options || {};
+    - options['classes'] = options.classes || '';
+
+    .panel-footer(class=options.classes)
+        block
+
+
+
+mixin switch_unit_div(name, leftActive, disabled, leftLabel, rightLabel, classes)
+  - leftActive = (leftActive && !!leftActive) || false;
+  - leftLabel  = leftLabel  || false;
+  - rightLabel = rightLabel || false;
+  - classes    = classes    || ''
+
+  .switchUnit(class="#{disabled ? 'disabled' : ''} #{classes} #{leftActive ? 'active' : ''}", id='#{name}')
+    .handle
+    .clippingDiv
+      .switchLabel.on(class="#{leftActive ? 'active' : ''}", id="#{name}_left", data-value="1")
+        span
+          if leftLabel
+            |translate:#{leftLabel}
+          else
+            |translate:general.button.on
+          if leftActive
+            input(name='#{name}_left', type='radio', value='1', checked='true')
+          if !leftActive
+            input(name='#{name}_left', type='radio', value='1')
+
+    .switchLabel.off(class="#{leftActive ? '' : 'active'}", id="#{name}_right", data-value="0")
+      span
+        if rightLabel
+          |translate:#{rightLabel}
+        else
+          |translate:general.button.off
+        if !leftActive
+          input(name='#{name}_right', type='radio', value='0', checked='true')
+        if leftActive
+          input(name='#{name}_right', type='radio', value='0')
+    .shutter
+    .switchLabel.hidden
+      span
+        if leftLabel
+          |translate:#{leftLabel}
+        else
+          |translate:general.button.on
+    .switchLabel.hidden
+      span
+        if rightLabel
+          |translate:#{rightLabel}
+        else
+          |translate:general.button.off
+
+mixin caret
+    .caret
+        block
+
+//- Table View
+mixin table-view(options)
+    - options = options || {};
+    - options['classes'] = options.classes || '';
+    - options['hidden'] = options.hidden ? 'hidden' : '';
+    ul.table-view(class='#{options.classes} #{options.hidden}')
+        block
+
+
+//- Table Cells 
+
+mixin table-cell(options)
+    //- Set default values
+    - options             = options          || {};
+    - options['classes']  = options.classes || '';
+    - options['size']  = options.size || 'md';
+
+    li.table-cell(data-id=options.dataID, class='#{options.classes} #{options.size}')
+        block
+
+mixin table-cell-nav(options)
+    //- Set default values
+    - options             = options          || {};
+    - options['classes'] = options.classes || '';
+    - options['target'] = options.target || '';
+    - options['hidden'] = options.hidden ? '' : 'open';
+    - options['dataId'] = options.dataId  || '';
+
+    li.table-cell-nav(class='#{options.classes} #{options.hidden}', data-target=options.target, data-id=options.dataId)
+        block
+
+mixin table-cell-section-header
+    li.table-cell-section-header
+        block
+
+mixin table-cell-nav-section-header
+    li.table-cell-nav-section-header
+        block
+
+mixin table-cell-search
+    //- Set default values
+    - options             = options          || {};
+    - options['classes']  = options.classes || '';
+    li.table-cell-search(class=options.classes)
+        block
+
+mixin table-cell-icon-container(options)
+    //- Set default values
+    - options             = options          || {};
+    - options['classes']  = options.classes  || '';
+    - options['side']     = options.side      || 'left';
+    .icon-container(class='#{options.classes} #{options.side}')
+        block
+
+
+mixin table-cell-container(options)
+    //- Set default values
+    - options             = options          || {};
+    - options['classes']  = options.classes  || '';
+    - options['side']     = options.side      || 'left';
+    div(class='#{options.classes} emil-table-cell-#{options.side} ')
+        block
+
+//- View
+mixin view(options)
+    - options = options || {};
+    - options['classes'] = options.classes || '';
+    .view.fluid-container(class="#{options.classes}")
+        block
+
+mixin app-view(options)
+    - options = options || {};
+    div.app-view
+        block
+
+mixin view-header(options)
+    - options = options || {};
+    - options['classes'] = options.classes || '';
+    .view-header
+        block
+
+mixin view-content
+    .view-content
+        block
