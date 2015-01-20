@@ -1,0 +1,27 @@
+-description = 'the lumas-warenkorb application'
+-title = 'LUMAS - Fotografie, Fotokunst, Bilder online bei LUMAS'
+
+mixin head-desktop
+    doctype
+    html(class='no-js')
+        head
+            meta(charset='utf-8')
+            meta(http-equiv='X-UA-Compatible', content='IE=edge')
+            title #{title}
+            meta(name='description', content='#{description}')
+            link(rel='icon' type='image/x-icon' href='favicon.ico')
+            link(rel='stylesheet', href='app.css')
+        body
+
+mixin head-mobile
+    doctype
+    html(class='no-js')
+        head
+            meta(charset='utf-8')
+            meta(http-equiv='X-UA-Compatible', content='IE=edge')
+            title #{title}
+            meta(name='description', content='#{description}')
+            meta(name='viewport', content='width=device-width, initial-scale=1')
+            link(rel='icon' type='image/x-icon' href='favicon.ico')
+            link(rel='stylesheet', href='app.css')
+        body
