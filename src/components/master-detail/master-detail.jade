@@ -1,13 +1,13 @@
 mixin master(options)
-    - options = options || {};
-    - options['id']      = options.id || '';
+    - options            = options         || {};
+    - options['id']      = options.id      || '';
     - options['classes'] = options.classes || '';
-    - options['columns'] = options.columns || 'col-md-3';
+    - options['columns'] = options.columns || 'col-md-3 col-sm-10';
     .master(id='#{options.id}', class='#{options.columns} #{options.classes}')
         block
 
 mixin detail(options)
-    - options = options || {};
+    - options            = options         || {};
     - options['columns'] = options.columns || '';
     .detail.fluid-container(class='#{options.columns}')
         block

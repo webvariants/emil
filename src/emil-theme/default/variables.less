@@ -51,7 +51,16 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+//== Webfont Handling
+//
+//## Specify custom Location for your own webfonts. Please respect the Licenses of these webfonts at any time.
+//
+//** Set custom font path 
+@font-path: 'font/bebasneue_regular/';
+@font-file: 'bebasneue_regular-webfont';
+@font-name: 'bebasneue_regularregular';
+
+@font-family-sans-serif:  bebasneue_regular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;

@@ -1,16 +1,16 @@
 {
-  "name": "EMIL",
-  "version": "0.0.1",
-  "description": "EMIL - EMIL is a collection of Extensible Mixins In Less.",
-  "main": "index.js",
+  "name": "emil",
+  "version": "0.2.3",
+  "description": "EMIL is a collection of extended Mixins written in Less and Jade based on the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web, Bootstrap.",
+  "main": "src/emil.less",
   "scripts": {
     "test": "grunt test"
   },
   "author": "Steven David <steven.david@webvariants.de>",
   "license": "MIT",
-  "repository" : {
-    "type" : "git",
-    "url" : "git@github.com:webvariants/emil.git"
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:webvariants/emil.git"
   },
   "dependencies": {
     "exec": "^0.1.1",
@@ -34,5 +34,17 @@
       "build-tasks": "build/tasks"
     },
     "components": {}
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/webvariants/emil/issues"
+  },
+  "homepage": "https://github.com/webvariants/emil",
+  "devDependencies": {},
+  "keywords": [
+    "Bootstrap",
+    "webvariants",
+    "Less",
+    "Jade",
+    "SMACSS"
+  ]
 }
