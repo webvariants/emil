@@ -1,11 +1,10 @@
 
-
-echo try to install bower package manager
-npm install -g bower
-
-echo try to update component dependencies
+echo get npm dependencies
 npm install
-bower install
+echo got npm dependencies
 
-echo starting component specific setup
+echo get bower dependencies
+bower install
+echo got bower dependencies
+
 grunt setup
