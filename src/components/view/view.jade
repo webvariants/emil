@@ -1,7 +1,7 @@
 mixin view(options)
     - options = options || {};
     - options['classes'] = options.classes || '';
-    .view.fluid-container(class="#{options.classes}")
+    .view.container-fluid(class="#{options.classes}")
         block
 
 mixin app-view(options)
