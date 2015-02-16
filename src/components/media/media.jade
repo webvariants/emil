@@ -9,7 +9,8 @@ mixin media-pull(options)
     - options = options || {};
     - options['pull'] = options.pull || 'left';
     - options['classes'] = options.classes || '';
-    div(class='media-#{options.pull} #{options.classes}')
+    - options['size'] = options.size || 'md';
+    div(class='media-#{options.pull} #{options.classes} #{options.size}')
         block
 
 mixin media-body
@@ -23,8 +24,7 @@ mixin media-heading
 mixin media-object(options)
     - options = options || {};
     - options['src'] = options.src || '';
-    - options['size'] = options.size || 'md';
-    img(src='#{options.src}', class='media-object #{options.size}')
+    img(src='#{options.src}', class='media-object')
 
 mixin media-list(options)
     - options = options || {};
