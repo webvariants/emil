@@ -1,0 +1,9 @@
+mixin figure(options)
+    - options = options || {};
+    - options['classes'] = options.classes || '';
+    figure(classes: #{options.classes})
+        block
+
+mixin figcaption
+    figcaption
+        block
