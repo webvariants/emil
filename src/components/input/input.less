@@ -11,26 +11,24 @@
     }
 }
 
-.input-error-group {
+.input-group {
+    margin: 0 0 @padding-base-horizontal*2 0;
 
-    &.error {
+    .form-control {
 
-        .form-control {
-            border: 1px solid @danger;
-            color: @danger;
+        &:first-child,
+        &:last-child {
+            border-radius: @border-radius-base;
         }
     }
 }
 
-.input-error {
-    background: @danger;
-    border-radius: @border-radius-base;
-    color: white;
-    padding: 0 @padding-base-vertical;
-    margin: @padding-base-horizontal 0 0 0;
-    line-height: 24px;
+.input-error-group {
 
-    p {
-        margin: 0;
+    .input-error {
+        background: @danger;
+        color: white;
+        margin: @padding-base-horizontal 0 0 0;
+        padding: @padding-base-vertical @padding-base-horizontal;
     }
 }

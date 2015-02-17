@@ -2,35 +2,41 @@ mixin emil-panel(options)
     - options = options || {};
     - options['id'] = options.id || '';
     - options['classes'] = options.classes || '';
+
     .emil-panel.panel-default(class=options.classes)
         block
 
 mixin emil-panel-left-side(options)
     - options = options || {};
     - options['classes'] = options.classes || '';
+
     .emil-panel-left-side(class=options.classes)
         block
 
 mixin emil-panel-right-side(options)
     - options = options || {};
     - options['classes'] = options.classes || '';
+
     .emil-panel-right-side(class=options.classes)
         block
 
 mixin emil-panel-header(options)
     - options = options || {};
     - options['classes'] = options.classes || '';
+
     .emil-panel-heading(class=options.classes)
         block
 
 mixin emil-panel-body(options)
     - options = options || {};
     - options['classes'] = options.classes || '';
+
     .emil-panel-body(class=options.classes)
         block
 
 mixin emil-panel-footer(options)
     - options = options || {};
     - options['classes'] = options.classes || '';
+
     .emil-panel-footer(class=options.classes)
         block
