@@ -1,10 +1,22 @@
-button.emil-panel {
-    .panel;
-    .emil-states;
+.emil-panel {
+    border: @border-color-base solid @border-base;
+    padding: 0;
+    .clearfix;
+
+    .emil-panel-left-side,
+    .emil-panel-right-side {
+        padding: 0;
+    }
+
+    .emil-panel-heading,
+    .emil-panel-body {
+        border-bottom: @border-color-base solid @border-base;
+    }
+
+    .emil-panel-header {
+        padding: 10px;
+    }
 }
-.panel-heading {
-	.clearfix;
-}
-.panel-footer {
-	background-color: transparent;
+.border-right {
+    border-right: @border-color-base solid @border-base;
 }

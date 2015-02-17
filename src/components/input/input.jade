@@ -14,8 +14,8 @@ mixin input(options)
     input.form-control(type=options.type, class='#{options.classes} input-#{options.size}', id='#{options.id}', placeholder=options.placeholder, value=options.value, name=options.name, data-target=options.target, maxlength=options.maxlength)
     block
 
+//- For using inputs in a row like button group.
 mixin input-group(options)
-    //- Set default values
     - options                = options             || {};
     - options['classes']     = options.classes     || '';
     .input-group(class='#{options.classes}')
@@ -23,8 +23,19 @@ mixin input-group(options)
 
 
 mixin input-group-addon(options)
-    //- Set default values
     - options                = options             || {};
     - options['classes']     = options.classes     || '';
     span.input-group-addon
+        block
+
+mixin input-error-group(options)
+    - options                = options             || {};
+    - options['classes']     = options.classes     || '';
+    .input-error-group(class='#{options.classes}')
+        block
+
+mixin input-error(options)
+    - options                = options             || {};
+    - options['classes']     = options.classes     || '';
+    div.input-error
         block
