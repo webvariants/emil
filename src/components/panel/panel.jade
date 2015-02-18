@@ -1,42 +1,42 @@
-mixin emil-panel(options)
+mixin panel(options)
     - options = options || {};
     - options['id'] = options.id || '';
     - options['classes'] = options.classes || '';
 
-    .emil-panel.panel-default(class=options.classes)
+    .panel.panel-default(class=options.classes)
         block
 
-mixin emil-panel-left-side(options)
+mixin panel-left-side(options)
     - options = options || {};
     - options['classes'] = options.classes || '';
 
-    .emil-panel-left-side(class=options.classes)
+    .panel-left-side(class=options.classes)
         block
 
-mixin emil-panel-right-side(options)
+mixin panel-right-side(options)
     - options = options || {};
     - options['classes'] = options.classes || '';
 
-    .emil-panel-right-side(class=options.classes)
+    .panel-right-side(class=options.classes)
         block
 
-mixin emil-panel-header(options)
+mixin panel-header(options)
     - options = options || {};
     - options['classes'] = options.classes || '';
 
-    .emil-panel-heading(class=options.classes)
+    .panel-heading(class=options.classes)
         block
 
-mixin emil-panel-body(options)
+mixin panel-body(options)
     - options = options || {};
     - options['classes'] = options.classes || '';
 
-    .emil-panel-body(class=options.classes)
+    .panel-body(class=options.classes)
         block
 
-mixin emil-panel-footer(options)
+mixin panel-footer(options)
     - options = options || {};
     - options['classes'] = options.classes || '';
 
-    .emil-panel-footer(class=options.classes)
+    .panel-footer(class=options.classes)
         block

@@ -1,15 +1,21 @@
-.emil-panel {
+.panel {
     border: @panel-default-border 1px solid;
     padding: 0;
     .clearfix;
 
-    .emil-panel-left-side,
-    .emil-panel-right-side {
+    .panel-left-side,
+    .panel-right-side {
         padding: 0;
     }
 
-    .emil-panel-heading,
-    .emil-panel-body {
+    .panel-heading,
+    .panel-body {
         border-bottom: @panel-default-border 1px solid;
+    }
+
+    .panel-footer {
+        background: none;
+        border-radius: 0;
+        border-top: 0;
     }
 }
