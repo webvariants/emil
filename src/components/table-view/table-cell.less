@@ -163,13 +163,13 @@
 
     input {
         margin-right: @padding-base-horizontal;
-        left: 50px;
         position: relative;
-        width: 78%;
+        width: 80%;
     }
 
     .icon-container {
         padding-top: 10px;
+        height: 100%;
 
         &.right {
             .pull-right();
@@ -197,11 +197,17 @@
 
 
 .icon-container {
+    height: 100%;
+    padding: 0 @padding-base-vertical 0 0;
 
     &.right {
         .pull-right();
     }
     &.left {
         .pull-left();
+    }
+
+    .icon {
+        height: 100%;
     }
 }

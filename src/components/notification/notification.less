@@ -13,7 +13,52 @@
     &.danger {
 
         .close {
-            background: @danger;
+            border: 1px solid @danger;
+            color: @danger;
+
+            &:hover {
+                background: transparent;
+                color: @danger;
+            }
+        }
+    }
+
+    &.success {
+
+        .close {
+            border: 1px solid @success;
+            color: @success;
+
+            &:hover {
+                background: transparent;
+                color: @success;
+            }
+        }
+    }
+
+    &.info {
+
+        .close {
+            border: 1px solid @info;
+            color: @info;
+
+            &:hover {
+                background: transparent;
+                color: @info;
+            }
+        }
+    }
+
+    &.warning {
+
+        .close {
+            border: 1px solid @warning;
+            color: @warning;
+
+            &:hover {
+                background: transparent;
+                color: @warning;
+            }
         }
     }
 
@@ -22,5 +67,7 @@
         margin: 0;
         opacity: 1;
         right: 0;
+        line-height: 16px;
+        text-shadow: none;
     }
 }
