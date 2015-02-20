@@ -1,7 +1,7 @@
 .notification {
     .emil-states;
     margin: @padding-base-horizontal @padding-base-vertical;
-    padding: @padding-base-horizontal @padding-base-vertical;
+    padding: @padding-base-horizontal - 1 @padding-base-vertical;
     margin: 0 auto;
     width: 100%;
     z-index: 1000;
@@ -10,9 +10,17 @@
         top: @padding-base-horizontal / 2;
     }
 
+    &.danger {
+
+        .close {
+            background: @danger;
+        }
+    }
+
     .close {
         font-size: 21px;
         margin: 0;
+        opacity: 1;
         right: 0;
     }
 }

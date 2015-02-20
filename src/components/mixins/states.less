@@ -2,13 +2,13 @@
     @border: ~"btn-@{brand}-border";
     @color: ~"btn-@{brand}-color";
     @bg: ~"btn-@{brand}-bg";
-    
+
     &.@{brand} {
         .transition(0.1s);
         border-color: @@border;
         color: @@color;
         background-color: @@bg;
-        
+
         .icon {
             div {
                 background-color: @@color;
@@ -17,7 +17,7 @@
         &:hover {
             background: @@color;
             color: @contrast;
-            
+
             .icon {
                 div {
                     background-color: @contrast;
@@ -37,6 +37,7 @@
     .emil-state-factory(@brand: danger; @body-bg);
     .emil-state-factory(@brand: success; @body-bg);
     .emil-state-factory(@brand: info; @body-bg);
+    .emil-state-factory(@brand: warning; @body-bg);
 
     &.disabled {
         .opacity(.35);
