@@ -1,16 +1,18 @@
 mixin media(options)
-    - options = options || {};
+    - options            = options         || {};
     - options['classes'] = options.classes || '';
-    - options['pull'] = options.pull || 'pull-left';
-    .media(class='#{options.classes}')
+    .emil-media(class='#{options.classes}')
         block
 
-mixin media-pull(options)
-    - options = options || {};
-    - options['pull'] = options.pull || 'left';
-    - options['classes'] = options.classes || '';
-    - options['size'] = options.size || 'md';
-    div(class='media-#{options.pull} #{options.classes} #{options.size}')
+mixin media-container(options)
+    - options             =                  options          || {};
+    - options['pull']     =                  options.pull     || 'left';
+    - options['size']     =                  options.size     || 'md';
+    - options['url']      =                  options.url      || '';
+    - options['circular'] =                  options.circular || false;
+    - options['classes'] = options.classes || '';options['classes'] = options.classes || '';
+    - if (options.circular) options.classes =  options.classes + ' circular ';
+    div(class='media-#{options.pull} #{options.size} #{options.classes}', style='background-image: url(#{options.url})')
         block
 
 mixin media-body

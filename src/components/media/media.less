@@ -1,69 +1,26 @@
-.media {
-    display: table;
-    margin: 0 0 @padding-base-horizontal 0;
+.emil-media {
+    .media;
     .clearfix;
 
+    display: table;
+    margin: 0 0 @padding-base-horizontal 0;
+    width: 100%;
+    margin-top: 0;
+    
     .media-left,
     .media-right,
     .media-body {
         vertical-align: top;
     }
 
-    .media-left {
-        padding-right: @padding-base-vertical;
-        display: table-cell;
-    }
-
-    .media-right {
-        padding-left: @padding-base-vertical;
-        display: table-cell;
-    }
-
-    .media-list {
-
-        .media-list {
-            margin: @padding-base-horizontal 0 0 0;
+    .media-left, .media-right {
+        &.circular {
+            border-radius: 50%;
         }
-    }
-
-    .media-body {
-        display: table-cell;
-        vertical-align: top;
-
-        p {
-            margin: 0;
-        }
-    }
-
-    .media-heading {
-
-        * {
-            margin: 0 0 12px 0;
-            line-height: 1;
-        }
-    }
-
-    .media-middle {
-        vertical-align: middle;
-    }
-
-    .media-bottom {
-        vertical-align: bottom;
-    }
-
-    .media-left,
-    .media-right {
-
-        img {
-            max-width: 100%;
-        }
-
-        &.rounded {
-
-            img {
-                border-radius: 50%;
-                overflow: hidden;
-            }
+        &.sm, &.md, &.lg, &.xl {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         &.sm {
@@ -84,6 +41,39 @@
 
         &.xxl {
             .square(512px);
+        }
+    }
+    .media-left {
+        .pull-left;
+        padding-left: @padding-base-horizontal;
+    }
+    .media-right {
+        .pull-right;
+        padding-right: @padding-base-horizontal;
+    }
+    .media-heading {
+        * {
+            margin: 0 0 @padding-base-horizontal 0;
+            line-height: 1;
+        }
+    }
+    .media-list {
+        .media-list {
+            margin: @padding-base-horizontal 0 0 0;
+        }
+    }
+    .media-middle {
+        vertical-align: middle;
+    }
+    .media-bottom {
+        vertical-align: bottom;
+    }
+    .media-body {
+        display: table-cell;
+        vertical-align: top;
+
+        p {
+            margin: 0;
         }
     }
 }

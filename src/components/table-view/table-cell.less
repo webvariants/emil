@@ -9,8 +9,11 @@
     cursor: pointer;
     height: @table-cell-height-base;
     overflow: hidden;
-    padding: @table-cell-padding;
     margin: 0;
+    
+    p, .emil-label, h1, h2, h3, h4, h5 {
+        margin: @padding-base-vertical @padding-base-horizontal @padding-base-vertical 0;
+    }
 
     &:hover,
     &.selected {
@@ -52,16 +55,29 @@
         .pull-right();
         height: 100%;
     }
+    &:last-child {
+        border: none;
+    }
 }
-
-
 
 .table-cell-nav {
     .table-cell;
     border: none;
     overflow-x: hidden;
     border-radius: @table-cell-border-radius;
-
+    
+    &.md {
+        padding: (@padding-base-vertical + 2) @padding-base-horizontal;
+    }
+    &.sm {
+        padding: @padding-base-vertical @padding-base-horizontal;
+    }
+    &.lg {
+        padding: (@padding-base-vertical * 4) @padding-base-horizontal;
+    }
+    &.xl {
+        padding: (@padding-base-vertical * 4) @padding-base-horizontal;
+    }
     .title {
         .no-user-selection;
     }
