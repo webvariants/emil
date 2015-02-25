@@ -9,11 +9,15 @@ mixin master(options)
 mixin detail(options)
     - options            = options         || {};
     - options['columns'] = options.columns || '';
-    .detail.fluid-container(class='#{options.columns}')
+    - options['classes'] = options.classes || '';
+    - options['sidebarAnimation'] = options.sidebarAnimation || 'slideIn';
+    .detail.fluid-container(class='#{options.columns} #{options.classes} #{options.sidebarAnimation}')
         block
 
-mixin master-detail
-    .master-detail
+mixin master-detail(options)
+    - options            = options         || {};
+    - options['classes']      = options.classes      || '';
+    .master-detail(class='#{options.classes}')
         block
 
 mixin sidebar-btn

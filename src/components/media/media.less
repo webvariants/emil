@@ -1,9 +1,17 @@
-.media {
-    .pull-left {
+.emil-media {
+    .media;
+    width: 100%;
+    margin-top: 0;
+    
+    .media-left, .media-right {
+        padding-right: @padding-base-horizontal;
+        &.circular {
+            border-radius: 50%;
+        }
         &.sm, &.md, &.lg, &.xl {
-            img {
-                max-width: 100%;
-            }
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         &.sm {
             .square(32px);
@@ -20,5 +28,13 @@
         &.xxl {
             .square(512px);
         }
+    }
+    .media-left {
+        float: left;
+        margin-right: @padding-base-horizontal;
+    }
+    .media-right {
+        float: right;
+        margin-left: @padding-base-horizontal;
     }
 }

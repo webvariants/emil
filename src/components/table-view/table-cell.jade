@@ -13,10 +13,11 @@ mixin table-cell-nav(options)
     - options             = options          || {};
     - options['classes'] = options.classes || '';
     - options['target'] = options.target || '';
-    - options['hidden'] = options.hidden ? '' : 'open';
+    - options['hidden'] = options.hidden ? '' : 'open'; // TODO: For what is this ? :D
     - options['dataId'] = options.dataId  || '';
+    - options['size']  = options.size || 'md';
 
-    li.table-cell-nav(class='#{options.classes} #{options.hidden}', data-target=options.target, data-id=options.dataId)
+    li.table-cell-nav(class='#{options.classes} #{options.size} #{options.hidden}', data-target=options.target, data-id=options.dataId)
         block
 
 mixin table-cell-section-header
