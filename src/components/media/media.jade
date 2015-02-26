@@ -23,6 +23,13 @@ mixin media-heading
     .media-heading
         block
 
+mixin media-side
+    - options             =                  options            || {};
+    - options['pull']     =                  options.pull       || 'left';
+    - options['size']     =                  options.size       || 'md';
+    - options['classes']  =                  options.classes    || '';
+    div(class='media-#{options.pull} #{options.size} #{options.classes}')
+
 mixin media-object(options)
     - options = options || {};
     - options['src'] = options.src || '';
