@@ -11,7 +11,7 @@ mixin detail(options)
     - options['columns'] = options.columns || '';
     - options['classes'] = options.classes || '';
     - options['sidebarAnimation'] = options.sidebarAnimation || 'slideIn';
-    .detail.fluid-container(class='#{options.columns} #{options.classes} #{options.sidebarAnimation}')
+    .detail.container-fluid(class='#{options.columns} #{options.classes} #{options.sidebarAnimation}')
         block
 
 mixin master-detail(options)
