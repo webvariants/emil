@@ -2,16 +2,53 @@
 mixin table-cell(options)
     //- Set default values
     - options             = options          || {};
-    - options['classes'] = options.classes || '';
+    - options['classes']  = options.classes || '';
+    - options['size']  = options.size || 'md';
 
-    li.table-cell(data-id=options.dataID, class=options.classes)
+    li.table-cell(data-id=options.dataID, class='#{options.classes} #{options.size}')
         block
 
-mixin nav-table-cell(options)
+mixin table-cell-nav(options)
     //- Set default values
     - options             = options          || {};
     - options['classes'] = options.classes || '';
     - options['target'] = options.target || '';
+    - options['hidden'] = options.hidden ? '' : 'open'; // TODO: For what is this ? :D
+    - options['dataId'] = options.dataId  || '';
+    - options['size']  = options.size || 'md';
 
-    li.nav-table-cell(class=options.classes, data-target=options.target)
+    li.table-cell-nav(class='#{options.classes} #{options.size} #{options.hidden}', data-target=options.target, data-id=options.dataId)
         block
+
+mixin table-cell-section-header
+    li.table-cell-section-header
+        block
+
+mixin table-cell-nav-section-header
+    li.table-cell-nav-section-header
+        block
+
+mixin table-cell-search
+    //- Set default values
+    - options             = options          || {};
+    - options['classes']  = options.classes || '';
+    li.table-cell-search(class=options.classes)
+        block
+
+mixin table-cell-icon-container(options)
+    //- Set default values
+    - options             = options          || {};
+    - options['classes']  = options.classes  || '';
+    - options['side']     = options.side      || 'left';
+    .icon-container(class='#{options.classes} #{options.side}')
+        block
+
+
+mixin table-cell-container(options)
+    //- Set default values
+    - options             = options          || {};
+    - options['classes']  = options.classes  || '';
+    - options['side']     = options.side      || 'left';
+    div(class='#{options.classes} emil-table-cell-#{options.side} ')
+        block
+

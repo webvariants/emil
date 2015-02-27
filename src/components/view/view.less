@@ -1,77 +1,38 @@
 html {
-    height: 100%; /*  This is awkward, why can't the html cannot be fullscreen all the time? WTF */
     margin: 0;
+    background-color: @body-bg;
 }
 
 .view {
-    height: 100%;
+    .emil-states;
+    height: auto;
     background-color: white;
-
+    position: relative;
+    
+    .content {
+        height: 100%;
+        width: 100%;
+    }
     .view-header {
         width: 100%;
         height: 40px;
-        border-bottom: @default-border-color;
+        border-bottom: @border-color-base;
     }
 }
 
-
-
-
-
 .app-view {
+    .transition(.2s);
     .translate3d(0,0,0);
     -webkit-perspective: 1000;
-    position: relative;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: @app-bg-color;
+    background-color: @body-bg;
     height: 100%;
+    position: absolute;
+    
+    .hasNavbar {
+        top: 48px;
+    }
 }
-
-// Old View
-
-// #view {
-//     background-color: transparent;
-// }
-
-// .viewContainer {
-//     background-color: white;
-//     border-top-left-radius: 3px;
-//     border-top-right-radius: 3px;
-//     width: 100%;
-//     height: 100%;
-
-//     .containerBox {
-//         height: 100%;
-//     }
-
-//     .viewHeader {
-//         border-bottom: 1px solid grey;
-//         height: 40px;
-//         width: 100%;
-//         position: relative;
-
-//         &.SystemProfile {
-//             border: 0;
-//         }
-
-//         .viewTitle {
-//             color: grey;
-//             height: 40px;
-//             line-height: 40px;
-//             font-size: 18px;
-//             text-align: center;
-//             position: absolute;
-//             top: 0;
-//             right: 0;
-//             bottom: 0;
-//             left: 0;
-//         }
-//     }
-//     .viewContent {
-//         height: calc(~"100% - 40px");
-
-//     }
-// }

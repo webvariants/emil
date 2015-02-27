@@ -4,26 +4,6 @@ module.exports = function(grunt) {
     clean: {
       all: ['<%= pkg.project.directories.bin %>/*']
     },
-    svgmin: {
-      icons: {
-        files: [{
-          expand: true,
-          cwd: '<%= pkg.project.directories.src %>/icons',
-          src: ['*.svg'],
-          dest: '<%= pkg.project.directories.bin %>/icons'
-        }]
-      }
-    },
-    grunticon: {
-      icons: {
-        files: [{
-          expand: true,
-          cwd: '<%= pkg.project.directories.bin %>/icons',
-          src: ['*.svg'],
-          dest: '<%= pkg.project.directories.bin %>/grunticon'
-        }]
-      }
-    },
     copy: {
       src: {
         expand: true,
@@ -52,32 +32,23 @@ module.exports = function(grunt) {
           dest: '<%= pkg.project.directories.bin %>/emil.jade'
         }]
       }
+    },
+
+    sudo_subcomponents: {
+      development: {
+        options: {
+          cmd: 'grunt',
+          args: ['build'],
+        }
+      }
     }
   });
-  //@TODO refactor and create as plugin
-  var gruntRemote = function (cmd, cwd, done) {
-    var spawn  = require('child_process').spawn,
-        remote = spawn('grunt', [cmd], {cwd: cwd});
-
-    remote.stdout.on('data', function (data) {
-      grunt.log.write(data);
-    });
-    remote.stderr.on('data', function (data) {
-      grunt.fail.fatal(data);
-    });
-    remote.on('close', function (code) {
-      grunt.log.ok(cmd+' '+cwd+' finished ('+code+')');
-      done();
-    });
-  };
 
   grunt.registerTask('build', '', [
       'clean:all',
-      'svgmin:icons',
-      'grunticon:icons',
       'copy:src',
       'concat:jade',
-      'copy:glyphicon',
       'copy:bootstrap'
   ]);
+  grunt.registerTask('development',['build']);
 };

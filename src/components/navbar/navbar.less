@@ -1,0 +1,30 @@
+.emil-navbar {
+    .navbar;
+    margin: 0 0;
+    color: @table-cell-nav-typo-color;
+    padding: @padding-base-vertical @padding-base-horizontal;
+    border-width: 0;
+    background: @navbar-default-bg;
+    height: @navbar-height;
+
+    &.isFixed {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+    .navbar-left, .navbar-right {
+        margin-top: 2px;
+    }
+    .navbar-left {
+        .pull-left;
+    }
+    .navbar-right {
+        .pull-right;
+    }
+    .navbar-title {
+        .text-center;
+        height: @navbar-height - (2* @padding-base-vertical);
+        line-height: @navbar-height - (2* @padding-base-vertical);
+    }
+}

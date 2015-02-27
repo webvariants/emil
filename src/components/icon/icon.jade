@@ -1,0 +1,9 @@
+mixin icon(options)
+    //- Setting default values
+    - options['type']     = options.type     || '';
+    - options['hidden']   = options.hidden   || '';
+    - options['size']     = options.size     || 'sm';
+    - options['target']   = options.target   || '';
+    - options['title']    = options.title    || '';
+    span.icon(class='#{options.type} #{options.size}', aria-hidden=options.hidden, data-target=options.target, title=options.title)
+        block

@@ -1,0 +1,70 @@
+.emil-typo {
+    font-family: @font-family-base;
+    font-size: @font-size-base;
+    line-height: @line-height-base;
+
+    &.large {
+        font-size: @font-size-large;
+        line-height: @line-height-large;
+    }
+
+    &.small {
+        font-size: @font-size-large;
+        line-height: @line-height-large;
+    }
+
+    &.header {
+        font-size: @font-size-large;
+        line-height: @line-height-large;
+        margin-bottom: 20px;
+        display: block;
+    }
+}
+
+.emil-headings {
+    font-family: @headings-font-family;
+    font-weight: @headings-font-weight;
+    line-height: @headings-line-height;
+    color: @headings-color;
+}
+
+body {
+    .emil-typo;
+}
+
+h1, h2, h3, h4, h5 {
+    .emil-headings;
+}
+
+h1 {
+    font-size: @font-size-h1;
+}
+
+h2 {
+    font-size: @font-size-h2;
+}
+
+h3 {
+    font-size: @font-size-h3;
+}
+
+h4 {
+    font-size: @font-size-h4;
+}
+
+h5 {
+    font-size: @font-size-h5;
+}
+
+@font-face {
+    font-family: @font-name;
+    src: url('@{font-file}.eot');
+    src: url('@{font-file}.eot?#iefix') format('embedded-opentype'),
+         url('@{font-file}.woff2') format('woff2'),
+         url('@{font-file}.woff') format('woff'),
+         url('@{font-file}.ttf') format('truetype'),
+         url('@{font-file}.svg#@{font-name}') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
