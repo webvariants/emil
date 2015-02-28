@@ -2,56 +2,103 @@
 .table-cell {
     .translate3d(0,0,0);
     .transition(0.1s, ease-in-out, all);
+    .emil-states;
     background-color: transparent;
-    border-bottom: 1px solid @table-cell-border-color;
-    position: relative;
-    padding: 14px 15px;
-    height: 60px;
+    border-bottom: @table-cell-border solid @table-cell-border-color;
+    border-radius: @table-cell-border-radius;
     cursor: pointer;
+    height: @table-cell-height-base;
     overflow: hidden;
+    margin: 0;
+    
+    p, .emil-label, h1, h2, h3, h4, h5 {
+        margin: @padding-base-vertical @padding-base-horizontal @padding-base-vertical 0;
+    }
 
     &:hover,
     &.selected {
-        .cyanLighten70;
+        .cyanLighten80;
     }
 
     &:active {
         .cyanLighten40;
-        .scale(0.98);
     }
-    &.search:active {
-        .scale(1);
-        // .cyanLighten40;
-    }
+
     & > .table-view {
-        padding-left: 40px;
+        padding-left: (@padding-large-horizontal * 2) + 16px /* @TODO add global icon size*/;
     }
+
     &.open {
         height: auto;
     }
+
+    &.md {
+        height: @table-cell-height-base;
+    }
+    &.sm {
+        height: @table-cell-height-small;
+    }
+    &.lg {
+        height: @table-cell-height-large;
+    }
+    &.xl {
+        height: @table-cell-height-xlarge;
+    }
+    &.auto {
+        height: auto;
+    }
+    .emil-table-cell-left {
+        .pull-left();
+        height: 100%;
+    }
+    .emil-table-cell-right {
+        .pull-right();
+        height: 100%;
+    }
+    &:last-child {
+        border: none;
+    }
 }
 
-.nav-table-cell {
+.table-cell-nav {
     .table-cell;
     border: none;
-    overflow: hidden;
+    overflow-x: hidden;
+    border-radius: @table-cell-border-radius;
+    
+    &.md {
+        padding: (@padding-base-vertical + 2) @padding-base-horizontal;
+    }
+    &.sm {
+        padding: @padding-base-vertical @padding-base-horizontal;
+    }
+    &.lg {
+        padding: (@padding-base-vertical * 4) @padding-base-horizontal;
+    }
+    &.xl {
+        padding: (@padding-base-vertical * 4) @padding-base-horizontal;
+    }
     .title {
         .no-user-selection;
     }
 
-    &:hover, &.selected {
+    &:hover {
         background-color: @table-cell-hover-color;
     }
 
+    &.selected {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
     &:active {
-        background-color: @table-cell-active-color;
+        background-color: rgba(255, 255, 255, 0.35);
     }
 
     .icon {
         z-index: 1;
+        color: @table-cell-nav-icon-color;
         float: left;
-        margin: 7px 23px 20px 7px;
-        color: @nav-table-cell-icon-color;
+        margin-right: @padding-base-horizontal + 2;
     }
 
     .title, .percentage {
@@ -62,15 +109,18 @@
         color: lightGrey;
     }
 
+    .emil-label, .btn-default {
+        color: @table-cell-nav-typo-color;
+    }
+
     .emil-label {
-        float: left;
-        color: @nav-table-cell-typo-color;
+        padding: 0 0 0 5px; /* TODO Better use of variables!!! */
+        position: absolute;
     }
 
     .percentage {
         opacity: 0.65;
         margin-right: 12px;
-        float: right;
         color: white;
         z-index: 1;
     }
@@ -86,5 +136,94 @@
         width: 66%;
         opacity: 0.15;
         z-index: -1;
+    }
+}
+
+.table-cell-section-header {
+    .table-cell;
+    height: @table-cell-section-header-height;
+    border:  @table-cell-border solid @border-color-base;
+    background: @table-cell-section-header-bgc;
+    padding: @table-cell-section-header-padding;
+    border-radius: @table-cell-border-radius;
+
+    &:hover {
+        background: @table-cell-section-header-bgc;
+    }
+}
+
+.table-cell-nav-section-header {
+    .table-cell;
+    border-bottom: @table-cell-border solid @table-cell-nav-section-header-border-color;
+    background: @table-cell-nav-section-header-bgc;
+    height: @table-cell-section-header-height;
+    padding: @table-cell-section-header-padding;
+    border-radius: @table-cell-border-radius;
+
+    .emil-label {
+        color: @table-cell-nav-section-header-color;
+    }
+    &:hover {
+        background-color: @table-cell-nav-section-hover-bgc;
+    }
+}
+
+.table-cell-search {
+    .table-cell-nav;
+    padding-top: (@padding-base-vertical * 2);
+
+    &:active, &:hover  {
+        background-color: transparent;
+        cursor: auto;
+    }
+
+    input {
+        margin-right: @padding-base-horizontal;
+        position: relative;
+        width: 80%;
+    }
+
+    .icon-container {
+        padding-top: 10px;
+        height: 100%;
+
+        &.right {
+            .pull-right();
+        }
+        &.left {
+            .pull-left();
+        }
+    }
+
+    .icon {
+        color: @table-cell-nav-icon-color;
+    }
+}
+
+
+// FIX FOR NEW SIDBAR
+.navbar-brand {
+    padding: 12px 16px 20px;
+
+    .emil-label {
+        white-space: nowrap;
+        position: absolute;
+    }
+}
+
+
+.icon-container {
+    height: 100%;
+    padding: 0 @padding-base-vertical 0 0;
+
+    &.right {
+        .pull-right();
+    }
+    &.left {
+        .pull-left();
+    }
+
+    .icon {
+        height: 100%;
     }
 }

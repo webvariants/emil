@@ -1,0 +1,28 @@
+mixin browser-switch(options)
+    - options = options || {};
+    - options['option1'] = options.option1 || NULL;
+    - options['option2'] = options.option2 || NULL;
+    .browser-switch(class='#{options.classes}')
+        .col-md-4.col-md-offset-4
+            block
+
+mixin browser-switch-msg(options)
+    - options = options || {};
+    - options['option1'] = options.option1 || NULL;
+    - options['option2'] = options.option2 || NULL;
+    .browser-switch-msg
+        +label({label: 'Your browser is not supported.', classes: 'emil-typo browser-switch-msg'})
+
+mixin browser-switch-list(options)
+    - options = options || {};
+    - options['classes'] = options.classes || NULL;
+    - options['option2'] = options.option2 || NULL;
+    div(class='browser-switch-list #{options.classes}')
+        +label({label: 'Please use one of this browsers.', classes: 'emil-typo browser-switch-list-label'})
+        +table-view({})
+          +table-cell-nav({})
+            a(href='https://www.mozilla.org/de/firefox/new/', target='_blank', title='Download Firefox') Firefox
+          +table-cell-nav({})
+            a(href='https://www.google.de/intl/de/chrome/browser/', target='_blank', title='Download Chrome') Chrome
+          +table-cell-nav({})
+            a(href='https://www.apple.com/de/safari/', target='_blank', title='Download Safari') Safari
