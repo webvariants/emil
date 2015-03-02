@@ -1,3 +1,4 @@
+![EMIL Logo](https://github.com/webvariants/emil/blob/release/0.3/emil.png)
 EMIL - Extended Mixins in Less
 ======
 *and jade pssht!*
