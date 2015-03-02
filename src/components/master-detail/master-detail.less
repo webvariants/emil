@@ -17,7 +17,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: @body-bg;
+    // background-color: @body-bg;
+    background: tomato;
     display: block;
     height: 100%;
     padding-right: 0;
@@ -25,14 +26,8 @@
     overflow-y: scroll;
     overflow-x: hidden;
    -webkit-overflow-scrolling: touch;
-
-    @media (max-width: @screen-md-min) {
-      width: @master-mobile-width;
-    }
-  }
-
-  .closed {
-    width: 48px;
+   // float: left;
+   width: @detail-desktop-offset-x;
   }
 
   .detail {
@@ -43,13 +38,46 @@
     height: 100%;
     overflow-y: scroll;
     background-color: white;
+    margin-left: @detail-desktop-offset-x;
+  }
 
-    &.sidebarOpen {
+  &.isOpen {
+
+    .master {
+      width: @detail-desktop-min;
+    }
+
+    .detail {
       .transition(.1s);
       .translate3d(0,0,0);
+      margin-left: @detail-desktop-min;
+    }
+  }
+}
 
-      @media (max-width: @screen-md-min) {
-        margin-left: @master-mobile-width;
+@media (max-width: @screen-md-min) {
+
+  .master-detail {
+
+    .master {
+      width: 100%;
+    }
+
+    .detail {
+      margin-left: 0;
+      top: @detail-mobile-offset-y;
+      width: 100%;
+    }
+
+    &.isOpen {
+
+      .master {
+        width: 100%;
+      }
+
+      .detail {
+        margin-left: @detail-mobile-offset-x;
+        top: @detail-mobile-offset-y * 10;
       }
     }
   }

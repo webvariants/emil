@@ -30,7 +30,6 @@
 //** Master / Detail
 @master-detail-bg: white;
 @master-detail-color: @gray-lighter;
-@master-mobile-width: @padding-base-horizontal * 2 + @icon-size-default;
 
 
 //** Icon-Size
@@ -331,9 +330,9 @@
 //## Define your custom responsive grid.
 
 //** Number of columns in the grid.
-@grid-columns:              12;
+@grid-columns:              16;
 //** Padding between columns. Gets divided in half for the left and right.
-@grid-gutter-width:         30px;
+@grid-gutter-width:         20px;
 // Navbar collapse
 //** Point at which the navbar becomes uncollapsed.
 @grid-float-breakpoint:     @screen-sm-min;
@@ -876,33 +875,6 @@
 @hr-border:                   @gray-lighter;
 
 
-
-
-//==================================================================================================================
-//
-//== Webfont Handling
-//
-//## Specify custom Location for your own webfonts. Please respect the Licenses of these webfonts at any time.
-//
-//** Set custom font path 
-@font-path: 'font';
-
-//==================================================================================================================
-//
-//== Grid Settings
-//
-// Specify custom Grid size for the bootstrap Grid
-//
-//** Number of columns in the grid.
-@grid-columns:              16;
-//** Padding between columns. Gets divided in half for the left and right.
-@grid-gutter-width:         20px;
-// Navbar collapse
-//** Point at which the navbar becomes uncollapsed.
-@grid-float-breakpoint:     @screen-sm-min;
-//** Point at which the navbar begins collapsing.
-@grid-float-breakpoint-max: (@grid-float-breakpoint - 1);
-
 //==================================================================================================================
 //
 //== Color Settings
@@ -945,6 +917,24 @@
 @table-cell-nav-padding: 20px 15px;
 @table-cell-nav-caret-margin: 10px 0px;
 
+//==================================================================================================================
+//
+//== Navigations Settings
+//
+//## Set default component dimensions.
+//** Master / Detail
+@detail-desktop-offset-factor-x: 3;
+@detail-desktop-offset-factor-y: 3;
+@detail-mobile-offset-factor-x: 3;
+@detail-mobile-offset-factor-y: 3;
+
+@detail-desktop-offset-x: 100% / @grid-columns * @detail-desktop-offset-factor-x;
+@detail-desktop-offset-y: 0;
+@detail-desktop-min: @icon-size-default + @padding-base-horizontal * 2;
+@detail-mobile-offset-x: 50%;
+@detail-mobile-offset-y: 0;
+
+@master-desktop-width: @detail-desktop-offset-x;
 
 
 
