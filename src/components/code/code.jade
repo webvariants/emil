@@ -1,0 +1,5 @@
+mixin code(options)
+    - options               = options           || {};
+    - options['classes']    = options.classes   || '';
+    code(class='#{options.classes}')
+        block
