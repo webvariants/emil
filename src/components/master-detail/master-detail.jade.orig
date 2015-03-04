@@ -2,8 +2,13 @@ mixin emil-master(options)
     - options            = options         || {};
     - options['id']      = options.id      || '';
     - options['classes'] = options.classes || '';
+<<<<<<< HEAD
+    - options['columns'] = options.columns || '';
+    .master(id='#{options.id}', class='#{options.columns} #{options.classes}')
+=======
     - options['columns'] = options.columns || 'col-md-3 col-sm-10';
     .emil-master(id='#{options.id}', class='#{options.columns} #{options.classes}')
+>>>>>>> feature/classname
         block
 
 mixin emil-detail(options)

@@ -1,4 +1,4 @@
-.switchUnit {
+.emil-switch-unit {
   @switchUnitHandleSize: 22px;
   @transDuration: .25s;
 
@@ -38,7 +38,7 @@
     width: @switchUnitHandleSize;
     z-index: 5;
 
-    &.noTransitions {
+    &.no-transitions {
       .transition(0s, ease-in, none);
     }
 
@@ -50,7 +50,7 @@
       left: floor(@switchUnitHandleSize / 2) - 4px;
     }
   }
-  .switchLabel {
+  .emil-switch-label {
     float: left;
     opacity: 1;
     .transition(0.15s, ease-in-out, all);
@@ -87,7 +87,6 @@
       width: 100%;
       display: block;
       height: @switchUnitHandleSize;
-      //font-family: Arial;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: 11px;
       font-weight: bold;
@@ -117,7 +116,7 @@
     }
   }
 
-  .clippingDiv {
+  .clipping-div {
       left: 0;
       right: 0;
       top: 0;
@@ -171,22 +170,9 @@
     display: none;
   }
 }
-// fieldset.switchUnitRow {
-//   legend {
-//     @media (min-width: @screen-small) {
-//       min-height: 42px;
-//       span {
-//         padding-top: 10px;
-//       }
-//     }
-//   }
-//   .switchUnit {
-//     margin: 9px auto;
-//   }
-// }
 
 /*  This is awkward but it works for now */
-#maintenance_mode.switchUnit {
+#maintenance_mode.emil-switch-unit {
   width: 60px;
 }
 .noiseSpec {
@@ -195,6 +181,6 @@
   }
 }
 
-.switchUnit {
+.emil-switch-unit {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
