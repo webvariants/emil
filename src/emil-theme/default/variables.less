@@ -19,10 +19,6 @@
 @brand-warning:         #f0ad4e;
 @brand-danger:          #d9534f;
 
-@cyan: #043751;
-
-
-
 
 //== Scaffolding
 //
@@ -67,18 +63,15 @@
 //## Specify custom Location for your own webfonts. Please respect the Licenses of these webfonts at any time.
 //
 //** Set custom font path 
-@icon-font-path: "../fonts/";
-//** File name for all font files.
-@icon-font-name: "glyphicons-halflings-regular";
-//** Element ID within SVG icon file.
-@icon-font-svg-id: "glyphicons_halflingsregular";
+@font-path: 'font/bebasneue_regular/';
+@font-file: 'bebasneue_regular-webfont';
+@font-name: 'bebasneue_regularregular';
 
-@font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-serif: Georgia, "Times New Roman", Times, serif;
+@font-family-sans-serif:  bebasneue_regular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-@font-family-monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
-@font-family-base: @font-family-sans-serif;
-
+@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-base:        @font-family-sans-serif;
 
 @font-size-base:          14px;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
@@ -168,11 +161,8 @@
 @table-bg-hover:                #f5f5f5;
 @table-bg-active:               @table-bg-hover;
 
-
 //** Border color for table and cell borders.
 @table-border-color:            #ddd;
-
-
 
 
 //== Buttons
@@ -182,7 +172,6 @@
 @btn-font-weight:                normal;
 @btn-font-color:                 #FFFFFF;
 
-
 @btn-default-color:              lighten(@gray-light, 40%);
 @btn-default-bg:                 @gray-light;
 @btn-default-border:             darken(@gray-light, 10%);
@@ -190,6 +179,7 @@
 @btn-primary-color:              darken(@brand-primary, 20%);
 @btn-primary-bg:                 @brand-primary;
 @btn-primary-border:             darken(@brand-primary, 10%);
+
 @btn-success-color:              darken(@brand-success, 20%);
 @btn-success-bg:                 @brand-success;
 @btn-success-border:             darken(@brand-success, 10%);
@@ -202,9 +192,9 @@
 @btn-warning-bg:                 @brand-warning;
 @btn-warning-border:             darken(@brand-warning, 20%);
 
-@btn-danger-color:               lighten(@brand-danger, 12%);
+@btn-danger-color:               darken(@brand-danger, 25%);
 @btn-danger-bg:                  @brand-danger;
-@btn-danger-border:              lighten(@brand-danger, 6%);
+@btn-danger-border:              darken(@brand-danger, 10%);
 
 @btn-link-disabled-color:        @gray-light;
 
@@ -848,8 +838,8 @@
 //
 //##
 
-@code-color:                  @lightblue;
-@code-bg:                     @darkblue;
+@code-color:                  #c7254e;
+@code-bg:                     #f9f2f4;
 
 @kbd-color:                   #fff;
 @kbd-bg:                      #333;
@@ -943,12 +933,8 @@
 
 @detail-desktop-offset-x: 100% / @grid-columns * @detail-desktop-offset-factor-x;
 @detail-desktop-offset-y: 0;
-@detail-desktop-width: @icon-size-default + @padding-base-horizontal * 2;
+@detail-desktop-min: @icon-size-default + @padding-base-horizontal * 2;
 @detail-mobile-offset-x: 50%;
 @detail-mobile-offset-y: 0;
 
 @master-desktop-width: @detail-desktop-offset-x;
-
-
-
-
