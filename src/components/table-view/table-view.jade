@@ -1,6 +1,28 @@
 mixin emil-table-view(options)
-    - options = options || {};
-    - options['classes'] = options.classes || '';
-    - options['hidden'] = options.hidden ? 'hidden' : '';
-    ul.emil-table-view(class='#{options.classes} #{options.hidden}')
+    - options                       = options                    || {};
+    - options['classes']            = options.classes            || '';
+    - options['hidden']             = options.hidden             ?  'hidden'             : '';
+    - options['hasTableViewHeaderExpanded'] = options.hasTableViewHeaderExpanded ?  'hasTableViewHeaderExpanded' : '';
+    ul.emil-table-view(class='#{options.classes} #{options.hasTableViewHeaderExpanded} #{options.hidden}')
+        block
+
+mixin emil-table-view-header(options)
+    //- Set default values
+    - options             = options          || {};
+    - options['classes']  = options.classes  || '';
+    .emil-table-view-header(class='#{options.classes} isExpanded')
+        block
+
+mixin emil-table-view-status-bar(options)
+    //- Set default values
+    - options             = options          || {};
+    - options['classes']  = options.classes  || '';
+    .emil-table-view-status-bar(class='#{options.classes}')
+        block
+
+mixin emil-table-view-title-bar(options)
+    //- Set default values
+    - options             = options          || {};
+    - options['classes']  = options.classes  || '';
+    .emil-table-view-title-bar(class='#{options.classes}')
         block

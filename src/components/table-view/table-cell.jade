@@ -32,6 +32,7 @@ mixin emil-table-cell-search
     //- Set default values
     - options             = options          || {};
     - options['classes']  = options.classes || '';
+    
     li.emil-table-cell-search(class=options.classes)
         block
 
@@ -40,6 +41,7 @@ mixin emil-table-cell-icon-container(options)
     - options             = options          || {};
     - options['classes']  = options.classes  || '';
     - options['side']     = options.side      || 'left';
+
     .emil-icon-container(class='#{options.classes} #{options.side}')
         block
 

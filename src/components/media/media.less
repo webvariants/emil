@@ -14,8 +14,10 @@
     }
 
     .media-left, .media-right {
+
         &.circular {
             border-radius: 50%;
+            background-color: @media-bg;
         }
         &.sm, &.md, &.lg, &.xl {
             background-size: cover;
@@ -24,23 +26,23 @@
         }
 
         &.sm {
-            .square(32px);
+            .square(@media-size-sm);
         }
 
         &.md {
-            .square(64px);
+            .square(@media-size-md);
         }
 
         &.lg {
-            .square(128px);
+            .square(@media-size-lg);
         }
 
         &.xl {
-            .square(256px);
+            .square(@media-size-xl);
         }
 
         &.xxl {
-            .square(512px);
+            .square(@media-size-xxl);
         }
     }
     .media-left {

@@ -6,13 +6,13 @@ mixin media(options)
 
 mixin media-container(options)
     - options             =                  options          || {};
+    - options['classes'] = options.classes                    || '';
     - options['pull']     =                  options.pull     || 'left';
     - options['size']     =                  options.size     || 'md';
     - options['url']      =                  options.url      || '';
     - options['circular'] =                  options.circular || false;
-    - options['classes'] = options.classes || '';options['classes'] = options.classes || '';
     - if (options.circular) options.classes =  options.classes + ' circular ';
-    div(class='media-#{options.pull} #{options.size} #{options.classes}', style='background-image: url(#{options.url})')
+    div(class='media-#{options.pull} #{options.size} #{options.classes}', style='background-image: url("#{options.url}")')
         block
 
 mixin media-body

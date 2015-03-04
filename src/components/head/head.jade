@@ -1,28 +1,33 @@
--description = 'emil'
--title = 'EMIL'
+
 
 mixin head-desktop(options)
+    - options                = options             || {};
+    - options['description'] = options.description || '';
+    - options['title']       = options.title       || '';
     doctype
     html(class='no-js')
         head
             meta(charset='utf-8')
             meta(http-equiv='X-UA-Compatible', content='IE=edge')
-            title #{title}
-            meta(name='description', content='#{description}')
-            link(rel='icon' type='image/x-icon' href='favicon.ico')
+            title #{options.title}
+            meta(name='description', content='#{options.description}')
+            link(rel='icon', type='image/x-icon', href='favicon.ico')
             link(rel='stylesheet', href='client.css')
         block
 
-mixin head-mobile
+mixin head-mobile(options)
+    - options                = options             || {};
+    - options['description'] = options.description || '';
+    - options['title']       = options.title       || '';
     doctype
     html(class='no-js')
         head
             meta(charset='utf-8')
             meta(http-equiv='X-UA-Compatible', content='IE=edge')
-            title #{title}
-            meta(name='description', content='#{description}')
-            meta(name='viewport', content='width=device-width, initial-scale=1 user-scalable=no')
-            link(rel='icon' type='image/x-icon' href='favicon.ico')
+            title #{options.title}
+            meta(name='description', content='#{options.description}')
+            meta(name='viewport', content='width=device-width initial-scale=1 user-scalable=no')
+            link(rel='icon', type='image/x-icon', href='favicon.ico')
             link(rel='stylesheet', href='client.css')
             link(rel='apple-touch-icon', href='ios/AppIcon.appiconset/Icon-60@2x.png')
             link(rel='apple-touch-icon', sizes='180x180', href='ios/AppIcon.appiconset/Icon-60@3x.png')
