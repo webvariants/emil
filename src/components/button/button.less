@@ -5,14 +5,23 @@
   .btn;
   .emil-states;
 
+  // .emil-label {
+  //   color: #FFFFFF;
+  // }
+
   &:active {
     box-shadow: none;
   }
 
+  &.emil-btn-outline {
+    background: transparent;
+  }
+
   &.emil-btn-simple {
     // @TODO create simple Button without borders and filling
-    border-width: 0;
-    bgc: transparent;
+    border-width: 1px;
+    border-color: transparent;
+    background-color: transparent;
 
     &:active, &:hover, .selected{
       background-color: fade(white, 20%);
@@ -31,15 +40,12 @@
 .emil-btn-lg {
   // line-height: ensure even-numbered height of button next to large input
   .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
-  .emil-states;
 }
 .emil-btn-sm {
   // line-height: ensure proper height of button next to small input
   .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
-  .emil-states;
 }
 .emil-btn-xs {
   // line-height: ensure proper height of button next to small input
   .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; @border-radius-small);
-  .emil-states;
 }

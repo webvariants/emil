@@ -170,30 +170,31 @@
 //## For each of Bootstrap's buttons, define text, background and border color.
 
 @btn-font-weight:                normal;
+@btn-font-color:                 #FFFFFF;
 
-@btn-default-color:              @gray-light;
-@btn-default-bg:                 transparent;
-@btn-default-border:             @gray-light;
+@btn-default-color:              lighten(@gray-light, 40%);
+@btn-default-bg:                 @gray-light;
+@btn-default-border:             darken(@gray-light, 10%);
 
-@btn-primary-color:              lighten(@brand-primary, 12%);
-@btn-primary-bg:                 transparent;
-@btn-primary-border:             lighten(@brand-primary, 6%);
+@btn-primary-color:              darken(@brand-primary, 20%);
+@btn-primary-bg:                 @brand-primary;
+@btn-primary-border:             darken(@brand-primary, 10%);
 
-@btn-success-color:              lighten(@brand-success, 12%);
-@btn-success-bg:                 transparent;
-@btn-success-border:             lighten(@brand-success, 7%);
+@btn-success-color:              darken(@brand-success, 20%);
+@btn-success-bg:                 @brand-success;
+@btn-success-border:             darken(@brand-success, 10%);
 
-@btn-info-color:                 lighten(@brand-info, 12%);
-@btn-info-bg:                    transparent;
-@btn-info-border:                lighten(@brand-info, 6%);
+@btn-info-color:                 darken(@brand-info, 25%);
+@btn-info-bg:                    @brand-info;
+@btn-info-border:                darken(@brand-info, 10%);
 
-@btn-warning-color:              lighten(@brand-warning, 12%);
-@btn-warning-bg:                 transparent;
-@btn-warning-border:             lighten(@brand-warning, 7%);
+@btn-warning-color:              darken(@brand-warning, 30%);
+@btn-warning-bg:                 @brand-warning;
+@btn-warning-border:             darken(@brand-warning, 20%);
 
-@btn-danger-color:               lighten(@brand-danger, 12%);
-@btn-danger-bg:                  transparent;
-@btn-danger-border:              lighten(@brand-danger, 6%);
+@btn-danger-color:               darken(@brand-danger, 30%);
+@btn-danger-bg:                  @brand-danger;
+@btn-danger-border:              darken(@brand-danger, 25%);
 
 @btn-link-disabled-color:        @gray-light;
 
@@ -932,12 +933,8 @@
 
 @detail-desktop-offset-x: 100% / @grid-columns * @detail-desktop-offset-factor-x;
 @detail-desktop-offset-y: 0;
-@detail-desktop-width: @icon-size-default + @padding-base-horizontal * 2;
+@detail-desktop-min: @icon-size-default + @padding-base-horizontal * 2;
 @detail-mobile-offset-x: 50%;
 @detail-mobile-offset-y: 0;
 
 @master-desktop-width: @detail-desktop-offset-x;
-
-
-
-
