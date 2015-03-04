@@ -6,7 +6,7 @@
   .no-user-selection;
   border-radius: @switchUnitHandleSize / 2;
   height: @switchUnitHandleSize;
-  background: @grey10;
+  background: @gray-light;
   position: relative;
   padding: 0 ceil(@switchUnitHandleSize / 3);
   cursor: pointer;
@@ -54,13 +54,13 @@
     float: left;
     opacity: 1;
     .transition(0.15s, ease-in-out, all);
-    color: @grey53;
+    color: @gray-light;
     position: absolute;
     z-index: 3;
     overflow: hidden;
 
     &.on {
-      color: @white;
+      color: white;
       width: calc(~"100% - 22px");
       right: @switchUnitHandleSize;
 
@@ -104,11 +104,11 @@
       left: 0;
       height: 100%;
       width: @switchUnitHandleSize;
-      background: @sliderBgBlue;
+      background: @brand-info;
       z-index: 2;
 
       &:hover {
-        background: lighten(@sliderBgBlue, 10%);
+        background: lighten(@brand-info, 10%);
       }
 
       &.noTransitions {
@@ -142,7 +142,7 @@
         box-shadow: none;
 
         span {
-          color: @grey40;
+          color: @gray-light;
         }
       }
     }
@@ -153,17 +153,17 @@
     }
 
     .left.active {
-      background: @cyanLight;
+      background: @brand-info;
     }
 
     .right.active {
-      background: @grey40;
+      background: @gray-light;
     }
   }
 
   &:not(.disabled):hover {
     &:not(.active) {
-      background: @grey5;
+      background: @gray-light;
     }
   }
   input[type="radio"] {
