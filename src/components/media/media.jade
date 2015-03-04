@@ -1,16 +1,18 @@
 mixin media(options)
-    - options = options || {};
-    - options['size'] = options.size || 'md';
+    - options            = options         || {};
     - options['classes'] = options.classes || '';
-    - options['pull'] = options.pull || 'pull-left';
-    .media(class='#{options.classes}')
+    .emil-media(class='#{options.classes}')
         block
 
-mixin media-pull(options)
-    - options = options || {};
-    - options['pull'] = options.pull || 'left';
-    - options['size'] = options.size || 'md';
-    div(class='pull-#{options.pull} #{options.size}')
+mixin media-container(options)
+    - options             =                  options          || {};
+    - options['pull']     =                  options.pull     || 'left';
+    - options['size']     =                  options.size     || 'md';
+    - options['url']      =                  options.url      || '';
+    - options['circular'] =                  options.circular || false;
+    - options['classes'] = options.classes || '';options['classes'] = options.classes || '';
+    - if (options.circular) options.classes =  options.classes + ' circular ';
+    div(class='media-#{options.pull} #{options.size} #{options.classes}', style='background-image: url(#{options.url})')
         block
 
 mixin media-body
@@ -21,3 +23,26 @@ mixin media-heading
     .media-heading
         block
 
+mixin media-side
+    - options             =                  options            || {};
+    - options['pull']     =                  options.pull       || 'left';
+    - options['size']     =                  options.size       || 'md';
+    - options['classes']  =                  options.classes    || '';
+    div(class='media-#{options.pull} #{options.size} #{options.classes}')
+
+mixin media-object(options)
+    - options = options || {};
+    - options['src'] = options.src || '';
+    img(src='#{options.src}', class='media-object')
+
+mixin media-list(options)
+    - options = options || {};
+    - options['classes'] = options.classes || '';
+    ul(class='media-list #{options.classes}')
+        block
+
+mixin media-list-item(options)
+    - options = options || {};
+    - options['classes'] = options.classes || '';
+    li(class='media #{options.classes}')
+        block

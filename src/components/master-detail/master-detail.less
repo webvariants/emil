@@ -1,39 +1,56 @@
-.master-detail {
+.emil-master-detail {
   .translate3d(0,0,0);
-  height: 100%;
-  -ms-overflow-style: -ms-autohiding-scrollbar; //MAKE SCROLLBARS ON IE HALFTRANSPARENT
-  background-color: @body-bg;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
-  .master {
+  .emil-master {
     .translate3d(0,0,0);
     .transition(.1s);
     .no-user-selection;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     background-color: @body-bg;
     display: block;
     height: 100%;
     padding-right: 0;
     padding-left: 0;
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
    -webkit-overflow-scrolling: touch;
+
+    @media (max-width: @screen-md-min) {
+      width: @master-mobile-width;
+    }
   }
 
-  .closed-horizontal {
-    height: 48px;
-  }
-
-  .closed-vertical {
+  .closed {
     width: 48px;
   }
 
-  .detail {
+  .emil-detail {
     .transition(.1s);
     .box-shadow(-1px 0 2px rgba(0,0,0,.35));
     .translate3d(0,0,0);
     position: relative;
-    padding: 10px;
     height: 100%;
-    overflow-y: auto;
+    overflow-y: scroll;
     background-color: white;
+
+    &.sidebarOpen {
+      .transition(.1s);
+      .translate3d(0,0,0);
+
+      @media (max-width: @screen-md-min) {
+        margin-left: @master-mobile-width;
+      }
+    }
   }
 }

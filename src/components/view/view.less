@@ -1,25 +1,26 @@
 html {
     margin: 0;
+    background-color: @body-bg;
 }
 
-.view {
+.emil-view {
     .emil-states;
     height: auto;
     background-color: white;
     position: relative;
-    
-    .content {
+
+    .emil-view-content {
         height: 100%;
         width: 100%;
     }
-    .view-header {
+    .emil-view-header {
         width: 100%;
         height: 40px;
         border-bottom: @border-color-base;
     }
 }
 
-.app-view {
+.emil-app-view {
     .transition(.2s);
     .translate3d(0,0,0);
     -webkit-perspective: 1000;
@@ -29,6 +30,9 @@ html {
     left: 0;
     background-color: @body-bg;
     height: 100%;
-    // overflow: hidden;
     position: absolute;
+
+    .hasNavbar {
+        top: 48px;
+    }
 }

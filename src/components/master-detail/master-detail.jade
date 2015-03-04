@@ -1,21 +1,25 @@
-mixin master(options)
-    - options = options || {};
-    - options['id']      = options.id || '';
+mixin emil-master(options)
+    - options            = options         || {};
+    - options['id']      = options.id      || '';
     - options['classes'] = options.classes || '';
-    - options['columns'] = options.columns || 'col-md-3';
-    .master(id='#{options.id}', class='#{options.columns} #{options.classes}')
+    - options['columns'] = options.columns || 'col-md-3 col-sm-10';
+    .emil-master(id='#{options.id}', class='#{options.columns} #{options.classes}')
         block
 
-mixin detail(options)
-    - options = options || {};
+mixin emil-detail(options)
+    - options            = options         || {};
     - options['columns'] = options.columns || '';
-    .detail.fluid-container(class='#{options.columns}')
+    - options['classes'] = options.classes || '';
+    - options['sidebarAnimation'] = options.sidebarAnimation || 'slideIn';
+    .emil-detail.container-fluid(class='#{options.columns} #{options.classes} #{options.sidebarAnimation}')
         block
 
-mixin master-detail
-    .master-detail
+mixin emil-master-detail(options)
+    - options            = options         || {};
+    - options['classes']      = options.classes      || '';
+    .emil-master-detail(class='#{options.classes}')
         block
 
-mixin sidebar-btn
-     .sidebar-btn
+mixin emil-sidebar-btn
+     .emil-sidebar-btn
         block

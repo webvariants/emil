@@ -1,5 +1,11 @@
+mixin input-box(options)
+    - options                = options             || {};
+    - options['id']          = options.id          || '';
+    - options['classes']     = options.classes     || '';
+    .input-box(id='#{options.id}', class='#{options.classes}')
+        block
+
 mixin input(options)
-    //- Set default values
     - options                = options             || {};
     - options['id']          = options.id          || '';
     - options['classes']     = options.classes     || '';
@@ -9,21 +15,31 @@ mixin input(options)
     - options['type']        = options.type || '';
     - options['name']        = options.name || '';
     - options['target']      = options.target || '';
-
-    input.form-control(type=options.type, class='#{options.classes} input-#{options.size}', id='#{options.id}', placeholder=options.placeholder, value=options.value, name=options.name, data-target=options.target)
-    block
+    - options['maxlength']   = options.maxlength || '';
+    input.form-control(type='#{options.type}', class='#{options.classes} input-#{options.size}', id='#{options.id}', placeholder='#{options.placeholder}', value='#{options.value}', name='#{options.name}', data-target='#{options.target}', maxlength='#{options.maxlength}')
 
 mixin input-group(options)
-    //- Set default values
     - options                = options             || {};
     - options['classes']     = options.classes     || '';
-    .input-group(class='#{options.classes}')
+    - options['size']        = options.size        || '';
+    .input-group(class='#{options.classes} input-group-#{options.size}')
         block
 
-
 mixin input-group-addon(options)
-    //- Set default values
     - options                = options             || {};
     - options['classes']     = options.classes     || '';
-    span.input-group-addon
+    span.input-group-addon(class='#{options.classes}')
+        block
+
+mixin input-group-btn(options)
+    - options                = options             || {};
+    - options['classes']     = options.classes     || '';
+    span.input-group-btn(class='#{options.classes}')
+        block
+
+mixin emil-input-box(options)
+    - options                = options             || {};
+    - options['classes']     = options.classes     || '';
+    - options['size']        = options.size        || '';
+    .emil-input-box(class='#{options.classes} input-group-#{options.size}')
         block
