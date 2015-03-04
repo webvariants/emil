@@ -15,7 +15,7 @@
             }
         }
         &:hover {
-            background: @@color;
+            background-color: lighten(@@bg, 15%);
             color: @contrast;
 
             .icon {
@@ -25,19 +25,21 @@
             }
         }
 
-        &:active {
-            background: darken(@@color, 5%);
+        &:active,
+        &.active {
+            background-color: lighten(@@bg, 20%);
+            box-shadow: none;
         }
     }
 }
 
 .emil-states {
-    .emil-state-factory(@brand: primary; @body-bg);
-    .emil-state-factory(@brand: default; @gray);
-    .emil-state-factory(@brand: danger; @body-bg);
-    .emil-state-factory(@brand: success; @body-bg);
-    .emil-state-factory(@brand: info; @body-bg);
-    .emil-state-factory(@brand: warning; @body-bg);
+    .emil-state-factory(@brand: primary; @btn-primary-color);
+    .emil-state-factory(@brand: default; @btn-default-color);
+    .emil-state-factory(@brand: danger; @btn-danger-color);
+    .emil-state-factory(@brand: success; @btn-success-color);
+    .emil-state-factory(@brand: info; @btn-info-color);
+    .emil-state-factory(@brand: warning; @btn-warning-color);
 
     &.disabled {
         .opacity(.35);

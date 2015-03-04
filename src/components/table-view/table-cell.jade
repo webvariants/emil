@@ -1,14 +1,14 @@
 
-mixin table-cell(options)
+mixin emil-table-cell(options)
     //- Set default values
     - options             = options          || {};
     - options['classes']  = options.classes || '';
     - options['size']  = options.size || 'md';
 
-    li.table-cell(data-id=options.dataID, class='#{options.classes} #{options.size}')
+    li.emil-table-cell(data-id=options.dataID, class='#{options.classes} #{options.size}')
         block
 
-mixin table-cell-nav(options)
+mixin emil-table-cell-nav(options)
     //- Set default values
     - options             = options          || {};
     - options['classes'] = options.classes || '';
@@ -17,34 +17,34 @@ mixin table-cell-nav(options)
     - options['dataId'] = options.dataId  || '';
     - options['size']  = options.size || 'md';
 
-    li.table-cell-nav(class='#{options.classes} #{options.size} #{options.hidden}', data-target=options.target, data-id=options.dataId)
+    li.emil-table-cell-nav(class='#{options.classes} #{options.size} #{options.hidden}', data-target=options.target, data-id=options.dataId)
         block
 
-mixin table-cell-section-header
-    li.table-cell-section-header
+mixin emil-table-cell-section-header
+    li.emil-table-cell-section-header
         block
 
-mixin table-cell-nav-section-header
-    li.table-cell-nav-section-header
+mixin emil-table-cell-nav-section-header
+    li.emil-table-cell-nav-section-header
         block
 
-mixin table-cell-search
+mixin emil-table-cell-search
     //- Set default values
     - options             = options          || {};
     - options['classes']  = options.classes || '';
-    li.table-cell-search(class=options.classes)
+    li.emil-table-cell-search(class=options.classes)
         block
 
-mixin table-cell-icon-container(options)
+mixin emil-table-cell-icon-container(options)
     //- Set default values
     - options             = options          || {};
     - options['classes']  = options.classes  || '';
     - options['side']     = options.side      || 'left';
-    .icon-container(class='#{options.classes} #{options.side}')
+    .emil-icon-container(class='#{options.classes} #{options.side}')
         block
 
 
-mixin table-cell-container(options)
+mixin emil-table-cell-container(options)
     //- Set default values
     - options             = options          || {};
     - options['classes']  = options.classes  || '';

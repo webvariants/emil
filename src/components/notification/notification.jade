@@ -8,8 +8,4 @@ mixin button-notification(options)
     - options = options || {};
     - options['classes'] = options.classes || NULL;
     div(class="notification button-notification alert #{options.classes} alert-dismissible", role="alert")
-        +button({classes: 'close', data: {dismiss: 'alert'}})
-            +icon({hidden: 'true'})
-                | &times;
-            span.sr-only Close
         block
