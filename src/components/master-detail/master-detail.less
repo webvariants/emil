@@ -17,7 +17,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: tomato;
+    background: @body-bg;
     display: block;
     height: 100%;
     padding-right: 0;
@@ -41,27 +41,25 @@
 
   &.isOpen {
 
-    .master {
-      width: @detail-desktop-min;
+    .emil-master {
+      width: @detail-desktop-width;
     }
 
-    .detail {
-      .transition(.1s);
-      .translate3d(0,0,0);
-      margin-left: @detail-desktop-min;
+    .emil-detail {
+      margin-left: @detail-desktop-width;
     }
   }
 }
 
 @media (max-width: @screen-md-min) {
 
-  .master-detail {
+  .emil-master-detail {
 
-    .master {
+    .emil-master {
       width: 100%;
     }
 
-    .detail {
+    .emil-detail {
       margin-left: 0;
       top: @detail-mobile-offset-y;
       width: 100%;
@@ -69,13 +67,13 @@
 
     &.isOpen {
 
-      .master {
+      .emil-master {
         width: 100%;
       }
 
-      .detail {
+      .emil-detail {
         margin-left: @detail-mobile-offset-x;
-        top: @detail-mobile-offset-y * 10;
+        top: @detail-mobile-offset-y;
       }
     }
   }

@@ -18,10 +18,24 @@ mixin input(options)
     - options['maxlength']   = options.maxlength || '';
     input.form-control(type='#{options.type}', class='#{options.classes} input-#{options.size}', id='#{options.id}', placeholder='#{options.placeholder}', value='#{options.value}', name='#{options.name}', data-target='#{options.target}', maxlength='#{options.maxlength}')
 
+mixin simple-input(options)
+    - options                = options             || {};
+    - options['id']          = options.id          || '';
+    - options['classes']     = options.classes     || '';
+    - options['placeholder'] = options.placeholder || '';
+    - options['value']       = options.value       || '';
+    - options['size']        = options.size        || 'md';
+    - options['type']        = options.type || '';
+    - options['name']        = options.name || '';
+    - options['target']      = options.target || '';
+    - options['maxlength']   = options.maxlength || '';
+    input(type='#{options.type}', class='#{options.classes} input-#{options.size}', id='#{options.id}', placeholder='#{options.placeholder}', value='#{options.value}', name='#{options.name}', data-target='#{options.target}', maxlength='#{options.maxlength}')
+
+
 mixin input-group(options)
     - options                = options             || {};
     - options['classes']     = options.classes     || '';
-    - options['size']        = options.size        || '';
+    - options['size']        = options.size        || 'md';
     .input-group(class='#{options.classes} input-group-#{options.size}')
         block
 
@@ -40,6 +54,5 @@ mixin input-group-btn(options)
 mixin emil-input-box(options)
     - options                = options             || {};
     - options['classes']     = options.classes     || '';
-    - options['size']        = options.size        || '';
-    .emil-input-box(class='#{options.classes} input-group-#{options.size}')
+    .emil-input-box(class='#{options.classes}')
         block

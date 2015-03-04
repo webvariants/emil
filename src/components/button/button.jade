@@ -11,7 +11,7 @@
     dataEvent  : data-event attribute to handle trigger event
     loader     : true, to enable loading animation
 
-mixin button(options)
+mixin emil-button(options)
     //- Set default values
     - options             =                  options          || {};
     - options['classes']  =                  options.classes  || '';
@@ -23,14 +23,16 @@ mixin button(options)
     - options['navbar']   =                  options.navbar   || false;
     - options['block']    =                  options.block    || false;
     - options['simple']   =                  options.simple   || false;
+    - options['outline']   =                 options.outline   || false;
     - if (options.disabled)                  options.classes  = options.classes + ' disabled ';
     - if (options.navbar)                    options.classes  = options.classes + ' navbar-btn ';
     - if (options.block)                     options.classes  = options.classes + ' btn-block ';
     - if (options.simple)                    options.classes  = options.classes + ' emil-btn-simple ';
+    - if (options.outline)                   options.classes  = options.classes + ' emil-btn-outline ';
     .emil-btn(class='emil-btn-#{options.size} #{options.classes} #{options.priority} ', id='#{options.id}', data-target="#{options.target}", data-toggle="#{options.toggle}")
         block
 
-mixin button-loader
+mixin emil-button-loader
     span.button-loader
 
 mixin button-group(options)
