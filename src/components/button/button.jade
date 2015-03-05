@@ -18,15 +18,16 @@ mixin button(options)
     - options['priority'] =                  options.priority || 'default';
     - options['id']       =                  options.id       || '';
     - options['target']   =                  options.target   || '';
+    - options['toggle']   =                  options.toggle   || '';
     - options['size']     =                  options.size     || 'md';
     - options['navbar']   =                  options.navbar   || false;
     - options['block']    =                  options.block    || false;
     - options['simple']   =                  options.simple   || false;
     - if (options.disabled)                  options.classes  = options.classes + ' disabled ';
     - if (options.navbar)                    options.classes  = options.classes + ' navbar-btn ';
-    - if (options.block)                    options.classes  = options.classes + ' btn-block ';
+    - if (options.block)                     options.classes  = options.classes + ' btn-block ';
     - if (options.simple)                    options.classes  = options.classes + ' emil-btn-simple ';
-    .emil-btn(class='emil-btn-#{options.size} #{options.classes} #{options.priority} ', id='#{options.id}', data-target="#{options.target}")
+    .emil-btn(class='emil-btn-#{options.size} #{options.classes} #{options.priority} ', id='#{options.id}', data-target="#{options.target}", data-toggle="#{options.toggle}")
         block
 
 mixin button-loader
@@ -34,10 +35,11 @@ mixin button-loader
 
 mixin button-group(options)
     //- @FIXME data redefine options structure
+    - options['id']           = options.id   || ''
     - options['data']         = options.data || []
     - options['selectedData'] = options.selectedData || []
     - options['buttons']      = options.buttons || []
     - options['classes']      = options.classes || ''
     - if(options.buttons.length > 0 && options.classes.indexOf('justified') < 0) options.classes = options.classes + ' btn-group-justified'
-    div(class='btn-group btn-group-#{options.size} #{options.classes}')
+    div(id='#{options.id}', class='btn-group btn-group-#{options.size} #{options.classes}')
         block

@@ -10,22 +10,27 @@
     .no-user-selection;
     background-color: @body-bg;
     display: block;
-    height: auto;
+    height: 100%;
     padding-right: 0;
     padding-left: 0;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
    -webkit-overflow-scrolling: touch;
+  }
 
-    &.closed {
-      width: 48px;
-    }
+  .closed-horizontal {
+    height: 48px;
+  }
+
+  .closed-vertical {
+    width: 48px;
   }
 
   .detail {
     .transition(.1s);
     .box-shadow(-1px 0 2px rgba(0,0,0,.35));
     .translate3d(0,0,0);
+    position: relative;
     padding: 10px;
     height: 100%;
     overflow-y: auto;

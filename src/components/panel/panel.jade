@@ -6,14 +6,37 @@ mixin panel(options)
     .panel.panel-default(class=options.classes)
         block
 
-mixin panel-header
-    .panel-heading
+mixin panel-left-side(options)
+    - options = options || {};
+    - options['classes'] = options.classes || '';
+
+    .panel-left-side(class=options.classes)
         block
 
-mixin panel-body
-    .panel-body
+mixin panel-right-side(options)
+    - options = options || {};
+    - options['classes'] = options.classes || '';
+
+    .panel-right-side(class=options.classes)
         block
 
-mixin panel-footer
-    .panel-footer
+mixin panel-header(options)
+    - options = options || {};
+    - options['classes'] = options.classes || '';
+
+    .panel-heading(class=options.classes)
+        block
+
+mixin panel-body(options)
+    - options = options || {};
+    - options['classes'] = options.classes || '';
+
+    .panel-body(class=options.classes)
+        block
+
+mixin panel-footer(options)
+    - options = options || {};
+    - options['classes'] = options.classes || '';
+
+    .panel-footer(class=options.classes)
         block
