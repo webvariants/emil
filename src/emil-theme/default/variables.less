@@ -933,8 +933,36 @@
 
 @detail-desktop-offset-x: 100% / @grid-columns * @detail-desktop-offset-factor-x;
 @detail-desktop-offset-y: 0;
-@detail-desktop-min: @icon-size-default + @padding-base-horizontal * 2;
+@detail-desktop-width: @icon-size-default + @padding-base-horizontal * 2;
 @detail-mobile-offset-x: 50%;
 @detail-mobile-offset-y: 0;
 
 @master-desktop-width: @detail-desktop-offset-x;
+
+
+
+// STEVEN ALLE FOLGENDE VARIABLEN MUSSTE ICH NACHTRAGEN. WARUM?
+
+//==================================================================================================================
+//
+//== Media Settings
+//
+//## Set default component dimensions.
+//** Media
+@media-bg: @gray-lighter;
+@media-size-sm: 16px;
+@media-size-md: 24px;
+@media-size-lg: 36px;
+@media-size-xl: 48px;
+@media-size-xxl: 64px;
+
+@table-view-header-bg: @gray-lighter;
+@table-view-header-color: black;
+@table-view-header-height-expanded: 40px;
+@table-view-status-height: 40px;
+@table-view-status-bg: white;
+@table-view-title-height-expanded: 60px;
+@table-view-title-bg: green;
+@table-view-header-height-collapsed: 20px;
+@table-view-title-height-collapsed: 30px;
+
