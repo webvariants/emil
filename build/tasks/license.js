@@ -11,11 +11,7 @@ module.exports = function(grunt) {
       jade: {
         options: {
           license: 'LICENSE',
-          comment: {
-            start: '//-',
-            end: ''
-          },
-          indent: 4
+          topdoc: true
         },
         files: [{src: ['src/**/*.jade']}]
       }
@@ -24,5 +20,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('license', '', [
       'licensr:jade',
+      'licensr:less',
   ]);
 };
