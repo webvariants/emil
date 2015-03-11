@@ -7,6 +7,7 @@
   bottom: 0;
   left: 0;
   right: 0;
+  height: 100%;
 
   .emil-master {
     .translate3d(0,0,0);
@@ -22,7 +23,7 @@
     height: 100%;
     padding-right: 0;
     padding-left: 0;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
    -webkit-overflow-scrolling: touch;
    width: @detail-desktop-offset-x;
@@ -34,12 +35,12 @@
     .translate3d(0,0,0);
     position: relative;
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
     background-color: white;
     margin-left: @detail-desktop-offset-x;
   }
 
-  &.isClose {
+  &.isOpen {
 
     .emil-master {
       width: @detail-desktop-width;
@@ -47,6 +48,17 @@
 
     .emil-detail {
       margin-left: @detail-desktop-width;
+    }
+  }
+
+  &.isOpenRight {
+
+    .emil-master {
+      width: 100%;
+    }
+
+    .emil-detail {
+      margin-left: - @detail-mobile-offset-x;
     }
   }
 }
@@ -61,11 +73,18 @@
 
     .emil-detail {
       margin-left: 0;
-      top: @detail-mobile-offset-y;
+      margin-top: @detail-mobile-offset-y;
+      width: 100%;
+      overflow: hidden;
+      overflow-y: auto;
+    }
+
+    #timeline-box {
+      margin-left: 0;
       width: 100%;
     }
 
-    &.isClose {
+    &.isOpen {
 
       .emil-master {
         width: 100%;
@@ -73,7 +92,15 @@
 
       .emil-detail {
         margin-left: @detail-mobile-offset-x;
-        top: @detail-mobile-offset-y;
+      }
+    }
+
+    &.isOpenRight {
+
+      #timeline-box {
+        .translate3d(0,0,0);
+        .transition(.1s);
+        left: 0;
       }
     }
   }
