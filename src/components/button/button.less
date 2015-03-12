@@ -4,7 +4,7 @@
 .emil-btn {
   .btn;
   .emil-states;
-  
+
   &:active {
     box-shadow: none;
   }
@@ -13,7 +13,7 @@
     // @TODO create simple Button without borders and filling
     border-width: 0;
     bgc: transparent;
-    
+
     &:active, &:hover, .selected {
       background-color: fade(white, 20%);
       border-width: 0;
@@ -23,7 +23,56 @@
       background-color: fade(white, 28%);
     }
   }
+
+  &.loading {
+    position: relative;
+    overflow: hidden;
+
+    .button-loader {
+        -webkit-animation: button-loader 2.8s infinite;
+        -moz-animation: button-loader 2.8s infinite;
+        -o-animation: button-loader 2.8s infinite;
+        -ms-animation: button-loader 2.8s infinite;
+        animation: button-loader 2.8s infinite;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        background-color: rgba(0,22,61,0.7);
+        z-index: 0;
+        width: 0;
+        opacity: .3;
+    }
+
+    &.btn-bright .button-loader {
+        background-color: rgba(0,74,107,0.35);
+    }
+  }
 }
+
+
+@-webkit-keyframes button-loader {
+  0%, 100% { width: 0%; }
+  50% { width: 100%; }
+}
+
+@-moz-keyframes button-loader {
+  0%, 100% { width: 0%; }
+  50% { width: 100%; }
+}
+
+@-o-keyframes button-loader {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+@-ms-keyframes button-loader {
+  0%, 100% { width: 0%; }
+  50% { width: 100%; }
+}
+
+
 
 // Button Sizes
 // --------------------------------------------------
