@@ -6,7 +6,7 @@
     margin: 0 0 @padding-base-horizontal 0;
     width: 100%;
     margin-top: 0;
-    
+
     .media-left,
     .media-right,
     .media-body {
@@ -73,9 +73,19 @@
     .media-body {
         display: table-cell;
         vertical-align: top;
+        font-size: @font-size-base;
 
-        p {
+        .media-title {
+            margin: @padding-base-vertical 0;
+        }
+
+        .media-info {
             margin: 0;
+        }
+
+        .media-text {
+            margin: 0;
+            color: @gray-light;
         }
     }
 }
