@@ -4,8 +4,9 @@ mixin emil-table-cell(options)
     - options             = options          || {};
     - options['classes']  = options.classes || '';
     - options['size']  = options.size || 'md';
+    - options['target'] = options.target || '';
 
-    li.emil-table-cell(data-id=options.dataID, class='#{options.classes} #{options.size}')
+    li.emil-table-cell(class='#{options.classes} #{options.size}', data-target='#{options.target}')
         block
 
 mixin emil-table-cell-nav(options)
