@@ -39,6 +39,12 @@
     margin-left: @detail-desktop-offset-x;
   }
 
+  .emil-sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
   &.isClose {
 
     .emil-master {
@@ -65,6 +71,10 @@
       width: 100%;
     }
 
+    .emil-sidebar {
+      top: @detail-mobile-offset-y;
+    }
+
     &.isClose {
 
       .emil-master {
@@ -74,6 +84,20 @@
       .emil-detail {
         margin-left: @detail-mobile-offset-x;
         top: @detail-mobile-offset-y;
+      }
+    }
+
+    &.isSidebarOpen {
+
+      .emil-detail {
+        margin-left: -90%;
+        top: @detail-mobile-offset-y;
+        z-index: 2;
+      }
+
+      .emil-sidebar {
+        width: 90%;
+        left: 10%;
       }
     }
   }
