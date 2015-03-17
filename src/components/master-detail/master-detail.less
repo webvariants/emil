@@ -22,10 +22,10 @@
     height: 100%;
     padding-right: 0;
     padding-left: 0;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
-   -webkit-overflow-scrolling: touch;
-   width: @detail-desktop-offset-x;
+    -webkit-overflow-scrolling: touch;
+    width: @detail-desktop-offset-x;
   }
 
   .emil-detail {
@@ -34,7 +34,7 @@
     .translate3d(0,0,0);
     position: relative;
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
     background-color: white;
     margin-left: @detail-desktop-offset-x;
   }
@@ -43,6 +43,8 @@
     position: absolute;
     top: 0;
     left: 0;
+    height: 100%;
+    background: @body-bg;
   }
 
   &.isClose {
@@ -63,16 +65,21 @@
 
     .emil-master {
       width: 100%;
+      z-index: 2;
     }
 
     .emil-detail {
       margin-left: 0;
       top: @detail-mobile-offset-y;
       width: 100%;
+      z-index: 3;
     }
 
     .emil-sidebar {
       top: @detail-mobile-offset-y;
+      width: 90%;
+      left: 100%;
+      z-index: 1;
     }
 
     &.isClose {
@@ -89,15 +96,20 @@
 
     &.isSidebarOpen {
 
+      .emil-master {
+        z-index: 1;
+      }
+
       .emil-detail {
         margin-left: -90%;
         top: @detail-mobile-offset-y;
-        z-index: 2;
+        z-index: 3;
       }
 
       .emil-sidebar {
         width: 90%;
         left: 10%;
+        z-index: 2;
       }
     }
   }
