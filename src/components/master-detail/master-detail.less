@@ -10,7 +10,7 @@
 
   .emil-master {
     .translate3d(0,0,0);
-    .transition(.1s);
+    .transition(.15s);
     .no-user-selection;
     position: absolute;
     top: 0;
@@ -25,36 +25,50 @@
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    width: @detail-desktop-offset-x;
+    width: 100%;
+    z-index: 1;
   }
 
   .emil-detail {
-    .transition(.1s);
-    .box-shadow(-1px 0 2px rgba(0,0,0,.35));
+    .transition(.25s);
     .translate3d(0,0,0);
     position: relative;
     height: 100%;
     overflow-y: auto;
     background-color: white;
     margin-left: @detail-desktop-offset-x;
+    z-index: 3;
+    width: 100% - @detail-desktop-offset-x;
   }
 
   .emil-sidebar {
+    .transition(.15s);
+    .translate3d(0,0,0);
     position: absolute;
     top: 0;
-    left: 0;
+    left: 100%;
     height: 100%;
     background: @body-bg;
+    width: @detail-mobile-offset-x;
+    z-index: 2;
   }
 
   &.isClose {
 
-    .emil-master {
-      width: @detail-desktop-width;
+    .emil-detail {
+      margin-left: @detail-mobile-offset-x;
     }
+  }
+
+  &.isOpenDesktopSidebar {
 
     .emil-detail {
-      margin-left: @detail-desktop-width;
+      width: 100% - @detail-desktop-offset-x * 2;
+    }
+
+    .emil-sidebar {
+      left: 100% - @detail-desktop-offset-x;
+      z-index: 4;
     }
   }
 }
@@ -62,23 +76,22 @@
 @media (max-width: @screen-md-min) {
 
   .emil-master-detail {
+    top: @header-height-md;
 
     .emil-master {
       width: 100%;
       z-index: 2;
+      left: -@detail-mobile-offset-x;
     }
 
     .emil-detail {
       margin-left: 0;
-      top: @detail-mobile-offset-y;
       width: 100%;
       z-index: 3;
     }
 
     .emil-sidebar {
-      top: @detail-mobile-offset-y;
-      width: 90%;
-      left: 100%;
+      left: @detail-mobile-offset-x;
       z-index: 1;
     }
 
@@ -86,30 +99,26 @@
 
       .emil-master {
         width: 100%;
+        left: 0;
       }
 
       .emil-detail {
         margin-left: @detail-mobile-offset-x;
-        top: @detail-mobile-offset-y;
       }
     }
 
     &.isSidebarOpen {
 
       .emil-master {
-        z-index: 1;
+        left: -@detail-mobile-offset-x;
       }
 
       .emil-detail {
-        margin-left: -90%;
-        top: @detail-mobile-offset-y;
-        z-index: 3;
+        margin-left: -@detail-mobile-offset-x;
       }
 
       .emil-sidebar {
-        width: 90%;
-        left: 10%;
-        z-index: 2;
+        left: 100% - @detail-mobile-offset-x;
       }
     }
   }
