@@ -23,3 +23,11 @@ mixin emil-master-detail(options)
 mixin emil-sidebar-btn
      .emil-sidebar-btn
         block
+
+mixin emil-sidebar(options)
+    - options            = options         || {};
+    - options['id']      = options.id      || '';
+    - options['classes'] = options.classes || '';
+    - options['columns'] = options.columns || 'col-md-3 col-sm-10';
+    .emil-sidebar(id='#{options.id}', class='#{options.columns} #{options.classes}')
+        block
