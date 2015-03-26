@@ -15,8 +15,8 @@ mixin input(options)
     - options['type']        = options.type || 'text';
     - options['name']        = options.name || '';
     - options['target']      = options.target || '';
-    - options['maxlength']   = options.maxlength || '';
-    input.form-control(type='#{options.type}', class='#{options.classes} input-#{options.size}', id=options.id, placeholder='#{options.placeholder}', value='#{options.value}', name='#{options.name}', data-target='#{options.target}', maxlength='#{options.maxlength}')
+    - options['maxlength']   = options.maxlength && options.maxlength >= 0 ? options.maxlength : null;
+    input.form-control(type='#{options.type}', class='#{options.classes} input-#{options.size}', id=options.id, placeholder='#{options.placeholder}', value='#{options.value}', name='#{options.name}', data-target='#{options.target}', maxlength=options.maxlength)
 
 mixin simple-input(options)
     - options                = options             || {};
@@ -28,8 +28,8 @@ mixin simple-input(options)
     - options['type']        = options.type || 'text';
     - options['name']        = options.name || '';
     - options['target']      = options.target || '';
-    - options['maxlength']   = options.maxlength || '';
-    input(type='#{options.type}', class='#{options.classes} input-#{options.size}', id=options.id, placeholder='#{options.placeholder}', value='#{options.value}', name='#{options.name}', data-target='#{options.target}', maxlength='#{options.maxlength}')
+    - options['maxlength']   = options.maxlength && options.maxlength >= 0 ? options.maxlength : null;
+    input(type='#{options.type}', class='#{options.classes} input-#{options.size}', id=options.id, placeholder='#{options.placeholder}', value='#{options.value}', name='#{options.name}', data-target='#{options.target}', maxlength=options.maxlength)
 
 
 mixin input-group(options)
