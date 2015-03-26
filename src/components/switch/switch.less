@@ -1,4 +1,4 @@
-.emil-switch-unit {
+.switchUnit {
   @switchUnitHandleSize: 22px;
   @transDuration: .25s;
 
@@ -6,7 +6,7 @@
   .no-user-selection;
   border-radius: @switchUnitHandleSize / 2;
   height: @switchUnitHandleSize;
-  background: @gray-light;
+  background: @blackLighten90;
   position: relative;
   padding: 0 ceil(@switchUnitHandleSize / 3);
   cursor: pointer;
@@ -38,7 +38,7 @@
     width: @switchUnitHandleSize;
     z-index: 5;
 
-    &.no-transitions {
+    &.noTransitions {
       .transition(0s, ease-in, none);
     }
 
@@ -50,11 +50,11 @@
       left: floor(@switchUnitHandleSize / 2) - 4px;
     }
   }
-  .emil-switch-label {
+  .switchLabel {
     float: left;
     opacity: 1;
     .transition(0.15s, ease-in-out, all);
-    color: @gray-light;
+    color: @blackLighten90;
     position: absolute;
     z-index: 3;
     overflow: hidden;
@@ -87,6 +87,7 @@
       width: 100%;
       display: block;
       height: @switchUnitHandleSize;
+      //font-family: Arial;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: 11px;
       font-weight: bold;
@@ -104,11 +105,11 @@
       left: 0;
       height: 100%;
       width: @switchUnitHandleSize;
-      background: @brand-info;
+      background: @sliderBg;
       z-index: 2;
 
       &:hover {
-        background: lighten(@brand-info, 10%);
+        background: lighten(@sliderBg, 10%);
       }
 
       &.noTransitions {
@@ -116,7 +117,7 @@
     }
   }
 
-  .clipping-div {
+  .clippingDiv {
       left: 0;
       right: 0;
       top: 0;
@@ -142,7 +143,7 @@
         box-shadow: none;
 
         span {
-          color: @gray-light;
+          color: @blackLighten90;
         }
       }
     }
@@ -153,26 +154,39 @@
     }
 
     .left.active {
-      background: @brand-info;
+      background: @sliderBg;
     }
 
     .right.active {
-      background: @gray-light;
+      background: @blackLighten90;
     }
   }
 
   &:not(.disabled):hover {
     &:not(.active) {
-      background: @gray-light;
+      background: @blackLighten90;
     }
   }
   input[type="radio"] {
     display: none;
   }
 }
+// fieldset.switchUnitRow {
+//   legend {
+//     @media (min-width: @screen-small) {
+//       min-height: 42px;
+//       span {
+//         padding-top: 10px;
+//       }
+//     }
+//   }
+//   .switchUnit {
+//     margin: 9px auto;
+//   }
+// }
 
 /*  This is awkward but it works for now */
-#maintenance_mode.emil-switch-unit {
+#maintenance_mode.switchUnit {
   width: 60px;
 }
 .noiseSpec {
@@ -181,6 +195,6 @@
   }
 }
 
-.emil-switch-unit {
+.switchUnit {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
