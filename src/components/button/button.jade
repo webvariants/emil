@@ -16,20 +16,20 @@ mixin emil-button(options)
     - options             =                  options          || {};
     - options['classes']  =                  options.classes  || '';
     - options['priority'] =                  options.priority || 'default';
-    - options['id']       =                  options.id       || '';
+    - options['id']       =                  options.id && options.id.length ? options.id : null;
     - options['target']   =                  options.target   || '';
     - options['toggle']   =                  options.toggle   || '';
     - options['size']     =                  options.size     || 'md';
     - options['navbar']   =                  options.navbar   || false;
     - options['block']    =                  options.block    || false;
     - options['simple']   =                  options.simple   || false;
-    - options['outline']   =                 options.outline   || false;
+    - options['outline']  =                  options.outline  || false;
     - if (options.disabled)                  options.classes  = options.classes + ' disabled ';
     - if (options.navbar)                    options.classes  = options.classes + ' navbar-btn ';
     - if (options.block)                     options.classes  = options.classes + ' btn-block ';
     - if (options.simple)                    options.classes  = options.classes + ' emil-btn-simple ';
     - if (options.outline)                   options.classes  = options.classes + ' emil-btn-outline ';
-    .emil-btn(class='emil-btn-#{options.size} #{options.classes} #{options.priority} ', id='#{options.id}', data-target="#{options.target}", data-toggle="#{options.toggle}")
+    .emil-btn(class='emil-btn-#{options.size} #{options.classes} #{options.priority} ', id=options.id, data-target="#{options.target}", data-toggle="#{options.toggle}")
         block
 
 mixin emil-button-loader
@@ -37,12 +37,12 @@ mixin emil-button-loader
 
 mixin button-group(options)
     //- @FIXME data redefine options structure
-    - options['id']           = options.id   || '';
+    - options['id']           = options.id && options.id.length ? options.id : null;
     - options['data']         = options.data || [];
     - options['selectedData'] = options.selectedData || [];
     - options['buttons']      = options.buttons || [];
     - options['classes']      = options.classes || '';
-    - options['size']      = options.size || '';
+    - options['size']         = options.size    || '';
     - if(options.buttons.length > 0 && options.classes.indexOf('justified') < 0) options.classes = options.classes + ' btn-group-justified'
-    div(id='#{options.id}', class='btn-group btn-group-#{options.size} #{options.classes}')
+    div(id=options.id, class='btn-group btn-group-#{options.size} #{options.classes}')
         block
