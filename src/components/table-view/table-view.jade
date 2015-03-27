@@ -1,4 +1,4 @@
-mixin emil-table-view(options)
+mixin table-view(options)
     - options                       = options                    || {};
     - options['classes']            = options.classes            || '';
     - options['hidden']             = options.hidden             ?  'hidden'             : '';
@@ -6,21 +6,21 @@ mixin emil-table-view(options)
     ul.emil-table-view(class='#{options.classes} #{options.hasTableViewHeaderExpanded} #{options.hidden}')
         block
 
-mixin emil-table-view-header(options)
+mixin table-view-header(options)
     //- Set default values
     - options             = options          || {};
     - options['classes']  = options.classes  || '';
     .emil-table-view-header(class='#{options.classes} isExpanded')
         block
 
-mixin emil-table-view-status-bar(options)
+mixin table-view-status-bar(options)
     //- Set default values
     - options             = options          || {};
     - options['classes']  = options.classes  || '';
     .emil-table-view-status-bar(class='#{options.classes}')
         block
 
-mixin emil-table-view-title-bar(options)
+mixin table-view-title-bar(options)
     //- Set default values
     - options             = options          || {};
     - options['classes']  = options.classes  || '';

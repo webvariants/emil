@@ -1,5 +1,5 @@
 
-mixin emil-table-cell(options)
+mixin table-cell(options)
     //- Set default values
     - options             = options          || {};
     - options['classes']  = options.classes || '';
@@ -9,7 +9,7 @@ mixin emil-table-cell(options)
     li.emil-table-cell(class='#{options.classes} #{options.size}', data-target='#{options.target}')
         block
 
-mixin emil-table-cell-nav(options)
+mixin table-cell-nav(options)
     //- Set default values
     - options             = options          || {};
     - options['classes'] = options.classes || '';
@@ -21,15 +21,15 @@ mixin emil-table-cell-nav(options)
     li.emil-table-cell-nav(class='#{options.classes} #{options.size} #{options.hidden}', data-target=options.target, data-id=options.dataId)
         block
 
-mixin emil-table-cell-section-header
+mixin table-cell-section-header
     li.emil-table-cell-section-header
         block
 
-mixin emil-table-cell-nav-section-header
+mixin table-cell-nav-section-header
     li.emil-table-cell-nav-section-header
         block
 
-mixin emil-table-cell-search
+mixin table-cell-search
     //- Set default values
     - options             = options          || {};
     - options['classes']  = options.classes || '';
@@ -37,7 +37,7 @@ mixin emil-table-cell-search
     li.emil-table-cell-search(class=options.classes)
         block
 
-mixin emil-table-cell-icon-container(options)
+mixin table-cell-icon-container(options)
     //- Set default values
     - options             = options          || {};
     - options['classes']  = options.classes  || '';
@@ -47,7 +47,7 @@ mixin emil-table-cell-icon-container(options)
         block
 
 
-mixin emil-table-cell-container(options)
+mixin table-cell-container(options)
     //- Set default values
     - options             = options          || {};
     - options['classes']  = options.classes  || '';
