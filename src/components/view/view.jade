@@ -1,19 +1,19 @@
-mixin emil-view(options)
+mixin view(options)
     - options = options || {};
     - options['classes'] = options.classes || '';
-    .emil-view.container-fluid(class="#{options.classes}")
+    .view.container-fluid(class="#{options.classes}")
         block
 
-mixin emil-app-view
-    div.emil-app-view
+mixin app-view
+    div.app-view
         block
 
-mixin emil-view-header(options)
+mixin view-header(options)
     - options = options || {};
     - options['classes'] = options.classes || '';
-    .emil-view-header
+    .view-header
         block
 
-mixin emil-view-content
-    .emil-view-content
+mixin view-content
+    .view-content
         block

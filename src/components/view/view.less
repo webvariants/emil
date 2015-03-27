@@ -1,30 +1,25 @@
 html {
     margin: 0;
-    background-color: @body-bg;
 }
 
-body {
-    background-color: @body-bg;
-    overflow: visible;
-}
-.emil-view {
+.view {
     .emil-states;
     height: auto;
-    background-color: @body-bg;
+    background-color: white;
     position: relative;
 
-    .emil-view-content {
+    .content {
         height: 100%;
         width: 100%;
     }
-    .emil-view-header {
+    .view-header {
         width: 100%;
         height: 40px;
         border-bottom: @border-color-base;
     }
 }
 
-.emil-app-view {
+.app-view {
     .transition(.2s);
     .translate3d(0,0,0);
     -webkit-perspective: 1000;
@@ -34,9 +29,7 @@ body {
     left: 0;
     background-color: @body-bg;
     height: 100%;
+    // overflow: hidden;
     position: absolute;
-
-    .hasNavbar {
-        top: 48px;
-    }
 }
+

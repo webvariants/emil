@@ -3,26 +3,26 @@ mixin table-view(options)
     - options['classes']            = options.classes            || '';
     - options['hidden']             = options.hidden             ?  'hidden'             : '';
     - options['hasTableViewHeaderExpanded'] = options.hasTableViewHeaderExpanded ?  'hasTableViewHeaderExpanded' : '';
-    ul.emil-table-view(class='#{options.classes} #{options.hasTableViewHeaderExpanded} #{options.hidden}')
+    ul.table-view(class='#{options.classes} #{options.hasTableViewHeaderExpanded} #{options.hidden}')
         block
 
 mixin table-view-header(options)
     //- Set default values
     - options             = options          || {};
     - options['classes']  = options.classes  || '';
-    .emil-table-view-header(class='#{options.classes} isExpanded')
+    .table-view-header(class='#{options.classes} isExpanded')
         block
 
 mixin table-view-status-bar(options)
     //- Set default values
     - options             = options          || {};
     - options['classes']  = options.classes  || '';
-    .emil-table-view-status-bar(class='#{options.classes}')
+    .table-view-status-bar(class='#{options.classes}')
         block
 
 mixin table-view-title-bar(options)
     //- Set default values
     - options             = options          || {};
     - options['classes']  = options.classes  || '';
-    .emil-table-view-title-bar(class='#{options.classes}')
+    .table-view-title-bar(class='#{options.classes}')
         block

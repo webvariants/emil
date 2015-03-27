@@ -6,7 +6,7 @@ mixin table-cell(options)
     - options['size']  = options.size || 'md';
     - options['target'] = options.target || '';
 
-    li.emil-table-cell(class='#{options.classes} #{options.size}', data-target='#{options.target}')
+    li.table-cell(class='#{options.classes} #{options.size}', data-target='#{options.target}')
         block
 
 mixin table-cell-nav(options)
@@ -18,15 +18,15 @@ mixin table-cell-nav(options)
     - options['dataId'] = options.dataId  || '';
     - options['size']  = options.size || 'md';
 
-    li.emil-table-cell-nav(class='#{options.classes} #{options.size} #{options.hidden}', data-target=options.target, data-id=options.dataId)
+    li.table-cell-nav(class='#{options.classes} #{options.size} #{options.hidden}', data-target=options.target, data-id=options.dataId)
         block
 
 mixin table-cell-section-header
-    li.emil-table-cell-section-header
+    li.table-cell-section-header
         block
 
 mixin table-cell-nav-section-header
-    li.emil-table-cell-nav-section-header
+    li.table-cell-nav-section-header
         block
 
 mixin table-cell-search
@@ -34,7 +34,7 @@ mixin table-cell-search
     - options             = options          || {};
     - options['classes']  = options.classes || '';
 
-    li.emil-table-cell-search(class=options.classes)
+    li.table-cell-search(class=options.classes)
         block
 
 mixin table-cell-icon-container(options)
@@ -43,7 +43,7 @@ mixin table-cell-icon-container(options)
     - options['classes']  = options.classes  || '';
     - options['side']     = options.side      || 'left';
 
-    .emil-icon-container(class='#{options.classes} pull-#{options.side}')
+    .icon-container(class='#{options.classes} pull-#{options.side}')
         block
 
 

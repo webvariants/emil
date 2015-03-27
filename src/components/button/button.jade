@@ -10,26 +10,24 @@ mixin emil-button(options)
     - options['navbar']   =                  options.navbar   || false;
     - options['block']    =                  options.block    || false;
     - options['simple']   =                  options.simple   || false;
-    - options['outline']   =                 options.outline   || false;
     - if (options.disabled)                  options.classes  = options.classes + ' disabled ';
     - if (options.navbar)                    options.classes  = options.classes + ' navbar-btn ';
     - if (options.block)                     options.classes  = options.classes + ' btn-block ';
     - if (options.simple)                    options.classes  = options.classes + ' emil-btn-simple ';
-    - if (options.outline)                   options.classes  = options.classes + ' emil-btn-outline ';
     .emil-btn(class='emil-btn-#{options.size} #{options.classes} #{options.priority} ', id='#{options.id}', data-target="#{options.target}", data-toggle="#{options.toggle}")
         block
 
-mixin emil-button-loader
+mixin button-loader
     span.button-loader
 
 mixin button-group(options)
     //- @FIXME data redefine options structure
-    - options['id']           = options.id   || '';
-    - options['data']         = options.data || [];
-    - options['selectedData'] = options.selectedData || [];
-    - options['buttons']      = options.buttons || [];
-    - options['classes']      = options.classes || '';
-    - options['size']      = options.size || '';
+    - options['id']           = options.id   || ''
+    - options['data']         = options.data || []
+    - options['selectedData'] = options.selectedData || []
+    - options['buttons']      = options.buttons || []
+    - options['classes']      = options.classes || ''
     - if(options.buttons.length > 0 && options.classes.indexOf('justified') < 0) options.classes = options.classes + ' btn-group-justified'
     div(id='#{options.id}', class='btn-group btn-group-#{options.size} #{options.classes}')
         block
+
