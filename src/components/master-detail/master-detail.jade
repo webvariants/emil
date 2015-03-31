@@ -16,8 +16,8 @@ mixin emil-detail(options)
 
 mixin emil-master-detail(options)
     - options            = options         || {};
-    - options['classes']      = options.classes      || '';
-    .emil-master-detail(class='#{options.classes} isClose')
+    - options['classes'] = options.classes || '';
+    .emil-master-detail(class='#{options.classes}')
         block
 
 mixin emil-sidebar-btn
