@@ -177,3 +177,20 @@
     0% {transform: rotate(360deg)}
     100% {transform: rotate(0deg)}
 }
+
+
+// Mobile Button Workaround
+// --------------------------------------------------
+.touch {
+
+  .emil-btn {
+
+    &:hover {
+      background: none;
+    }
+
+    &:active {
+      background: @gray-lighter;
+    }
+  }
+}
