@@ -2,22 +2,28 @@
     @border: ~"btn-@{brand}-border";
     @color: ~"btn-@{brand}-color";
     @bg: ~"btn-@{brand}-bg";
-    
+
     &.@{brand} {
         .transition(0.1s);
         border-color: @@border;
-        color: @@color;
-        background-color: @@bg;
-        
+        background: @@bg;
+
+        .emil-label {
+            color: @contrast;
+        }
+
         .icon {
             div {
                 background-color: @@color;
             }
         }
         &:hover {
-            background: @@color;
-            color: @contrast;
-            
+            background: lighten(@@color, 12%);
+
+            .emil-label {
+                color: @contrast;
+            }
+
             .icon {
                 div {
                     background-color: @contrast;
@@ -25,15 +31,16 @@
             }
         }
 
-        &:active {
-            background: darken(@@color, 5%);
+        &:active,
+        &.active {
+            background: lighten(@@color, 6%);
         }
     }
 }
 
 .emil-states {
-    .emil-state-factory(@brand: primary; @body-bg);
-    .emil-state-factory(@brand: default; @gray);
+    .emil-state-factory(@brand: default; @contrast: default);
+    .emil-state-factory(@brand: primary; @contrast: white;);
     .emil-state-factory(@brand: danger; @body-bg);
     .emil-state-factory(@brand: success; @body-bg);
     .emil-state-factory(@brand: info; @body-bg);
