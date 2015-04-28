@@ -12,6 +12,10 @@
             color: @contrast;
         }
 
+        .emil-handle-marker {
+            background-color: darken(@@color, 15%);
+        }
+
         .icon {
             div {
                 background-color: @@color;
@@ -44,6 +48,7 @@
     .emil-state-factory(@brand: danger; @body-bg);
     .emil-state-factory(@brand: success; @body-bg);
     .emil-state-factory(@brand: info; @body-bg);
+    .emil-state-factory(@brand: warning; @body-bg);
 
     &.disabled {
         .opacity(.35);
