@@ -2,6 +2,18 @@
     @border: ~"btn-@{brand}-border";
     @color: ~"btn-@{brand}-color";
     @bg: ~"btn-@{brand}-bg";
+    @handle-bg: ~"btn-@{brand}-handle-bg";
+
+
+    .emil-handle{
+
+         &.@{brand} {
+            .transition(0.1s);
+            border-color: @@border;
+            background: @@handle-bg;
+        }
+    }
+
 
     &.@{brand} {
         .transition(0.1s);
