@@ -1,12 +1,12 @@
 .emil-state-factory(@brand; @contrast;){
     @border: ~"btn-@{brand}-border";
     @color: ~"btn-@{brand}-color";
-    @bg: ~"btn-@{brand}-color";
+    @bg: ~"btn-@{brand}-bg";
 
     &.@{brand} {
         .transition(0.1s);
         border-color: @@border;
-        background: lighten(@@color, 0%);
+        background: lighten(@@color, 90%);
 
         .emil-label {
             color: @contrast;
