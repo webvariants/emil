@@ -1,4 +1,4 @@
-.emil-state-factory(@brand; @contrast){
+.emil-state-factory(@brand; @contrast;){
     @border: ~"btn-@{brand}-border";
     @color: ~"btn-@{brand}-color";
     @bg: ~"btn-@{brand}-bg";
@@ -18,7 +18,7 @@
     &.@{brand} {
         .transition(0.1s);
         border-color: @@border;
-        background: @@bg;
+        background: lighten(@@color, 90%);
 
         .emil-label {
             color: @contrast;
@@ -55,12 +55,12 @@
 }
 
 .emil-states {
-    .emil-state-factory(@brand: default; @contrast: default);
-    .emil-state-factory(@brand: primary; @contrast: white;);
-    .emil-state-factory(@brand: danger; @body-bg);
-    .emil-state-factory(@brand: success; @body-bg);
-    .emil-state-factory(@brand: info; @body-bg);
-    .emil-state-factory(@brand: warning; @body-bg);
+    .emil-state-factory(@brand: default; @contrast: white;);
+    .emil-state-factory(@brand: primary; @contrast: white);
+    .emil-state-factory(@brand: danger; @contrast: white);
+    .emil-state-factory(@brand: success; @contrast: white);
+    .emil-state-factory(@brand: info; @contrast: white);
+    .emil-state-factory(@brand: warning; @contrast: white);
 
     &.disabled {
         .opacity(.35);
