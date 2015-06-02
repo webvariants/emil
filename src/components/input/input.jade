@@ -17,7 +17,8 @@ mixin input-group(options)
     //- Set default values
     - options                = options             || {};
     - options['classes']     = options.classes     || '';
-    .input-group(class='#{options.classes}')
+    - options['size']        = options.size     || '';
+    .input-group(class='#{options.classes} input-group-#{options.size}')
         block
 
 
