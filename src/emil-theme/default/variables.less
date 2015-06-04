@@ -29,8 +29,8 @@
 @body-bg:               @cyan;
 
 //** Master / Detail
-@master-detail-bg: white;
-@master-detail-color: @gray-lighter;
+// @master-detail-bg: white;
+// @master-detail-color: @gray-lighter;
 
 //** Global text color on `<body>`.
 @text-color:            @gray-dark;
@@ -959,5 +959,30 @@
 @handle-marker-width: 12px;
 @handle-border-width: 1px;
 
+// Icon Size
+//** Icon-Size
+@icon-size-sm: 16px;
+@icon-size-md: 24px;
+@icon-size-lg: 32px;
+@icon-size-default: @icon-size-md;
 
+//==================================================================================================================
+//
+//== Navigations Settings
+//
+//## Set default component dimensions.
+//** Master / Detail
+@detail-desktop-offset-factor-x: 3;
+// NOTE Diese Variablen werden noch nicht verwendet ------------
+@detail-desktop-offset-factor-y: 3;
+@detail-mobile-offset-factor-x: 3;
+@detail-mobile-offset-factor-y: 3;
+// --------------------
 
+@detail-desktop-offset-x: 100% / @grid-columns * @detail-desktop-offset-factor-x;
+@detail-desktop-offset-y: 0;
+@detail-desktop-min: @icon-size-default + @padding-base-horizontal * 2;
+@detail-mobile-offset-x: 75%;
+@detail-mobile-offset-y: 0;
+
+@master-desktop-width: @detail-desktop-offset-x;
