@@ -17,6 +17,7 @@ mixin button(options)
     - options['classes']  =                  options.classes  || '';
     - options['priority'] =                  options.priority || 'default';
     - options['id']       =                  options.id       || '';
+    - options['data']       =                  options.data       || {};
     - options['target']   =                  options.target   || '';
     - options['toggle']   =                  options.toggle   || '';
     - options['size']     =                  options.size     || 'md';
@@ -31,7 +32,11 @@ mixin button(options)
     - if (options.simple)                    options.classes  = options.classes + ' emil-btn-simple ';
     - if (options.margin)                    options.classes  = options.classes + ' btn-margin ';
     - if (options.fullwidth)                 options.classes  = options.classes + ' btn-full-width ';
-    .emil-btn(class='emil-btn-#{options.size} #{options.classes} #{options.priority} ', id='#{options.id}', data-target="#{options.target}", data-toggle="#{options.toggle}")
+    - var attrs = {}
+    - for(idx in options.data) { 
+    -   attrs["data-"+idx] = options.data[idx];
+    - }
+    .emil-btn(class='emil-btn-#{options.size} #{options.classes} #{options.priority} ', id='#{options.id}', data-target="#{options.target}", data-toggle="#{options.toggle}")&attributes(attrs)
         block
 
 mixin button-loader

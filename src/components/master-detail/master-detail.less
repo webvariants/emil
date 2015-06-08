@@ -10,46 +10,125 @@
 
   .emil-master {
     .translate3d(0,0,0);
-    .transition(.1s);
+    .transition(.15s);
     .no-user-selection;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: @body-bg;
+    background: @body-bg;
     display: block;
     height: 100%;
     padding-right: 0;
     padding-left: 0;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
-   -webkit-overflow-scrolling: touch;
-
-    @media (max-width: @screen-md-min) {
-      width: @master-mobile-width;
-    }
-  }
-
-  .closed {
-    width: 48px;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    z-index: 1;
   }
 
   .emil-detail {
-    .transition(.1s);
-    .box-shadow(-1px 0 2px rgba(0,0,0,.35));
+    .transition(.25s);
     .translate3d(0,0,0);
     position: relative;
     height: 100%;
-    overflow-y: scroll;
+    padding: 0;
+    overflow-y: auto;
     background-color: white;
+    margin-left: @detail-desktop-offset-x;
+    z-index: 3;
+  }
 
-    &.sidebarOpen {
-      .transition(.1s);
-      .translate3d(0,0,0);
+  .emil-sidebar {
+    .transition(.15s);
+    .translate3d(0,0,0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: @body-bg;
+    width: @detail-desktop-offset-x;
+    z-index: 2;
+    padding: 0;
+  }
 
-      @media (max-width: @screen-md-min) {
-        margin-left: @master-mobile-width;
+  &.isOpened {
+
+    .emil-detail {
+      margin-left: @detail-desktop-offset-x;
+    }
+  }
+
+  &.isClosed {
+
+    .emil-detail {
+      margin-left: @detail-desktop-min;
+    }
+  }
+
+  // &.isOpenDesktopSidebar {
+
+  //   .emil-detail {
+  //     width: 100% - @detail-desktop-offset-x * 2;
+  //   }
+
+  //   .emil-sidebar {
+  //     left: 100% - @detail-desktop-offset-x;
+  //     z-index: 4;
+  //   }
+  // }
+}
+
+@media (max-width: @screen-lg-min) {
+
+  .emil-master-detail {
+    background: red;
+    // top: @header-height-md;
+    top: 0;
+
+    .emil-master {
+      width: 100%;
+      z-index: 2;
+      left: -@detail-mobile-offset-x;
+    }
+
+    .emil-detail {
+      margin-left: 0;
+      width: 100%;
+      z-index: 3;
+    }
+
+    .emil-sidebar {
+      left: @detail-mobile-offset-x;
+      z-index: 1;
+    }
+
+    &.isOpen {
+
+      .emil-master {
+        width: 100%;
+        left: 0;
+      }
+
+      .emil-detail {
+        margin-left: @detail-mobile-offset-x;
+      }
+    }
+
+    &.isSidebarOpen {
+
+      .emil-master {
+        left: -@detail-mobile-offset-x;
+      }
+
+      .emil-detail {
+        margin-left: -@detail-mobile-offset-x;
+      }
+
+      .emil-sidebar {
+        left: 100% - @detail-mobile-offset-x;
       }
     }
   }
