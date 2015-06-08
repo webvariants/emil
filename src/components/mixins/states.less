@@ -7,49 +7,40 @@
 
     .emil-handle{
 
-         &.@{brand} {
+        &.@{brand} {
             .transition(0.1s);
             border-color: @@border;
-            background: @@handle-bg;
-        }
-    }
-
-
-    &.@{brand} {
-        .transition(0.1s);
-        border-color: @@border;
-        background: @@bg;
-
-        .emil-label {
-            color: @contrast;
-        }
-
-        .emil-handle-marker {
-            background-color: darken(@@color, 15%);
-        }
-
-        .icon {
-            div {
-                background-color: @@color;
-            }
-        }
-        &:hover {
-            background: lighten(@@color, 12%);
+            color: @@color;
+            background-color: @@bg;
+            background: @@bg;
 
             .emil-label {
                 color: @contrast;
             }
 
+            .emil-handle-marker {
+                background-color: darken(@@color, 15%);
+            }
+
             .icon {
                 div {
-                    background-color: @contrast;
+                    background-color: @@color;
                 }
             }
-        }
 
-        &:active,
-        &.active {
-            background: lighten(@@color, 6%);
+            &:hover {
+                background: @@color;
+                color: @contrast;
+
+                .emil-label {
+                    color: @contrast;
+                }
+            }
+            
+            &:active,
+            &.active {
+                background: lighten(@@color, 6%);
+            }
         }
     }
 }

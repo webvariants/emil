@@ -32,34 +32,17 @@ module.exports = function(grunt) {
           dest: '<%= pkg.project.directories.bin %>/emil.jade'
         }]
       }
+    },
+
+    sudo_subcomponents: {
+      development: {
+        options: {
+          cmd: 'grunt',
+          args: ['build'],
+        }
+      }
     }
   });
-  //@TODO refactor and create as plugin
-  
-    //@TODO refactor and create as plugin
-    var gruntRemote = function (cmd, cwd, done) {
-        var spawn = require('superspawn').spawn;
-        var remote = spawn('grunt', [cmd], {cwd: cwd}, function (err, data) {
-            if (err) {
-                console.error(err);
-                done();
-            }
-            grunt.log.ok(cmd+' '+cwd+' finished ('+data+')');
-            done();
-        });
-
-        // remote.stdout.on('data', function (data) {
-        //     grunt.log.write(data);
-        // });
-        // remote.stderr.on('data', function (data) {
-        //     grunt.fail.fatal(data);
-        // });
-        // remote.on('close', function (code) {
-        //     grunt.log.ok(cmd+' '+cwd+' finished ('+code+')');
-        //     done();
-        // });
-    };
-
 
   grunt.registerTask('build', '', [
       'clean:all',

@@ -58,7 +58,7 @@ module.exports = function(grunt) {
           paths: ['<%= pkg.project.directories.bin %>/src']
         },
         files: {
-          '<%= pkg.project.directories.bin %>emil.css': '<%= pkg.project.directories.src %>/emil.less' 
+          '<%= pkg.project.directories.bin %>emil.css': '<%= pkg.project.directories.src %>/emil.less'
         }
       }
     },
@@ -89,36 +89,20 @@ module.exports = function(grunt) {
           dest: '<%= pkg.project.directories.bin %>/src/emil.jade'
         }]
       }
+    },
+
+    // @NOTE not supported yet (from the specific subcomponents)
+    sudo_subcomponents: {
+      development: {
+        options: {
+          cmd: 'grunt',
+          args: ['development'],
+        }
+      }
     }
   });
-  //@TODO refactor and create as plugin
-  
-    //@TODO refactor and create as plugin
-    var gruntRemote = function (cmd, cwd, done) {
-        var spawn = require('superspawn').spawn;
-        var remote = spawn('grunt', [cmd], {cwd: cwd}, function (err, data) {
-            if (err) {
-                console.error(err);
-                done();
-            }
-            grunt.log.ok(cmd+' '+cwd+' finished ('+data+')');
-            done();
-        });
 
-        // remote.stdout.on('data', function (data) {
-        //     grunt.log.write(data);
-        // });
-        // remote.stderr.on('data', function (data) {
-        //     grunt.fail.fatal(data);
-        // });
-        // remote.on('close', function (code) {
-        //     grunt.log.ok(cmd+' '+cwd+' finished ('+code+')');
-        //     done();
-        // });
-    };
-
-
-  grunt.registerTask('dev', '',[
+  grunt.registerTask('development', '',[
       'clean:all',
       'copy:vendor',
       'copy:src',
@@ -126,5 +110,7 @@ module.exports = function(grunt) {
       'concat:jade',
       'jade:dev'
   ]);
-  grunt.registerTask('default', ['dev','watch']);
+  // alias
+  grunt.registerTask('dev', ['development']);
+  grunt.registerTask('default', 'starts the development process and watch for changes.', ['dev','watch']);
 };

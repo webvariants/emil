@@ -1,24 +1,28 @@
 {
-  "name": "EMIL",
-  "version": "0.0.1",
-  "description": "EMIL - EMIL is a collection of Extensible Mixins In Less.",
-  "main": "index.js",
+  "name": "emil",
+  "version": "0.2.3",
+  "description": "EMIL is a collection of extended Mixins written in Less and Jade based on the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web, Bootstrap.",
+  "main": "src/emil.less",
   "scripts": {
     "test": "grunt test"
   },
   "author": "Steven David <steven.david@webvariants.de>",
   "license": "MIT",
-  "repository" : {
-    "type" : "git",
-    "url" : "git@github.com:webvariants/emil.git"
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:webvariants/emil.git"
   },
-  "dependencies": {
+ "dependencies": {
+    "grunt": "^0.4.5",
     "exec": "^0.1.1",
     "grunt-clear": "^0.2.1",
     "grunt-concurrent": "^0.5.0",
     "grunt-contrib": "^0.11.0",
+    "grunt-newer": "^0.7.0",
+    "grunt-grunticon": "^1.2.12",
     "grunt-shell": "^0.7.0",
-    "grunt-sudo-subcomponents": "0.0.5",
+    "grunt-sudo-components": "0.0.6",
+    "grunt-sudo-subcomponents": "0.0.8",
     "grunt-svgmin": "^0.4.0",
     "load-grunt-tasks": "^0.5.0",
     "time-grunt": "^0.3.2"
@@ -28,10 +32,24 @@
       "bin": "bin/",
       "src": "src/",
       "vendor": "vendor/",
+      "test": "test/",
       "build": "build/",
-      "build-lib": "build/lib",
-      "build-tasks": "build/tasks"
+      "build_tasks": "build/tasks",
+      "build_config": "build/config",
+      "vendor_npm": "node_modules"
     },
     "components": {}
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/webvariants/emil/issues"
+  },
+  "homepage": "https://github.com/webvariants/emil",
+  "devDependencies": {},
+  "keywords": [
+    "Bootstrap",
+    "webvariants",
+    "Less",
+    "Jade",
+    "SMACSS"
+  ]
 }

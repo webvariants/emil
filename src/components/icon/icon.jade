@@ -1,9 +1,15 @@
 mixin icon(options)
     //- Setting default values
     - options['type']     = options.type     || '';
-    - options['hidden']     = options.hidden     || '';
+    - options['hidden']   = options.hidden   || '';
     - options['size']     = options.size     || 'sm';
+<<<<<<< HEAD
+    - options['target']   = options.target   || '';
+    - options['title']    = options.title    || '';
+    span.icon(class='#{options.type} #{options.size}', aria-hidden=options.hidden, data-target=options.target, title=options.title)
+=======
     - options['target']     = options.target     || '';
     - options['classes']     = options.classes     || '';
     span.icon(class='#{options.classes} #{options.type} #{options.size}', aria-hidden=options.hidden, data-target=options.target)
+>>>>>>> release/0.2.2
         block

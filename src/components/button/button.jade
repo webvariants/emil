@@ -44,6 +44,16 @@ mixin button-loader
 
 mixin button-group(options)
     //- @FIXME data redefine options structure
+<<<<<<< HEAD
+    - options['id']           = options.id   || '';
+    - options['data']         = options.data || [];
+    - options['selectedData'] = options.selectedData || [];
+    - options['buttons']      = options.buttons || [];
+    - options['classes']      = options.classes || '';
+    - options['size']      = options.size || '';
+    - if(options.buttons.length > 0 && options.classes.indexOf('justified') < 0) options.classes = options.classes + ' btn-group-justified'
+    div(id='#{options.id}', class='btn-group btn-group-#{options.size} #{options.classes}')
+=======
     - options['id']           = options.id   || ''
     - options['data']         = options.data || []
     - options['selectedData'] = options.selectedData || []
@@ -54,4 +64,5 @@ mixin button-group(options)
     - if (options.justified)    options.classes  = options.classes + ' btn-group-justified ';
     - if (options.margin)    options.classes  = options.classes + ' btn-group-margin ';
     div(id='#{options.id}', class='btn-group #{options.classes}')
+>>>>>>> release/0.2.2
         block

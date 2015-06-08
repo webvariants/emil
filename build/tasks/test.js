@@ -13,6 +13,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
     sudo_subcomponents: {
       test: {
         options: {

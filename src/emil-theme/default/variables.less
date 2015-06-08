@@ -29,8 +29,16 @@
 @body-bg:               @cyan;
 
 //** Master / Detail
-// @master-detail-bg: white;
-// @master-detail-color: @gray-lighter;
+@master-detail-bg: white;
+@master-detail-color: @gray-lighter;
+@master-mobile-width: @padding-base-horizontal * 2 + @icon-size-default;
+
+
+//** Icon-Size
+@icon-size-sm: 16px;
+@icon-size-md: 24px;
+@icon-size-lg: 32px;
+@icon-size-default: @icon-size-md;
 
 //** Global text color on `<body>`.
 @text-color:            @gray-dark;
@@ -52,7 +60,16 @@
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+//== Webfont Handling
+//
+//## Specify custom Location for your own webfonts. Please respect the Licenses of these webfonts at any time.
+//
+//** Set custom font path 
+@font-path: 'font/bebasneue_regular/';
+@font-file: 'bebasneue_regular-webfont';
+@font-name: 'bebasneue_regularregular';
+
+@font-family-sans-serif:  bebasneue_regular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -211,7 +228,7 @@
 @input-color-placeholder:        @gray-light;
 
 //** Default `.form-control` height
-@input-height-base:              (@line-height-computed + (@padding-base-vertical * 2) + 2);
+@input-height-base:              ((@line-height-computed + (@padding-base-vertical * 2) + 2));
 //** Large `.form-control` height
 @input-height-large:             (ceil(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
 //** Small `.form-control` height
@@ -494,7 +511,7 @@
 
 //== Form states and alerts
 //
-//## Define colors for form feedback states and, by default, alerts.
+//## Define colors for  feedback states and, by default, alerts.
 
 @state-success-text:             #3c763d;
 @state-success-bg:               #dff0d8;
@@ -895,19 +912,6 @@
 
 //==================================================================================================================
 //
-//== Iconography
-//
-//## Specify custom location and filename of the included Glyphicons icon font. Useful for those including Bootstrap via Bower.
-//
-//** Load fonts from this directory.
-@icon-font-path:          "font/";
-//** File name for all font files.
-@icon-font-name:          "glyphicons-halflings-regular";
-//** Element ID within SVG icon file.
-@icon-font-svg-id:        "glyphicons_halflingsregular";
-
-//==================================================================================================================
-//
 //== Color Settings
 //
 //## Set default component colors.
@@ -959,30 +963,5 @@
 @handle-marker-width: 12px;
 @handle-border-width: 1px;
 
-// Icon Size
-//** Icon-Size
-@icon-size-sm: 16px;
-@icon-size-md: 24px;
-@icon-size-lg: 32px;
-@icon-size-default: @icon-size-md;
 
-//==================================================================================================================
-//
-//== Navigations Settings
-//
-//## Set default component dimensions.
-//** Master / Detail
-@detail-desktop-offset-factor-x: 3;
-// NOTE Diese Variablen werden noch nicht verwendet ------------
-@detail-desktop-offset-factor-y: 3;
-@detail-mobile-offset-factor-x: 3;
-@detail-mobile-offset-factor-y: 3;
-// --------------------
 
-@detail-desktop-offset-x: 100% / @grid-columns * @detail-desktop-offset-factor-x;
-@detail-desktop-offset-y: 0;
-@detail-desktop-min: @icon-size-default + @padding-base-horizontal * 2;
-@detail-mobile-offset-x: 75%;
-@detail-mobile-offset-y: 0;
-
-@master-desktop-width: @detail-desktop-offset-x;

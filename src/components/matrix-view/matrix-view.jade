@@ -1,18 +1,16 @@
-
-
 mixin matrix-view(options)
     - options = options || {};
     - options['matrixContent'] = options.matrixContent || NULL;
     - options['matrixCol'] = options.matrixCol || NULL;
     - options['matrixRow'] = options.matrixRow || NULL;
-    .matrix-view
+    .emil-matrix-view
         - var row = 0
         while row < options.matrixRow
-            div(class='matrix-row matrix-row-#{options.matrixRow}')
+            div(class='emil.matrix-row emil-matrix-row-#{options.matrixRow}')
                 //- p= 'matrixRow ' + options.matrixRow
                 - var col = 0
                 while col < options.matrixCol
-                     div(class='matrix-col matrix-col-#{options.matrixCol}')
+                     div(class='emil-matrix-col emil-matrix-col-#{options.matrixCol}')
                          //- p= 'matrixCol ' + options.matrixCol
                          if options.matrixContent[row] && options.matrixContent[row][col]
                             if options.matrixContent[row][col].mixin

@@ -1,5 +1,5 @@
 
-.table-cell {
+.emil-table-cell {
     .translate3d(0,0,0);
     .transition(0.1s, ease-in-out, all);
     .emil-states;
@@ -9,8 +9,11 @@
     cursor: pointer;
     height: @table-cell-height-base;
     overflow: hidden;
-    padding: @table-cell-padding;
     margin: 0;
+
+    p, .emil-label, h1, h2, h3, h4, h5 {
+        margin: @padding-base-vertical @padding-base-horizontal @padding-base-vertical 0;
+    }
 
     &:hover,
     &.selected {
@@ -52,16 +55,29 @@
         .pull-right();
         height: 100%;
     }
+    &:last-child {
+        border: none;
+    }
 }
 
-
-
-.table-cell-nav {
-    .table-cell;
+.emil-table-cell-nav {
+    .emil-table-cell;
     border: none;
     overflow-x: hidden;
     border-radius: @table-cell-border-radius;
 
+    &.md {
+        padding: (@padding-base-vertical + 2) @padding-base-horizontal;
+    }
+    &.sm {
+        padding: @padding-base-vertical @padding-base-horizontal;
+    }
+    &.lg {
+        padding: (@padding-base-vertical * 4) @padding-base-horizontal;
+    }
+    &.xl {
+        padding: (@padding-base-vertical * 4) @padding-base-horizontal;
+    }
     .title {
         .no-user-selection;
     }
@@ -98,7 +114,7 @@
     }
 
     .emil-label {
-        padding: 0 0 0 5px;
+        padding: 0 0 0 5px; /* TODO Better use of variables!!! */
         position: absolute;
     }
 
@@ -123,8 +139,8 @@
     }
 }
 
-.table-cell-section-header {
-    .table-cell;
+.emil-table-cell-section-header {
+    .emil-table-cell;
     height: @table-cell-section-header-height;
     border:  @table-cell-border solid @border-color-base;
     background: @table-cell-section-header-bgc;
@@ -136,8 +152,8 @@
     }
 }
 
-.table-cell-nav-section-header {
-    .table-cell;
+.emil-table-cell-nav-section-header {
+    .emil-table-cell;
     border-bottom: @table-cell-border solid @table-cell-nav-section-header-border-color;
     background: @table-cell-nav-section-header-bgc;
     height: @table-cell-section-header-height;
@@ -152,8 +168,8 @@
     }
 }
 
-.table-cell-search {
-    .table-cell-nav;
+.emil-table-cell-search {
+    .emil-table-cell-nav;
     padding-top: (@padding-base-vertical * 2);
 
     &:active, &:hover  {
@@ -163,13 +179,13 @@
 
     input {
         margin-right: @padding-base-horizontal;
-        left: 50px;
-        position: absolute;
-        width: 78%;
+        position: relative;
+        width: 80%;
     }
 
     .icon-container {
         padding-top: 10px;
+        height: 100%;
 
         &.right {
             .pull-right();
@@ -196,12 +212,18 @@
 }
 
 
-.icon-container {
+.emil-icon-container {
+    height: 100%;
+    padding: 0 @padding-base-vertical 0 0;
 
     &.right {
         .pull-right();
     }
     &.left {
         .pull-left();
+    }
+
+    .icon {
+        height: 100%;
     }
 }
