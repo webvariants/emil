@@ -1,0 +1,23 @@
+.emil-handle {
+    .emil-states;
+    .no-user-selection;
+    .square(@handle-width);
+    .drop-shadow(0px, 0px, 2px, .2);
+    .rounded(50%);
+    background: white;
+    border: @handle-border-width solid rgba(0,0,0,.2);
+    cursor: pointer;
+    display: block;
+    position: relative;
+    top: @handle-width / -2;
+
+    .emil-handle-marker {
+        .square(@handle-marker-width);
+        .rounded(50%);
+        content: '';
+        display: block;
+        position: absolute;
+        top: (@handle-width - @handle-marker-width) / 2 - @handle-border-width;
+        left: (@handle-width - @handle-marker-width) / 2 - @handle-border-width;
+    }
+}

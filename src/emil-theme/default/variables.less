@@ -18,6 +18,7 @@
 @brand-info:            #5bc0de;
 @brand-warning:         #f0ad4e;
 @brand-danger:          #d9534f;
+@brand-default:         #AAAAAA;
 
 
 //== Scaffolding
@@ -172,28 +173,34 @@
 
 @btn-font-weight:                normal;
 
-@btn-default-color:              @gray-light;
+@btn-default-color:              #ccc;
 @btn-default-bg:                 transparent;
-@btn-default-border:             @gray-light;
+@btn-default-handle-bg:          white;
+@btn-default-border:             #ccc;
 
 @btn-primary-color:              lighten(@brand-primary, 12%);
 @btn-primary-bg:                 transparent;
+@btn-primary-handle-bg:          white;
 @btn-primary-border:             lighten(@brand-primary, 6%);
 
 @btn-success-color:              lighten(@brand-success, 12%);
 @btn-success-bg:                 transparent;
+@btn-success-handle-bg:          white;
 @btn-success-border:             lighten(@brand-success, 7%);
 
 @btn-info-color:                 lighten(@brand-info, 12%);
 @btn-info-bg:                    transparent;
+@btn-info-handle-bg:             white;
 @btn-info-border:                lighten(@brand-info, 6%);
 
 @btn-warning-color:              lighten(@brand-warning, 12%);
 @btn-warning-bg:                 transparent;
+@btn-warning-handle-bg:          white;
 @btn-warning-border:             lighten(@brand-warning, 7%);
 
 @btn-danger-color:               lighten(@brand-danger, 12%);
 @btn-danger-bg:                  transparent;
+@btn-danger-handle-bg:           white;
 @btn-danger-border:              lighten(@brand-danger, 6%);
 
 @btn-link-disabled-color:        @gray-light;
@@ -945,7 +952,16 @@
 @table-cell-nav-padding: 20px 15px;
 @table-cell-nav-caret-margin: 10px 0px;
 
+//==================================================================================================================
+//
+//== Dimension Settings
+//
+//## Set default component dimensions.
+//** Handle
 
+@handle-width: 24px;
+@handle-marker-width: 12px;
+@handle-border-width: 1px;
 
 
 

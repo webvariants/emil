@@ -1,9 +1,10 @@
 .icon {
+    display: block;
+    float: left;
     background-repeat: no-repeat;
     background-position: center center;
     display: block;
     height: 16px;
-    margin-right: @padding-large-horizontal;
     width: 16px;
 
     &.sm {
@@ -22,5 +23,20 @@
         background-size: @icon-size-lg;
         height: @icon-size-lg;
         width: @icon-size-lg;
+    }
+
+    &.xl {
+        background-size: 64px;
+        height: 64px;
+        width: 64px;
+    }
+
+    // @FIX LOOKING FOR BETTER PLACE FOR HELPER CLASSES
+    &.margin-right {
+        margin-right: @padding-base-horizontal;
+    }
+
+    &.margin-left {
+        margin-left: @padding-base-horizontal;
     }
 }

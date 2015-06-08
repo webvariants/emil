@@ -23,6 +23,7 @@ mixin panel-right-side(options)
 mixin panel-header(options)
     - options = options || {};
     - options['classes'] = options.classes || '';
+    - if (options.subheader) options.classes = options.classes + ' subheader ';
 
     .panel-heading(class=options.classes)
         block

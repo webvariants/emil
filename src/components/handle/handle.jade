@@ -1,0 +1,9 @@
+mixin emil-handle(options)
+    - options = options || {};
+    - options['classes']  =                  options.classes  || '';
+    - options['priority'] =                  options.priority || 'default';
+    - options['text']   =                    options.text     || false;
+    - if (options.text)                      options.classes  = options.classes + ' handle-text ';
+    .emil-handle(class='#{options.classes} #{options.priority}')
+        .emil-handle-marker
+        block

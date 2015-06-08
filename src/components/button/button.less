@@ -5,17 +5,49 @@
   .btn;
   .emil-states;
 
-  &:active {
+  &.btn-full-width {
+    width: 100%;
+  }
+
+  &:active,
+  &.active {
     box-shadow: none;
   }
 
-  &.emil-btn-simple {
-    // @TODO create simple Button without borders and filling
-    border-width: 0;
-    bgc: transparent;
+  &.btn-margin-left {
+    margin: @padding-base-vertical @padding-large-horizontal @padding-base-vertical 0;
+  }
 
-    &:active, &:hover, .selected{
-      background-color: fade(white, 20%);
+  &.btn-margin-right {
+    margin: @padding-base-vertical 0 @padding-base-vertical @padding-large-horizontal;
+  }
+
+  .icon-arrow {
+      display: block;
+    }
+
+  .icon-loader {
+    display: none;
+  }
+
+  &.emil-btn-simple {
+    border-width: 0;
+    background-color: transparent;
+
+    &.default {
+
+      &:active, &:hover, .selected, &.active {
+        background-color: transparent;
+        border-width: 0;
+        margin-bottom: 1px;
+      }
+      &:active {
+        background-color: fade(white, 28%);
+      }
+    }
+
+    &:active, &:hover, .selected {
+      background-color: transparent;
       border-width: 0;
       margin-bottom: 1px;
     }
@@ -23,7 +55,66 @@
       background-color: fade(white, 28%);
     }
   }
+
+  &.isLoading {
+    position: relative;
+    overflow: hidden;
+
+    .icon-arrow {
+      display: none;
+    }
+
+    .icon-loader {
+      -webkit-animation: infinite icon-loader-finished 2s linear;
+      animation: infinite icon-loader-finished 2s linear;
+      display: block;
+    }
+
+    .button-loader {
+        -webkit-animation: button-loader 2.8s infinite;
+        -moz-animation: button-loader 2.8s infinite;
+        -o-animation: button-loader 2.8s infinite;
+        -ms-animation: button-loader 2.8s infinite;
+        animation: button-loader 2.8s infinite;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        background-color: rgba(0,22,61,0.2);
+        z-index: 0;
+        width: 0;
+        opacity: .3;
+    }
+
+    &.btn-bright .button-loader {
+        background-color: rgba(0,74,107,0.35);
+    }
+  }
 }
+
+
+@-webkit-keyframes button-loader {
+  0%, 100% { width: 0%; }
+  50% { width: 100%; }
+}
+
+@-moz-keyframes button-loader {
+  0%, 100% { width: 0%; }
+  50% { width: 100%; }
+}
+
+@-o-keyframes button-loader {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+@-ms-keyframes button-loader {
+  0%, 100% { width: 0%; }
+  50% { width: 100%; }
+}
+
+
 
 // Button Sizes
 // --------------------------------------------------
@@ -31,15 +122,75 @@
 .emil-btn-lg {
   // line-height: ensure even-numbered height of button next to large input
   .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @border-radius-large);
-  .emil-states;
+  // .emil-states;
+}
+.emil-btn-md {
+  // line-height: ensure even-numbered height of button next to large input
+  .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-base; @line-height-base; @border-radius-base);
+  // .emil-states;
 }
 .emil-btn-sm {
   // line-height: ensure proper height of button next to small input
   .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
-  .emil-states;
+  // .emil-states;
 }
 .emil-btn-xs {
   // line-height: ensure proper height of button next to small input
   .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; @border-radius-small);
-  .emil-states;
+  // .emil-states;
+}
+
+
+// Button Group Margin
+// --------------------------------------------------
+
+.btn-group {
+
+  .emil-btn {
+    display: table-cell;
+    border-radius: 0;
+    border-width: @border-base 0 @border-base @border-base;
+
+    &:first-child {
+      .border-radius(0, 0, @border-radius-base, @border-radius-base);
+    }
+
+    &:last-child {
+      .border-radius(@border-radius-base, @border-radius-base, 0, 0);
+      border-width: @border-base;
+    }
+  }
+
+  &.btn-group-margin {
+    margin: @padding-base-vertical @padding-base-horizontal;
+    width: ~"calc(100% - @{padding-base-horizontal} * 2)";
+  }
+}
+
+@-webkit-keyframes icon-loader-finished {
+    0% {transform: rotate(360deg)}
+    100% {transform: rotate(0deg)}
+}
+
+/* Standard syntax */
+@keyframes icon-loader-finished {
+    0% {transform: rotate(360deg)}
+    100% {transform: rotate(0deg)}
+}
+
+
+// Mobile Button Workaround
+// --------------------------------------------------
+.touch {
+
+  .emil-btn {
+
+    &:hover {
+      background: none;
+    }
+
+    &:active {
+      background: @gray-lighter;
+    }
+  }
 }

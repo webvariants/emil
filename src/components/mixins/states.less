@@ -2,42 +2,56 @@
     @border: ~"btn-@{brand}-border";
     @color: ~"btn-@{brand}-color";
     @bg: ~"btn-@{brand}-bg";
+    @handle-bg: ~"btn-@{brand}-handle-bg";
 
-    &.@{brand} {
-        .transition(0.1s);
-        border-color: @@border;
-        color: @@color;
-        background-color: @@bg;
 
-        .icon {
-            div {
-                background-color: @@color;
+    .emil-handle{
+
+        &.@{brand} {
+            .transition(0.1s);
+            border-color: @@border;
+            color: @@color;
+            background-color: @@bg;
+            background: @@bg;
+
+            .emil-label {
+                color: @contrast;
             }
-        }
-        &:hover {
-            background: @@color;
-            color: @contrast;
+
+            .emil-handle-marker {
+                background-color: darken(@@color, 15%);
+            }
 
             .icon {
                 div {
-                    background-color: @contrast;
+                    background-color: @@color;
                 }
             }
-        }
 
-        &:active {
-            background: darken(@@color, 5%);
+            &:hover {
+                background: @@color;
+                color: @contrast;
+
+                .emil-label {
+                    color: @contrast;
+                }
+            }
+            
+            &:active,
+            &.active {
+                background: lighten(@@color, 6%);
+            }
         }
     }
 }
 
 .emil-states {
-    .emil-state-factory(@brand: primary; @body-bg);
-    .emil-state-factory(@brand: default; @gray);
-    .emil-state-factory(@brand: danger; @body-bg);
-    .emil-state-factory(@brand: success; @body-bg);
-    .emil-state-factory(@brand: info; @body-bg);
-    .emil-state-factory(@brand: warning; @body-bg);
+    .emil-state-factory(@brand: default; @contrast: default);
+    .emil-state-factory(@brand: primary; @contrast: white;);
+    .emil-state-factory(@brand: danger; @contrast: white;);
+    .emil-state-factory(@brand: success; @contrast: white;);
+    .emil-state-factory(@brand: info; @contrast: white;);
+    .emil-state-factory(@brand: warning; @contrast: white;);
 
     &.disabled {
         .opacity(.35);

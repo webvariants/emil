@@ -23,10 +23,14 @@ mixin button(options)
     - options['navbar']   =                  options.navbar   || false;
     - options['block']    =                  options.block    || false;
     - options['simple']   =                  options.simple   || false;
+    - options['margin']   =                  options.margin   || false;
+    - options['fullwidth']   =               options.fullwidth    || false;
     - if (options.disabled)                  options.classes  = options.classes + ' disabled ';
     - if (options.navbar)                    options.classes  = options.classes + ' navbar-btn ';
     - if (options.block)                     options.classes  = options.classes + ' btn-block ';
     - if (options.simple)                    options.classes  = options.classes + ' emil-btn-simple ';
+    - if (options.margin)                    options.classes  = options.classes + ' btn-margin ';
+    - if (options.fullwidth)                 options.classes  = options.classes + ' btn-full-width ';
     .emil-btn(class='emil-btn-#{options.size} #{options.classes} #{options.priority} ', id='#{options.id}', data-target="#{options.target}", data-toggle="#{options.toggle}")
         block
 
@@ -35,6 +39,7 @@ mixin button-loader
 
 mixin button-group(options)
     //- @FIXME data redefine options structure
+<<<<<<< HEAD
     - options['id']           = options.id   || '';
     - options['data']         = options.data || [];
     - options['selectedData'] = options.selectedData || [];
@@ -43,4 +48,16 @@ mixin button-group(options)
     - options['size']      = options.size || '';
     - if(options.buttons.length > 0 && options.classes.indexOf('justified') < 0) options.classes = options.classes + ' btn-group-justified'
     div(id='#{options.id}', class='btn-group btn-group-#{options.size} #{options.classes}')
+=======
+    - options['id']           = options.id   || ''
+    - options['data']         = options.data || []
+    - options['selectedData'] = options.selectedData || []
+    - options['buttons']      = options.buttons || []
+    - options['classes']      = options.classes || ''
+    - options['justified']    = options.justified   || false;
+    - options['margin']       = options.margin   || false;
+    - if (options.justified)    options.classes  = options.classes + ' btn-group-justified ';
+    - if (options.margin)    options.classes  = options.classes + ' btn-group-margin ';
+    div(id='#{options.id}', class='btn-group #{options.classes}')
+>>>>>>> release/0.2.2
         block
