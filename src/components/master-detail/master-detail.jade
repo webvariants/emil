@@ -2,7 +2,7 @@ mixin emil-master(options)
     - options            = options         || {};
     - options['id']      = options.id && options.id.length ? options.id : null;
     - options['classes'] = options.classes || '';
-    - options['columns'] = options.columns || 'col-md-3 col-sm-10';
+    - options['columns'] = options.columns || '';
     .emil-master(id=options.id, class='#{options.columns} #{options.classes}')
         block
 
@@ -28,6 +28,6 @@ mixin emil-sidebar(options)
     - options            = options         || {};
     - options['id']      = options.id && options.id.length ? options.id : null;
     - options['classes'] = options.classes || '';
-    - options['columns'] = options.columns || 'col-md-3 col-sm-10';
+    - options['columns'] = options.columns || '';
     .emil-sidebar(id=options.id, class='#{options.columns} #{options.classes}')
         block
