@@ -1,1 +1,7 @@
 @import 'states.less';
+
+.use-graphic-acceleration {
+    & when (@use-graphic-acceleration = true) {
+        .translate3d(0,0,0);
+    }
+}
