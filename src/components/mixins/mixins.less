@@ -1,7 +1,15 @@
 @import 'states.less';
 
+/* Handy Mixin for Graphic Accelaration Hack */
 .use-graphic-acceleration {
     & when (@use-graphic-acceleration = true) {
         .translate3d(0,0,0);
+    }
+}
+
+/* Set view to fixed for better App Feeling *jedimove* */
+.view-pos {
+    & when (@view-pos-fixed = true) {
+        position: fixed;
     }
 }
