@@ -33,10 +33,10 @@ mixin button(options)
     - if (options.margin)                    options.classes  = options.classes + ' btn-margin ';
     - if (options.fullwidth)                 options.classes  = options.classes + ' btn-full-width ';
     - var attrs = {}
-    - for(idx in options.data) { 
+    - for(idx in options.data) {
     -   attrs["data-"+idx] = options.data[idx];
     - }
-    .emil-btn(class='emil-btn-#{options.size} #{options.classes} #{options.priority} ', id='#{options.id}', data-target="#{options.target}", data-toggle="#{options.toggle}")&attributes(attrs)
+    .emil-btn(class='btn emil-btn-#{options.size} #{options.classes} #{options.priority} ', id='#{options.id}', data-target="#{options.target}", data-toggle="#{options.toggle}")&attributes(attrs)
         block
 
 mixin button-loader
@@ -54,4 +54,18 @@ mixin button-group(options)
     - if (options.justified)    options.classes  = options.classes + ' btn-group-justified ';
     - if (options.margin)    options.classes  = options.classes + ' btn-group-margin ';
     div(id='#{options.id}', class='btn-group #{options.classes}')
+        block
+
+
+mixin button-group-vertical(options)
+    //- @FIXME data redefine options structure
+    - options['id']           = options.id   || ''
+    - options['data']         = options.data || []
+    - options['selectedData'] = options.selectedData || []
+    - options['buttons']      = options.buttons || []
+    - options['classes']      = options.classes || ''
+    - options['vertical']    = options.vertical   || false;
+    - options['margin']       = options.margin   || false;
+    - if (options.margin)    options.classes  = options.classes + ' btn-group-margin ';
+    div(id='#{options.id}', class='btn-group-vertical #{options.classes}')
         block
