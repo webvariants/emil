@@ -15,16 +15,24 @@ mixin table-cell-nav(options)
     - options['target'] = options.target || '';
     - options['hidden'] = options.hidden ? '' : 'open';
     - options['dataId'] = options.dataId  || '';
+    - options['size']  = options.size || 'md';
 
-    li.table-cell-nav(class='#{options.classes} #{options.hidden}', data-target=options.target, data-id=options.dataId)
+    li.table-cell-nav(class='#{options.classes} #{options.hidden} #{options.size}', data-target=options.target, data-id=options.dataId)
         block
 
 mixin table-cell-section-header
     li.table-cell-section-header
         block
 
-mixin table-cell-nav-section-header
-    li.table-cell-nav-section-header
+mixin table-cell-nav-section-header(options)
+    //- Set default values
+    - options             = options          || {};
+    - options['classes'] = options.classes || '';
+    - options['target'] = options.target || '';
+    - options['hidden'] = options.hidden ? '' : 'open';
+    - options['dataId'] = options.dataId  || '';
+    - options['size']  = options.size || 'md';
+    li.table-cell-nav-section-header(class='#{options.classes} #{options.hidden} #{options.size}', data-target=options.target, data-id=options.dataId)
         block
 
 mixin table-cell-search
