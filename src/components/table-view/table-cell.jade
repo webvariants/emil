@@ -55,7 +55,8 @@ mixin table-cell-container(options)
     //- Set default values
     - options             = options          || {};
     - options['classes']  = options.classes  || '';
+    - options['id']  = options.id  || '';
     - options['side']     = options.side      || 'left';
-    div(class='#{options.classes} emil-table-cell-#{options.side} ')
+    div(class='#{options.classes} emil-table-cell-#{options.side}', id=options.id)
         block
 
