@@ -18,8 +18,9 @@ mixin emil-master-detail(options)
     - options            = options         || {};
     - options['classes'] = options.classes || '';
     - options['id'] = options.id || '';
-    - options['isOpened'] = options.isOpened || true;
-    - if (options.isOpened) options.classes = options.classes + ' isOpened ';
+    - if(options.isOpened === undefined) options.isOpened = true;
+    - if (options.isOpened) {options.classes += ' isOpened '} else {options.classes += ' isClosed '};
+    - console.log(options.classes);
     .emil-master-detail(class='#{options.classes}', id=options.id)
         block
 
