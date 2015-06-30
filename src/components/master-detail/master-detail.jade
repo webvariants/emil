@@ -18,7 +18,9 @@ mixin emil-master-detail(options)
     - options            = options         || {};
     - options['classes'] = options.classes || '';
     - options['id'] = options.id || '';
-    .emil-master-detail(class='#{options.classes} isOpened', id=options.id)
+    - options['isOpened'] = options.isOpened || true;
+    - if (options.isOpened) options.classes = options.classes + ' isOpened ';
+    .emil-master-detail(class='#{options.classes}', id=options.id)
         block
 
 mixin emil-sidebar-btn
