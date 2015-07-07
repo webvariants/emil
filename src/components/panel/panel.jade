@@ -3,7 +3,7 @@ mixin panel(options)
     - options['id'] = options.id || '';
     - options['classes'] = options.classes || '';
 
-    .panel.panel-default(class=options.classes)
+    .panel.panel-default(class=options.classes, id='#{options.id}')
         block
 
 mixin panel-left-side(options)
