@@ -46,9 +46,9 @@
     }
 
     &:active, &:hover, .selected {
-      background-color: transparent;
       border-width: 0;
     }
+
     &:active {
       background-color: fade(white, 28%);
     }
@@ -187,8 +187,9 @@
       background: none;
     }
 
-    &:active {
-      background: @gray-lighter;
+    &:active,
+    &.active {
+      background: @brand-primary;
     }
   }
 }
