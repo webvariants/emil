@@ -3,7 +3,8 @@
     @color: ~"btn-@{brand}-color";
     @bg: ~"btn-@{brand}-bg";
     @handle-bg: ~"btn-@{brand}-handle-bg";
-
+    @contrast-color: ~"btn-@{brand}-contrast-color";
+    @active-bg: ~"btn-@{brand}-active-bg";
 
     .emil-handle{
 
@@ -21,11 +22,11 @@
         background: @@bg;
 
         .emil-label {
-            color: @contrast;
+            color: @@color;
         }
 
         .emil-handle-marker {
-            background-color: darken(@@color, 15%);
+            background-color: @@bg;
         }
 
         .icon {
@@ -34,10 +35,10 @@
             }
         }
         &:hover {
-            background: lighten(@@color, 12%);
+            background: @@color;
 
             .emil-label {
-                color: @contrast;
+                color: @@contrast-color;
             }
 
             .icon {
@@ -50,7 +51,11 @@
         &:active,
         &.active,
         &:focus {
-            background: lighten(@@color, 6%);
+            background: @@active-bg;
+            
+            .emil-label {
+                color: @@contrast-color;
+            }
         }
     }
 }
