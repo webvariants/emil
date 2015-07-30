@@ -8,10 +8,20 @@
 
     .emil-handle{
 
-         &.@{brand} {
+        &.@{brand} {
             .transition(0.1s);
             border-color: @@border;
             background: @@handle-bg;
+            
+            &:hover {
+                background-color: lighten(@@color, 85%);
+            }
+
+            &:active,
+            &.active,
+            &:focus {
+                background-color: lighten(@@color, 45%);
+            }
         }
     }
 
@@ -35,7 +45,7 @@
             }
         }
         &:hover {
-            background: @@color;
+            background: @@active-bg;
 
             .emil-label {
                 color: @@contrast-color;
@@ -56,6 +66,9 @@
             .emil-label {
                 color: @@contrast-color;
             }
+        }
+        &.active {
+            
         }
     }
 }
