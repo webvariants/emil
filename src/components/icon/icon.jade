@@ -5,5 +5,5 @@ mixin icon(options)
     - options['size']     = options.size     || 'sm';
     - options['target']     = options.target     || '';
     - options['classes']     = options.classes     || '';
-    span.icon(class='#{options.classes} #{options.type} #{options.size}', aria-hidden=options.hidden, data-target=options.target)
+    span.icon(class='#{options.classes} #{options.type} #{options.size}', aria-hidden=options.hidden, data-target=options.target, data-grunticon-embed)
         block
