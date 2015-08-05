@@ -81,7 +81,7 @@
     .emil-state-factory(@brand: info; @contrast: white;);
     .emil-state-factory(@brand: warning; @contrast: white;);
 
-    &.disabled {
+    &.disabled:not(.table-cell-nav) {
         .opacity(.35);
         .no-user-selection;
     }
