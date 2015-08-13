@@ -20,7 +20,6 @@ mixin emil-master-detail(options)
     - options['id'] = options.id || '';
     - if(options.isOpened === undefined) options.isOpened = true;
     - if (options.isOpened) {options.classes += ' isOpened '} else {options.classes += ' isClosed '};
-    - console.log(options.classes);
     .emil-master-detail(class='#{options.classes}', id=options.id)
         block
 
