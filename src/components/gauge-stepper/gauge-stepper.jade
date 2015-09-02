@@ -1,0 +1,21 @@
+mixin gauge-stepper(options)
+    - options = options || {};
+    //- - options['option1'] = options.option1 || NULL;
+    //- - options['option2'] = options.option2 || NULL;
+    - options['classes'] = options.classes  || '';
+    .gauge-stepper
+        .gauge-wrapper
+            .dial-container.container1
+                .wedge
+            .dial-container.container2
+                .wedge
+            .marker.start
+            .marker.end
+        .gauge-element-wrapper
+            +button({classes: 'minus pull-left', size:'sm'})
+                +label({label: '-'})
+            +button({classes: 'plus pull-right', size:'sm'})
+                +label({label: '+'})
+            input(type='text')
+            //- FIXEN MIXIN AUFRUF FUNKTIONIERT NICHT BEI INPUT
+            //- +input({type: 'text'})

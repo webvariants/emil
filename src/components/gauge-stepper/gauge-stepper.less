@@ -1,0 +1,156 @@
+@gauge-width: 4em;
+@gauge-height: @gauge-width;
+
+
+@gauge-mask-width: 3em;
+@gauge-mask-height: @gauge-mask-width;
+
+@gauge-mask-position-top: (@gauge-width - @gauge-mask-width) / 2;
+@gauge-mask-position-left: @gauge-mask-position-top;
+
+.gauge-stepper {
+    width: @gauge-width;
+    border: 1px solid black;
+    .clearfix;
+}
+.gauge-wrapper {
+    position: relative;
+    width: @gauge-width;
+    height: @gauge-height;
+    // left: calc(50% - 2em);
+    margin: 0 auto;
+    border: 1px solid black;
+
+    &:hover {
+        background-color: pink;
+        cursor: pointer;
+    }
+
+    &:after {
+        content: "";
+        background: #fff;
+        border-radius: 50%;
+        width: @gauge-mask-width;
+        height: @gauge-mask-height;
+        position: absolute;
+        top: @gauge-mask-position-top;
+        left: @gauge-mask-position-left;
+    }
+}
+.dial-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    width: 2em;
+}
+.wedge {
+    background: red;
+    height: 4em;
+    width: 2em;
+}
+.container1 {
+    left: 2em;
+}
+.container1 .wedge {
+    -ms-animation: rotate-bg-1 4s infinite linear;
+    -webkit-animation: rotate-bg-1 4s infinite linear;
+    animation: rotate-bg-1 4s infinite linear;
+    border-radius: 0 4em 4em 0;
+    left: 0;
+    -ms-transform-origin: 0 50%;
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+}
+.container2 {
+    left: 0;
+}
+.container2 .wedge {
+    -ms-animation: rotate-bg-2 4s infinite linear;
+    -webkit-animation: rotate-bg-2 4s infinite linear;
+    animation: rotate-bg-2 4s infinite linear;
+    border-radius: 4em 0 0 4em;
+    -ms-transform-origin: 2em 2em;
+    -webkit-transform-origin: 2em 2em;
+    transform-origin: 2em 2em;
+}
+/* First animation moves 180 degrees in the first 2 seconds */
+@keyframes rotate-bg-1 {
+    50%, 100% {
+        -ms-transform: rotateZ(180deg);
+        -webkit-transform: rotateZ(180deg);
+        transform: rotateZ(180deg);
+    }
+}
+
+@-webkit-keyframes rotate-bg-1 {
+    50%, 100% {
+        -ms-transform: rotateZ(180deg);
+        -webkit-transform: rotateZ(180deg);
+        transform: rotateZ(180deg);
+    }
+}
+/* Second animation moves 180 degrees in the last 2 seconds */
+@keyframes rotate-bg-2 {
+    0%, 50% {
+        -ms-transform: rotateZ(0);
+        -webkit-transform: rotateZ(0);
+        transform: rotateZ(0);
+    }
+    100% {
+        -ms-transform: rotateZ(180deg);
+        -webkit-transform: rotateZ(180deg);
+        transform: rotateZ(180deg);
+    }
+}
+
+@-webkit-keyframes rotate-bg-2 {
+    0%, 50% {
+        -ms-transform: rotateZ(0);
+        -webkit-transform: rotateZ(0);
+        transform: rotateZ(0);
+    }
+    100% {
+        -ms-transform: rotateZ(180deg);
+        -webkit-transform: rotateZ(180deg);
+        transform: rotateZ(180deg);
+    }
+}
+
+
+.marker {
+    background: green;
+    border-radius: 50%;
+    height: 0.5em;
+    width: 0.5em;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 2.0em);
+}
+.end {
+    -ms-animation: rotate-marker 4s infinite linear;
+    -webkit-animation: rotate-marker 4s infinite linear;
+    animation: rotate-marker 4s infinite linear;
+    -ms-transform-origin: 50% 2em;
+    -webkit-transform-origin: 50% 2em;
+    transform-origin: 50% 2em;
+}
+@keyframes rotate-marker {
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@-webkit-keyframes rotate-marker {
+    100% {
+        -ms-transform: rotateZ(360deg);
+        -webkit-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+    }
+}
+
+.gauge-element-wrapper {
+    input {
+        width: 100%;
+    }
+}
