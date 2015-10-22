@@ -13,3 +13,16 @@
         position: fixed;
     }
 }
+
+.cubic-transition-expo(@param: all, @time: 250ms) {
+    -webkit-transition: @param @time cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+       -moz-transition: @param @time cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+         -o-transition: @param @time cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+            transition: @param @time cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
+
+        -webkit-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+           -moz-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+             -o-transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); 
+                transition-timing-function: cubic-bezier(1.000, 0.000, 0.000, 1.000); /* easeInOutExpo */
+}
+    
