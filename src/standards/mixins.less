@@ -100,7 +100,7 @@
   float: left;
 }
 
-.diagonal-lines-pattern (@color1: #ccc, @size: 22px, @lighten: 5%) {
+.diagonal-lines-pattern(@color1: #ccc, @size: 22px, @lighten: 5%) {
   @color2: lighten(@color1, @lighten);
   background-image: -webkit-gradient(linear, left bottom, right top, color-stop(0, @color1), color-stop(0.25, @color1), color-stop(0.25, @color2), color-stop(0.5, @color2), color-stop(0.5, @color1), color-stop(0.75, @color1), color-stop(0.75, @color2));
   background-image: -webkit-linear-gradient(left bottom, @color1 0%, @color1 25%, @color2 25%, @color2 50%, @color1 50%, @color1 75%, @color2 75%);
@@ -112,7 +112,7 @@
   background-size: @size @size;
 }
 
-.diagonal-lines-pattern-inverted (@color1: #ccc, @size: 22px, @lighten: 5%) {
+.diagonal-lines-pattern-inverted(@color1: #ccc, @size: 22px, @lighten: 5%) {
   @color2: lighten(@color1, @lighten);
   background-image: -webkit-gradient(linear, right bottom, right top, color-stop(0, @color1), color-stop(0.25, @color1), color-stop(0.25, @color2), color-stop(0.5, @color2), color-stop(0.5, @color1), color-stop(0.75, @color1), color-stop(0.75, @color2));
   background-image: -webkit-linear-gradient(right bottom, @color1 0%, @color1 25%, @color2 25%, @color2 50%, @color1 50%, @color1 75%, @color2 75%);
