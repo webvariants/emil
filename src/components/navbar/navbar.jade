@@ -14,12 +14,18 @@ mixin navbar-brand
     .navbar-brand
         block
 
-mixin navbar-left
-    div.navbar-left.nav-navbar.nav
+mixin navbar-left(options)
+    - options              = options              || {};
+    - options['id']        = options.id           || '';
+    - options['classes']   = options.classes      || '';
+    div.navbar-left.nav-navbar.nav(class='#{options.classes}')
         block
 
-mixin navbar-right
-    div.navbar-right.nav-navbar.nav
+mixin navbar-right(options)
+    - options              = options              || {};
+    - options['id']        = options.id           || '';
+    - options['classes']   = options.classes      || '';
+    div.navbar-right.nav-navbar.nav(class='#{options.classes}')
         block
 
 mixin navbar-form(options)
@@ -37,4 +43,3 @@ mixin navbar-form(options)
 mixin form-group
     .form-group
         block
-
