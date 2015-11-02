@@ -9,6 +9,14 @@
     }
 }
 
+/* Handy Mixin for Graphic Accelaration Hack */
+.use-transitions {
+    & when (@use-transitions = false) {
+        transition: none !important;
+    }
+}
+
+
 /* Set view to fixed for better App Feeling *jedimove* */
 .view-pos {
     & when (@view-pos-fixed = true) {
