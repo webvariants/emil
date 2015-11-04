@@ -5,338 +5,394 @@
 // --------------------------------------------------
 
 .transition {
-
   @durationDefault: @transition-duration-default;
   @subjectDefault: @transition-subject-default;
+  
+    .none() {
+      & when (@use-transitions = true) {
+        -webkit-transition: none;
+           -moz-transition: none;
+            -ms-transition: none;
+             -o-transition: none;
+                transition: none;
+      }
+    }
 
-  .none() {
-    -webkit-transition: none;
-       -moz-transition: none;
-        -ms-transition: none;
-         -o-transition: none;
-            transition: none;
-  }
+    .linear(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration linear;
+           -moz-transition: @subject @duration linear;
+            -ms-transition: @subject @duration linear;
+             -o-transition: @subject @duration linear;
+                transition: @subject @duration linear;
+      }
+    }
 
-  .linear(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration linear;
-       -moz-transition: @subject @duration linear;
-        -ms-transition: @subject @duration linear;
-         -o-transition: @subject @duration linear;
-            transition: @subject @duration linear;
-  }
+    .ease(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration ease;
+           -moz-transition: @subject @duration ease;
+            -ms-transition: @subject @duration ease;
+             -o-transition: @subject @duration ease;
+                transition: @subject @duration ease;
+      }
+    }
 
-  .ease(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration ease;
-       -moz-transition: @subject @duration ease;
-        -ms-transition: @subject @duration ease;
-         -o-transition: @subject @duration ease;
-            transition: @subject @duration ease;
-  }
+    .ease-in(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration ease-in;
+           -moz-transition: @subject @duration ease-in;
+            -ms-transition: @subject @duration ease-in;
+             -o-transition: @subject @duration ease-in;
+                transition: @subject @duration ease-in;
+      }
+    }
 
-  .ease-in(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration ease-in;
-       -moz-transition: @subject @duration ease-in;
-        -ms-transition: @subject @duration ease-in;
-         -o-transition: @subject @duration ease-in;
-            transition: @subject @duration ease-in;
-  }
+    .ease-out(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration ease-out;
+           -moz-transition: @subject @duration ease-out;
+            -ms-transition: @subject @duration ease-out;
+             -o-transition: @subject @duration ease-out;
+                transition: @subject @duration ease-out;
+      }
+    }
 
-  .ease-out(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration ease-out;
-       -moz-transition: @subject @duration ease-out;
-        -ms-transition: @subject @duration ease-out;
-         -o-transition: @subject @duration ease-out;
-            transition: @subject @duration ease-out;
-  }
+    .ease-in-out(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration ease-in-out;
+           -moz-transition: @subject @duration ease-in-out;
+            -ms-transition: @subject @duration ease-in-out;
+             -o-transition: @subject @duration ease-in-out;
+                transition: @subject @duration ease-in-out;
+      }
+    }
 
-  .ease-in-out(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration ease-in-out;
-       -moz-transition: @subject @duration ease-in-out;
-        -ms-transition: @subject @duration ease-in-out;
-         -o-transition: @subject @duration ease-in-out;
-            transition: @subject @duration ease-in-out;
-  }
+    .easeInQuad(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration cubic-bezier(0.550, 0.085, 0.680, 0.530);
+           -moz-transition: @subject @duration cubic-bezier(0.550, 0.085, 0.680, 0.530);
+            -ms-transition: @subject @duration cubic-bezier(0.550, 0.085, 0.680, 0.530);
+             -o-transition: @subject @duration cubic-bezier(0.550, 0.085, 0.680, 0.530);
+                transition: @subject @duration cubic-bezier(0.550, 0.085, 0.680, 0.530);
+      }
+    }
 
-  .easeInQuad(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(0.550, 0.085, 0.680, 0.530);
-       -moz-transition: @subject @duration cubic-bezier(0.550, 0.085, 0.680, 0.530);
-        -ms-transition: @subject @duration cubic-bezier(0.550, 0.085, 0.680, 0.530);
-         -o-transition: @subject @duration cubic-bezier(0.550, 0.085, 0.680, 0.530);
-            transition: @subject @duration cubic-bezier(0.550, 0.085, 0.680, 0.530);
-  }
+    .easeInCubic(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration cubic-bezier(0.550, 0.055, 0.675, 0.190);
+           -moz-transition: @subject @duration cubic-bezier(0.550, 0.055, 0.675, 0.190);
+            -ms-transition: @subject @duration cubic-bezier(0.550, 0.055, 0.675, 0.190);
+             -o-transition: @subject @duration cubic-bezier(0.550, 0.055, 0.675, 0.190);
+                transition: @subject @duration cubic-bezier(0.550, 0.055, 0.675, 0.190);
+      }
+    }
 
-  .easeInCubic(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(0.550, 0.055, 0.675, 0.190);
-       -moz-transition: @subject @duration cubic-bezier(0.550, 0.055, 0.675, 0.190);
-        -ms-transition: @subject @duration cubic-bezier(0.550, 0.055, 0.675, 0.190);
-         -o-transition: @subject @duration cubic-bezier(0.550, 0.055, 0.675, 0.190);
-            transition: @subject @duration cubic-bezier(0.550, 0.055, 0.675, 0.190);
-  }
+    .easeInQuart(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration cubic-bezier(0.895, 0.030, 0.685, 0.220);
+           -moz-transition: @subject @duration cubic-bezier(0.895, 0.030, 0.685, 0.220);
+            -ms-transition: @subject @duration cubic-bezier(0.895, 0.030, 0.685, 0.220);
+             -o-transition: @subject @duration cubic-bezier(0.895, 0.030, 0.685, 0.220);
+                transition: @subject @duration cubic-bezier(0.895, 0.030, 0.685, 0.220);
+      }
+    }
 
-  .easeInQuart(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(0.895, 0.030, 0.685, 0.220);
-       -moz-transition: @subject @duration cubic-bezier(0.895, 0.030, 0.685, 0.220);
-        -ms-transition: @subject @duration cubic-bezier(0.895, 0.030, 0.685, 0.220);
-         -o-transition: @subject @duration cubic-bezier(0.895, 0.030, 0.685, 0.220);
-            transition: @subject @duration cubic-bezier(0.895, 0.030, 0.685, 0.220);
-  }
+    .easeInQuint(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+       -webkit-transition: @subject @duration cubic-bezier(0.755, 0.050, 0.855, 0.060);
+         -moz-transition: @subject @duration cubic-bezier(0.755, 0.050, 0.855, 0.060);
+          -ms-transition: @subject @duration cubic-bezier(0.755, 0.050, 0.855, 0.060);
+           -o-transition: @subject @duration cubic-bezier(0.755, 0.050, 0.855, 0.060);
+              transition: @subject @duration cubic-bezier(0.755, 0.050, 0.855, 0.060);
+      }
+    }
 
-  .easeInQuint(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-   -webkit-transition: @subject @duration cubic-bezier(0.755, 0.050, 0.855, 0.060);
-     -moz-transition: @subject @duration cubic-bezier(0.755, 0.050, 0.855, 0.060);
-      -ms-transition: @subject @duration cubic-bezier(0.755, 0.050, 0.855, 0.060);
-       -o-transition: @subject @duration cubic-bezier(0.755, 0.050, 0.855, 0.060);
-          transition: @subject @duration cubic-bezier(0.755, 0.050, 0.855, 0.060);
-  }
+    .easeInSine(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration cubic-bezier(0.470, 0.000, 0.745, 0.715);
+           -moz-transition: @subject @duration cubic-bezier(0.470, 0.000, 0.745, 0.715);
+            -ms-transition: @subject @duration cubic-bezier(0.470, 0.000, 0.745, 0.715);
+             -o-transition: @subject @duration cubic-bezier(0.470, 0.000, 0.745, 0.715);
+                transition: @subject @duration cubic-bezier(0.470, 0.000, 0.745, 0.715);
+      }
+    }
 
-  .easeInSine(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(0.470, 0.000, 0.745, 0.715);
-       -moz-transition: @subject @duration cubic-bezier(0.470, 0.000, 0.745, 0.715);
-        -ms-transition: @subject @duration cubic-bezier(0.470, 0.000, 0.745, 0.715);
-         -o-transition: @subject @duration cubic-bezier(0.470, 0.000, 0.745, 0.715);
-            transition: @subject @duration cubic-bezier(0.470, 0.000, 0.745, 0.715);
-  }
+    .easeInExpo(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration cubic-bezier(0.950, 0.050, 0.795, 0.035);
+           -moz-transition: @subject @duration cubic-bezier(0.950, 0.050, 0.795, 0.035);
+            -ms-transition: @subject @duration cubic-bezier(0.950, 0.050, 0.795, 0.035);
+             -o-transition: @subject @duration cubic-bezier(0.950, 0.050, 0.795, 0.035);
+                transition: @subject @duration cubic-bezier(0.950, 0.050, 0.795, 0.035);
+      }
+    }
 
-  .easeInExpo(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(0.950, 0.050, 0.795, 0.035);
-       -moz-transition: @subject @duration cubic-bezier(0.950, 0.050, 0.795, 0.035);
-        -ms-transition: @subject @duration cubic-bezier(0.950, 0.050, 0.795, 0.035);
-         -o-transition: @subject @duration cubic-bezier(0.950, 0.050, 0.795, 0.035);
-            transition: @subject @duration cubic-bezier(0.950, 0.050, 0.795, 0.035);
-  }
+    .easeInCirc(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      -webkit-transition: @subject @duration cubic-bezier(0.600, 0.040, 0.980, 0.335);
+         -moz-transition: @subject @duration cubic-bezier(0.600, 0.040, 0.980, 0.335);
+          -ms-transition: @subject @duration cubic-bezier(0.600, 0.040, 0.980, 0.335);
+           -o-transition: @subject @duration cubic-bezier(0.600, 0.040, 0.980, 0.335);
+              transition: @subject @duration cubic-bezier(0.600, 0.040, 0.980, 0.335);
+    }
 
-  .easeInCirc(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(0.600, 0.040, 0.980, 0.335);
-       -moz-transition: @subject @duration cubic-bezier(0.600, 0.040, 0.980, 0.335);
-        -ms-transition: @subject @duration cubic-bezier(0.600, 0.040, 0.980, 0.335);
-         -o-transition: @subject @duration cubic-bezier(0.600, 0.040, 0.980, 0.335);
-            transition: @subject @duration cubic-bezier(0.600, 0.040, 0.980, 0.335);
-  }
+    .easeInBack(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration cubic-bezier(0.600, 0, 0.735, 0.045); // older webkit
+        -webkit-transition: @subject @duration cubic-bezier(0.600, -0.280, 0.735, 0.045);
+           -moz-transition: @subject @duration cubic-bezier(0.600, -0.280, 0.735, 0.045);
+            -ms-transition: @subject @duration cubic-bezier(0.600, -0.280, 0.735, 0.045);
+             -o-transition: @subject @duration cubic-bezier(0.600, -0.280, 0.735, 0.045);
+                transition: @subject @duration cubic-bezier(0.600, -0.280, 0.735, 0.045);
+      }
+    }
 
-  .easeInBack(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(0.600, 0, 0.735, 0.045); // older webkit
-    -webkit-transition: @subject @duration cubic-bezier(0.600, -0.280, 0.735, 0.045);
-       -moz-transition: @subject @duration cubic-bezier(0.600, -0.280, 0.735, 0.045);
-        -ms-transition: @subject @duration cubic-bezier(0.600, -0.280, 0.735, 0.045);
-         -o-transition: @subject @duration cubic-bezier(0.600, -0.280, 0.735, 0.045);
-            transition: @subject @duration cubic-bezier(0.600, -0.280, 0.735, 0.045);
-  }
+    .easeOutQuad(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration cubic-bezier(0.250, 0.460, 0.450, 0.940);
+           -moz-transition: @subject @duration cubic-bezier(0.250, 0.460, 0.450, 0.940);
+            -ms-transition: @subject @duration cubic-bezier(0.250, 0.460, 0.450, 0.940);
+             -o-transition: @subject @duration cubic-bezier(0.250, 0.460, 0.450, 0.940);
+                transition: @subject @duration cubic-bezier(0.250, 0.460, 0.450, 0.940);
+      }
+    }
 
-  .easeOutQuad(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(0.250, 0.460, 0.450, 0.940);
-       -moz-transition: @subject @duration cubic-bezier(0.250, 0.460, 0.450, 0.940);
-        -ms-transition: @subject @duration cubic-bezier(0.250, 0.460, 0.450, 0.940);
-         -o-transition: @subject @duration cubic-bezier(0.250, 0.460, 0.450, 0.940);
-            transition: @subject @duration cubic-bezier(0.250, 0.460, 0.450, 0.940);
-  }
+    .easeOutCubic(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration cubic-bezier(0.215, 0.610, 0.355, 1.000);
+           -moz-transition: @subject @duration cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            -ms-transition: @subject @duration cubic-bezier(0.215, 0.610, 0.355, 1.000);
+             -o-transition: @subject @duration cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                transition: @subject @duration cubic-bezier(0.215, 0.610, 0.355, 1.000);
+      }
+    }
 
-  .easeOutCubic(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(0.215, 0.610, 0.355, 1.000);
-       -moz-transition: @subject @duration cubic-bezier(0.215, 0.610, 0.355, 1.000);
-        -ms-transition: @subject @duration cubic-bezier(0.215, 0.610, 0.355, 1.000);
-         -o-transition: @subject @duration cubic-bezier(0.215, 0.610, 0.355, 1.000);
-            transition: @subject @duration cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  }
+    .easeOutQuart(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration cubic-bezier(0.165, 0.840, 0.440, 1.000);
+           -moz-transition: @subject @duration cubic-bezier(0.165, 0.840, 0.440, 1.000);
+            -ms-transition: @subject @duration cubic-bezier(0.165, 0.840, 0.440, 1.000);
+             -o-transition: @subject @duration cubic-bezier(0.165, 0.840, 0.440, 1.000);
+                transition: @subject @duration cubic-bezier(0.165, 0.840, 0.440, 1.000);
+      }
+    }
 
-  .easeOutQuart(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(0.165, 0.840, 0.440, 1.000);
-       -moz-transition: @subject @duration cubic-bezier(0.165, 0.840, 0.440, 1.000);
-        -ms-transition: @subject @duration cubic-bezier(0.165, 0.840, 0.440, 1.000);
-         -o-transition: @subject @duration cubic-bezier(0.165, 0.840, 0.440, 1.000);
-            transition: @subject @duration cubic-bezier(0.165, 0.840, 0.440, 1.000);
-  }
+    .easeOutQuint(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration cubic-bezier(0.230, 1.000, 0.320, 1.000);
+           -moz-transition: @subject @duration cubic-bezier(0.230, 1.000, 0.320, 1.000);
+            -ms-transition: @subject @duration cubic-bezier(0.230, 1.000, 0.320, 1.000);
+             -o-transition: @subject @duration cubic-bezier(0.230, 1.000, 0.320, 1.000);
+                transition: @subject @duration cubic-bezier(0.230, 1.000, 0.320, 1.000);
+      }
+    }
 
-  .easeOutQuint(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(0.230, 1.000, 0.320, 1.000);
-       -moz-transition: @subject @duration cubic-bezier(0.230, 1.000, 0.320, 1.000);
-        -ms-transition: @subject @duration cubic-bezier(0.230, 1.000, 0.320, 1.000);
-         -o-transition: @subject @duration cubic-bezier(0.230, 1.000, 0.320, 1.000);
-            transition: @subject @duration cubic-bezier(0.230, 1.000, 0.320, 1.000);
-  }
+    .easeOutSine(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration cubic-bezier(0.390, 0.575, 0.565, 1.000);
+           -moz-transition: @subject @duration cubic-bezier(0.390, 0.575, 0.565, 1.000);
+            -ms-transition: @subject @duration cubic-bezier(0.390, 0.575, 0.565, 1.000);
+             -o-transition: @subject @duration cubic-bezier(0.390, 0.575, 0.565, 1.000);
+                transition: @subject @duration cubic-bezier(0.390, 0.575, 0.565, 1.000);
+      }
+    }
 
-  .easeOutSine(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(0.390, 0.575, 0.565, 1.000);
-       -moz-transition: @subject @duration cubic-bezier(0.390, 0.575, 0.565, 1.000);
-        -ms-transition: @subject @duration cubic-bezier(0.390, 0.575, 0.565, 1.000);
-         -o-transition: @subject @duration cubic-bezier(0.390, 0.575, 0.565, 1.000);
-            transition: @subject @duration cubic-bezier(0.390, 0.575, 0.565, 1.000);
-  }
+    .easeOutExpo(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration cubic-bezier(0.190, 1.000, 0.220, 1.000);
+           -moz-transition: @subject @duration cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            -ms-transition: @subject @duration cubic-bezier(0.190, 1.000, 0.220, 1.000);
+             -o-transition: @subject @duration cubic-bezier(0.190, 1.000, 0.220, 1.000);
+                transition: @subject @duration cubic-bezier(0.190, 1.000, 0.220, 1.000);
+      }
+    }
 
-  .easeOutExpo(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(0.190, 1.000, 0.220, 1.000);
-       -moz-transition: @subject @duration cubic-bezier(0.190, 1.000, 0.220, 1.000);
-        -ms-transition: @subject @duration cubic-bezier(0.190, 1.000, 0.220, 1.000);
-         -o-transition: @subject @duration cubic-bezier(0.190, 1.000, 0.220, 1.000);
-            transition: @subject @duration cubic-bezier(0.190, 1.000, 0.220, 1.000);
-  }
+    .easeOutCirc(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration cubic-bezier(0.075, 0.820, 0.165, 1.000);
+           -moz-transition: @subject @duration cubic-bezier(0.075, 0.820, 0.165, 1.000);
+            -ms-transition: @subject @duration cubic-bezier(0.075, 0.820, 0.165, 1.000);
+             -o-transition: @subject @duration cubic-bezier(0.075, 0.820, 0.165, 1.000);
+                transition: @subject @duration cubic-bezier(0.075, 0.820, 0.165, 1.000);
+      }
+    }
 
-  .easeOutCirc(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(0.075, 0.820, 0.165, 1.000);
-       -moz-transition: @subject @duration cubic-bezier(0.075, 0.820, 0.165, 1.000);
-        -ms-transition: @subject @duration cubic-bezier(0.075, 0.820, 0.165, 1.000);
-         -o-transition: @subject @duration cubic-bezier(0.075, 0.820, 0.165, 1.000);
-            transition: @subject @duration cubic-bezier(0.075, 0.820, 0.165, 1.000);
-  }
+    .easeOutBack(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration cubic-bezier(0.175, 0.885, 0.320, 1); // older webkit
+        -webkit-transition: @subject @duration cubic-bezier(0.175, 0.885, 0.320, 1.275);
+           -moz-transition: @subject @duration cubic-bezier(0.175, 0.885, 0.320, 1.275);
+            -ms-transition: @subject @duration cubic-bezier(0.175, 0.885, 0.320, 1.275);
+             -o-transition: @subject @duration cubic-bezier(0.175, 0.885, 0.320, 1.275);
+                transition: @subject @duration cubic-bezier(0.175, 0.885, 0.320, 1.275);
+      }
+    }
 
-  .easeOutBack(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(0.175, 0.885, 0.320, 1); // older webkit
-    -webkit-transition: @subject @duration cubic-bezier(0.175, 0.885, 0.320, 1.275);
-       -moz-transition: @subject @duration cubic-bezier(0.175, 0.885, 0.320, 1.275);
-        -ms-transition: @subject @duration cubic-bezier(0.175, 0.885, 0.320, 1.275);
-         -o-transition: @subject @duration cubic-bezier(0.175, 0.885, 0.320, 1.275);
-            transition: @subject @duration cubic-bezier(0.175, 0.885, 0.320, 1.275);
-  }
+    .easeInOutQuad(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration cubic-bezier(0.455, 0.030, 0.515, 0.955);
+           -moz-transition: @subject @duration cubic-bezier(0.455, 0.030, 0.515, 0.955);
+            -ms-transition: @subject @duration cubic-bezier(0.455, 0.030, 0.515, 0.955);
+             -o-transition: @subject @duration cubic-bezier(0.455, 0.030, 0.515, 0.955);
+                transition: @subject @duration cubic-bezier(0.455, 0.030, 0.515, 0.955);
+      }
+    }
 
-  .easeInOutQuad(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(0.455, 0.030, 0.515, 0.955);
-       -moz-transition: @subject @duration cubic-bezier(0.455, 0.030, 0.515, 0.955);
-        -ms-transition: @subject @duration cubic-bezier(0.455, 0.030, 0.515, 0.955);
-         -o-transition: @subject @duration cubic-bezier(0.455, 0.030, 0.515, 0.955);
-            transition: @subject @duration cubic-bezier(0.455, 0.030, 0.515, 0.955);
-  }
+    .easeInOutCubic(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration cubic-bezier(0.645, 0.045, 0.355, 1.000);
+           -moz-transition: @subject @duration cubic-bezier(0.645, 0.045, 0.355, 1.000);
+            -ms-transition: @subject @duration cubic-bezier(0.645, 0.045, 0.355, 1.000);
+             -o-transition: @subject @duration cubic-bezier(0.645, 0.045, 0.355, 1.000);
+                transition: @subject @duration cubic-bezier(0.645, 0.045, 0.355, 1.000);
+      }
+    }
 
-  .easeInOutCubic(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(0.645, 0.045, 0.355, 1.000);
-       -moz-transition: @subject @duration cubic-bezier(0.645, 0.045, 0.355, 1.000);
-        -ms-transition: @subject @duration cubic-bezier(0.645, 0.045, 0.355, 1.000);
-         -o-transition: @subject @duration cubic-bezier(0.645, 0.045, 0.355, 1.000);
-            transition: @subject @duration cubic-bezier(0.645, 0.045, 0.355, 1.000);
-  }
+    .easeInOutQuart(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration cubic-bezier(0.770, 0.000, 0.175, 1.000);
+           -moz-transition: @subject @duration cubic-bezier(0.770, 0.000, 0.175, 1.000);
+            -ms-transition: @subject @duration cubic-bezier(0.770, 0.000, 0.175, 1.000);
+             -o-transition: @subject @duration cubic-bezier(0.770, 0.000, 0.175, 1.000);
+                transition: @subject @duration cubic-bezier(0.770, 0.000, 0.175, 1.000);
+      }
+    }
 
-  .easeInOutQuart(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(0.770, 0.000, 0.175, 1.000);
-       -moz-transition: @subject @duration cubic-bezier(0.770, 0.000, 0.175, 1.000);
-        -ms-transition: @subject @duration cubic-bezier(0.770, 0.000, 0.175, 1.000);
-         -o-transition: @subject @duration cubic-bezier(0.770, 0.000, 0.175, 1.000);
-            transition: @subject @duration cubic-bezier(0.770, 0.000, 0.175, 1.000);
-  }
+    .easeInOutQuint(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration cubic-bezier(0.860, 0.000, 0.070, 1.000);
+           -moz-transition: @subject @duration cubic-bezier(0.860, 0.000, 0.070, 1.000);
+            -ms-transition: @subject @duration cubic-bezier(0.860, 0.000, 0.070, 1.000);
+             -o-transition: @subject @duration cubic-bezier(0.860, 0.000, 0.070, 1.000);
+                transition: @subject @duration cubic-bezier(0.860, 0.000, 0.070, 1.000);
+      }
+    }
 
-  .easeInOutQuint(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(0.860, 0.000, 0.070, 1.000);
-       -moz-transition: @subject @duration cubic-bezier(0.860, 0.000, 0.070, 1.000);
-        -ms-transition: @subject @duration cubic-bezier(0.860, 0.000, 0.070, 1.000);
-         -o-transition: @subject @duration cubic-bezier(0.860, 0.000, 0.070, 1.000);
-            transition: @subject @duration cubic-bezier(0.860, 0.000, 0.070, 1.000);
-  }
+    .easeInOutSine(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration cubic-bezier(0.445, 0.050, 0.550, 0.950);
+           -moz-transition: @subject @duration cubic-bezier(0.445, 0.050, 0.550, 0.950);
+            -ms-transition: @subject @duration cubic-bezier(0.445, 0.050, 0.550, 0.950);
+             -o-transition: @subject @duration cubic-bezier(0.445, 0.050, 0.550, 0.950);
+                transition: @subject @duration cubic-bezier(0.445, 0.050, 0.550, 0.950);
+      }
+    }
 
-  .easeInOutSine(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(0.445, 0.050, 0.550, 0.950);
-       -moz-transition: @subject @duration cubic-bezier(0.445, 0.050, 0.550, 0.950);
-        -ms-transition: @subject @duration cubic-bezier(0.445, 0.050, 0.550, 0.950);
-         -o-transition: @subject @duration cubic-bezier(0.445, 0.050, 0.550, 0.950);
-            transition: @subject @duration cubic-bezier(0.445, 0.050, 0.550, 0.950);
-  }
+    .easeInOutExpo(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration cubic-bezier(1.000, 0.000, 0.000, 1.000);
+           -moz-transition: @subject @duration cubic-bezier(1.000, 0.000, 0.000, 1.000);
+            -ms-transition: @subject @duration cubic-bezier(1.000, 0.000, 0.000, 1.000);
+             -o-transition: @subject @duration cubic-bezier(1.000, 0.000, 0.000, 1.000);
+                transition: @subject @duration cubic-bezier(1.000, 0.000, 0.000, 1.000);
+      }
+    }
 
-  .easeInOutExpo(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(1.000, 0.000, 0.000, 1.000);
-       -moz-transition: @subject @duration cubic-bezier(1.000, 0.000, 0.000, 1.000);
-        -ms-transition: @subject @duration cubic-bezier(1.000, 0.000, 0.000, 1.000);
-         -o-transition: @subject @duration cubic-bezier(1.000, 0.000, 0.000, 1.000);
-            transition: @subject @duration cubic-bezier(1.000, 0.000, 0.000, 1.000);
-  }
+    .easeInOutCirc(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration cubic-bezier(0.785, 0.135, 0.150, 0.860);
+           -moz-transition: @subject @duration cubic-bezier(0.785, 0.135, 0.150, 0.860);
+            -ms-transition: @subject @duration cubic-bezier(0.785, 0.135, 0.150, 0.860);
+             -o-transition: @subject @duration cubic-bezier(0.785, 0.135, 0.150, 0.860);
+                transition: @subject @duration cubic-bezier(0.785, 0.135, 0.150, 0.860);
+      }
+    }
 
-  .easeInOutCirc(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(0.785, 0.135, 0.150, 0.860);
-       -moz-transition: @subject @duration cubic-bezier(0.785, 0.135, 0.150, 0.860);
-        -ms-transition: @subject @duration cubic-bezier(0.785, 0.135, 0.150, 0.860);
-         -o-transition: @subject @duration cubic-bezier(0.785, 0.135, 0.150, 0.860);
-            transition: @subject @duration cubic-bezier(0.785, 0.135, 0.150, 0.860);
-  }
-
-  .easeInOutBack(
-      @duration: @durationDefault,
-      @subject: @subjectDefault
-    ) {
-    -webkit-transition: @subject @duration cubic-bezier(0.680, 0, 0.265, 1); // older webkit
-    -webkit-transition: @subject @duration cubic-bezier(0.680, -0.550, 0.265, 1.550);
-       -moz-transition: @subject @duration cubic-bezier(0.680, -0.550, 0.265, 1.550);
-        -ms-transition: @subject @duration cubic-bezier(0.680, -0.550, 0.265, 1.550);
-         -o-transition: @subject @duration cubic-bezier(0.680, -0.550, 0.265, 1.550);
-            transition: @subject @duration cubic-bezier(0.680, -0.550, 0.265, 1.550);
-  }
-
+    .easeInOutBack(
+        @duration: @durationDefault,
+        @subject: @subjectDefault
+      ) {
+      & when (@use-transitions = true) {
+        -webkit-transition: @subject @duration cubic-bezier(0.680, 0, 0.265, 1); // older webkit
+        -webkit-transition: @subject @duration cubic-bezier(0.680, -0.550, 0.265, 1.550);
+           -moz-transition: @subject @duration cubic-bezier(0.680, -0.550, 0.265, 1.550);
+            -ms-transition: @subject @duration cubic-bezier(0.680, -0.550, 0.265, 1.550);
+             -o-transition: @subject @duration cubic-bezier(0.680, -0.550, 0.265, 1.550);
+                transition: @subject @duration cubic-bezier(0.680, -0.550, 0.265, 1.550);
+      }
+    }
 }

@@ -7,20 +7,11 @@
 
 .gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
   background: @color;
-  background: -webkit-gradient(linear,
-                               left bottom,
-                               left top,
-                               color-stop(0, @start),
-                               color-stop(1, @stop));
-  background: -ms-linear-gradient(bottom,
-                                  @start,
-                                  @stop);
-  background: -moz-linear-gradient(center bottom,
-                                   @start 0%,
-                                   @stop 100%);
-  background: -o-linear-gradient(@stop,
-                                 @start);
-  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, @start), color-stop(1, @stop));
+  background: -ms-linear-gradient(bottom, @start, @stop);
+  background: -moz-linear-gradient(center bottom, @start 0%, @stop 100%);
+  background: -o-linear-gradient(@stop, @start);
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)", @stop, @start));
 }
 .horizontal-gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
   background: @color;
@@ -125,27 +116,27 @@
   .transform(scale(@ratio));
 }
 
-@easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-@easeInOutBack: cubic-bezier(0.02, 0.3, 0.3, 0.3);
+// @easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+// @easeInOutBack: cubic-bezier(0.02, 0.3, 0.3, 0.3);
 
-.transition-duration(@duration: 0.2s) {
-  -moz-transition-duration: @duration;
-  -webkit-transition-duration: @duration;
-  -o-transition-duration: @duration;
-  transition-duration: @duration;
-}
-.transition(@duration:0.2s, @ease:ease-out, @type:all) {
-  -webkit-transition: @type @duration @ease;
-  -moz-transition: @type @duration @ease;
-  -o-transition: @type @duration @ease;
-  transition: @type @duration @ease;
-}
-.transition-delay(@duration: 0.25s, @ease: ease-out, @type: all, @delay: 0.25s) {
-  -webkit-transition: @type @duration @ease @delay;
-  -moz-transition: @type @duration @ease @delay;
-  -o-transition: @type @duration @ease @delay;
-  transition: @type @duration @ease @delay;
-}
+// .transition-duration(@duration: 0.2s) {
+//   -moz-transition-duration: @duration;
+//   -webkit-transition-duration: @duration;
+//   -o-transition-duration: @duration;
+//   transition-duration: @duration;
+// }
+// .transition(@duration:0.2s, @ease:ease-out, @type:all) {
+//   -webkit-transition: @type @duration @ease;
+//   -moz-transition: @type @duration @ease;
+//   -o-transition: @type @duration @ease;
+//   transition: @type @duration @ease;
+// }
+// .transition-delay(@duration: 0.25s, @ease: ease-out, @type: all, @delay: 0.25s) {
+//   -webkit-transition: @type @duration @ease @delay;
+//   -moz-transition: @type @duration @ease @delay;
+//   -o-transition: @type @duration @ease @delay;
+//   transition: @type @duration @ease @delay;
+// }
 .inner-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4) {
   -webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
   -moz-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);

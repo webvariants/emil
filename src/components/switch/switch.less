@@ -1,6 +1,5 @@
 .switchUnit {
   @switchUnitHandleSize: 22px;
-  @transDuration: .25s;
 
   .inner-shadow(0, 0, 2px, .3);
   .no-user-selection;
@@ -23,12 +22,12 @@
     right: calc(~"100% - -22px");
   }
   &, .handle, .shutter {
-    .transition(@transDuration, ease-in-out, all);
+    .transition.ease-out;
   }
 
   .handle {
     .drop-shadow(0px, 0px, 2px, .2);
-    .transition(0.15s, ease-in-out, all);
+    .transition.ease-out;
     border-radius: 50%;
     background: rgba(255,255,255,1);
     border: 1px solid rgba(0,0,0,.2);
@@ -39,7 +38,7 @@
     z-index: 5;
 
     &.noTransitions {
-      .transition(0s, ease-in, none);
+      .transition.ease-out;
     }
 
     &:hover {
@@ -53,7 +52,7 @@
   .switchLabel {
     float: left;
     opacity: 1;
-    .transition(0.15s, ease-in-out, all);
+    .transition.ease-out;
     color: @grey53;
     position: absolute;
     z-index: 3;
@@ -65,7 +64,7 @@
       right: @switchUnitHandleSize;
 
       &.noTransitions {
-        .transition(0s, ease-in, none);
+        .transition.none;
       }
     }
 
@@ -98,7 +97,7 @@
 
   .shutter {
     .inner-shadow(0, 0, 2px, .3);
-    .transition(0.15s, ease-in-out, all);
+    .transition.ease-out;
       border-radius: @switchUnitHandleSize / 2;
       position: absolute;
       top: 0;
@@ -113,7 +112,7 @@
       }
 
       &.noTransitions {
-      .transition(0s, ease-in, none);
+      .transition.none;
     }
   }
 
@@ -171,19 +170,6 @@
     display: none;
   }
 }
-// fieldset.switchUnitRow {
-//   legend {
-//     @media (min-width: @screen-small) {
-//       min-height: 42px;
-//       span {
-//         padding-top: 10px;
-//       }
-//     }
-//   }
-//   .switchUnit {
-//     margin: 9px auto;
-//   }
-// }
 
 /*  This is awkward but it works for now */
 #maintenance_mode.switchUnit {

@@ -1,6 +1,5 @@
 .emil-master-detail {
   .use-graphic-acceleration;
-  .use-transitions;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   overflow: hidden;
   position: absolute;
@@ -10,8 +9,7 @@
   right: 0;
 
   .emil-master {
-    .use-transitions;
-    .transition(.15s);
+    .transition.ease-out;
     .no-user-selection;
     position: absolute;
     top: 0;
@@ -31,8 +29,7 @@
   }
 
   .emil-detail {
-    .use-transitions;
-    .transition(.25s);
+    .transition.ease-out;
     position: relative;
     height: 100%;
     padding: 0;
@@ -45,7 +42,7 @@
 
   .emil-sidebar {
     .use-transitions;
-    .transition(.15s);
+    .transition.ease-out;
     position: absolute;
     top: 0;
     left: 0;
