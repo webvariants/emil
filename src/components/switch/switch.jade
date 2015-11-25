@@ -1,43 +1,44 @@
-mixin switch_unit_div(name, leftActive, disabled, leftLabel, rightLabel, classes)
-  - leftActive = (leftActive && !!leftActive) || false;
-  - leftLabel  = leftLabel  || false;
-  - rightLabel = rightLabel || false;
-  - classes    = classes    || ''
+mixin switch_unit_div(options)
+  - options['leftActive'] = (options.leftActive && !!options.leftActive) || false;
+  - options['leftLabel']  = options.leftLabel  || false;
+  - options['rightLabel'] = options.rightLabel || false;
+  - options['classes']    = options.classes    || ''
+  - options['name']       = options.name       || ''
 
-  .switchUnit(class="#{disabled ? 'disabled' : ''} #{classes} #{leftActive ? 'active' : ''}", id='#{name}')
+  .switchUnit(class="#{options.disabled ? 'disabled' : ''} #{options.classes} #{options.leftActive ? 'active' : ''}", id='#{options.name}')
     .handle
     .clippingDiv
-      .switchLabel.on(class="#{leftActive ? 'active' : ''}", id="#{name}_left", data-value="1")
+      .switchLabel.on(class="#{options.leftActive ? 'active' : ''}", id="#{options.name}_left", data-value="1")
         span
-          if leftLabel
-            |translate:#{leftLabel}
+          if options.leftLabel
+            |#{options.leftLabel}
           else
-            |translate:general.button.on
-          if leftActive
-            input(name='#{name}_left', type='radio', value='1', checked='true')
-          if !leftActive
-            input(name='#{name}_left', type='radio', value='1')
+            |On
+          if options.leftActive
+            input(name='#{options.name}_left', type='radio', value='1', checked='true')
+          if !options.leftActive
+            input(name='#{options.name}_left', type='radio', value='1')
 
-    .switchLabel.off(class="#{leftActive ? '' : 'active'}", id="#{name}_right", data-value="0")
+    .switchLabel.off(class="#{options.leftActive ? '' : 'active'}", id="#{options.name}_right", data-value="0")
       span
-        if rightLabel
-          |translate:#{rightLabel}
+        if options.rightLabel
+          |#{options.rightLabel}
         else
-          |translate:general.button.off
-        if !leftActive
-          input(name='#{name}_right', type='radio', value='0', checked='true')
-        if leftActive
-          input(name='#{name}_right', type='radio', value='0')
+          |Off
+        if !options.leftActive
+          input(name='#{options.name}_right', type='radio', value='0', checked='true')
+        if options.leftActive
+          input(name='#{options.name}_right', type='radio', value='0')
     .shutter
     .switchLabel.hidden
       span
-        if leftLabel
-          |translate:#{leftLabel}
+        if options.leftLabel
+          |#{options.leftLabel}
         else
-          |translate:general.button.on
+          |On
     .switchLabel.hidden
       span
-        if rightLabel
-          |translate:#{rightLabel}
+        if options.rightLabel
+          |#{options.rightLabel}
         else
-          |translate:general.button.off
+          |Off
