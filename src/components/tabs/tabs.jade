@@ -1,0 +1,26 @@
+mixin tabs-wrapper(options)
+    - no = 0;
+    -options            = options         || {}
+    -options['name']    = options.name    || ''
+    -options['classes'] = options.classes || ''
+    -options['id']      = options.id      || ''
+    -options['hidden']  = options.hidden  || false
+    ul(class='tabs-wrapper nav nav-tabs #{options.classes}' role='tablist')
+        .tabs-marker
+        block
+
+mixin tabs(options)
+    - no++;
+    -options            = options         || {}
+    -options['name']    = options.name    || ''
+    -options['classes'] = options.classes || ''
+    -options['id']      = options.id      || ''
+    -options['selected']= options.selected|| ''
+    -options['target']  = options.target  || ''
+    -options['evt']     = options.evt     || 'tabChange'
+    
+    if options.name
+        li(role='presentation' class=options.selected ? 'selected' : '', data-no=no, data-target=options.target, id=options.id, data-evt=options.evt)
+            a(href='#') #{options.name}
+            div.tab-content
+                block
