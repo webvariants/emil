@@ -1,10 +1,9 @@
 mixin switch_unit_div(options)
-  - options.name       = options['name']                                    || '';
-  - options.leftActive = (options['leftActive'] && !!options['leftActive']) || false;
-  - options.leftLabel  = options['leftLabel']                               || false;
-  - options.rightLabel = options['rightLabel']                              || false;
-  - options.classes    = options['classes']                                 || ''
-  - options.disabled   = options['disabled']                                || false
+  - options['leftActive'] = (options.leftActive && !!options.leftActive) || false;
+  - options['leftLabel']  = options.leftLabel  || false;
+  - options['rightLabel'] = options.rightLabel || false;
+  - options['classes']    = options.classes    || ''
+  - options['name']       = options.name       || ''
 
   .switchUnit(class="#{options.disabled ? 'disabled' : ''} #{options.classes} #{options.leftActive ? 'active' : ''}", id='#{options.name}')
     .handle
@@ -12,9 +11,9 @@ mixin switch_unit_div(options)
       .switchLabel.on(class="#{options.leftActive ? 'active' : ''}", id="#{options.name}_left", data-value="1")
         span
           if options.leftLabel
-            |translate:#{options.leftLabel}
+            |#{options.leftLabel}
           else
-            |translate:general.button.on
+            |On
           if options.leftActive
             input(name='#{options.name}_left', type='radio', value='1', checked='true')
           if !options.leftActive
@@ -23,9 +22,9 @@ mixin switch_unit_div(options)
     .switchLabel.off(class="#{options.leftActive ? '' : 'active'}", id="#{options.name}_right", data-value="0")
       span
         if options.rightLabel
-          |translate:#{options.rightLabel}
+          |#{options.rightLabel}
         else
-          |translate:general.button.off
+          |Off
         if !options.leftActive
           input(name='#{options.name}_right', type='radio', value='0', checked='true')
         if options.leftActive
@@ -34,12 +33,12 @@ mixin switch_unit_div(options)
     .switchLabel.hidden
       span
         if options.leftLabel
-          |translate:#{leftLabel}
+          |#{options.leftLabel}
         else
-          |translate:general.button.on
+          |On
     .switchLabel.hidden
       span
         if options.rightLabel
-          |translate:#{options.rightLabel}
+          |#{options.rightLabel}
         else
-          |translate:general.button.off
+          |Off
